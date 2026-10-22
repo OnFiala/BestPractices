@@ -1,0 +1,19 @@
+name: Guidance proposal or correction
+description: Propose a contextual improvement with primary evidence.
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Decision, project context, and counterexample
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Primary sources, versions, and affected guide IDs
+    validations:
+      required: true
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Tradeoffs, validation, migration, and language impact

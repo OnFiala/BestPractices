@@ -1,0 +1,17 @@
+Copyright (c) 2026 OnFiala and contributors.
+
+Except where otherwise credited, the original prose, translations, and diagrams
+in docs/, decisions/, and the repository's Markdown documentation are licensed
+under Creative Commons Attribution 4.0 International (CC BY 4.0).
+
+License deed: https://creativecommons.org/licenses/by/4.0/
+Full legal terms: https://creativecommons.org/licenses/by/4.0/legalcode
+
+You may share and adapt this content, including commercially, under those terms.
+Credit OnFiala/BestPractices and contributors, link the source and license, and
+indicate changes. No endorsement is implied. Third-party source documents retain
+their own licenses; links, metadata, and observations do not relicense those works.
+
+Executable code, workflow definitions, JSON data, configuration, and reusable code
+snippets/templates are licensed under the MIT license in LICENSE-CODE. This file
+does not replace the linked CC BY 4.0 legal terms.

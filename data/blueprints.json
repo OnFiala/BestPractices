@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "status": "design-reference",
+  "production_targets": "SLO, RTO, RPO, budget and residency require project-specific human agreement.",
+  "profiles": [
+    {
+      "id": "public-website",
+      "components": [
+        "static generator",
+        "CDN",
+        "Git content"
+      ],
+      "boundaries": [
+        "No secrets or private source data in generated assets",
+        "Build identity separate from content author"
+      ],
+      "acceptance": [
+        "All four locale routes and search work with keyboard",
+        "Previous artifact can be redeployed",
+        "Unknown route gives an accessible 404"
+      ],
+      "recovery": "Redeploy a known artifact; restore content from Git; retain domain control.",
+      "evolve_when": "Authenticated writes need a server boundary; measured build time exceeds publishing needs.",
+      "guides": [
+        "frontend",
+        "hosting",
+        "github"
+      ]
+    },
+    {
+      "id": "saas",
+      "components": [
+        "modular API",
+        "relational database",
+        "bounded worker",
+        "payment provider"
+      ],
+      "boundaries": [
+        "Tenant ID bound to authenticated principal",
+        "Billing module owns provider reconciliation",
+        "Worker writes through business contracts"
+      ],
+      "acceptance": [
+        "Tenant A cannot read/export/update tenant B records",
+        "Repeated payment request has one intended charge",
+        "Restore preserves order/payment reconciliation"
+      ],
+      "recovery": "Restore isolated data, reconcile external payments, then resume outbox and workers.",
+      "evolve_when": "Measured lock contention or an independently owned domain justifies extraction.",
+      "guides": [
+        "data",
+        "durability",
+        "scaling"
+      ]
+    },
+    {
+      "id": "internal-tool",
+      "components": [
+        "SSO",
+        "small application",
+        "audit store",
+        "upstream integrations"
+      ],
+      "boundaries": [
+        "SSO identity is mapped to per-action permissions",
+        "Exports are separately authorized",
+        "Upstream writes require business approval"
+      ],
+      "acceptance": [
+        "Revoked account loses access within the agreed window",
+        "Export cannot exceed authorized scope",
+        "Unavailable upstream produces actionable pending state"
+      ],
+      "recovery": "Restore records; reconcile upstream operations using stable operation IDs.",
+      "evolve_when": "Different integration owners or reliability obligations require isolated workers.",
+      "guides": [
+        "security",
+        "architecture",
+        "operations"
+      ]
+    },
+    {
+      "id": "ai-application",
+      "components": [
+        "API gateway",
+        "model adapter",
+        "authorized retrieval",
+        "evaluation dataset"
+      ],
+      "boundaries": [
+        "Document ACL applied before retrieval",
+        "Model output is untrusted input",
+        "No model access to raw production credentials"
+      ],
+      "acceptance": [
+        "Unauthorized documents never enter prompt context",
+        "Provider timeout respects deadline and cost cap",
+        "Deletion propagates to indexes and caches",
+        "Evaluation measures grounded answers and abstention"
+      ],
+      "recovery": "Disable model features or degrade to ordinary search; preserve user records; replay only safe bounded jobs.",
+      "evolve_when": "Measured quality, latency, residency or price requires another model/provider; rerun evaluations.",
+      "guides": [
+        "agents",
+        "security",
+        "quality"
+      ]
+    },
+    {
+      "id": "agent-automation",
+      "components": [
+        "queue",
+        "durable run ledger",
+        "bounded worker",
+        "scoped tool gateway",
+        "human approval"
+      ],
+      "boundaries": [
+        "Write capabilities granted per task",
+        "Approval bound to exact intended action and expires",
+        "Source text cannot change tool policy"
+      ],
+      "acceptance": [
+        "Duplicate task cannot repeat irreversible effects",
+        "Token/time/cost cap stops a run",
+        "Expired approval blocks execution",
+        "Hostile tool text cannot authorize new destinations"
+      ],
+      "recovery": "Cancel work, reconcile external effects, resume from durable checkpoint after human review.",
+      "evolve_when": "Independent tool domains or priorities require separate queues, identities and owners.",
+      "guides": [
+        "agents",
+        "durability",
+        "integrations"
+      ]
+    },
+    {
+      "id": "mobile-backend",
+      "components": [
+        "mobile UI",
+        "platform credential storage",
+        "local cache",
+        "versioned API",
+        "sync worker"
+      ],
+      "boundaries": [
+        "Device stores only necessary data",
+        "Server owns authorization and canonical state",
+        "Push payload contains no sensitive record content"
+      ],
+      "acceptance": [
+        "Offline edits resume without duplicates",
+        "Conflicting edits follow an explicit resolution rule",
+        "Previous supported client version still works",
+        "Revoked device cannot refresh credentials"
+      ],
+      "recovery": "Restore server state and reconcile client sync cursors; avoid forcing all clients to update at once.",
+      "evolve_when": "Measured sync volume, conflict rate or geography requires partitioning or regional design.",
+      "guides": [
+        "frontend",
+        "data",
+        "security"
+      ]
+    }
+  ]
+}

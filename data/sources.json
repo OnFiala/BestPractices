@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "agents-guardrails",
+      "url": "https://raw.githubusercontent.com/openai/openai-agents-python/main/docs/guardrails.md",
+      "publisher": "openai",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 14,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "codex",
+      "url": "https://raw.githubusercontent.com/openai/codex/main/README.md",
+      "publisher": "openai",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 14,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "codex-action",
+      "url": "https://raw.githubusercontent.com/openai/codex-action/main/README.md",
+      "publisher": "openai",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 14,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "docker-security",
+      "url": "https://raw.githubusercontent.com/docker/docs/main/content/manuals/engine/security/_index.md",
+      "publisher": "docker",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "durable-workflows",
+      "url": "https://raw.githubusercontent.com/temporalio/temporal/main/README.md",
+      "publisher": "temporalio",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "github-rulesets",
+      "url": "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md",
+      "publisher": "github",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "github-workflows",
+      "url": "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/security/secure-use.md",
+      "publisher": "github",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "kubernetes",
+      "url": "https://raw.githubusercontent.com/kubernetes/website/main/content/en/docs/concepts/architecture/_index.md",
+      "publisher": "kubernetes",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "mcp-python",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md",
+      "publisher": "modelcontextprotocol",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 14,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "mcp-spec",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/README.md",
+      "publisher": "modelcontextprotocol",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 14,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "mkdocs-material",
+      "url": "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/README.md",
+      "publisher": "squidfunk",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "observability",
+      "url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/main/content/en/docs/concepts/observability-primer.md",
+      "publisher": "open-telemetry",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "openai-agents",
+      "url": "https://raw.githubusercontent.com/openai/openai-agents-python/main/docs/agents.md",
+      "publisher": "openai",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 14,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "openai-apps",
+      "url": "https://raw.githubusercontent.com/openai/openai-apps-sdk-examples/main/README.md",
+      "publisher": "openai",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 14,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "opentofu",
+      "url": "https://raw.githubusercontent.com/opentofu/opentofu/main/README.md",
+      "publisher": "opentofu",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "owasp",
+      "url": "https://raw.githubusercontent.com/OWASP/ASVS/master/README.md",
+      "publisher": "OWASP",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "plugins",
+      "url": "https://raw.githubusercontent.com/openai/plugins/main/README.md",
+      "publisher": "openai",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 14,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "postgres-backup",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/backup.sgml",
+      "publisher": "postgres",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "postgres-isolation",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/mvcc.sgml",
+      "publisher": "postgres",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "semver",
+      "url": "https://raw.githubusercontent.com/semver/semver/master/semver.md",
+      "publisher": "semver",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "skills",
+      "url": "https://raw.githubusercontent.com/openai/skills/main/README.md",
+      "publisher": "openai",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 14,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "deprecated"
+    },
+    {
+      "id": "wcag",
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/index.html",
+      "publisher": "w3c",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 90,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "current"
+    },
+    {
+      "id": "webmcp",
+      "url": "https://raw.githubusercontent.com/webmachinelearning/webmcp/main/README.md",
+      "publisher": "webmachinelearning",
+      "authority": "primary",
+      "reviewed_on": "2026-10-21",
+      "review_days": 14,
+      "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
+      "status": "experimental"
+    }
+  ]
+}

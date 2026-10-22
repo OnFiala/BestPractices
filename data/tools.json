@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "tools": [
+    {
+      "id": "codex",
+      "name": "Codex",
+      "status": "candidate",
+      "sources": [
+        "codex",
+        "plugins"
+      ],
+      "use_when": "Bounded coding and review tasks",
+      "cost": "Host permissions, model access, evaluation and cost",
+      "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "agents-sdk",
+      "name": "OpenAI Agents SDK",
+      "status": "candidate",
+      "sources": [
+        "openai-agents",
+        "agents-guardrails"
+      ],
+      "use_when": "Agent orchestration when a direct loop is insufficient",
+      "cost": "Guardrails are not authorization; evaluate handoffs and failure behavior",
+      "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "mcp",
+      "name": "MCP Python SDK",
+      "status": "used-here",
+      "sources": [
+        "mcp-python"
+      ],
+      "use_when": "Read-only retrieval for compatible hosts",
+      "cost": "Remote deployment needs transport, authentication and limits",
+      "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "webmcp",
+      "name": "WebMCP",
+      "status": "experimental",
+      "sources": [
+        "webmcp"
+      ],
+      "use_when": "Browser-mediated progressive enhancement",
+      "cost": "Evolving API; feature detection and human fallback required",
+      "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "material",
+      "name": "MkDocs Material",
+      "status": "used-here",
+      "sources": [
+        "mkdocs-material"
+      ],
+      "use_when": "Static searchable documentation",
+      "cost": "Lock dependencies; review accessibility and generated output",
+      "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "github",
+      "name": "GitHub Actions",
+      "status": "used-here",
+      "sources": [
+        "github-workflows",
+        "github-rulesets"
+      ],
+      "use_when": "Reviewable automation and checks",
+      "cost": "Hosted execution and permissions require repository configuration",
+      "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "postgres",
+      "name": "PostgreSQL",
+      "status": "candidate",
+      "sources": [
+        "postgres-backup",
+        "postgres-isolation"
+      ],
+      "use_when": "Transactional application data",
+      "cost": "Recovery, migrations, isolation and connection budget",
+      "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "docker",
+      "name": "Docker / Compose",
+      "status": "candidate",
+      "sources": [
+        "docker-security"
+      ],
+      "use_when": "Reproducible processes and small service groups",
+      "cost": "Host patching, privileges and persistent data remain your responsibility",
+      "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "kubernetes",
+      "name": "Kubernetes",
+      "status": "candidate",
+      "sources": [
+        "kubernetes"
+      ],
+      "use_when": "Measured orchestration needs and capable operators",
+      "cost": "Cluster upgrades, policy, networking and on-call burden",
+      "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "opentofu",
+      "name": "OpenTofu",
+      "status": "candidate",
+      "sources": [
+        "opentofu"
+      ],
+      "use_when": "Versioned infrastructure management",
+      "cost": "Protect state, review plans, define drift and recovery handling",
+      "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "otel",
+      "name": "OpenTelemetry",
+      "status": "candidate",
+      "sources": [
+        "observability"
+      ],
+      "use_when": "Vendor-neutral telemetry instrumentation",
+      "cost": "Cardinality, sampling, personal data and backend costs",
+      "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "temporal",
+      "name": "Temporal",
+      "status": "candidate",
+      "sources": [
+        "durable-workflows"
+      ],
+      "use_when": "Long-running durable business workflows",
+      "cost": "Determinism, replay, versioning, hosting and operational cost",
+      "reviewed_on": "2026-10-21"
+    }
+  ]
+}

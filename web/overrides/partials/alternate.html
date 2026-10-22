@@ -1,0 +1,12 @@
+<div class="md-header__option">
+  <details class="bp-languages">
+    <summary aria-label="{{ lang.t('select.language') }}">{{ config.theme.language | upper }} ▾</summary>
+    <ul>
+      {% for alt in config.extra.alternate %}
+      <li><a href="{% if page %}{{ alt.local }}{% else %}{{ base_url }}/{{ config.extra.root_prefix }}/{{ '' if alt.lang == 'en' else alt.lang + '/' }}{% endif %}"
+             lang="{{ alt.lang }}" hreflang="{{ alt.lang }}"
+             {% if alt.lang == config.theme.language %}aria-current="true"{% endif %}>{{ alt.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </details>
+</div>

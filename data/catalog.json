@@ -1,0 +1,507 @@
+{
+  "schema_version": 1,
+  "canonical_language": "en",
+  "languages": [
+    "en",
+    "cs",
+    "de",
+    "es"
+  ],
+  "guides": [
+    {
+      "id": "start",
+      "path": "index.md",
+      "title": {
+        "en": "Build systems that can last",
+        "cs": "Stavějte systémy, které vydrží",
+        "de": "Systeme bauen, die Bestand haben",
+        "es": "Construye sistemas que perduren"
+      },
+      "sources": [
+        "plugins",
+        "github-rulesets",
+        "observability"
+      ],
+      "related": [
+        "foundations",
+        "lifecycle",
+        "architecture",
+        "adoption"
+      ],
+      "area": "start",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "foundations",
+      "path": "guides/foundations.md",
+      "title": {
+        "en": "Decision principles",
+        "cs": "Principy rozhodování",
+        "de": "Entscheidungsprinzipien",
+        "es": "Principios de decisión"
+      },
+      "sources": [
+        "owasp",
+        "observability",
+        "github-rulesets"
+      ],
+      "related": [
+        "architecture",
+        "scaling",
+        "governance"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "lifecycle",
+      "path": "guides/lifecycle.md",
+      "title": {
+        "en": "The complete project lifecycle",
+        "cs": "Celý životní cyklus projektu",
+        "de": "Der vollständige Projektlebenszyklus",
+        "es": "El ciclo de vida completo"
+      },
+      "sources": [
+        "github-rulesets",
+        "observability",
+        "postgres-backup"
+      ],
+      "related": [
+        "quality",
+        "operations",
+        "agents",
+        "adoption"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "architecture",
+      "path": "guides/architecture.md",
+      "title": {
+        "en": "Choose and connect architectures",
+        "cs": "Volba a propojení architektur",
+        "de": "Architekturen auswählen und verbinden",
+        "es": "Elegir y conectar arquitecturas"
+      },
+      "sources": [
+        "kubernetes",
+        "postgres-isolation",
+        "durable-workflows"
+      ],
+      "related": [
+        "durability",
+        "frontend",
+        "scaling",
+        "hosting"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "durability",
+      "path": "guides/durability.md",
+      "title": {
+        "en": "Durability and distributed work",
+        "cs": "Odolnost a distribuovaná práce",
+        "de": "Beständigkeit und verteilte Arbeit",
+        "es": "Durabilidad y trabajo distribuido"
+      },
+      "sources": [
+        "postgres-isolation",
+        "postgres-backup",
+        "durable-workflows"
+      ],
+      "related": [
+        "data",
+        "operations",
+        "architecture"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "scaling",
+      "path": "guides/scaling.md",
+      "title": {
+        "en": "Scale from measurements",
+        "cs": "Škálování podle měření",
+        "de": "Anhand von Messungen skalieren",
+        "es": "Escalar con mediciones"
+      },
+      "sources": [
+        "observability",
+        "kubernetes",
+        "postgres-isolation"
+      ],
+      "related": [
+        "hosting",
+        "data",
+        "operations",
+        "architecture"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "hosting",
+      "path": "guides/hosting.md",
+      "title": {
+        "en": "Hosting and exit strategies",
+        "cs": "Hosting a cesta k migraci",
+        "de": "Hosting und Ausstiegswege",
+        "es": "Alojamiento y estrategias de salida"
+      },
+      "sources": [
+        "docker-security",
+        "kubernetes",
+        "opentofu",
+        "postgres-backup"
+      ],
+      "related": [
+        "self-hosting",
+        "scaling",
+        "operations"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "self-hosting",
+      "path": "guides/self-hosting.md",
+      "title": {
+        "en": "Operate your own servers",
+        "cs": "Provoz vlastních serverů",
+        "de": "Eigene Server betreiben",
+        "es": "Operar servidores propios"
+      },
+      "sources": [
+        "docker-security",
+        "postgres-backup",
+        "opentofu"
+      ],
+      "related": [
+        "security",
+        "hosting",
+        "operations"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "frontend",
+      "path": "guides/frontend.md",
+      "title": {
+        "en": "Frontend architecture and contracts",
+        "cs": "Architektura frontendu a smlouvy",
+        "de": "Frontendarchitektur und Verträge",
+        "es": "Arquitectura frontend y contratos"
+      },
+      "sources": [
+        "wcag",
+        "owasp",
+        "webmcp"
+      ],
+      "related": [
+        "architecture",
+        "quality",
+        "integrations"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "data",
+      "path": "guides/data.md",
+      "title": {
+        "en": "Data, contracts, and migrations",
+        "cs": "Data, smlouvy a migrace",
+        "de": "Daten, Verträge und Migrationen",
+        "es": "Datos, contratos y migraciones"
+      },
+      "sources": [
+        "postgres-isolation",
+        "postgres-backup",
+        "owasp"
+      ],
+      "related": [
+        "durability",
+        "security",
+        "scaling"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "quality",
+      "path": "guides/quality.md",
+      "title": {
+        "en": "Quality gates that prove behavior",
+        "cs": "Kontroly kvality dokazující chování",
+        "de": "Qualitätsprüfungen mit Verhaltensnachweis",
+        "es": "Controles que demuestran comportamiento"
+      },
+      "sources": [
+        "owasp",
+        "wcag",
+        "github-workflows"
+      ],
+      "related": [
+        "github",
+        "agents",
+        "lifecycle"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "security",
+      "path": "guides/security.md",
+      "title": {
+        "en": "Security, privacy, and supply chain",
+        "cs": "Bezpečnost, soukromí a závislosti",
+        "de": "Sicherheit, Datenschutz und Lieferkette",
+        "es": "Seguridad, privacidad y dependencias"
+      },
+      "sources": [
+        "owasp",
+        "docker-security",
+        "github-workflows"
+      ],
+      "related": [
+        "agents",
+        "self-hosting",
+        "data"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "operations",
+      "path": "guides/operations.md",
+      "title": {
+        "en": "Health, recovery, and cost",
+        "cs": "Zdraví, obnova a náklady",
+        "de": "Zustand, Wiederherstellung und Kosten",
+        "es": "Salud, recuperación y costes"
+      },
+      "sources": [
+        "observability",
+        "postgres-backup"
+      ],
+      "related": [
+        "durability",
+        "scaling",
+        "lifecycle"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "github",
+      "path": "guides/github.md",
+      "title": {
+        "en": "GitHub, versions, and clean trees",
+        "cs": "GitHub, verze a čisté stromy",
+        "de": "GitHub, Versionen und saubere Arbeitsbäume",
+        "es": "GitHub, versiones y árboles limpios"
+      },
+      "sources": [
+        "github-rulesets",
+        "github-workflows",
+        "semver"
+      ],
+      "related": [
+        "quality",
+        "agents",
+        "maintenance"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "agents",
+      "path": "guides/agents.md",
+      "title": {
+        "en": "Human direction, agent execution",
+        "cs": "Člověk řídí, agent vykonává",
+        "de": "Menschen steuern, Agenten führen aus",
+        "es": "Dirección humana, ejecución de agentes"
+      },
+      "sources": [
+        "openai-agents",
+        "agents-guardrails",
+        "codex-action",
+        "plugins"
+      ],
+      "related": [
+        "quality",
+        "security",
+        "maintenance",
+        "integrations"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "integrations",
+      "path": "guides/integrations.md",
+      "title": {
+        "en": "Skills, plugins, MCP, and WebMCP",
+        "cs": "Skills, pluginy, MCP a WebMCP",
+        "de": "Skills, Plugins, MCP und WebMCP",
+        "es": "Skills, plugins, MCP y WebMCP"
+      },
+      "sources": [
+        "plugins",
+        "skills",
+        "openai-apps",
+        "mcp-python",
+        "webmcp"
+      ],
+      "related": [
+        "agents",
+        "frontend",
+        "security",
+        "maintenance"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "maintenance",
+      "path": "guides/maintenance.md",
+      "title": {
+        "en": "Evidence and automated maintenance",
+        "cs": "Důkazy a automatická údržba",
+        "de": "Belege und automatische Pflege",
+        "es": "Evidencia y mantenimiento automático"
+      },
+      "sources": [
+        "codex-action",
+        "github-workflows",
+        "plugins"
+      ],
+      "related": [
+        "github",
+        "agents",
+        "governance"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "adoption",
+      "path": "guides/adoption.md",
+      "title": {
+        "en": "Adopt the library in a project",
+        "cs": "Použití knihovny v projektu",
+        "de": "Die Bibliothek im Projekt einsetzen",
+        "es": "Adoptar la biblioteca en un proyecto"
+      },
+      "sources": [
+        "plugins",
+        "github-rulesets",
+        "observability"
+      ],
+      "related": [
+        "foundations",
+        "lifecycle",
+        "agents",
+        "governance"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "governance",
+      "path": "guides/governance.md",
+      "title": {
+        "en": "Governance and unanswered decisions",
+        "cs": "Správa a otevřená rozhodnutí",
+        "de": "Verantwortung und offene Entscheidungen",
+        "es": "Gobierno y decisiones abiertas"
+      },
+      "sources": [
+        "github-rulesets",
+        "semver",
+        "plugins"
+      ],
+      "related": [
+        "maintenance",
+        "adoption",
+        "github"
+      ],
+      "area": "engineering",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "examples",
+      "path": "reference/examples.md",
+      "title": {
+        "en": "Reference project paths",
+        "cs": "Referenční cesty projektů",
+        "de": "Referenzpfade für Projekte",
+        "es": "Rutas de proyectos de referencia"
+      },
+      "sources": [
+        "owasp",
+        "openai-agents",
+        "postgres-backup",
+        "wcag"
+      ],
+      "related": [
+        "adoption",
+        "architecture",
+        "agents",
+        "frontend"
+      ],
+      "area": "reference",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "tools",
+      "path": "reference/tools.md",
+      "title": {
+        "en": "Sources and tools",
+        "cs": "Zdroje a nástroje",
+        "de": "Quellen und Werkzeuge",
+        "es": "Fuentes y herramientas"
+      },
+      "sources": [
+        "mkdocs-material",
+        "mcp-python",
+        "plugins"
+      ],
+      "related": [
+        "integrations",
+        "hosting",
+        "maintenance"
+      ],
+      "area": "reference",
+      "revision": 1,
+      "status": "proposed"
+    }
+  ]
+}

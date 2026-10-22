@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-21",
+  "meaning": "Initial retrieval baseline; not human policy approval.",
+  "observations": {
+    "agents-guardrails": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/openai/openai-agents-python/main/docs/guardrails.md",
+      "sha256": "ccdfa6eb4ca29ef5f265a2bad4d3d0b7786f1a3970f58cfcf07a641b3bb56667",
+      "bytes": 16786
+    },
+    "codex": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/openai/codex/main/README.md",
+      "sha256": "ba4e1f69ff48386e72a9c5e1edaf76aad64a475c2d51af79ccba6d1128261ba7",
+      "bytes": 3334
+    },
+    "codex-action": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/openai/codex-action/main/README.md",
+      "sha256": "00083d3f3b7ab6b887e1efa198c79a3791e53c5aae534588c9eba6c7b056b741",
+      "bytes": 17938
+    },
+    "docker-security": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/docker/docs/main/content/manuals/engine/security/_index.md",
+      "sha256": "bf9c126d4fc7bad25d75d1e1bce851d75738cdd8bc41561a39a9a8687ed1c9e0",
+      "bytes": 13998
+    },
+    "durable-workflows": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/temporalio/temporal/main/README.md",
+      "sha256": "269838d3de5da90d4c2c0b45bf7fc745b384a5a05c0932582e923638e8994189",
+      "bytes": 3888
+    },
+    "github-rulesets": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md",
+      "sha256": "ad074c0507552b396bd5d506a7e80875c5664dd7e6f0e496f5a1dbc1bd039810",
+      "bytes": 6171
+    },
+    "github-workflows": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/security/secure-use.md",
+      "sha256": "0b2d692984fae55eff6334aabb52ca3c97bd38757cca1e2cc3437460cbc4b1d5",
+      "bytes": 37281
+    },
+    "kubernetes": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/kubernetes/website/main/content/en/docs/concepts/architecture/_index.md",
+      "sha256": "0fd1fc2f5ff1e715c5ef99bfd040803f75ec17807c35c863c2b6890620cc3d10",
+      "bytes": 10086
+    },
+    "mcp-python": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md",
+      "sha256": "51552fa66eee9852eb40f5bad68319df90800e88c399c4f404562c570216c05b",
+      "bytes": 4561
+    },
+    "mcp-spec": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/README.md",
+      "sha256": "7e98444c73ed5d923a3b02b1247e9cdf678d31a30cc32b1503bdcd906aa984e2",
+      "bytes": 876
+    },
+    "mkdocs-material": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/README.md",
+      "sha256": "bd8225e2c9fe001b03a83fa2e7db8e154b361968154dc9fca7deb20607ff428a",
+      "bytes": 17357
+    },
+    "observability": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/main/content/en/docs/concepts/observability-primer.md",
+      "sha256": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
+      "bytes": 7669
+    },
+    "openai-agents": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/openai/openai-agents-python/main/docs/agents.md",
+      "sha256": "a7610fba9f6f95e3fad126f23600f644464bafb1d6a7e020090beff86a4619c9",
+      "bytes": 17801
+    },
+    "openai-apps": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/openai/openai-apps-sdk-examples/main/README.md",
+      "sha256": "9faecc20f32fc628038d1cd3745b08e38a84b358e303a9ea70cd763e99241f98",
+      "bytes": 10659
+    },
+    "opentofu": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/opentofu/opentofu/main/README.md",
+      "sha256": "60c539cfab196b4b39768781ee871f07b34aadcada2f4bef42393810e3dbfb92",
+      "bytes": 4419
+    },
+    "owasp": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/OWASP/ASVS/master/README.md",
+      "sha256": "9a360766c67c8facb75a088656dfadad7b390a894acf439c49b2d6cd7b077876",
+      "bytes": 10970
+    },
+    "plugins": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/openai/plugins/main/README.md",
+      "sha256": "b3681ebd15797bdee1d638c6520c7ba10a36e676760ea5c251530f53f843c852",
+      "bytes": 1283
+    },
+    "postgres-backup": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/backup.sgml",
+      "sha256": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26",
+      "bytes": 76905
+    },
+    "postgres-isolation": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/mvcc.sgml",
+      "sha256": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5",
+      "bytes": 84819
+    },
+    "semver": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/semver/semver/master/semver.md",
+      "sha256": "33ebae1a97845991d0b916f3295a88b499e2ec71a6c1fe84c12429077b19ce08",
+      "bytes": 17474
+    },
+    "skills": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/openai/skills/main/README.md",
+      "sha256": "0f6a07580f3c627253e15a58dd0439e135049ec38eb16cf3587f7e50abc6f590",
+      "bytes": 1840
+    },
+    "wcag": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/index.html",
+      "sha256": "26fd85fad76ac1f8d0a08f595099d0435a8b9af5656e1c0f2596eef2519ad37c",
+      "bytes": 65256
+    },
+    "webmcp": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/webmachinelearning/webmcp/main/README.md",
+      "sha256": "184c519af9ed728e77249423ff376c7d99367cd340e80a2d7f3a4a789e3fc7d6",
+      "bytes": 37575
+    }
+  }
+}
