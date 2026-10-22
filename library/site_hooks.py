@@ -10,7 +10,7 @@ def on_page_context(context, page, config, nav):
                         + f'<a href="{notices}">{config.extra["notices_label"]}</a>')
     for alternate in config.extra["alternate"]:
         locale = "" if alternate["lang"] == "en" else alternate["lang"] + "/"
-        alternate["link"] = "https://onfiala.github.io/BestPractices/" + locale + page.url
+        alternate["link"] = config.extra["base_url"] + locale + page.url
         alternate["local"] = posixpath.relpath(locale + page.url or ".",
                                                current + page.url or ".") + "/"
     return context
