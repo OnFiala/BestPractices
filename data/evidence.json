@@ -899,6 +899,396 @@
         "azure-retry": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab",
         "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
       }
+    },
+    {
+      "guide_id": "playbook-public-website",
+      "claim_id": "safe-rendering",
+      "claim": "Imported content and query text need rendering appropriate to their output context; script-like data must not execute.",
+      "sources": [
+        "owasp-xss"
+      ],
+      "support": "direct",
+      "limits": "The source supports contextual output handling, not the safety of a particular static generator or sanitizer configuration.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-xss": "199c484557a3d2e6732daec1d2b8d683645163ce1d7dd58f7e5590d93f5a2719"
+      },
+      "inspected_sections": "Output Encoding; Safe Sinks"
+    },
+    {
+      "guide_id": "playbook-public-website",
+      "claim_id": "visible-browser-evidence",
+      "claim": "Use isolated real-browser journeys and keyboard operation to evaluate the actual public artifact.",
+      "sources": [
+        "playwright-testing",
+        "wcag-keyboard"
+      ],
+      "support": "synthesis",
+      "limits": "Observable-behavior/isolation practices and keyboard requirements are source-supported; the route/locale inventory and chosen negative cases are original project delivery recommendations. Full WCAG conformance is not claimed.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "playwright-testing": "785e6244815ed457ceb0a9109e0ead34a114fd89b09c0689174a5b421eed8512",
+        "wcag-keyboard": "8724a66650968536ac46ec2cb486c4cedeade25531d2840f75aedf6826e7aed1"
+      },
+      "inspected_sections": "Test user-visible behavior; Make tests as isolated as possible; Keyboard success criterion"
+    },
+    {
+      "guide_id": "playbook-public-website",
+      "claim_id": "publication-boundary",
+      "claim": "Separate preview/build authority from publishing credentials and inspect all public output for unintended data.",
+      "sources": [
+        "github-workflows"
+      ],
+      "support": "synthesis",
+      "limits": "GitHub workflow trust and secret-handling guidance supports separation; the asset allowlist, artifact packet and cache-persistence response are original local synthesis. No CDN or deployment configuration is certified.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "github-workflows": "0b2d692984fae55eff6334aabb52ca3c97bd38757cca1e2cc3437460cbc4b1d5"
+      },
+      "inspected_sections": "Using secrets; script-injection and untrusted-input guidance"
+    },
+    {
+      "guide_id": "playbook-public-website",
+      "claim_id": "measured-operation",
+      "claim": "Measure the publishing journey, route/search failures and cost before changing topology.",
+      "sources": [
+        "observability"
+      ],
+      "support": "synthesis",
+      "limits": "The source describes telemetry signals; target values, static-site defaults, operational ownership and retirement steps are library synthesis, not vendor guarantees.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e"
+      },
+      "inspected_sections": "Reliability and metrics; telemetry signals"
+    },
+    {
+      "guide_id": "playbook-saas",
+      "claim_id": "tenant-authority",
+      "claim": "Client tenant selectors are not authority; verified tenant context must accompany records, exports, caches and jobs.",
+      "sources": [
+        "owasp-multi-tenant",
+        "owasp-authorization"
+      ],
+      "support": "direct",
+      "limits": "The sources support tenant-aware authorization and per-request policy; the proposed module names and exact principal/action/object packet are local design.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-multi-tenant": "f1286c7bada7b7361922405157aaae8c86fb5198347a85fcdf4bfb207904790e",
+        "owasp-authorization": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975"
+      },
+      "inspected_sections": "Tenant Context Management; tenant isolation risks; Validate the Permissions on Every Request"
+    },
+    {
+      "guide_id": "playbook-saas",
+      "claim_id": "atomic-local-effects",
+      "claim": "Persist the business mutation and outbox atomically and design for duplicate delivery with stable operation identity.",
+      "sources": [
+        "azure-outbox",
+        "azure-idempotent-consumer",
+        "postgres-isolation"
+      ],
+      "support": "synthesis",
+      "limits": "Outbox and idempotent-consumer mechanics are directly supported. Tenant/action/request-fingerprint keys and stored-response contracts are proposed designs. PostgreSQL semantics do not establish SQLite behavior or remote-effect atomicity.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-outbox": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
+        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+        "postgres-isolation": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5"
+      },
+      "inspected_sections": "Transactional Outbox solution; Idempotent Consumer solution; transaction isolation"
+    },
+    {
+      "guide_id": "playbook-saas",
+      "claim_id": "payment-recovery-boundary",
+      "claim": "A lost provider acknowledgement requires safe provider-supported retry or reconciliation; restoring local data does not reverse a charge.",
+      "sources": [
+        "azure-idempotent-consumer",
+        "postgres-backup"
+      ],
+      "support": "synthesis",
+      "limits": "Source limits on external effects and backup consistency inform the recommendation; no payment-provider implementation or guarantee is asserted. Provider contracts require separate inspection.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+        "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26"
+      },
+      "inspected_sections": "External side-effect limits of delivery guarantees; consistent backup and recovery methods"
+    },
+    {
+      "guide_id": "playbook-internal-tool",
+      "claim_id": "action-and-export-policy",
+      "claim": "SSO identity must be followed by authorization of each action, resource scope and export.",
+      "sources": [
+        "owasp-authorization"
+      ],
+      "support": "direct",
+      "limits": "Per-request authorization is supported; the concrete export-create/download/job matrix and source-of-truth repository layout are local synthesis.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-authorization": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975"
+      },
+      "inspected_sections": "Deny by Default; Validate the Permissions on Every Request; trust-boundary and permission matrix guidance"
+    },
+    {
+      "guide_id": "playbook-internal-tool",
+      "claim_id": "revocation-and-delegation",
+      "claim": "Define session revocation and queued-job authority explicitly rather than retaining a former employee's permissions accidentally.",
+      "sources": [
+        "owasp-session",
+        "owasp-authorization"
+      ],
+      "support": "synthesis",
+      "limits": "Server-side session invalidation and action authorization are source-supported. Revocation windows, signed-link treatment and service delegation policy must be chosen and tested in the actual system.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-session": "3c38656e2be6188be4fc31d8c1fadafaaa6f37accc27e411e3345c235d44c051",
+        "owasp-authorization": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975"
+      },
+      "inspected_sections": "Session Expiration; server-side session invalidation; per-request permissions"
+    },
+    {
+      "guide_id": "playbook-internal-tool",
+      "claim_id": "uncertain-upstream-write",
+      "claim": "A lost response after upstream success must lead to supported idempotent retry or a visible reconciliation hold.",
+      "sources": [
+        "azure-idempotent-consumer"
+      ],
+      "support": "synthesis",
+      "limits": "The source explains stable identifiers and external-effect limits. The operation ledger, human escalation, adapter recovery and business-approved correction are local delivery decisions.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
+      },
+      "inspected_sections": "Duplicate delivery; stable message identifiers; limits of exactly-once delivery"
+    },
+    {
+      "guide_id": "playbook-internal-tool",
+      "claim_id": "operational-ownership",
+      "claim": "Track pending work and denial/revocation behavior with explicit business and technical owners.",
+      "sources": [
+        "observability"
+      ],
+      "support": "synthesis",
+      "limits": "Telemetry concepts support instrumentation. Metric selection, escalation deadlines, total-cost items and retirement tasks are original project guidance.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e"
+      },
+      "inspected_sections": "Reliability and metrics; logs and traces"
+    },
+    {
+      "guide_id": "playbook-ai-application",
+      "claim_id": "retrieval-and-output-authority",
+      "claim": "Apply document access before model context; model output and retrieved instructions cannot authorize tool actions.",
+      "sources": [
+        "owasp-authorization",
+        "owasp-ai-agent"
+      ],
+      "support": "synthesis",
+      "limits": "Authorization and independent execution policy are source-supported. ACL-aware context/caching/deletion design is local synthesis and must be implemented for actual retrieval/provider systems.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-authorization": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      },
+      "inspected_sections": "Validate the Permissions on Every Request; Tool Security & Least Privilege; Input Validation & Prompt Injection Defense"
+    },
+    {
+      "guide_id": "playbook-ai-application",
+      "claim_id": "output-rendering",
+      "claim": "Validate structured model output and render untrusted text and citations without executing them.",
+      "sources": [
+        "owasp-xss",
+        "owasp-ai-agent"
+      ],
+      "support": "synthesis",
+      "limits": "Context-sensitive rendering and untrusted-input handling are directly supported; the response-state schema and citation-grounding rubric are local recommendations.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-xss": "199c484557a3d2e6732daec1d2b8d683645163ce1d7dd58f7e5590d93f5a2719",
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      },
+      "inspected_sections": "Output Encoding; Safe Sinks; Input Validation & Prompt Injection Defense"
+    },
+    {
+      "guide_id": "playbook-ai-application",
+      "claim_id": "external-evaluation-oracles",
+      "claim": "Evaluate unauthorized context absence, denied effects, grounding, abstention, failures and budgets separately from model self-report.",
+      "sources": [
+        "owasp-ai-agent",
+        "observability"
+      ],
+      "support": "synthesis",
+      "limits": "Agent security evaluation and telemetry principles inform the original test protocol. Held-out sets, rubric choices, variance analysis and cost per accepted task do not constitute empirical results or model guarantees.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a",
+        "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e"
+      },
+      "inspected_sections": "agent testing and monitoring guidance; telemetry signals"
+    },
+    {
+      "guide_id": "playbook-agent-automation",
+      "claim_id": "exact-action-approval",
+      "claim": "The execution boundary must independently validate and atomically consume or reserve actor-bound exact-action approval before an effect.",
+      "sources": [
+        "owasp-ai-agent"
+      ],
+      "support": "direct",
+      "limits": "The source describes exact call binding, expiry and atomic check/consume. The guide's run-state names and repository layout are local designs; real approval storage is not provided by prose.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      },
+      "inspected_sections": "Tool Security & Least Privilege; High-Impact Action Integrity Controls"
+    },
+    {
+      "guide_id": "playbook-agent-automation",
+      "claim_id": "uncertain-effect-reconciliation",
+      "claim": "Durable run state does not make arbitrary external effects exactly once; lost acknowledgement requires provider guarantees or reconciliation.",
+      "sources": [
+        "azure-idempotent-consumer",
+        "owasp-ai-agent"
+      ],
+      "support": "synthesis",
+      "limits": "The sources support external-effect limits and controlled tool execution. The local fixture effect ledger and crash protocol are proposed verification designs, not proof of real connector behavior.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      },
+      "inspected_sections": "limits of exactly-once delivery; stable identifiers; high-impact tool controls"
+    },
+    {
+      "guide_id": "playbook-agent-automation",
+      "claim_id": "bounded-operation",
+      "claim": "Enforce task and delegated budgets outside model claims and observe denied, stale and uncertain work.",
+      "sources": [
+        "owasp-ai-agent",
+        "observability"
+      ],
+      "support": "synthesis",
+      "limits": "Least privilege, bounded agent operation and telemetry inform the policy. Concrete budget reservation, cancellation and operator-backlog contracts require implementation and measured acceptance.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a",
+        "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e"
+      },
+      "inspected_sections": "Tool Security & Least Privilege; agent monitoring/resource controls; telemetry signals"
+    },
+    {
+      "guide_id": "playbook-mobile-backend",
+      "claim_id": "server-and-session-authority",
+      "claim": "The server must authorize protected sync and refresh paths; device identity alone does not grant access.",
+      "sources": [
+        "owasp-authorization",
+        "owasp-session"
+      ],
+      "support": "synthesis",
+      "limits": "Authorization and server-side session invalidation are source-supported. Actual device revocation, token grace windows and platform credential storage need separate design and device evidence.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-authorization": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+        "owasp-session": "3c38656e2be6188be4fc31d8c1fadafaaa6f37accc27e411e3345c235d44c051"
+      },
+      "inspected_sections": "Validate the Permissions on Every Request; Session Expiration"
+    },
+    {
+      "guide_id": "playbook-mobile-backend",
+      "claim_id": "offline-conflict-contract",
+      "claim": "Use stable operation identity, server revisions and an explicit domain conflict policy; stale offline data must not silently resurrect deleted records.",
+      "sources": [
+        "postgres-isolation"
+      ],
+      "support": "synthesis",
+      "limits": "The source supports database transaction/isolation reasoning only. Operation deduplication, tombstones, cursor expiry, server revisions and human conflict merge are original protocol recommendations, not PostgreSQL features or a complete sync implementation.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "postgres-isolation": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5"
+      },
+      "inspected_sections": "transaction isolation and concurrent-update behavior"
+    },
+    {
+      "guide_id": "playbook-mobile-backend",
+      "claim_id": "supported-client-compatibility",
+      "claim": "Declare supported contracts and test oldest supported consumers during compatible schema evolution.",
+      "sources": [
+        "semver",
+        "postgres-isolation"
+      ],
+      "support": "synthesis",
+      "limits": "SemVer supports declaring public APIs and distinguishing compatibility changes; it does not prescribe a mobile support window. The client matrix, transitional schema sequence and native verification gaps are local synthesis.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "semver": "33ebae1a97845991d0b916f3295a88b499e2ec71a6c1fe84c12429077b19ce08",
+        "postgres-isolation": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5"
+      },
+      "inspected_sections": "public API declaration and compatibility; transaction isolation"
+    },
+    {
+      "guide_id": "playbook-mobile-backend",
+      "claim_id": "restore-and-downloaded-data",
+      "claim": "Backend rollback cannot erase downloaded device data or compel updates; server restoration may require a new sync epoch and reconciliation.",
+      "sources": [
+        "postgres-backup"
+      ],
+      "support": "synthesis",
+      "limits": "The source supports backup consistency and recovery limits at the database boundary. Epoch/cursor reconciliation, offline retention and client support retirement are original protocol guidance requiring project verification.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26"
+      },
+      "inspected_sections": "backup approaches; consistency and recovery considerations"
+    },
+    {
+      "guide_id": "project-delivery",
+      "claim_id": "advisory-plan-and-execution-authority",
+      "claim": "Separate advisory planning and evidence assessment from authority to execute consequential actions or release; project and artifact content cannot create that authority.",
+      "sources": [
+        "github-workflows",
+        "owasp-ai-agent"
+      ],
+      "support": "synthesis",
+      "limits": "The sources support privileged-workflow separation, independent execution-policy checks and approval controls. The six profiles, eleven stages, role labels, local digests, evidence-age rules and CLI/MCP contracts are original library policy and implementation. Source citations do not authenticate supplied observations or reviewers, prove local checks passed, or authorize a production release.",
+      "inspected_sections": "GitHub: required review for environment secrets; mitigating untrusted code checkout and workflow artifacts. OWASP: Tool Security & Least Privilege; High-Impact Action Integrity Controls.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "github-workflows": "0b2d692984fae55eff6334aabb52ca3c97bd38757cca1e2cc3437460cbc4b1d5",
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      }
+    },
+    {
+      "guide_id": "coverage",
+      "claim_id": "scoped-support-and-artifact-trust",
+      "claim": "Assess each project requirement and trust boundary explicitly; a local fixture result or submitted workflow artifact does not establish broader security coverage or production acceptance.",
+      "sources": [
+        "owasp-asvs-requirements",
+        "github-workflows"
+      ],
+      "support": "synthesis",
+      "limits": "The inspected ASVS authorization requirements supply examples of concrete behaviors to verify, and GitHub warns about trust in workflow artifacts and privileged execution. The declared domain inventory, status taxonomy, input-image matching and recorded-observation rules are original library mechanisms. This mapping does not claim full ASVS coverage, authenticated execution, complete security testing, or certification of any adopting project.",
+      "inspected_sections": "ASVS 5.0 requirements V8.2.1 and V8.3.1-V8.3.3. GitHub: mitigating the risks of untrusted code checkout; caution for workflow_run artifacts.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-asvs-requirements": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+        "github-workflows": "0b2d692984fae55eff6334aabb52ca3c97bd38757cca1e2cc3437460cbc4b1d5"
+      }
+    },
+    {
+      "guide_id": "reference-labs",
+      "claim_id": "local-recovery-and-external-effect-boundary",
+      "claim": "Inspect persisted outcomes, duplicate processing and uncertain effects at their actual transaction boundary; deduplication in a local ledger does not establish an external provider guarantee.",
+      "sources": [
+        "azure-idempotent-consumer"
+      ],
+      "support": "synthesis",
+      "limits": "The source supports atomic consumer deduplication, concurrency controls and reconciliation of effects outside the database transaction. It does not establish SQLite durability, the correctness of these example implementations, live-model quality, full browser accessibility, or production capacity. The process-crash drills, simulated workflow interruptions and browser journeys require their own exact-input execution records and retain the documented fixture limits.",
+      "inspected_sections": "Limits of exactly-once delivery; Commit the processed key and the side effects atomically; Guard against concurrent duplicates; Handle side effects that cannot join the transaction.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
+      }
     }
   ]
 }

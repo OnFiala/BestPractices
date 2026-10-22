@@ -27,7 +27,11 @@
         "github",
         "testing-strategy",
         "performance-testing",
-        "security-testing"
+        "security-testing",
+        "playbook-public-website",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
       ],
       "assumptions": [
         "Public authored content only; no private notes, credentials or tenant data in Git or generated assets.",
@@ -78,7 +82,11 @@
         "scaling",
         "testing-strategy",
         "performance-testing",
-        "security-testing"
+        "security-testing",
+        "playbook-saas",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
       ],
       "assumptions": [
         "Several tenants share application infrastructure.",
@@ -129,7 +137,11 @@
         "operations",
         "testing-strategy",
         "performance-testing",
-        "security-testing"
+        "security-testing",
+        "playbook-internal-tool",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
       ],
       "assumptions": [
         "An organization identity provider authenticates people.",
@@ -181,7 +193,11 @@
         "quality",
         "testing-strategy",
         "performance-testing",
-        "security-testing"
+        "security-testing",
+        "playbook-ai-application",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
       ],
       "assumptions": [
         "The model feature is bounded by an authenticated user task and enforced resource limits.",
@@ -234,7 +250,11 @@
         "integrations",
         "testing-strategy",
         "performance-testing",
-        "security-testing"
+        "security-testing",
+        "playbook-agent-automation",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
       ],
       "assumptions": [
         "Tasks can invoke consequential external tools through an independently enforced policy boundary.",
@@ -287,7 +307,11 @@
         "security",
         "testing-strategy",
         "performance-testing",
-        "security-testing"
+        "security-testing",
+        "playbook-mobile-backend",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
       ],
       "assumptions": [
         "The supported client-version range is explicit and older clients remain in use.",

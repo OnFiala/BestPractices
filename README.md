@@ -1,26 +1,80 @@
 # BestPractices
 
-**An agent-maintained decision system, created with AI agents under human direction.**
-It helps humans and agents choose, build, test, and operate durable software.
-English is canonical; the website switches between **EN / CS / DE / ES** on the
-same page. This first edition is proposed guidance, pending human editorial review.
+**An agent-maintained decision and delivery system, created with AI agents under human direction.**
+It connects project requirements, architecture decisions, bounded implementation,
+verification, release review and operational ownership. The first operational edition
+contains six project profiles, 28 conditional gates across 11 lifecycle stages,
+35 declared coverage domains, and 33 catalog entries in **EN / CS / DE / ES**
+(132 localized pages). These counts describe the implemented scope; they do not
+establish complete coverage of software engineering or production readiness.
 
-Agent authorship is disclosed on every guide and in machine-readable exports.
-Passing checks does not certify factual correctness, translation quality, legal
-clearance, or suitability for a particular project. See [AGENT_SYSTEM.md](AGENT_SYSTEM.md)
-for roles and authority, and [PROVENANCE.md](PROVENANCE.md) for evidence and original-writing rules.
-The [independent and specialist review](reviews/2026-10-22-agent-system-review.md)
-records findings, corrections, verification and remaining limits.
+English is canonical. Guidance and translations remain proposed until human review.
+The local planner does not call a model or build an arbitrary product. An agent host
+uses the skills and project artifacts to perform authorized work. Production identity,
+real payments, live-model evaluation and deployment remain project-specific work.
+See [AGENT_SYSTEM.md](AGENT_SYSTEM.md) for roles and evidence boundaries and
+[PROVENANCE.md](PROVENANCE.md) for original-writing and source-use rules.
+The [operational delivery review](reviews/2026-10-22-operational-delivery-review.md)
+tracks this edition's findings, observed checks and remaining limits; the
+[foundation review](reviews/2026-10-22-agent-system-review.md) covers the earlier library.
 
-Start with [the library](docs/en/index.md), [the decision matrix](docs/en/guides/architecture.md),
-[six project paths](docs/en/reference/examples.md), or [the full catalog](data/catalog.json).
+Start with [the delivery workflow](docs/en/guides/project-delivery.md),
+[coverage and limits](docs/en/guides/coverage.md), or
+[the reference projects](docs/en/guides/reference-labs.md).
+Choose a playbook: [public website](docs/en/guides/playbook-public-website.md),
+[SaaS](docs/en/guides/playbook-saas.md),
+[internal tool](docs/en/guides/playbook-internal-tool.md),
+[AI application](docs/en/guides/playbook-ai-application.md),
+[agent automation](docs/en/guides/playbook-agent-automation.md), or
+[mobile backend](docs/en/guides/playbook-mobile-backend.md).
 Česky: [úvod](docs/cs/index.md). Deutsch: [Einstieg](docs/de/index.md).
-Español: [inicio](docs/es/index.md).
+Español: [inicio](docs/es/index.md). All entries are in [the catalog](data/catalog.json).
 
-## Run and verify
+## Create a local delivery packet
 
-Requires Python 3.12 and [uv](https://docs.astral.sh/uv/). Dependencies and hashes
-are committed in `uv.lock`; no model API or service credentials are needed locally.
+Requires Python 3.12+ on PATH. The frontend checks also require Node 22+ and a
+**separately installed Chromium or Google Chrome**; set `CHROME_BIN` to its absolute
+executable path if needed. The verification runner uses the Linux/macOS POSIX process
+model. Local references require no provider account, secret or paid model call.
+
+From the repository root, this synthetic public-website example creates a new
+workspace, runs its selected local checks, then assesses its acceptance evidence:
+
+```sh
+mkdir -p reports
+python -m library.project init --profile templates/delivery-profile.json --destination reports/example-project
+cd reports/example-project
+python -m library.verification delivery frontend-unit frontend-browser --output reports/local-checks.json
+python -m library.delivery assess --profile project-profile.json --evidence project-evidence.json
+```
+
+The initial assessment **must exit 1**: `project-evidence.json` contains no acceptance
+records. Passing reference checks does not implement the requested product or fill
+that gap. Adapt the synthetic profile to actual requirements, use the generated
+plan and per-gate artifacts, implement authorized work, and record reviewed observations
+at the exact project revision. The initializer refuses an existing destination;
+verification refuses to overwrite reports. Inspect the packet's manifest for copied
+file hashes and source revision/dirty state. It creates no remote repository or deployment.
+
+Chromium's sandbox stays enabled by default. In this controlled container, where the
+browser sandbox cannot start, the explicit exception is scoped to the runner's owned
+synthetic local fixture:
+
+```sh
+BP_BROWSER_NO_SANDBOX=1 python -m library.verification delivery frontend-unit frontend-browser --output reports/local-checks-container.json
+```
+
+Use this opt-in only for that local fixture, never for browsing an untrusted site.
+The result records reduced process isolation. A missing browser or failed startup
+is a failure, not a reason to silently omit the required check. Read
+[the frontend prerequisites and limits](examples/frontend/README.md) before using it.
+A complete recorded packet can become ready for human review; the assessor always
+reports `production_ready: false` and cannot authenticate human approval.
+
+## Verify the library and references
+
+From the original library root, install the pinned Python dependencies with
+[uv](https://docs.astral.sh/uv/). The lockfile includes dependency hashes.
 
 ```sh
 uv sync --frozen
@@ -28,48 +82,69 @@ uv run ruff check .
 uv run python -m library.validate
 uv run python -m unittest discover -s tests -v
 node --test tests/webmcp.test.cjs
+uv run python -m library.verification delivery durable-service agent-workflow frontend-unit frontend-browser --output reports/reference-checks.json
+uv run python -m library.coverage --report reports/reference-checks.json
 uv run python -m library.site build
 uv run python -m library.check_site
 uv run python -m library.site serve
 ```
 
-The last command builds and serves all languages on loopback port 8000. Generated
-`site/`, `.build/`, and `reports/` stay out of Git. Node 22+ is only needed for the
-browser-adapter unit tests. Run `uv run python -m library.sources check` separately
-for live source availability, drift, and overdue review. It never accepts new advice.
+The browser prerequisite and local-fixture sandbox exception above also apply to
+the reference suite. The last command serves all four languages on loopback port
+8000. Generated `site/`, `.build/`, and `reports/` stay out of Git. Run
+`uv run python -m library.sources check` separately for live source availability,
+drift and overdue review; it never accepts a new source baseline or new advice.
+
+The three original executable references are
+[durable service](examples/durable_service/README.md),
+[bounded agent workflow](examples/agent_workflow/README.md), and
+[frontend interaction](examples/frontend/README.md). They exercise local SQLite/HTTP
+invariants, deterministic agent policy/effect fixtures, and real-browser journeys.
+Their READMEs state negative oracles, recovery limits and omitted production work.
+A SQLite restart is not regional failover; fixture policy results are not live-model
+quality; one browser run is not complete accessibility evidence. Reports bind observed
+results to inputs but are not signed attestations. Review failed, skipped, stale and
+unrun evidence explicitly.
 
 ## Repository map
 
 | Path | Purpose |
 | --- | --- |
-| `docs/{en,cs,de,es}` | Canonical prose and complete translations |
-| `data/` | Stable guide IDs, primary sources, retrieval baseline, tool and project registries |
-| `templates/` | Project profile, ADR, agent task, test plan, review, release, incident, exception |
-| `decisions/` | Decisions about this library itself |
-| `library/` | Validation, source observation, static build, read-only MCP |
-| `plugins/bestpractices/` | Local Codex skill bundle |
-| `.github/workflows/` | CI, evidence PRs, optional agent PRs, manual Pages deployment |
+| `docs/{en,cs,de,es}` | Canonical guidance, six delivery playbooks and complete translations |
+| `data/` | Catalog, immutable source references, claim evidence, blueprints, delivery gates and coverage map |
+| `templates/` | Delivery profile/evidence, project profile, ADR, task, test, review, release, incident and exception packets |
+| `examples/` | Three local executable references with synthetic boundaries and explicit production gaps |
+| `library/` | Project initialization, planning, assessment, fixed verification, coverage, content validation, source observation, site and read-only MCP |
+| `plugins/bestpractices/` | Five local skills for host-driven implementation and review |
+| `decisions/` | Proposed architecture decisions about this system |
+| `reviews/` | Dated review findings, executed evidence and limitations |
+| `.github/workflows/` | CI, metadata evidence PRs, optional private agent proposals and manual Pages publication |
 
 ## Integrate with agents
 
-Read [AGENTS.md](AGENTS.md). Start the read-only MCP server with
-`uv run python -m library.mcp_server`; it provides `search_guides`, `get_guide`, and
-`bestpractices://catalog`. A host can launch it using
+Read [AGENTS.md](AGENTS.md). Start the local stdio MCP adapter with
+`uv run python -m library.mcp_server`, or configure a host to run
 `uv --directory /absolute/path/BestPractices run --frozen python -m library.mcp_server`.
-This is local stdio, not a deployed ChatGPT connector. See the
-[integration guide](docs/en/guides/integrations.md) for the distinction.
+Its five read-only tools are `search_guides`, `get_guide`, `plan_delivery`,
+`assess_delivery` and `get_coverage`; `bestpractices://catalog` is a separate resource.
+They retrieve guidance or assess submitted data. They do not execute tests, create
+files, authenticate identities, approve, merge or deploy. This is not a deployed
+ChatGPT connector; see [integration options](docs/en/guides/integrations.md).
 
-The [test-strategy skill](plugins/bestpractices/skills/test-strategy/SKILL.md) helps
-agents choose when, what, and how to test using a
-[bounded test plan](templates/test-plan.yaml). The plan separates knowledge level
-(black/gray/white box), test boundary, and objective; recording a plan does not
-authorize or execute a load or security test.
+The five local skills are
+[project-delivery](plugins/bestpractices/skills/project-delivery/SKILL.md),
+[release-review](plugins/bestpractices/skills/release-review/SKILL.md),
+[test-strategy](plugins/bestpractices/skills/test-strategy/SKILL.md),
+[architecture-review](plugins/bestpractices/skills/architecture-review/SKILL.md), and
+[maintain-library](plugins/bestpractices/skills/maintain-library/SKILL.md).
+They guide the host's authorized work and evidence handoffs. Installing a skill or
+producing a plan does not grant tool access or production authority.
 
 The static site includes a feature-detected **experimental** WebMCP search adapter.
-Normal reading and search do not depend on browser support. Current API assumptions
-are recorded against the primary-source hash; native WebMCP host support needs a
-separate compatibility test. `llms.txt`, `catalog.json`, and localized `guides.json`
-are exported with the website for plain retrieval.
+Ordinary reading and search work without it. Native host support still needs a
+separate compatibility check. The site exports `llms.txt`, `catalog.json`,
+`coverage.json` and localized `guides.json` for retrieval; static coverage data is
+not a newly executed verification result.
 
 ## Activate on GitHub
 

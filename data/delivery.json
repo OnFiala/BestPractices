@@ -1,0 +1,751 @@
+{
+  "schema_version": 1,
+  "status": "proposed",
+  "authorship": "agent-authored",
+  "stage_order": [
+    "intent",
+    "requirements",
+    "design",
+    "security",
+    "implementation",
+    "verification",
+    "release",
+    "operation",
+    "incident",
+    "evolution",
+    "retirement"
+  ],
+  "evidence_max_age_days": 30,
+  "high_risk_evidence_max_age_days": 7,
+  "gates": [
+    {
+      "id": "intent-brief",
+      "stage": "intent",
+      "producer_role": "product-analyst",
+      "reviewer_role": "accountable-owner-reviewer",
+      "artifacts": [
+        "problem-brief"
+      ],
+      "prerequisites": [],
+      "guides": [
+        "foundations",
+        "lifecycle"
+      ],
+      "blocking_conditions": [
+        "The intended user outcome, accountable owner, non-goals or stop decision is missing.",
+        "Success cannot be evaluated using an observable outcome."
+      ],
+      "release_required": true,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "requirements-contract",
+      "stage": "requirements",
+      "producer_role": "requirements-author",
+      "reviewer_role": "acceptance-reviewer",
+      "artifacts": [
+        "acceptance-contract"
+      ],
+      "prerequisites": [
+        "intent-brief"
+      ],
+      "guides": [
+        "lifecycle",
+        "testing-strategy"
+      ],
+      "blocking_conditions": [
+        "Critical journeys, error cases, denied actions or acceptance oracles are undefined.",
+        "Operating owner, budget, recovery objectives or unresolved assumptions are hidden."
+      ],
+      "release_required": true,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "architecture-decision",
+      "stage": "design",
+      "producer_role": "architecture-author",
+      "reviewer_role": "architecture-reviewer",
+      "artifacts": [
+        "architecture-record"
+      ],
+      "prerequisites": [
+        "requirements-contract"
+      ],
+      "guides": [
+        "architecture",
+        "data",
+        "hosting"
+      ],
+      "blocking_conditions": [
+        "Trust boundaries, component contracts, alternatives, cost ownership or reversal are missing.",
+        "The selected architecture has no measurable change trigger."
+      ],
+      "release_required": true,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "threat-boundaries",
+      "stage": "security",
+      "producer_role": "threat-model-author",
+      "reviewer_role": "security-reviewer",
+      "artifacts": [
+        "threat-model"
+      ],
+      "prerequisites": [
+        "architecture-decision"
+      ],
+      "guides": [
+        "security",
+        "security-testing"
+      ],
+      "blocking_conditions": [
+        "Entry points, sensitive assets, abuse cases or permission boundaries are unexamined.",
+        "A consequential threat lacks a control, failure case or accountable owner."
+      ],
+      "release_required": true,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "implementation-packet",
+      "stage": "implementation",
+      "producer_role": "implementation-author",
+      "reviewer_role": "code-reviewer",
+      "artifacts": [
+        "change-set",
+        "task-packet"
+      ],
+      "prerequisites": [
+        "threat-boundaries"
+      ],
+      "guides": [
+        "agents",
+        "github",
+        "quality"
+      ],
+      "blocking_conditions": [
+        "The change lacks bounded scope, acceptance cases, stop conditions or a reviewable diff.",
+        "Dependencies, migrations, configuration changes or agent authorship are concealed."
+      ],
+      "release_required": true,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "functional-verification",
+      "stage": "verification",
+      "producer_role": "test-executor",
+      "reviewer_role": "verification-reviewer",
+      "artifacts": [
+        "functional-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "testing-strategy",
+        "quality"
+      ],
+      "blocking_conditions": [
+        "Critical acceptance and negative cases have no observed result at the exact revision.",
+        "A mock is presented as proof of a real database, browser or provider boundary."
+      ],
+      "release_required": true,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "security-verification",
+      "stage": "verification",
+      "producer_role": "security-test-executor",
+      "reviewer_role": "security-test-reviewer",
+      "artifacts": [
+        "security-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "security-testing",
+        "security"
+      ],
+      "blocking_conditions": [
+        "Selected threat cases, denied effects or dependency checks fail or remain unrun.",
+        "The test exceeded authorized targets, identities, effects or safety limits."
+      ],
+      "release_required": true,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "recovery-rehearsal",
+      "stage": "verification",
+      "producer_role": "recovery-executor",
+      "reviewer_role": "recovery-reviewer",
+      "artifacts": [
+        "recovery-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "durability",
+        "operations"
+      ],
+      "blocking_conditions": [
+        "A representative rollback or restore has not been observed in isolation.",
+        "Lost data, recovery duration, manual steps or irreversible external effects are unknown."
+      ],
+      "release_required": true,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "operational-readiness",
+      "stage": "verification",
+      "producer_role": "operations-author",
+      "reviewer_role": "operations-reviewer",
+      "artifacts": [
+        "operating-runbook",
+        "incident-readiness",
+        "retirement-readiness"
+      ],
+      "prerequisites": [
+        "functional-verification",
+        "recovery-rehearsal"
+      ],
+      "guides": [
+        "operations",
+        "hosting"
+      ],
+      "blocking_conditions": [
+        "The operating owner, actionable alert, escalation, cost control or recovery procedure is absent.",
+        "The runbook has no observed exercise or its limitations are not stated."
+      ],
+      "release_required": true,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "release-candidate",
+      "stage": "release",
+      "producer_role": "release-coordinator",
+      "reviewer_role": "release-evidence-reviewer",
+      "artifacts": [
+        "release-manifest",
+        "rollout-plan"
+      ],
+      "prerequisites": [
+        "functional-verification",
+        "security-verification",
+        "recovery-rehearsal",
+        "operational-readiness"
+      ],
+      "guides": [
+        "github",
+        "quality",
+        "lifecycle"
+      ],
+      "blocking_conditions": [
+        "The immutable artifact, exact revision, staged acceptance, rollout or abort criteria are absent.",
+        "A required gate is unsupported; local evidence cannot authorize human merge or production release."
+      ],
+      "release_required": true,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "service-observation",
+      "stage": "operation",
+      "producer_role": "service-operator",
+      "reviewer_role": "operations-auditor",
+      "artifacts": [
+        "service-observations"
+      ],
+      "prerequisites": [
+        "release-candidate"
+      ],
+      "guides": [
+        "operations",
+        "scaling"
+      ],
+      "blocking_conditions": [
+        "Observed service outcomes, cost, incidents or capacity cannot be compared with agreed objectives.",
+        "A simulated result is presented as a production observation."
+      ],
+      "release_required": false,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "incident-learning",
+      "stage": "incident",
+      "producer_role": "incident-investigator",
+      "reviewer_role": "incident-reviewer",
+      "artifacts": [
+        "incident-record"
+      ],
+      "prerequisites": [
+        "service-observation"
+      ],
+      "guides": [
+        "operations",
+        "security"
+      ],
+      "blocking_conditions": [
+        "An incident or clearly labeled drill lacks containment, recovery evidence, learning or action owners.",
+        "Sensitive evidence was disclosed or unresolved external effects were ignored."
+      ],
+      "release_required": false,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "evolution-decision",
+      "stage": "evolution",
+      "producer_role": "change-proposer",
+      "reviewer_role": "change-reviewer",
+      "artifacts": [
+        "evolution-record"
+      ],
+      "prerequisites": [
+        "service-observation"
+      ],
+      "guides": [
+        "architecture",
+        "maintenance",
+        "data"
+      ],
+      "blocking_conditions": [
+        "The proposed change lacks measured need, compatibility, migration, deprecation or rollback evidence.",
+        "Supported consumers and operating ownership are not accounted for."
+      ],
+      "release_required": false,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "retirement-rehearsal",
+      "stage": "retirement",
+      "producer_role": "retirement-planner",
+      "reviewer_role": "retirement-reviewer",
+      "artifacts": [
+        "retirement-record"
+      ],
+      "prerequisites": [
+        "service-observation"
+      ],
+      "guides": [
+        "lifecycle",
+        "data",
+        "security"
+      ],
+      "blocking_conditions": [
+        "Export, retention/deletion, credential revocation, external resources or billing closure are unverified.",
+        "Destructive closure is proposed without a separately authorized human decision."
+      ],
+      "release_required": false,
+      "reason": "Required for every project.",
+      "when": {}
+    },
+    {
+      "id": "privacy-lifecycle",
+      "stage": "security",
+      "producer_role": "data-steward",
+      "reviewer_role": "privacy-reviewer",
+      "artifacts": [
+        "data-lifecycle-review"
+      ],
+      "prerequisites": [
+        "architecture-decision"
+      ],
+      "guides": [
+        "security",
+        "data"
+      ],
+      "blocking_conditions": [
+        "Collection purpose, access, retention, export, deletion and backup handling lack reviewed examples.",
+        "Data residency or legal obligations lack the responsible human decision."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "data_sensitivity": [
+          "confidential",
+          "restricted"
+        ]
+      }
+    },
+    {
+      "id": "high-consequence-review",
+      "stage": "security",
+      "producer_role": "risk-analyst",
+      "reviewer_role": "specialist-risk-reviewer",
+      "artifacts": [
+        "consequence-review"
+      ],
+      "prerequisites": [
+        "threat-boundaries"
+      ],
+      "guides": [
+        "security",
+        "governance"
+      ],
+      "blocking_conditions": [
+        "High-consequence failure cases, specialist review or a bounded response are absent.",
+        "An agent asserts that residual risk has been accepted by a human."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "risk": [
+          "high",
+          "critical"
+        ]
+      }
+    },
+    {
+      "id": "browser-journey",
+      "stage": "verification",
+      "producer_role": "browser-test-executor",
+      "reviewer_role": "accessibility-reviewer",
+      "artifacts": [
+        "browser-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "frontend",
+        "testing-strategy"
+      ],
+      "blocking_conditions": [
+        "Real browser observations omit loading, empty, error, keyboard, focus or narrow-viewport behavior.",
+        "A generated screenshot is presented as an executed browser test."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "surfaces": [
+          "browser"
+        ]
+      }
+    },
+    {
+      "id": "mobile-compatibility",
+      "stage": "verification",
+      "producer_role": "mobile-test-executor",
+      "reviewer_role": "mobile-reviewer",
+      "artifacts": [
+        "mobile-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "frontend",
+        "data",
+        "durability"
+      ],
+      "blocking_conditions": [
+        "Supported client versions, offline/reconnect, retry or interrupted-update behavior is unobserved.",
+        "Simulator-only coverage is presented as physical-device evidence."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "surfaces": [
+          "mobile"
+        ]
+      }
+    },
+    {
+      "id": "capacity-envelope",
+      "stage": "verification",
+      "producer_role": "performance-test-executor",
+      "reviewer_role": "performance-reviewer",
+      "artifacts": [
+        "performance-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "performance-testing",
+        "scaling"
+      ],
+      "blocking_conditions": [
+        "Representative workload, safety limits, thresholds, saturation or recovery are unmeasured.",
+        "Traffic, duration, resources, total work or spending limits are unset."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "workload": [
+          "variable",
+          "high",
+          "unmeasured"
+        ]
+      }
+    },
+    {
+      "id": "host-operations",
+      "stage": "verification",
+      "producer_role": "host-operator",
+      "reviewer_role": "infrastructure-reviewer",
+      "artifacts": [
+        "host-operations-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "self-hosting",
+        "operations"
+      ],
+      "blocking_conditions": [
+        "Patching, credential rotation, host recovery or service ownership has no exercised procedure.",
+        "Host access or deployment configuration grants broader authority than intended."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "hosting": [
+          "self-hosted",
+          "hybrid"
+        ]
+      }
+    },
+    {
+      "id": "provider-exit",
+      "stage": "design",
+      "producer_role": "platform-designer",
+      "reviewer_role": "portability-reviewer",
+      "artifacts": [
+        "provider-exit-plan"
+      ],
+      "prerequisites": [
+        "architecture-decision"
+      ],
+      "guides": [
+        "hosting",
+        "data"
+      ],
+      "blocking_conditions": [
+        "Provider failure, export, replacement cost or shared operational responsibilities are unknown.",
+        "A managed service is assumed to transfer all recovery and security obligations."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "hosting": [
+          "managed",
+          "hybrid"
+        ]
+      }
+    },
+    {
+      "id": "external-effects",
+      "stage": "verification",
+      "producer_role": "integration-test-executor",
+      "reviewer_role": "effect-reconciliation-reviewer",
+      "artifacts": [
+        "external-effect-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "durability",
+        "security"
+      ],
+      "blocking_conditions": [
+        "Duplicate, timeout, ambiguous success and reconciliation paths lack controlled observations.",
+        "The test can perform real external effects outside the separately permitted scope."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "external_side_effects": [
+          "payments",
+          "messaging",
+          "publishing",
+          "third-party-writes",
+          "infrastructure"
+        ]
+      }
+    },
+    {
+      "id": "tenant-isolation",
+      "stage": "verification",
+      "producer_role": "authorization-test-executor",
+      "reviewer_role": "tenant-boundary-reviewer",
+      "artifacts": [
+        "tenant-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "security-testing",
+        "data"
+      ],
+      "blocking_conditions": [
+        "Distinct tenant identities cannot demonstrate permitted and denied reads, writes, exports and jobs.",
+        "A denied response is accepted without checking protected state and external effects."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "project_type": [
+          "saas"
+        ]
+      }
+    },
+    {
+      "id": "identity-revocation",
+      "stage": "verification",
+      "producer_role": "identity-test-executor",
+      "reviewer_role": "access-reviewer",
+      "artifacts": [
+        "identity-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "security",
+        "security-testing"
+      ],
+      "blocking_conditions": [
+        "Active, revoked and insufficiently privileged users lack observed boundary checks.",
+        "Existing sessions and queued work bypass the declared revocation window."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "project_type": [
+          "internal-tool"
+        ]
+      }
+    },
+    {
+      "id": "model-evaluation",
+      "stage": "verification",
+      "producer_role": "evaluation-author",
+      "reviewer_role": "evaluation-reviewer",
+      "artifacts": [
+        "model-evaluation-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "agents",
+        "security-testing"
+      ],
+      "blocking_conditions": [
+        "Versioned representative and adversarial cases omit actual task outcomes, variability or data leakage.",
+        "Model output is treated as authority for a consequential tool action."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "project_type": [
+          "ai-application",
+          "agent-automation"
+        ]
+      }
+    },
+    {
+      "id": "agent-containment",
+      "stage": "security",
+      "producer_role": "agent-policy-author",
+      "reviewer_role": "agent-boundary-reviewer",
+      "artifacts": [
+        "agent-boundary-results"
+      ],
+      "prerequisites": [
+        "threat-boundaries"
+      ],
+      "guides": [
+        "agents",
+        "security"
+      ],
+      "blocking_conditions": [
+        "Enforced tool scope, injection handling, stop controls or audit evidence is missing.",
+        "Prompt instructions are the only barrier against unauthorized side effects."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "project_type": [
+          "agent-automation"
+        ]
+      }
+    },
+    {
+      "id": "public-output-review",
+      "stage": "verification",
+      "producer_role": "output-inspector",
+      "reviewer_role": "publication-reviewer",
+      "artifacts": [
+        "public-output-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "frontend",
+        "security"
+      ],
+      "blocking_conditions": [
+        "Generated routes, indexes or bundles expose private data or lack observed output inspection.",
+        "Public cache and history persistence are absent from the recovery limitation."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "project_type": [
+          "public-website"
+        ]
+      }
+    },
+    {
+      "id": "mobile-api-contract",
+      "stage": "verification",
+      "producer_role": "contract-test-executor",
+      "reviewer_role": "client-compatibility-reviewer",
+      "artifacts": [
+        "mobile-contract-results"
+      ],
+      "prerequisites": [
+        "implementation-packet"
+      ],
+      "guides": [
+        "data",
+        "durability"
+      ],
+      "blocking_conditions": [
+        "Old supported client versions cannot complete the declared compatibility and reconciliation cases.",
+        "A server rollback assumes deployed clients can be rolled back at the same time."
+      ],
+      "release_required": true,
+      "reason": "Selected by the project profile.",
+      "when": {
+        "project_type": [
+          "mobile-backend"
+        ]
+      }
+    }
+  ],
+  "authority": "Human owners choose objectives, architecture, risk acceptance, merge, release and destructive retirement. This local planner only evaluates submitted assertions.",
+  "limitations": [
+    "Does not execute agents, tests, commands or deployments.",
+    "Does not retrieve artifacts or authenticate identities, observations or human approval.",
+    "Freshness is relative to the explicitly supplied assessment time."
+  ]
+}

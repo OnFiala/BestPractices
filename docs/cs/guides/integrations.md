@@ -2,8 +2,8 @@
 {
   "id": "integrations",
   "language": "cs",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -13,9 +13,9 @@
 
 | Možnost | Úloha | Co je zde dodáno |
 | --- | --- | --- |
-| Skill | Opakovatelný postup agenta s rozsahem a kontrolami | Skills pro posouzení architektury a údržbu |
+| Skill | Opakovatelný postup agenta s rozsahem a kontrolami | `architecture-review`, `maintain-library`, `test-strategy`, `project-delivery` a `release-review` |
 | Codex plugin | Manifest balící skills a volitelné nástroje | Lokální balíček obsahující pouze skills; instalaci je stále nutné ověřit v hostitelské aplikaci |
-| MCP | Protokol nástrojů a zdrojů mezi hostitelem a serverem | Otestované vyhledávání a načítání průvodců pouze pro čtení přes stdio |
+| MCP | Protokol nástrojů a zdrojů mezi hostitelem a serverem | Vyhledávání, načítání průvodců, plánování a posuzování dodání a přehled pokrytí pouze pro čtení přes stdio |
 | ChatGPT Apps SDK | Integrace do ChatGPT pomocí MCP a volitelného rozhraní | Integrační průvodce; veřejný hosting ani autentizace nejsou zřízeny |
 | WebMCP | Nástroje uvnitř stránky zprostředkované prohlížečem | Experimentální adaptér vyhledávání s detekcí podpory |
 
@@ -23,7 +23,9 @@ Dřívější repozitář OpenAI `skills` nyní odkazuje na `plugins`. Řiďte s
 
 ## Lokální MCP
 
-V checkoutu spusťte `uv run python -m library.mcp_server`, nebo hostitele nakonfigurujte pomocí `uv --directory /absolute/path/BestPractices run --frozen python -m library.mcp_server`. Server zpřístupňuje katalog, vyhledávání a známé identifikátory průvodců bez nástroje pro zápis nebo přístup k libovolné cestě. Vzdálené připojení ChatGPT vyžaduje podporovaný přenos přes HTTPS, explicitní autentizaci a omezení četnosti požadavků, hosting a skutečný test kompatibility s hostitelem. GitHub Pages tento server spustit neumí.
+V checkoutu spusťte `uv run python -m library.mcp_server`, nebo hostitele nakonfigurujte pomocí `uv --directory /absolute/path/BestPractices run --frozen python -m library.mcp_server`. Server přes stdio zpřístupňuje katalogový zdroj a `search_guides`, `get_guide`, `plan_delivery`, `assess_delivery` a `get_coverage` bez nástroje pro zápis nebo přístup k libovolné cestě. Vzdálené připojení ChatGPT vyžaduje podporovaný přenos přes HTTPS, explicitní autentizaci a omezení četnosti požadavků, hosting a skutečný test kompatibility s hostitelem. GitHub Pages tento server spustit neumí.
+
+Plánování vrací podmíněný plán životního cyklu; posouzení vyhodnocuje předané záznamy důkazů; přehled pokrytí popisuje deklarovaný rozsah doporučení a referencí i mezery. Viz [postup dodání projektu](project-delivery.md) a [omezení pokrytí](coverage.md). Tyto nástroje nevykonávají úkoly ani testy, neověřují totožnost označených posuzovatelů ani pravost lidského schválení, neslučují PR a nenasazují služby. Hostitel provádí autorizovanou práci pomocí samostatných nástrojů; lokální pozorování nejsou podepsaná osvědčení.
 
 ## Experiment v prohlížeči
 

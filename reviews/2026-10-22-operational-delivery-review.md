@@ -1,0 +1,125 @@
+# Operational delivery review — 2026-10-22
+
+This edition connects a local project packet, conditional lifecycle plan, bounded
+reference execution, evidence consistency assessment, and human release review.
+It is an agent-maintained operational reference system. It does not autonomously
+build arbitrary products or establish universal software-engineering completeness.
+All guidance and translations remain proposed pending human approval.
+
+## Reviewed scope and identity
+
+The change extends base commit `34aca583b2a7366f17138bb2c4a5d1ddfbb6bfbf` on PR #1.
+The final observed code/configuration/guidance image is
+`55ea3827294494770273d91e9771b1c4bf9dd846c4bc3ddc890e942960be1959`.
+The full file inventory and execution receipts are in
+[operational evidence](2026-10-22-operational-evidence.json). Execution occurred
+before commit, so the receipt correctly records the previous HEAD and dirty state;
+its input digest identifies the actual tested files. Reviews, generated reports,
+caches and runtime state are outside that image. This is a local content binding,
+not a signed provenance attestation. Remote CI is reported separately on the PR.
+
+The inventory contains six project profiles, 28 conditional gates across eleven
+lifecycle stages, 35 declared coverage domains, 33 catalog entries in four languages
+(132 pages), three executable references, five read-only MCP tools, and five skills.
+The source registry has 53 pinned primary documents and 81 representative claim
+mappings. Counts measure scope, not correctness, exhaustive support or certification.
+
+## Review process and corrections
+
+Specialist agent workstreams implemented and checked the planner, transactional
+service, frontend, agent workflow, playbooks and translations. A separate read-only
+control thread using GPT-6-astra at maximum reasoning challenged the implementation,
+ran isolated reproductions and checked the integrated handoffs. Its
+[independent report](2026-10-22-operational-control.md) separates its own runs from
+coordinator observations. These are agent reviews, not human approval or a formal
+Codex Security scan; the formal scanning tools were unavailable in this environment.
+
+Six independent findings were corrected: required skips could look like passes;
+malformed policy could omit retirement; copied packets lacked their referenced
+guides; the managed container could not start the browser sandbox; coverage could
+trust a missing suite or contradictory receipt; and TAP diagnostic text could hide
+a skipped test. Regression checks preserve the failure cases. Browser sandbox
+relaxation is an explicit condition for the owned synthetic fixture, not a default.
+The coordinator also prevented packet output within copied docs, skills and Git
+metadata. A process-group timeout was independently exercised with a delayed child
+and stopped that ordinary descendant; this verifier is not a hostile-code sandbox.
+
+## Observed behavior
+
+| Check | Observation and scope |
+| --- | --- |
+| Full Python suite | 89 passed, zero skipped; content/source/license invariants, planner, verifier, packet, security and reference cases |
+| Fixed reference inventory | Delivery 19, durable service 12 and agent workflow 22 passed; these are subsets of the full Python suite |
+| JavaScript | 7 frontend unit/HTTP tests and 4 mocked WebMCP adapter tests passed |
+| Real browser | 20 journeys passed on Chrome 154.0.8037.57 / Node 24.19.0; explicit sandbox-disabled local fixture |
+| Packaging and site | Ruff, actionlint, 33-entry/four-locale validation, strict 132-page build and generated link/anchor/language/search/license checks passed |
+| Portable journey | Fresh copied agent-automation, mobile-backend and public-website packets executed their selected component suites; initial empty evidence remained blocked with exit 1 |
+| Coverage receipt | Current image matches; 23 domains have narrowly scoped observed local reference support, 12 contain documented guidance |
+| Agent corpus | 26 passed, zero failed, one explicitly skipped live-model-quality record; model quality is unverified |
+
+The service drill used actual child-process termination before commit, after commit
+and after a consumer effect before acknowledgement. Each recovered to one local
+effect with no pending record. Schema v1-to-v2 compatibility and a separate-file
+restore passed; one known post-snapshot operation was absent after restore, as
+expected. The workflow reference instead uses simulated interruption and reopened
+SQLite ledgers. Neither exercise establishes regional recovery or storage-loss safety.
+
+The bounded baseline completed 30 requests successfully, with zero rejected or
+transport failures. The overload run offered/completed 120 requests with eight
+workers, admission capacity two and an artificial 10 ms delay: six succeeded,
+114 received deliberate overload rejection, and zero had transport errors. A
+subsequent accepted request returned 200, integrity passed and pending work was
+zero. These are short closed-loop local observations with a shared generator/server,
+not production capacity, sustained-load, soak or tail-SLO evidence. Raw counts,
+configuration, measured latencies and limits are retained in the evidence JSON.
+
+## Sources, originality, translations and licensing
+
+The explanation, code, examples and translations were written for this repository.
+External documentation is referenced by immutable URL and hash; source prose,
+model source-fed logs and raw source snapshots are not published with this change.
+Text remains CC BY 4.0 and original code/configuration MIT. Existing third-party
+website notices and corresponding source retain their own licenses; no new vendor
+asset or application dependency was introduced. Prior document-license classifications
+remain reference-only, including unresolved and mixed grants; citations do not grant
+reuse permission. See [PROVENANCE](../PROVENANCE.md) and the foundation review.
+
+The control thread hash-checked 53 private immutable snapshots and screened the new
+and changed prose against that finite corpus. The metadata-only
+[originality screen](2026-10-22-operational-originality.json) records exact scope,
+normalization and exclusions. Literal overlap checks cannot establish absence of
+paraphrase, translation reuse, unseen-source overlap or rights issues. Human editorial
+and rights review still applies before acceptance/publication.
+
+Specialists checked all 27 new CS/DE/ES translations for complete meaning and
+structural parity; control independently checked structure and consequential
+semantics. The four integration guides were updated together to revision 3. Commands,
+stable IDs, source links, constraints and fixture-versus-production limits agree.
+This is agent language review, not native-editor sign-off.
+
+Live monitoring observed one changed document, `owasp-csrf`, with no unavailable or
+overdue sources. The agent's bounded semantic review is recorded in
+[CSRF drift evidence](2026-10-22-csrf-source-drift.json). The immutable reviewed
+baseline remains unchanged; a monitoring hash is never automatically adopted.
+
+## Remaining adoption decisions
+
+The planner is advisory and the host performs authorized work. Caller-provided
+roles, timestamps, evidence and approval fields are assertions. Even a complete
+packet only becomes ready for human review; `production_ready` and verified human
+authority remain false. Real identities, provider semantics, project requirements
+and trusted evidence capture must be implemented and assessed in an adopting project.
+
+Live-model quality, native WebMCP host compatibility, remote ChatGPT hosting,
+production identity/payment integration, distributed capacity, long-duration tests,
+native mobile behavior and regulated/safety-critical assurance are unverified or
+outside these local references. The coverage map exposes additional project evidence
+rather than representing those gaps as passes. Do not deploy teaching credentials,
+fixture approvals or local test servers as production services.
+
+Human review/merge remains required. Rulesets, Pages publication, private source-fed
+maintenance and paid providers need actual platform configuration; repository files
+do not activate them. No production deployment or remote connector is claimed.
+Future changes should regenerate affected plans, preserve historical observations,
+repeat relevant checks and propose a reviewable PR rather than silently promoting
+source/model updates or rewriting old evidence.

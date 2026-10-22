@@ -151,7 +151,8 @@ class MCPTests(unittest.IsolatedAsyncioTestCase):
         async with Client(params, read_timeout_seconds=15) as client:
             tools = await client.list_tools()
             names = {t.name for t in tools.tools}
-            self.assertEqual(names, {"search_guides", "get_guide"})
+            self.assertEqual(names, {"search_guides", "get_guide", "plan_delivery",
+                                     "assess_delivery", "get_coverage"})
             result = await client.call_tool("get_guide", {"guide_id": "durability", "language": "cs"})
             self.assertFalse(result.is_error)
             self.assertIn("RPO", str(result))
@@ -162,6 +163,19 @@ class MCPTests(unittest.IsolatedAsyncioTestCase):
             self.assertTrue(bad.is_error)
             resource = await client.read_resource("bestpractices://catalog")
             self.assertIn("architecture", str(resource))
+            profile = json.loads((ROOT / "templates/delivery-profile.json").read_text())
+            planned = await client.call_tool("plan_delivery", {"profile": profile})
+            self.assertFalse(planned.is_error)
+            self.assertIn("plan_digest", str(planned))
+            self.assertIn("retirement", str(planned))
+            assessed = await client.call_tool("assess_delivery", {"profile": profile, "evidence": {}})
+            self.assertFalse(assessed.is_error)
+            self.assertIn("false", str(assessed).lower())
+            mapped = await client.call_tool("get_coverage", {"domain_id": "tenant-isolation"})
+            self.assertFalse(mapped.is_error)
+            self.assertIn("executable-reference", str(mapped))
+            bad = await client.call_tool("get_coverage", {"domain_id": "../../etc/passwd"})
+            self.assertTrue(bad.is_error)
 
 
 if __name__ == "__main__":

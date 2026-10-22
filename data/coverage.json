@@ -1,0 +1,842 @@
+{
+  "schema_version": 1,
+  "scope": "Operational decision-library v1: six project patterns and declared lifecycle domains; not an exhaustive universe of software engineering.",
+  "authority": "All guidance is proposed; local observations never establish production readiness or human approval.",
+  "domains": [
+    {
+      "id": "intent-requirements",
+      "title": "Intent and acceptance contracts",
+      "guides": [
+        "foundations",
+        "lifecycle",
+        "testing-strategy"
+      ],
+      "sources": [
+        "github-rulesets"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "library/delivery.py"
+      ],
+      "suite_ids": [
+        "delivery"
+      ],
+      "test_ids": [
+        "test_delivery.DeliveryTests.test_six_project_types_have_full_deterministic_lifecycle"
+      ],
+      "claim_scope": "The planner requires distinct intent and requirements artifacts. It cannot determine whether a product solves a real problem.",
+      "adopter_evidence_required": "User research, agreed outcomes, excluded scope and falsifiable acceptance examples.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "risk-profile",
+      "title": "Risk and context selection",
+      "guides": [
+        "security",
+        "governance",
+        "hosting"
+      ],
+      "sources": [
+        "owasp-authorization"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "library/delivery.py"
+      ],
+      "suite_ids": [
+        "delivery"
+      ],
+      "test_ids": [
+        "test_delivery.DeliveryTests.test_profile_variants_add_gates_and_inherit_blueprint_boundaries"
+      ],
+      "claim_scope": "Conditional workflow gates change with project type, data, risk, workload, hosting and effects. Profile values remain caller assertions.",
+      "adopter_evidence_required": "Owner-reviewed data classification, real workload, budget, threat context and provider limits.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "architecture-composition",
+      "title": "Architecture selection and evolution",
+      "guides": [
+        "architecture",
+        "scaling"
+      ],
+      "sources": [
+        "azure-architecture-styles",
+        "azure-cqrs",
+        "azure-event-sourcing"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "Contextual architecture matrices and migration boundaries; no topology benchmark or universal stack prescription.",
+      "adopter_evidence_required": "Measured constraints, ADR, component ownership, consistency and migration drills.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "hosting-placement",
+      "title": "Hosting and self-hosting",
+      "guides": [
+        "hosting",
+        "self-hosting"
+      ],
+      "sources": [
+        "docker-security",
+        "opentofu"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "Guidance for operational ownership, isolation, exit and deployment choices. No infrastructure is provisioned.",
+      "adopter_evidence_required": "Selected provider/server configuration, TLS, patching, backups, access and recovery evidence.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "review-authority",
+      "title": "Independent review and evidence authority",
+      "guides": [
+        "agents",
+        "github",
+        "governance"
+      ],
+      "sources": [
+        "github-rulesets",
+        "github-workflows"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "library/delivery.py"
+      ],
+      "suite_ids": [
+        "delivery"
+      ],
+      "test_ids": [
+        "test_delivery.DeliveryTests.test_complete_assertions_only_enable_human_review_never_production",
+        "test_delivery.DeliveryTests.test_missing_failed_skipped_unrun_and_self_review_block_dependents"
+      ],
+      "claim_scope": "Assessment rejects same producer/reviewer label and never grants production authority. Labels are not authenticated identities.",
+      "adopter_evidence_required": "Actual independent review, protected merge/release permissions and verified human decisions.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "evidence-freshness",
+      "title": "Revision, artifact and evidence freshness",
+      "guides": [
+        "quality",
+        "maintenance"
+      ],
+      "sources": [
+        "github-workflows"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "library/delivery.py"
+      ],
+      "suite_ids": [
+        "delivery"
+      ],
+      "test_ids": [
+        "test_delivery.DeliveryTests.test_wrong_envelope_revision_profile_and_plan_fail_closed",
+        "test_delivery.DeliveryTests.test_artifact_revision_identity_and_observation_binding_are_required",
+        "test_delivery.DeliveryTests.test_stale_future_naive_failed_and_empty_observations_block"
+      ],
+      "claim_scope": "Recorded observations bind artifacts and exact profile/plan/project identities, and age at declared as_of. Statements can still be fabricated.",
+      "adopter_evidence_required": "Trusted execution records, current assessment time, artifact retrieval and independent inspection.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "tenant-isolation",
+      "title": "Tenant and object authorization",
+      "guides": [
+        "security",
+        "security-testing"
+      ],
+      "sources": [
+        "owasp-authorization",
+        "owasp-multi-tenant"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/durable_service/service.py"
+      ],
+      "suite_ids": [
+        "durable-service"
+      ],
+      "test_ids": [
+        "test_durable_service.DurableHTTPContractTests.test_cross_tenant_reads_writes_export_and_worker_are_denied_without_effect"
+      ],
+      "claim_scope": "Synthetic HTTP principals cannot read/write/export/consume another fixture tenant.",
+      "adopter_evidence_required": "Real identity/session, all endpoints/jobs/export paths, storage policies and revocation.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "identity-sessions",
+      "title": "Identity, authentication and sessions",
+      "guides": [
+        "security",
+        "security-testing"
+      ],
+      "sources": [
+        "owasp-authentication",
+        "owasp-session",
+        "owasp-csrf"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "Mechanism guidance only: synthetic bearer tokens and fixture approval issuers are not production identity systems.",
+      "adopter_evidence_required": "Chosen IdP/session/authentication/revocation/recovery and CSRF integration tests.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "privacy-data-lifecycle",
+      "title": "Privacy, retention and deletion",
+      "guides": [
+        "security",
+        "data",
+        "lifecycle"
+      ],
+      "sources": [
+        "owasp-multi-tenant",
+        "owasp-asvs-requirements"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "Data-lifecycle guidance; no jurisdictional legal compliance or real deletion audit.",
+      "adopter_evidence_required": "Data inventory, lawful basis where applicable, retention/deletion propagation and backup treatment.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "supply-chain",
+      "title": "Dependencies and supply chain",
+      "guides": [
+        "security",
+        "github"
+      ],
+      "sources": [
+        "github-workflows",
+        "docker-security"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "Pinned library dependencies/actions and published website notice inventory; not an adopter SBOM/signature assessment.",
+      "adopter_evidence_required": "Dependency provenance, vulnerability reachability, build attestations, secrets and deploy identity.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "idempotency",
+      "title": "Idempotent operations and conflicts",
+      "guides": [
+        "durability",
+        "data"
+      ],
+      "sources": [
+        "azure-idempotent-consumer",
+        "azure-retry"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/durable_service/service.py"
+      ],
+      "suite_ids": [
+        "durable-service"
+      ],
+      "test_ids": [
+        "test_durable_service.DurableHTTPContractTests.test_replay_payload_conflict_and_optimistic_version",
+        "test_durable_service.DurableHTTPContractTests.test_simultaneous_identical_retries_have_one_result_and_effect"
+      ],
+      "claim_scope": "Local tenant/action/operation-key replay, fingerprint conflict and simultaneous duplicate effects.",
+      "adopter_evidence_required": "Actual store isolation, provider idempotency contract, retention/window and reconciliation.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "concurrent-writes",
+      "title": "Concurrent writes and version contracts",
+      "guides": [
+        "data",
+        "durability"
+      ],
+      "sources": [
+        "postgres-isolation"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/durable_service/service.py"
+      ],
+      "suite_ids": [
+        "durable-service"
+      ],
+      "test_ids": [
+        "test_durable_service.DurableHTTPContractTests.test_simultaneous_version_writers_have_one_winner"
+      ],
+      "claim_scope": "SQLite fixture optimistic version races have one accepted winner. This does not establish PostgreSQL behavior.",
+      "adopter_evidence_required": "Selected database isolation, lock/retry budget, skew and real schema load.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "outbox-consumer",
+      "title": "Transactional outbox and consumer effects",
+      "guides": [
+        "durability",
+        "architecture"
+      ],
+      "sources": [
+        "azure-outbox",
+        "azure-idempotent-consumer"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/durable_service/service.py"
+      ],
+      "suite_ids": [
+        "durable-service"
+      ],
+      "test_ids": [
+        "test_durable_service.DurableIntegrationTests.test_transactional_outbox_and_concurrent_consumers",
+        "test_durable_service.DurableIntegrationTests.test_unknown_event_schema_is_not_acknowledged_or_applied"
+      ],
+      "claim_scope": "Local atomic write/outbox plus duplicate-safe projection; unknown event schema is not acknowledged.",
+      "adopter_evidence_required": "Broker semantics, ordering/partition design, consumer ownership, dead-letter and replay procedures.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "crash-recovery",
+      "title": "Crash boundaries and data recovery",
+      "guides": [
+        "durability",
+        "operations"
+      ],
+      "sources": [
+        "postgres-backup",
+        "azure-idempotent-consumer"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/durable_service/service.py"
+      ],
+      "suite_ids": [
+        "durable-service"
+      ],
+      "test_ids": [
+        "test_durable_service.DurableIntegrationTests.test_process_crashes_restart_restore_and_schema_compatibility"
+      ],
+      "claim_scope": "Child-process termination and reopened local SQLite state, not power loss, replica or storage-device failure.",
+      "adopter_evidence_required": "Store-specific durability, process/node/region failure and integrity checks.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "migration-restore",
+      "title": "Migration, snapshot restore and rollback boundary",
+      "guides": [
+        "data",
+        "lifecycle"
+      ],
+      "sources": [
+        "postgres-backup",
+        "postgres-isolation"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/durable_service/service.py"
+      ],
+      "suite_ids": [
+        "durable-service"
+      ],
+      "test_ids": [
+        "test_durable_service.DurableIntegrationTests.test_process_crashes_restart_restore_and_schema_compatibility"
+      ],
+      "claim_scope": "Fixture v1-to-v2 compatibility and isolated new-file restore, with post-snapshot write loss explicit.",
+      "adopter_evidence_required": "Real schema/data volume, compatibility window, RPO/RTO, post-cutover writer and external-effect reconciliation.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "bounded-overload",
+      "title": "Bounded overload and useful recovery",
+      "guides": [
+        "performance-testing",
+        "scaling"
+      ],
+      "sources": [
+        "k6-stress-testing",
+        "k6-thresholds"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/durable_service/service.py"
+      ],
+      "suite_ids": [
+        "durable-service"
+      ],
+      "test_ids": [
+        "test_durable_service.DurableIntegrationTests.test_bounded_overload_recovers_without_data_loss",
+        "test_durable_service.DurableIntegrationTests.test_unsafe_experiment_limits_and_overwriting_backup_are_rejected"
+      ],
+      "claim_scope": "A short closed-model loopback fixture experiment observes admission rejection and subsequent integrity/recovery.",
+      "adopter_evidence_required": "Production-shaped arrival mix, generator adequacy, agreed ceilings, real tails and recovery objectives.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "long-duration-capacity",
+      "title": "Spike, soak and large-scale capacity",
+      "guides": [
+        "performance-testing",
+        "scaling"
+      ],
+      "sources": [
+        "k6-spike-testing",
+        "k6-soak-testing",
+        "k6-breakpoint-testing",
+        "k6-open-vs-closed"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "Selection and workload methodology; no long-duration soak, distributed generator or million-user claim.",
+      "adopter_evidence_required": "Approved real workload experiment spanning lifecycle, saturation and recovery, with uncertainty and costs.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "frontend-state",
+      "title": "Frontend state, cancellation and races",
+      "guides": [
+        "frontend",
+        "testing-strategy"
+      ],
+      "sources": [
+        "playwright-testing"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/frontend/controller.mjs"
+      ],
+      "suite_ids": [
+        "frontend-unit"
+      ],
+      "test_ids": [],
+      "claim_scope": "Pure state and transport tests protect request identity, cancelled work and explicit retries.",
+      "adopter_evidence_required": "Real app routing, cache ownership, compatibility and component interactions.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "frontend-rendering",
+      "title": "Untrusted frontend output",
+      "guides": [
+        "frontend",
+        "security-testing"
+      ],
+      "sources": [
+        "owasp-xss"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/frontend/browser-smoke.mjs"
+      ],
+      "suite_ids": [
+        "frontend-browser"
+      ],
+      "test_ids": [],
+      "claim_scope": "Actual Chromium renders the hostile fixture as text without inserted active nodes.",
+      "adopter_evidence_required": "All production rendering/URL/HTML sinks and server policy; this is not general XSS clearance.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "browser-accessibility",
+      "title": "Browser usability and limited accessibility",
+      "guides": [
+        "frontend",
+        "testing-strategy"
+      ],
+      "sources": [
+        "wcag-keyboard",
+        "wcag-focus-visible",
+        "wcag-focus-order"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/frontend/browser-smoke.mjs"
+      ],
+      "suite_ids": [
+        "frontend-browser"
+      ],
+      "test_ids": [],
+      "claim_scope": "Selected keyboard, accessible-name, focus and390px layout observations in one browser.",
+      "adopter_evidence_required": "Assistive technology, zoom, contrast, device/browser matrix and complete applicable WCAG assessment.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "api-contracts",
+      "title": "API and event compatibility",
+      "guides": [
+        "data",
+        "quality",
+        "frontend"
+      ],
+      "sources": [
+        "semver",
+        "postgres-isolation"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/durable_service/service.py"
+      ],
+      "suite_ids": [
+        "durable-service"
+      ],
+      "test_ids": [
+        "test_durable_service.DurableHTTPContractTests.test_invalid_payloads_never_create_records",
+        "test_durable_service.DurableIntegrationTests.test_unknown_event_schema_is_not_acknowledged_or_applied"
+      ],
+      "claim_scope": "Local fixture request/schema/unknown-event rejection. No real consumer fleet tested.",
+      "adopter_evidence_required": "Versioned external consumer contracts, supported clients, serialization and rollout compatibility.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "mobile-offline",
+      "title": "Mobile and offline synchronization",
+      "guides": [
+        "frontend",
+        "data",
+        "durability"
+      ],
+      "sources": [
+        "azure-cqrs",
+        "azure-idempotent-consumer"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "Mobile-backend playbook covers retry/conflict/cursor/revision decisions; no native client or offline sync implementation.",
+      "adopter_evidence_required": "Real device lifecycle, stale clients, sync epochs, conflicts, consent and notification behavior.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "agent-retrieval",
+      "title": "Authorization before model context",
+      "guides": [
+        "agents",
+        "security"
+      ],
+      "sources": [
+        "owasp-ai-agent",
+        "owasp-authorization"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/agent_workflow/workflow.py"
+      ],
+      "suite_ids": [
+        "agent-workflow"
+      ],
+      "test_ids": [
+        "test_agent_workflow.AgentWorkflowTests.test_cross_tenant_and_cross_task_documents_never_reach_model",
+        "test_agent_workflow.AgentWorkflowTests.test_revocation_and_deleted_document_are_checked_before_context"
+      ],
+      "claim_scope": "Synthetic tenant/task/revocation rules are checked before documents reach the deterministic fixture model.",
+      "adopter_evidence_required": "Actual retrieval indexes, policy freshness, connectors and provider data boundary.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "agent-injection-boundary",
+      "title": "Untrusted instructions and tool authority",
+      "guides": [
+        "agents",
+        "security-testing"
+      ],
+      "sources": [
+        "owasp-ai-agent",
+        "agents-guardrails"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/agent_workflow/workflow.py"
+      ],
+      "suite_ids": [
+        "agent-workflow"
+      ],
+      "test_ids": [
+        "test_agent_workflow.AgentWorkflowTests.test_injected_document_cannot_grant_tool_scope_or_approval",
+        "test_agent_workflow.AgentWorkflowTests.test_untrusted_string_cannot_approve_and_token_is_not_in_report"
+      ],
+      "claim_scope": "Adversarial fixture content cannot broaden deterministic tool scope or issue an approval. No model robustness claim follows.",
+      "adopter_evidence_required": "Evaluated real model/provider/tool behavior with independent policy enforcement and adversarial cases.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "agent-approval",
+      "title": "Exact-action approval and revocation",
+      "guides": [
+        "agents",
+        "governance"
+      ],
+      "sources": [
+        "owasp-ai-agent"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/agent_workflow/workflow.py"
+      ],
+      "suite_ids": [
+        "agent-workflow"
+      ],
+      "test_ids": [
+        "test_agent_workflow.AgentWorkflowTests.test_expiry_at_boundary_rejects_capability",
+        "test_agent_workflow.AgentWorkflowTests.test_revision_change_invalidates_approval_even_for_identical_action",
+        "test_agent_workflow.AgentWorkflowTests.test_approval_is_bound_to_run_tenant_and_task",
+        "test_agent_workflow.AgentWorkflowTests.test_revoked_capability_human_denial_and_scope_revocation"
+      ],
+      "claim_scope": "Trusted local fixture authority binds capability to run/task/tenant/revision/action/expiry. It is not a human identity service.",
+      "adopter_evidence_required": "Authenticated human action, transport/session protection, real revocation and audited policy service.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "uncertain-effects",
+      "title": "Uncertain external effects and reconciliation",
+      "guides": [
+        "durability",
+        "agents"
+      ],
+      "sources": [
+        "azure-idempotent-consumer",
+        "azure-retry"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/agent_workflow/workflow.py"
+      ],
+      "suite_ids": [
+        "agent-workflow"
+      ],
+      "test_ids": [
+        "test_agent_workflow.AgentWorkflowTests.test_duplicate_and_restart_reconcile_one_durable_effect",
+        "test_agent_workflow.AgentWorkflowTests.test_missing_provider_receipt_remains_unresolved_without_blind_replay",
+        "test_agent_workflow.AgentWorkflowTests.test_mismatched_provider_receipt_stays_unresolved"
+      ],
+      "claim_scope": "Independent local provider ledger reconciles simulated crash/reopen; missing/mismatched receipts remain unresolved.",
+      "adopter_evidence_required": "Real provider receipts/idempotency, settlement, partial effect and manual reconciliation procedures.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "agent-budget-cancel",
+      "title": "Agent budgets, deadlines and cancellation",
+      "guides": [
+        "agents",
+        "operations"
+      ],
+      "sources": [
+        "owasp-ai-agent",
+        "azure-retry"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/agent_workflow/workflow.py"
+      ],
+      "suite_ids": [
+        "agent-workflow"
+      ],
+      "test_ids": [
+        "test_agent_workflow.AgentWorkflowTests.test_cancellation_before_dispatch_stops_and_after_dispatch_accounts_for_effect",
+        "test_agent_workflow.AgentWorkflowTests.test_deadline_and_cancellation_are_rechecked_after_model_work",
+        "test_agent_workflow.AgentWorkflowTests.test_budget_reserved_before_calls_and_survives_restart"
+      ],
+      "claim_scope": "Synthetic units and call caps survive restart; cancellation/deadlines are rechecked. They are not real currency/provider spending caps.",
+      "adopter_evidence_required": "Provider/account enforcement, in-flight billing, distributed cancellation and actual cost telemetry.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "model-evaluation",
+      "title": "Model quality and evaluation limits",
+      "guides": [
+        "quality",
+        "agents",
+        "testing-strategy"
+      ],
+      "sources": [
+        "openai-agents",
+        "owasp-ai-agent"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "examples/agent_workflow/workflow.py"
+      ],
+      "suite_ids": [
+        "agent-workflow"
+      ],
+      "test_ids": [
+        "test_agent_workflow.AgentWorkflowTests.test_corpus_and_oracle_report_failure_separately_from_skip",
+        "test_agent_workflow.AgentWorkflowTests.test_invalid_corpus_cannot_report_a_pass"
+      ],
+      "claim_scope": "Versioned deterministic policy cases and oracles; live-model quality is explicitly unrun, not scored as a pass.",
+      "adopter_evidence_required": "Held-out project tasks, evaluated model version, stochastic repeatability, factual quality and human adjudication.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "test-strategy",
+      "title": "Selecting falsifiable tests",
+      "guides": [
+        "testing-strategy",
+        "quality"
+      ],
+      "sources": [
+        "playwright-testing",
+        "owasp-authorization"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "Three-axis selection guidance and test-plan skill; coverage metrics do not establish requirement correctness.",
+      "adopter_evidence_required": "Project risk argument, fixtures, genuine oracles, negative controls and retained outcomes.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "github-delivery",
+      "title": "GitHub versioning and delivery",
+      "guides": [
+        "github",
+        "quality",
+        "governance"
+      ],
+      "sources": [
+        "github-workflows",
+        "github-rulesets",
+        "semver"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "Branch/PR/review/versioning policy and proposed Actions; no claim that an adopter ruleset is enforced.",
+      "adopter_evidence_required": "Actual repository rulesets, owner review, provenance, CI on final commit and rollback.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "release-readiness",
+      "title": "Release readiness and handoff",
+      "guides": [
+        "lifecycle",
+        "operations",
+        "github"
+      ],
+      "sources": [
+        "github-rulesets"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "library/delivery.py"
+      ],
+      "suite_ids": [
+        "delivery"
+      ],
+      "test_ids": [
+        "test_delivery.DeliveryTests.test_complete_assertions_only_enable_human_review_never_production",
+        "test_delivery.DeliveryTests.test_missing_failed_skipped_unrun_and_self_review_block_dependents"
+      ],
+      "claim_scope": "Required gate assertions cannot silently bypass missing/failed/unrun dependencies or become human authority.",
+      "adopter_evidence_required": "Real artifact/runbooks/restore results, actual human approval and target-environment rollout.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "observability-slo",
+      "title": "Observability, service objectives and on-call",
+      "guides": [
+        "operations",
+        "scaling"
+      ],
+      "sources": [
+        "observability",
+        "azure-health-endpoints"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "SLI/SLO/alerting/health guidance; local fixture counters are not a deployed telemetry platform.",
+      "adopter_evidence_required": "Real journey/error budget, alert delivery, logs/traces/privacy and accountable on-call.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "incident-retirement",
+      "title": "Incident, evolution and retirement readiness",
+      "guides": [
+        "operations",
+        "lifecycle",
+        "governance"
+      ],
+      "sources": [
+        "observability",
+        "postgres-backup"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [
+        "library/delivery.py"
+      ],
+      "suite_ids": [
+        "delivery"
+      ],
+      "test_ids": [
+        "test_delivery.DeliveryTests.test_post_release_work_does_not_require_prior_production_execution",
+        "test_delivery.DeliveryTests.test_duplicate_blueprint_and_missing_stage_are_configuration_errors"
+      ],
+      "claim_scope": "Planner requires pre-release operational readiness and includes later incident/evolution/retirement stages; no real incident or teardown executed.",
+      "adopter_evidence_required": "Exercises, owner/successor, communication scope, provider export, retention and approved destructive cleanup.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "maintenance-originality",
+      "title": "Evidence, translations and original writing",
+      "guides": [
+        "maintenance",
+        "integrations",
+        "governance"
+      ],
+      "sources": [
+        "codex-action",
+        "github-workflows"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "Library source monitoring, source/license pins, four-language review and private generation boundary; not legal clearance.",
+      "adopter_evidence_required": "Continuing semantic/source rights review, translation review, private generation setup and actual human merge.",
+      "human_adoption_required": true
+    },
+    {
+      "id": "agent-host-integration",
+      "title": "Agent host, MCP and WebMCP",
+      "guides": [
+        "integrations",
+        "agents"
+      ],
+      "sources": [
+        "mcp-python",
+        "mcp-spec",
+        "webmcp"
+      ],
+      "support": "local-synthesis",
+      "reference_paths": [],
+      "suite_ids": [],
+      "test_ids": [],
+      "claim_scope": "Read-only local MCP and host skills; native WebMCP and remote ChatGPT connector remain compatibility/deployment work.",
+      "adopter_evidence_required": "Host installation, transport/authentication/privacy/rate limiting and real tool invocation at supported versions.",
+      "human_adoption_required": true
+    }
+  ],
+  "extensions_requiring_separate_project_evidence": [
+    "Native mobile clients and device integration",
+    "Regulated or safety-critical systems",
+    "Embedded/hard-real-time control",
+    "Distributed multi-region failover and disaster recovery",
+    "Large data/ML training pipelines",
+    "Production identity, billing and provider integrations",
+    "Long-duration and distributed capacity measurements"
+  ]
+}

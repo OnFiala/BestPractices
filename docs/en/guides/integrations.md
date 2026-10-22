@@ -2,8 +2,8 @@
 {
   "id": "integrations",
   "language": "en",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -13,9 +13,9 @@
 
 | Surface | Role | Delivered here |
 | --- | --- | --- |
-| Skill | Repeatable agent procedure with scope and checks | Architecture-review and maintenance skills |
+| Skill | Repeatable agent procedure with scope and checks | `architecture-review`, `maintain-library`, `test-strategy`, `project-delivery`, and `release-review` |
 | Codex plugin | Manifest packaging skills and optional tools | Local skill-only bundle; installation still needs host verification |
-| MCP | Host-to-server tool/resource protocol | Tested read-only stdio search and guide retrieval |
+| MCP | Host-to-server tool/resource protocol | Read-only stdio search, guide retrieval, delivery planning/assessment, and coverage |
 | ChatGPT Apps SDK | ChatGPT integration using MCP and optional UI | Integration guide; public hosting/authentication not provisioned |
 | WebMCP | Browser-mediated tools inside a page | Experimental feature-detected search adapter |
 
@@ -23,7 +23,9 @@ OpenAI's former `skills` repository currently points to `plugins`. Follow the cu
 
 ## Local MCP
 
-Run `uv run python -m library.mcp_server` from the checkout, or configure a host with `uv --directory /absolute/path/BestPractices run --frozen python -m library.mcp_server`. It exposes catalog, search, and known guide IDs, with no write or arbitrary-path tool. A ChatGPT remote connection needs a supported HTTPS transport, explicit authentication/rate limits, hosting, and a real host compatibility test. GitHub Pages cannot run that server.
+Run `uv run python -m library.mcp_server` from the checkout, or configure a host with `uv --directory /absolute/path/BestPractices run --frozen python -m library.mcp_server`. The stdio server exposes the catalog resource and `search_guides`, `get_guide`, `plan_delivery`, `assess_delivery`, and `get_coverage`, with no write or arbitrary-path tool. A ChatGPT remote connection needs a supported HTTPS transport, explicit authentication/rate limits, hosting, and a real host compatibility test. GitHub Pages cannot run that server.
+
+Planning returns a conditional lifecycle plan; assessment evaluates supplied evidence records; coverage describes the declared guidance/reference scope and gaps. See the [project delivery workflow](project-delivery.md) and [coverage limits](coverage.md). These tools do not execute tasks or tests, authenticate reviewer labels or human approval, merge PRs, or deploy services. The host carries out authorized work through separate tools; local observations are not signed attestations.
 
 ## Browser experiment
 

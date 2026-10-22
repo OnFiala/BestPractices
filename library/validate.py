@@ -7,6 +7,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from library.content import LANGUAGES, ROOT, catalog, read_json, read_markdown
+from library.coverage import validate_coverage
 
 
 def validate(root: Path = ROOT) -> list[str]:
@@ -16,7 +17,7 @@ def validate(root: Path = ROOT) -> list[str]:
         if not condition:
             errors.append(message)
 
-    for filename in ("catalog", "sources", "source-baseline", "tools", "blueprints", "evidence"):
+    for filename in ("catalog", "sources", "source-baseline", "tools", "blueprints", "evidence", "coverage", "delivery"):
         require(read_json(root / f"data/{filename}.json").get("schema_version") == 1,
                 f"Unsupported schema version: {filename}")
     sources = read_json(root / "data/sources.json")["sources"]
@@ -71,6 +72,8 @@ def validate(root: Path = ROOT) -> list[str]:
         paths.add(g["path"])
         require(g["status"] in {"proposed", "adopted", "experimental", "deprecated"},
                 f"Invalid status: {gid}")
+        require(g.get("area") in {"start", "agent-delivery", "project-playbooks", "engineering",
+                                 "verification", "reference"}, f"Unknown navigation area: {gid}")
         require(bool(g["sources"]) and set(g["sources"]) <= source_ids,
                 f"Missing/unknown evidence: {gid}")
         require(set(g["related"]) <= ids and gid not in g["related"],
@@ -155,6 +158,7 @@ def validate(root: Path = ROOT) -> list[str]:
     require({"architecture", "durability", "frontend", "security", "quality",
              "testing-strategy", "performance-testing", "security-testing"}
             <= {key[0] for key in claim_keys}, "Missing critical claim evidence")
+    errors.extend(validate_coverage(root))
     return errors
 
 

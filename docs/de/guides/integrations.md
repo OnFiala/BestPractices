@@ -2,8 +2,8 @@
 {
   "id": "integrations",
   "language": "de",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -13,9 +13,9 @@
 
 | Fläche | Aufgabe | Hier vorhanden |
 | --- | --- | --- |
-| Skill | Wiederholbares Agentenverfahren mit Umfang und Prüfungen | Skills für Architekturreview und Pflege |
+| Skill | Wiederholbares Agentenverfahren mit Umfang und Prüfungen | `architecture-review`, `maintain-library`, `test-strategy`, `project-delivery` und `release-review` |
 | Codex-Plugin | Manifest für Skills und optionale Werkzeuge | Lokales Paket ausschließlich mit Skills; Installation im Host noch zu verifizieren |
-| MCP | Werkzeug- und Ressourcenprotokoll zwischen Host und Server | Geprüfte schreibgeschützte Suche und Leitfadenabrufe über stdio |
+| MCP | Werkzeug- und Ressourcenprotokoll zwischen Host und Server | Schreibgeschützte Suche, Leitfadenabrufe, Auslieferungsplanung und -bewertung sowie Abdeckung über stdio |
 | ChatGPT Apps SDK | ChatGPT-Integration mit MCP und optionaler Oberfläche | Integrationsleitfaden; öffentliches Hosting und Authentifizierung nicht eingerichtet |
 | WebMCP | Durch den Browser vermittelte Werkzeuge innerhalb einer Seite | Experimenteller Suchadapter mit Fähigkeitserkennung |
 
@@ -23,7 +23,9 @@ OpenAIs früheres Repository `skills` verweist derzeit auf `plugins`. Orientiere
 
 ## Lokales MCP
 
-Starte `uv run python -m library.mcp_server` im Checkout oder konfiguriere einen Host mit `uv --directory /absolute/path/BestPractices run --frozen python -m library.mcp_server`. Bereitgestellt werden Katalog, Suche und bekannte Leitfadenkennungen, ohne Schreibwerkzeug oder Zugriff auf beliebige Pfade. Eine entfernte ChatGPT-Verbindung braucht unterstützten HTTPS-Transport, ausdrückliche Authentifizierung und Ratenbegrenzung, Hosting sowie einen echten Kompatibilitätstest im Host. GitHub Pages kann diesen Server nicht ausführen.
+Starte `uv run python -m library.mcp_server` im Checkout oder konfiguriere einen Host mit `uv --directory /absolute/path/BestPractices run --frozen python -m library.mcp_server`. Der stdio-Server bietet die Katalogressource sowie `search_guides`, `get_guide`, `plan_delivery`, `assess_delivery` und `get_coverage`, ohne Schreibwerkzeug oder Zugriff auf beliebige Pfade. Eine entfernte ChatGPT-Verbindung braucht unterstützten HTTPS-Transport, ausdrückliche Authentifizierung und Ratenbegrenzung, Hosting sowie einen echten Kompatibilitätstest im Host. GitHub Pages kann diesen Server nicht ausführen.
+
+Die Planung liefert einen bedingungsabhängigen Lebenszyklusplan; die Bewertung untersucht übermittelte Nachweisdatensätze; die Abdeckung beschreibt den erklärten Umfang der Leitfäden und Referenzen sowie Lücken. Siehe den [Projektauslieferungsablauf](project-delivery.md) und die [Abdeckungsgrenzen](coverage.md). Diese Werkzeuge führen weder Aufgaben noch Tests aus, authentifizieren weder Prüferbezeichnungen noch menschliche Genehmigungen, führen keine PRs zusammen und stellen keine Dienste bereit. Der Host erledigt autorisierte Arbeit mit getrennten Werkzeugen; lokale Beobachtungen sind keine signierten Bescheinigungen.
 
 ## Browserexperiment
 

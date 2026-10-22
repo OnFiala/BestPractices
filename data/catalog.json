@@ -29,7 +29,10 @@
         "adoption",
         "testing-strategy",
         "performance-testing",
-        "security-testing"
+        "security-testing",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
       ],
       "area": "start",
       "revision": 2,
@@ -79,7 +82,10 @@
         "adoption",
         "testing-strategy",
         "performance-testing",
-        "security-testing"
+        "security-testing",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
       ],
       "area": "engineering",
       "revision": 2,
@@ -496,7 +502,10 @@
         "integrations",
         "testing-strategy",
         "performance-testing",
-        "security-testing"
+        "security-testing",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
       ],
       "area": "engineering",
       "revision": 2,
@@ -527,7 +536,7 @@
         "security-testing"
       ],
       "area": "engineering",
-      "revision": 2,
+      "revision": 3,
       "status": "proposed"
     },
     {
@@ -574,7 +583,10 @@
         "agents",
         "governance",
         "testing-strategy",
-        "examples"
+        "examples",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
       ],
       "area": "engineering",
       "revision": 2,
@@ -674,6 +686,230 @@
       "area": "reference",
       "revision": 2,
       "status": "proposed"
+    },
+    {
+      "id": "playbook-public-website",
+      "path": "guides/playbook-public-website.md",
+      "title": {
+        "en": "Deliver a public website",
+        "cs": "Dodání veřejného webu",
+        "de": "Eine öffentliche Website bereitstellen",
+        "es": "Entregar un sitio web público"
+      },
+      "sources": [
+        "github-workflows",
+        "owasp-xss",
+        "playwright-testing",
+        "wcag-keyboard",
+        "observability"
+      ],
+      "related": [
+        "frontend",
+        "hosting",
+        "github",
+        "testing-strategy"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "playbook-saas",
+      "path": "guides/playbook-saas.md",
+      "title": {
+        "en": "Deliver a tenant-aware SaaS",
+        "cs": "Dodání SaaS s oddělenými tenanty",
+        "de": "Ein mandantenfähiges SaaS bereitstellen",
+        "es": "Entregar un SaaS con aislamiento entre inquilinos"
+      },
+      "sources": [
+        "owasp-multi-tenant",
+        "owasp-authorization",
+        "postgres-isolation",
+        "postgres-backup",
+        "azure-outbox",
+        "azure-idempotent-consumer"
+      ],
+      "related": [
+        "data",
+        "durability",
+        "security-testing",
+        "scaling"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "playbook-internal-tool",
+      "path": "guides/playbook-internal-tool.md",
+      "title": {
+        "en": "Deliver an internal operations tool",
+        "cs": "Dodání interního provozního nástroje",
+        "de": "Ein internes Betriebswerkzeug bereitstellen",
+        "es": "Entregar una herramienta interna de operaciones"
+      },
+      "sources": [
+        "owasp-authorization",
+        "owasp-session",
+        "azure-idempotent-consumer",
+        "observability"
+      ],
+      "related": [
+        "security",
+        "operations",
+        "testing-strategy",
+        "durability"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "playbook-ai-application",
+      "path": "guides/playbook-ai-application.md",
+      "title": {
+        "en": "Deliver an AI application",
+        "cs": "Dodání aplikace s AI",
+        "de": "Eine KI-Anwendung bereitstellen",
+        "es": "Entregar una aplicación de IA"
+      },
+      "sources": [
+        "owasp-ai-agent",
+        "owasp-authorization",
+        "owasp-xss",
+        "observability"
+      ],
+      "related": [
+        "agents",
+        "security",
+        "quality",
+        "testing-strategy"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "playbook-agent-automation",
+      "path": "guides/playbook-agent-automation.md",
+      "title": {
+        "en": "Deliver bounded agent automation",
+        "cs": "Dodání ohraničené agentní automatizace",
+        "de": "Begrenzte Agentenautomatisierung bereitstellen",
+        "es": "Entregar automatización de agentes con límites"
+      },
+      "sources": [
+        "owasp-ai-agent",
+        "azure-idempotent-consumer",
+        "observability"
+      ],
+      "related": [
+        "agents",
+        "durability",
+        "integrations",
+        "security-testing"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "playbook-mobile-backend",
+      "path": "guides/playbook-mobile-backend.md",
+      "title": {
+        "en": "Deliver a backend for mobile clients",
+        "cs": "Dodání backendu pro mobilní klienty",
+        "de": "Ein Backend für mobile Clients bereitstellen",
+        "es": "Entregar un backend para clientes móviles"
+      },
+      "sources": [
+        "owasp-authorization",
+        "owasp-session",
+        "postgres-isolation",
+        "postgres-backup",
+        "semver"
+      ],
+      "related": [
+        "frontend",
+        "data",
+        "security",
+        "testing-strategy"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "project-delivery",
+      "path": "guides/project-delivery.md",
+      "area": "agent-delivery",
+      "status": "proposed",
+      "revision": 1,
+      "title": {
+        "en": "Run a project through the agent delivery system",
+        "cs": "Proveďte projekt systémem agentního dodávání",
+        "de": "Ein Projekt durch das agentengestützte Auslieferungssystem führen",
+        "es": "Ejecutar un proyecto mediante el sistema de entrega con agentes"
+      },
+      "sources": [
+        "github-rulesets",
+        "github-workflows",
+        "owasp-ai-agent",
+        "skills"
+      ],
+      "related": [
+        "testing-strategy",
+        "agents",
+        "lifecycle"
+      ]
+    },
+    {
+      "id": "coverage",
+      "path": "guides/coverage.md",
+      "area": "agent-delivery",
+      "status": "proposed",
+      "revision": 1,
+      "title": {
+        "en": "Read coverage and verification honestly",
+        "cs": "Posuzujte pokrytí a ověření poctivě",
+        "de": "Abdeckung und Verifikation ehrlich beurteilen",
+        "es": "Interpretar con honestidad la cobertura y la verificación"
+      },
+      "sources": [
+        "github-workflows",
+        "owasp-asvs-requirements"
+      ],
+      "related": [
+        "quality",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "reference-labs",
+      "path": "guides/reference-labs.md",
+      "area": "agent-delivery",
+      "status": "proposed",
+      "revision": 1,
+      "title": {
+        "en": "Run and interpret the reference projects",
+        "cs": "Spouštění a interpretace referenčních projektů",
+        "de": "Referenzprojekte ausführen und auswerten",
+        "es": "Ejecutar e interpretar los proyectos de referencia"
+      },
+      "sources": [
+        "azure-idempotent-consumer",
+        "azure-outbox",
+        "owasp-authorization",
+        "owasp-ai-agent",
+        "playwright-testing",
+        "k6-open-vs-closed"
+      ],
+      "related": [
+        "durability",
+        "security-testing",
+        "performance-testing"
+      ]
     }
   ],
   "agent_system": {

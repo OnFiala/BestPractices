@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "project_id": "synthetic-community-events",
+  "project_revision": "0123456789abcdef0123456789abcdef01234567",
+  "profile_digest": "fe7d9524398bcff6b44f72d7a5c698261e1526ac59b73dab20939df8958a2a41",
+  "plan_digest": "b2943d12b2e9142629b5f8b45d86ccbf570074ee6a25c32b022d001d91f10db4",
+  "as_of": "2026-10-22T12:00:00Z",
+  "example": true,
+  "notes": "Synthetic worked planning example. No project checks, artifact observations, human approval, deployment or production readiness are claimed. Empty artifacts and observations intentionally show that every gate is still unrun. Refresh plan identities after changing the profile or library policy; replace this example with actual recorded evidence before review.",
+  "human_approval": {
+    "status": "not-requested",
+    "verified": false,
+    "approved": false
+  },
+  "records": [
+    {
+      "gate_id": "intent-brief",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "requirements-contract",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "architecture-decision",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "provider-exit",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "threat-boundaries",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "implementation-packet",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "browser-journey",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "external-effects",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "functional-verification",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "public-output-review",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "recovery-rehearsal",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "operational-readiness",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "security-verification",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "release-candidate",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "service-observation",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "incident-learning",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "evolution-decision",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    },
+    {
+      "gate_id": "retirement-rehearsal",
+      "status": "unrun",
+      "project_revision": "0123456789abcdef0123456789abcdef01234567",
+      "producer": "unassigned-producer",
+      "reviewer": "unassigned-reviewer",
+      "review_status": "unreviewed",
+      "artifacts": [],
+      "observations": []
+    }
+  ]
+}

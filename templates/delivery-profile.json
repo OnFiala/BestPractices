@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "project_id": "synthetic-community-events",
+  "project_type": "public-website",
+  "revision": "0123456789abcdef0123456789abcdef01234567",
+  "risk": "low",
+  "data_sensitivity": "public",
+  "workload": "small",
+  "hosting": "managed",
+  "surfaces": [
+    "browser"
+  ],
+  "external_side_effects": [
+    "publishing"
+  ],
+  "description": "Synthetic planning example: a public community event directory generated from reviewed fictional records. No service is deployed.",
+  "objectives": [
+    "A visitor can locate a fictional event by date and keyboard navigation.",
+    "The operator can restore the prior static artifact in an isolated rehearsal."
+  ],
+  "constraints": [
+    "Synthetic public data only; no accounts, payments or tracking.",
+    "No paid API, deployment, merge or publication is authorized by this profile.",
+    "A human still decides whether the proposed objectives, architecture, risk and release are acceptable."
+  ]
+}

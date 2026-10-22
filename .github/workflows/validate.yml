@@ -12,7 +12,7 @@ concurrency:
 jobs:
   quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a
         with:
@@ -26,5 +26,11 @@ jobs:
       - run: uv run python -m library.validate
       - run: uv run python -m unittest discover -s tests -v
       - run: node --test tests/webmcp.test.cjs
+      - name: Execute bounded local references and record exact inputs
+        run: >-
+          uv run python -m library.verification delivery durable-service agent-workflow
+          frontend-unit frontend-browser --output reports/reference-checks.json
+      - name: Validate scoped observations
+        run: uv run python -m library.coverage --report reports/reference-checks.json > reports/coverage.json
       - run: uv run python -m library.site build
       - run: uv run python -m library.check_site

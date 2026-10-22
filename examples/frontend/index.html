@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Fieldnotes · Resource desk</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to search</a>
+  <header class="masthead"><a href="/" aria-label="Fieldnotes home">Fieldnotes<span aria-hidden="true">↗</span></a><span>LOCAL DEMO / 01</span></header>
+  <main id="main" tabindex="-1">
+    <div class="intro"><p class="eyebrow">A SMALL LIBRARY FOR BETTER SOFTWARE</p><h1>Find your next<br>useful idea.</h1><p>Explore a handful of synthetic resources. Search, change the response, and see how the page recovers.</p></div>
+    <form id="search-form" role="search" aria-label="Find resources">
+      <div class="field search-field"><label for="query">Search the library</label><input id="query" name="q" type="search" maxlength="80" placeholder="Try “testing”" autocomplete="off"></div>
+      <div class="field"><label for="scenario">Demo response</label><select id="scenario" name="scenario"><option value="normal">Normal results</option><option value="empty">Empty results</option><option value="error">Service error</option><option value="retry">Error, then retry succeeds</option><option value="slow">Slow response</option><option value="injection">Untrusted text</option></select></div>
+      <button id="search" type="submit">Search <span aria-hidden="true">→</span></button>
+    </form>
+    <noscript><p>This interactive example requires JavaScript to search. No data is sent to an external service.</p></noscript>
+    <section class="results" aria-labelledby="results-title">
+      <div class="results-heading"><h2 id="results-title">Resource desk</h2><label class="compact-control"><input type="checkbox" id="compact"> Compact view</label></div>
+      <div class="feedback"><p id="status" role="status" aria-live="polite" aria-atomic="true">Ready to search.</p><button id="cancel" type="button" hidden>Cancel search</button><button id="retry" type="button" hidden>Retry search</button></div>
+      <div id="result-content" aria-busy="false"><ul id="resource-list" class="resource-list"></ul></div>
+    </section>
+    <aside class="demo-note"><strong>Made for trying things.</strong><p>These resources are fictional. Your search lives in the URL; compact view lasts only while this page is open.</p></aside>
+  </main>
+  <footer>Original reference example · Created with AI assistance under human direction.<br>No accounts, credentials, or private records belong in this demo.</footer>
+</body>
+</html>

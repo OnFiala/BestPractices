@@ -17,6 +17,21 @@ from library.licensing import publish_licenses
 from library.validate import validate
 
 NAMES = {"en": "English", "cs": "Čeština", "de": "Deutsch", "es": "Español"}
+SECTIONS = {
+    "en": ["Start here", "Agent delivery", "Project playbooks", "Engineering decisions", "Verification", "Reference"],
+    "cs": ["Začněte zde", "Agentní realizace", "Projektové postupy", "Technická rozhodnutí", "Ověřování", "Reference"],
+    "de": ["Hier beginnen", "Agentengestützte Umsetzung", "Projektleitfäden", "Technische Entscheidungen", "Überprüfung", "Referenz"],
+    "es": ["Empieza aquí", "Ejecución con agentes", "Guías por proyecto", "Decisiones técnicas", "Verificación", "Referencia"],
+}
+AREAS = ("start", "agent-delivery", "project-playbooks", "engineering", "verification", "reference")
+
+
+def navigation(entries, language):
+    return [{label: [{g["title"][language]: g["path"]} for g in entries if g["area"] == area]}
+            for area, label in zip(AREAS, SECTIONS[language])
+            if any(g["area"] == area for g in entries)]
+
+
 DISCLOSURE = {
     "en": "Created and maintained with AI agents. Humans own review and publication.",
     "cs": "Vytvořeno a udržováno pomocí AI agentů. Za posouzení a zveřejnění odpovídají lidé.",
@@ -101,7 +116,7 @@ def build(root: Path = ROOT):
                                              ("" if code == "en" else code + "/")}
                                     for code, name in NAMES.items()]},
             "copyright": LICENSE_LABELS[language][0] + " · OnFiala & contributors",
-            "nav": [{g["title"][language]: g["path"]} for g in entries],
+            "nav": navigation(entries, language),
             "validation": {"links": {"not_found": "warn", "anchors": "warn"},
                            "nav": {"omitted_files": "warn", "not_found": "warn"}},
         }
@@ -115,7 +130,7 @@ def build(root: Path = ROOT):
         } for g in entries]
         (destination / "guides.json").write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
     shutil.copy(root / "data/catalog.json", root / "site/catalog.json")
-    for name in ("sources", "evidence", "tools", "blueprints"):
+    for name in ("sources", "evidence", "tools", "blueprints", "delivery", "coverage"):
         shutil.copy(root / f"data/{name}.json", root / f"site/{name}.json")
     publish_licenses(root, root / "site")
     (root / "site/.nojekyll").touch()
