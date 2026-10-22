@@ -48,7 +48,7 @@ Node version. The caller retains process/profile ownership and cleanup.
   executable/Node diagnostics. Both owned browser and HTTP-fixture processes had
   stopped, and the temporary browser profile was gone. The four reviewed files
   were unchanged before/after this check; their SHA-256 hashes and output hashes
-  are recorded in the accompanying `bp-browser-startup-control.json` metadata.
+  are recorded in the accompanying [control metadata](2026-10-22-browser-startup-control.json).
   This exercises failure cleanup, not the performance of a real Chromium launch.
 
 During review, the implementation was tightened to check elapsed time before
