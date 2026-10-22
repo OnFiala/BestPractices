@@ -125,7 +125,11 @@ Chrome/154.0.8037.57, with the explicit sandbox opt-in.
 The runner starts its own ephemeral fixture and temporary Chromium profile,
 drives real browser input through the Chrome DevTools Protocol using Node's
 built-in WebSocket, and cleans up both child processes and its profile. Each
-protocol command has a deadline, and the whole run has a 45-second timeout.
+protocol command has a deadline. Browser startup allows up to 20 seconds for a
+cold or busy CI host; an early process exit or spawn error fails immediately.
+The whole run, including startup, retains its 45-second timeout. Regression
+tests use real child processes to check readiness after five seconds, early
+exit, spawn failure, and a readiness marker arriving after the deadline.
 It accepts no target arguments. Requests from the page are intercepted and
 allowed only to its fixture origin; background browser networking is disabled
 and non-loopback browser proxy traffic is directed to an unavailable local

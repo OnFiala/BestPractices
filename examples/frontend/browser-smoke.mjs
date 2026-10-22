@@ -1,11 +1,12 @@
 // Original small CDP driver. Node 22+ and an externally installed Chromium are required.
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
-import { access, mkdtemp, readFile, rm } from 'node:fs/promises';
+import { access, mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
 import { startFixture, stopProcess } from './fixture-process.mjs';
+import { waitForBrowserPort } from './browser-startup.mjs';
 
 if (process.argv.length !== 2) throw new Error('No arguments accepted; this runner owns its local target.');
 if (typeof WebSocket === 'undefined') throw new Error('Use Node 22+ with its built-in WebSocket.');
@@ -95,16 +96,11 @@ try {
   browser = spawn(executable, args, { stdio: ['ignore', 'ignore', 'pipe'] });
   let diagnostics = '';
   browser.stderr.on('data', (chunk) => { diagnostics = (diagnostics + chunk).slice(-2500); });
-  let spawnError;
-  browser.on('error', (error) => { spawnError = error; });
-  let portInfo;
-  for (let tries = 0; tries < 100; tries++) {
-    if (spawnError) throw spawnError;
-    if (browser.exitCode !== null) throw new Error(`Chromium exited: ${diagnostics}`);
-    try { portInfo = await readFile(join(profile, 'DevToolsActivePort'), 'utf8'); break; } catch { await delay(50); }
-  }
-  if (!portInfo) throw new Error(`Chromium did not expose a local debugging port: ${diagnostics}`);
-  const [port, endpoint] = portInfo.trim().split('\n');
+  const portInfo = await waitForBrowserPort(browser, profile, { diagnostics: () => diagnostics })
+    .catch((error) => {
+      throw new Error(`Browser startup failed (executable=${executable}; Node=${process.version}): ${error.message}`, { cause: error });
+    });
+  const [port, endpoint] = portInfo.trim().split(/\r?\n/);
   assert.match(port, /^[0-9]+$/);
   assert.match(endpoint, /^\/devtools\/browser\/[a-zA-Z0-9-]+$/);
   const socket = new WebSocket(`ws://127.0.0.1:${port}${endpoint}`);

@@ -1,6 +1,11 @@
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const { request } = require('node:http');
+const { spawn } = require('node:child_process');
+const { mkdtemp, readFile, rm } = require('node:fs/promises');
+const { tmpdir } = require('node:os');
+const { join } = require('node:path');
+const { setTimeout: delay } = require('node:timers/promises');
 const stateModule = import('../examples/frontend/state.mjs');
 const controllerModule = import('../examples/frontend/controller.mjs');
 const item = { id: 'r1', title: 'A result', summary: 'Synthetic text' };
@@ -11,6 +16,87 @@ const deferred = () => {
   const promise = new Promise((yes, no) => { resolve = yes; reject = no; });
   return { promise, resolve, reject };
 };
+
+async function startupFixture(t, script, executable = process.execPath) {
+  const profile = await mkdtemp(join(tmpdir(), 'bestpractices-startup-'));
+  const child = spawn(executable, ['-e', script, profile], { stdio: ['ignore', 'ignore', 'pipe'] });
+  let diagnostics = '';
+  child.stderr.on('data', (chunk) => { diagnostics += chunk; });
+  t.after(async () => {
+    const { stopProcess } = await import('../examples/frontend/fixture-process.mjs');
+    await stopProcess(child);
+    await rm(profile, { recursive: true, force: true });
+  });
+  return { child, profile, diagnostics: () => diagnostics };
+}
+
+test('browser startup accepts a real child marker arriving after the former five second limit', { timeout: 15000 }, async (t) => {
+  const { waitForBrowserPort } = await import('../examples/frontend/browser-startup.mjs');
+  const marker = '12345\n/devtools/browser/delayed-fixture\n';
+  const { child, profile } = await startupFixture(t, `
+    const { writeFileSync } = require('node:fs');
+    const { join } = require('node:path');
+    setTimeout(() => writeFileSync(join(process.argv[1], 'DevToolsActivePort'), ${JSON.stringify(marker)}), 5500);
+    setInterval(() => {}, 1000);
+  `);
+  const started = performance.now();
+  assert.equal(await waitForBrowserPort(child, profile), marker);
+  assert.ok(performance.now() - started >= 5000, 'readiness must actually arrive beyond the old deadline');
+  assert.equal(child.exitCode, null);
+});
+
+test('browser startup rejects an early child exit with its code before the deadline', { timeout: 3000 }, async (t) => {
+  const { waitForBrowserPort } = await import('../examples/frontend/browser-startup.mjs');
+  const { child, profile, diagnostics } = await startupFixture(t,
+    "process.stderr.write('deliberate startup failure'); process.exit(23);");
+  await assert.rejects(waitForBrowserPort(child, profile, { diagnostics }),
+    /Chromium exited before startup \(code 23\):/);
+});
+
+test('browser startup rejects spawn errors promptly', { timeout: 3000 }, async (t) => {
+  const { waitForBrowserPort } = await import('../examples/frontend/browser-startup.mjs');
+  const { child, profile } = await startupFixture(t, '', '/nonexistent-bestpractices-browser');
+  await assert.rejects(waitForBrowserPort(child, profile), /Chromium failed to start:.*ENOENT/);
+});
+
+test('browser startup waits for both marker lines before accepting readiness', { timeout: 3000 }, async (t) => {
+  const { waitForBrowserPort } = await import('../examples/frontend/browser-startup.mjs');
+  const marker = '12345\n/devtools/browser/complete-fixture\n';
+  const { child, profile } = await startupFixture(t, `
+    const { writeFileSync } = require('node:fs');
+    const { join } = require('node:path');
+    const path = join(process.argv[1], 'DevToolsActivePort');
+    writeFileSync(path, '12345\\n');
+    setTimeout(() => writeFileSync(path, ${JSON.stringify(marker)}), 250);
+    setInterval(() => {}, 1000);
+  `);
+  assert.equal(await waitForBrowserPort(child, profile), marker);
+});
+
+test('browser startup deadline rejects a live child and ignores a later marker', { timeout: 3000 }, async (t) => {
+  const { waitForBrowserPort } = await import('../examples/frontend/browser-startup.mjs');
+  const lateMarker = '12345\n/devtools/browser/late-fixture\n';
+  const { child, profile } = await startupFixture(t, `
+    const { writeFileSync } = require('node:fs');
+    const { join } = require('node:path');
+    setTimeout(() => writeFileSync(join(process.argv[1], 'DevToolsActivePort'), ${JSON.stringify(lateMarker)}), 250);
+    setInterval(() => {}, 1000);
+  `);
+  const readiness = waitForBrowserPort(child, profile, { timeoutMs: 100 });
+  await assert.rejects(readiness, /within 100 ms: \(no stderr\)/);
+  assert.equal(child.exitCode, null, 'the caller still owns the live child after timeout');
+  const markerDeadline = performance.now() + 2000;
+  let marker;
+  while (performance.now() < markerDeadline) {
+    try { marker = await readFile(join(profile, 'DevToolsActivePort'), 'utf8'); break; }
+    catch (error) { if (error.code !== 'ENOENT') throw error; }
+    await delay(25);
+  }
+  assert.equal(marker, lateMarker, 'the child must actually publish a valid marker after the deadline');
+  await assert.rejects(readiness, /within 100 ms/);
+  assert.equal(child.listenerCount('error'), 0);
+  assert.equal(child.listenerCount('exit'), 0);
+});
 
 test('URL state is bounded, encoded, and round-trips without adopting an arbitrary target', async () => {
   const { readQuery, queryString, normalizeQuery } = await stateModule;
