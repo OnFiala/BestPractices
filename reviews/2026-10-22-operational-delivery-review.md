@@ -6,6 +6,19 @@ It is an agent-maintained operational reference system. It does not autonomously
 build arbitrary products or establish universal software-engineering completeness.
 All guidance and translations remain proposed pending human approval.
 
+## Current verified state
+
+The current implementation is `4ecd1c23e4693d6a739397e879580db92ab7d0b4` and the
+current observed input image is
+`662f3feb9a2a5d6149e5b4a9e5944bead4834cecfd9b8b4e6c9344cdc0043e90`.
+The complete [hosted quality run](https://github.com/OnFiala/BestPractices/actions/runs/39770522601)
+passed. The local inventory now includes 12 frontend tests (five added startup
+regressions), 20 actual browser journeys and the unchanged 89-test Python suite.
+The earlier counts and images below are retained historical observations.
+[Current receipts](2026-10-22-browser-startup-evidence.json) and the
+[browser-startup control review](2026-10-22-browser-startup-control.md) describe the
+final bounded-startup correction; no failed run is reclassified as passed.
+
 ## Reviewed scope and identity
 
 The change extends base commit `34aca583b2a7366f17138bb2c4a5d1ddfbb6bfbf` on PR #1.
@@ -146,3 +159,26 @@ Its receipts and both remote outcomes are in the
 cannot prove why the initial run failed. Any recurrence remains a failed gate;
 the new annotation supplies bounded diagnostics for investigation. This retained
 uncertainty is separate from the six corrected implementation findings above.
+
+## Browser readiness correction
+
+[Run 39769618962](https://github.com/OnFiala/BestPractices/actions/runs/39769618962)
+repeated the reference-step failure. The new annotation identified the immediate
+condition: no browser debugging port within the old roughly five-second polling
+budget, with empty stderr. It does not prove the cause of the earlier unlogged run.
+
+The startup helper now waits for a complete valid port/endpoint for at most
+20 seconds, checks monotonic expiry, fails promptly on spawn/exit errors, and
+ignores readiness after its deadline. The whole browser run still has a 45-second
+limit and owns child/profile cleanup. Five real-child regressions exercise a
+marker arriving after 5.5 seconds, partial marker, early exit, spawn failure and
+late readiness after timeout. Browser selection, network restrictions, required
+journeys and the default sandbox are unchanged; startup failures identify the
+selected executable and actual Node version.
+
+All 12 frontend tests and 20 browser journeys passed locally and independently.
+The fixed local report retained an unchanged image; the full hosted quality run
+at the implementation commit above then passed. This is evidence for the bounded
+correction and observed run, not proof of unlimited host or browser reliability.
+The original first failure remains without its detailed log and is preserved in
+the history above.
