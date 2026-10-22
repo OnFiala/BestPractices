@@ -9,7 +9,7 @@ All guidance and translations remain proposed pending human approval.
 ## Reviewed scope and identity
 
 The change extends base commit `34aca583b2a7366f17138bb2c4a5d1ddfbb6bfbf` on PR #1.
-The final observed code/configuration/guidance image is
+The initial integrated code/configuration/guidance image is
 `55ea3827294494770273d91e9771b1c4bf9dd846c4bc3ddc890e942960be1959`.
 The full file inventory and execution receipts are in
 [operational evidence](2026-10-22-operational-evidence.json). Execution occurred
@@ -123,3 +123,26 @@ do not activate them. No production deployment or remote connector is claimed.
 Future changes should regenerate affected plans, preserve historical observations,
 repeat relevant checks and propose a reviewable PR rather than silently promoting
 source/model updates or rewriting old evidence.
+
+## GitHub execution follow-up
+
+The initial remote [run 39768595418](https://github.com/OnFiala/BestPractices/actions/runs/39768595418)
+passed the full Python suite, content validation and WebMCP tests, but failed in the
+fixed-reference step. Redirected log downloads returned HTTP 403; the precise cause
+could not be established. That failure is retained, not reclassified as a pass.
+
+Commit `00d7bf56e95d58922ef43ead220b3c064c20c000` adds only bounded, escaped failure
+annotations to the CI wrapper. It preserves the original verifier exit status, fixed
+suite arguments and read-only workflow permissions. No reference implementation,
+skip rule, automatic retry or sandbox default changed. The independent control
+thread inspected this delta and found no authorization or diagnostic-scope blocker.
+
+The subsequent [run 39769062394](https://github.com/OnFiala/BestPractices/actions/runs/39769062394)
+passed every quality step, including the fixed references, coverage and built site.
+A new local fixed-suite observation passed with unchanged inputs at digest
+`5284b9a2a766f75209284e98805d4e9d3fab8d49fe8d0f2170ec24ec8adf63c1`.
+Its receipts and both remote outcomes are in the
+[CI follow-up evidence](2026-10-22-operational-ci-followup.json). A later green run
+cannot prove why the initial run failed. Any recurrence remains a failed gate;
+the new annotation supplies bounded diagnostics for investigation. This retained
+uncertainty is separate from the six corrected implementation findings above.

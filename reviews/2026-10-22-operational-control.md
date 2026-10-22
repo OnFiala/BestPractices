@@ -240,3 +240,56 @@ real-time systems, distributed/long-duration capacity, production operations and
 authenticated human release controls require adopter-specific implementation and
 evidence. Remote hosted CI, merge and publication are separate events; none is
 certified by this local review.
+
+## CI-only follow-up at 00d7bf56e95d58922ef43ead220b3c064c20c000
+
+This follow-up supplements the historical input-image review above. The immutable
+delta from `dccfdd35e4727266c3b8a936261de9d33d2ef83c` to
+`00d7bf56e95d58922ef43ead220b3c064c20c000` changes only
+`.github/workflows/validate.yml`: 19 insertions and three deletions. Reference code,
+guide content, fixed checks, permissions and acceptance requirements are unchanged.
+
+The wrapper at `.github/workflows/validate.yml:29` captures the fixed verifier's
+diagnostics, retains its original exit code and, on failure, emits a constant-title
+GitHub error annotation containing at most the final 3,500 decoded characters of
+stderr before escaping. Percent signs and normalized newlines cannot create an
+additional annotation command through that message. Read-only workflow permissions,
+disabled checkout credential persistence and the absence of supplied secrets remain
+unchanged. The existing raw console diagnostics are still displayed. This is bounded
+diagnostic publication for the owned synthetic suites, not a general-purpose secret
+redactor or permission to publish future source-fed/model/private-data logs.
+
+Independent isolated control-flow checks executed the exact committed shell block
+with a temporary verifier stub: success remained exit 0; verifier failure remained
+exit 1 with one escaped bounded annotation; annotation-helper failure at exit 99
+did not replace the original verifier exit 7. The tail excluded an earlier prefix,
+retained exactly 3,500 decoded characters and escaped a literal percent/newline
+annotation marker. The first test oracle incorrectly expected CRLF preservation;
+it was corrected because `Path.read_text` normalizes line endings before escaping.
+Check metadata and that qualification are in `/tmp/bp-ci-delta-control.json`.
+No repository files were edited by this reviewer. No authorization or logging-scope
+blocker was identified in this CI-only delta; formal security-scan tools remained
+unavailable, so this remains manual control.
+
+I independently queried GitHub run and job-step metadata for both observed runs:
+
+- [Run 39768595418](https://github.com/OnFiala/BestPractices/actions/runs/39768595418),
+  attempt 1 at `dccfdd35e4727266c3b8a936261de9d33d2ef83c`, failed in the fixed local
+  reference step. Ruff, content validation, Python tests and WebMCP tests passed;
+  subsequent coverage/site steps were skipped. The coordinator could not obtain
+  the redirected detailed logs because the result/blob host returned HTTP 403.
+  The actual cause of this first failure remains unknown.
+- [Run 39769062394](https://github.com/OnFiala/BestPractices/actions/runs/39769062394),
+  attempt 1 at `00d7bf56e95d58922ef43ead220b3c064c20c000`, completed successfully.
+  Every quality step passed, including the same fixed reference inventory, coverage,
+  site build and generated-site checks. The workflow contains no browser sandbox
+  opt-out. This is hosted workflow step evidence; I did not inspect its per-case
+  runtime receipt or establish its exact browser version from the unavailable logs.
+
+The later pass does not explain or erase the initial failure, prove that the wrapper
+fixed its cause, or demonstrate repeated-run reliability. There is no automatic retry,
+skip, permission expansion or weakened gate in the delta. The listed input image now
+hashes to `5284b9a2a766f75209284e98805d4e9d3fab8d49fe8d0f2170ec24ec8adf63c1`;
+the previous `55ea…1959` observation remains historical because the workflow file
+changed. The coordinator is recording the new local observation separately. Human
+merge/release authority and all previously stated production limits remain external.

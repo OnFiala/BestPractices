@@ -1,0 +1,31 @@
+{
+  "revision": "00d7bf56e95d58922ef43ead220b3c064c20c000",
+  "scope": "Manual CI-only wrapper review and isolated control-flow/encoding checks; no GitHub writes or remote scan.",
+  "method_note": "An initial test oracle expected CRLF preservation; Path.read_text normalizes line endings before escaping. Corrected the oracle to require normalized newlines, literal-percent escaping and the 3500-character raw tail.",
+  "cases": [
+    {
+      "verifier_status": 0,
+      "annotation_helper_status": 0,
+      "final_status": 0,
+      "annotation_lines": 0,
+      "escaped_tail_verified": false,
+      "passed": true
+    },
+    {
+      "verifier_status": 1,
+      "annotation_helper_status": 0,
+      "final_status": 1,
+      "annotation_lines": 1,
+      "escaped_tail_verified": true,
+      "passed": true
+    },
+    {
+      "verifier_status": 7,
+      "annotation_helper_status": 99,
+      "final_status": 7,
+      "annotation_lines": 0,
+      "escaped_tail_verified": false,
+      "passed": true
+    }
+  ]
+}
