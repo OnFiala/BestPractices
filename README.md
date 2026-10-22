@@ -182,6 +182,23 @@ separate compatibility check. The site exports `llms.txt`, `catalog.json`,
 `coverage.json` and localized `guides.json` for retrieval; static coverage data is
 not a newly executed verification result.
 
+## Prepare the Sites portal
+
+The requested portal targets integrated OpenAI Sites at `architecture.ofops.co`,
+with Cloudflare DNS. The custom-domain build is available:
+
+```sh
+uv run python -m library.site build --site-url https://architecture.ofops.co/
+uv run python -m library.check_site
+```
+
+This creates local public assets with matching canonical URLs and language metadata;
+it does not provision Sites, bind the domain, or deploy remote MCP. The
+[Sites deployment handoff](deployment/sites/README.md) records the native database,
+storage and MCP integration work and the provider contracts still to verify. Its
+[architecture decision](decisions/0003-sites-portal.md) preserves GitHub as the source
+of reviewed releases and uses Sites as the target application platform.
+
 ## Activate on GitHub
 
 1. Review the initial change and merge it into `main`. Local tests do not prove a

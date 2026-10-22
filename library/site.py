@@ -9,6 +9,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 
 import yaml
 
@@ -24,6 +25,24 @@ SECTIONS = {
     "es": ["Empieza aquí", "Ejecución con agentes", "Guías por proyecto", "Decisiones técnicas", "Verificación", "Referencia"],
 }
 AREAS = ("start", "agent-delivery", "project-playbooks", "engineering", "verification", "reference")
+DEFAULT_SITE_URL = "https://onfiala.github.io/BestPractices/"
+
+
+def normalize_site_url(value: str) -> str:
+    """Accept a public HTTPS base, or loopback HTTP for local previews."""
+    if not value or any(char.isspace() or ord(char) < 32 for char in value) or "\\" in value:
+        raise ValueError("Site URL must not contain whitespace, controls, or backslashes")
+    parsed = urlsplit(value)
+    if (parsed.scheme not in {"https", "http"} or not parsed.hostname
+            or parsed.username is not None or parsed.password is not None
+            or "?" in value or "#" in value):
+        raise ValueError("Site URL needs an HTTP(S) host without credentials, query, or fragment")
+    if parsed.scheme == "http" and parsed.hostname not in {"localhost", "127.0.0.1", "::1"}:
+        raise ValueError("Public site URLs must use HTTPS")
+    # Accessing port validates its syntax and range without making a request.
+    if parsed.port == 0:
+        raise ValueError("Site URL port must be positive")
+    return urlunsplit((parsed.scheme, parsed.netloc, parsed.path.rstrip("/") + "/", "", ""))
 
 
 def navigation(entries, language):
@@ -62,7 +81,8 @@ STATUS = {
 }
 
 
-def build(root: Path = ROOT):
+def build(root: Path = ROOT, *, site_url: str = DEFAULT_SITE_URL):
+    base_url = normalize_site_url(site_url)
     errors = validate(root)
     if errors:
         raise ValueError("\n".join(errors))
@@ -90,7 +110,7 @@ def build(root: Path = ROOT):
         config = {
             "site_name": "BestPractices",
             "site_description": DISCLOSURE[language],
-            "site_url": "https://onfiala.github.io/BestPractices/" +
+            "site_url": base_url +
                         ("" if language == "en" else language + "/"),
             "repo_url": "https://github.com/OnFiala/BestPractices",
             "edit_uri": "",
@@ -108,11 +128,12 @@ def build(root: Path = ROOT):
             "markdown_extensions": ["admonition", "tables", "fenced_code", "attr_list", "toc"],
             "extra_css": ["assets/library.css"],
             "extra_javascript": ["assets/webmcp.js"],
-            "extra": {"generator": False, "root_prefix": "." if language == "en" else "..",
+            "extra": {"generator": False, "base_url": base_url,
+                      "root_prefix": "." if language == "en" else "..",
                       "license_label": LICENSE_LABELS[language][0],
                       "notices_label": LICENSE_LABELS[language][1],
                       "alternate": [{"name": name, "lang": code,
-                                     "link": "https://onfiala.github.io/BestPractices/" +
+                                     "link": base_url +
                                              ("" if code == "en" else code + "/")}
                                     for code, name in NAMES.items()]},
             "copyright": LICENSE_LABELS[language][0] + " · OnFiala & contributors",
@@ -149,8 +170,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=["build", "serve"])
     parser.add_argument("--port", type=int, default=8000)
+    parser.add_argument("--site-url", default=DEFAULT_SITE_URL,
+                        help="Canonical HTTPS base, including any deployment subpath")
     args = parser.parse_args()
-    build()
+    try:
+        build(site_url=args.site_url)
+    except ValueError as exc:
+        parser.error(str(exc))
     if args.command == "serve":
         handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=ROOT / "site")
         server = http.server.ThreadingHTTPServer(("127.0.0.1", args.port), handler)
