@@ -1,0 +1,101 @@
+{
+  "kind": "local-tutorial-command-verification",
+  "observed_at": "2026-10-22T15:21:28.907121+00:00",
+  "document": "docs/en/guides/first-project.md",
+  "document_sha256": "5c8bf41da44b77f6f401b31adcd8ec7d8dd1ecf56df4efed3caa06bf07d77796",
+  "runtime": "Python 3.12.14",
+  "scope": "Copied library in an isolated temporary directory. Exact tutorial shell blocks executed after setting the real author label. Independent parent agent inspected the actual document before filling its review. No website/browser test, full suite, library commit or publication.",
+  "target_revision": "c13f701bfafe7ffd5ace24acf84e446ebbed06a6",
+  "artifact_sha256": "e23635924eb6fb2c9e19dd0c9284d5282f88fb7123407cfe590747914067a38f",
+  "producer": "/root/first_project_walkthrough (Codex agent)",
+  "reviewer": "/root (Codex coordinating agent; document reviewer)",
+  "initial_assessment": {
+    "exit_code": 1,
+    "summary": {
+      "required_for_release": 14,
+      "supported": 0,
+      "blocked": 18
+    }
+  },
+  "reviewed_assessment": {
+    "exit_code": 1,
+    "summary": {
+      "required_for_release": 14,
+      "supported": 1,
+      "blocked": 17
+    },
+    "supported_gates": [
+      "intent-brief"
+    ],
+    "release_blockers": [
+      "requirements-contract",
+      "architecture-decision",
+      "threat-boundaries",
+      "implementation-packet",
+      "browser-journey",
+      "capacity-envelope",
+      "external-effects",
+      "functional-verification",
+      "public-output-review",
+      "recovery-rehearsal",
+      "operational-readiness",
+      "security-verification",
+      "release-candidate"
+    ],
+    "ready_for_human_review": false,
+    "production_ready": false,
+    "human_authorization_verified": false
+  },
+  "negative_cases": [
+    {
+      "case": "changed-bytes",
+      "exit_code": 1,
+      "output": "Artifact or revision changed. Preserve this review and obtain a new one.",
+      "new_evidence_created": false,
+      "initial_evidence_unchanged": true
+    },
+    {
+      "case": "missing-reviewer",
+      "exit_code": 1,
+      "output": "No completed independent review. Keep the initial blocked evidence.",
+      "new_evidence_created": false,
+      "initial_evidence_unchanged": true
+    }
+  ],
+  "metadata_checks": [
+    "Required frontmatter values and H1",
+    "Same four immutable primary URLs as project-delivery",
+    "All relative Markdown links resolve within docs/en"
+  ],
+  "artifact_content": "# A local community-events website: intent brief\n\nAuthor and owner of this local document exercise: /root/first_project_walkthrough (Codex agent)\nHuman ownership and authorization for any real website remain unresolved.\n\nIntended outcome: a visitor can find the next public community event, its date\nand location without creating an account.\n\nProposed success check: given three fictional events with different dates, a\nvisitor can identify the next event and its location using keyboard navigation.\nThis check is a future acceptance case; no website exists and it has not run.\n\nScope now: write and independently review this brief in local files only.\nNon-goals: accounts, payments, analytics, private event data and public hosting.\nUse fictional public data only. No network calls, spending or publication are\nauthorized by this exercise.\n\nStop decision: the document owner stops work if private data, a paid service or\npublication becomes necessary. A human must resolve ownership and authorize any\nexpanded scope before implementation. Unknown workload remains unmeasured.\n\nReview criterion: the brief states an intended user outcome, a document owner,\nnon-goals, an observable future success check and a stop decision. Reject it if\nany is absent or if it presents a planned website test as an observed result.\n\nLimit: accepting this brief only supports the intent gate for this local\nexercise. Requirements, design, implementation and all website tests are unrun.\n",
+  "actual_review_record": {
+    "gate_id": "intent-brief",
+    "status": "passed",
+    "project_revision": "c13f701bfafe7ffd5ace24acf84e446ebbed06a6",
+    "producer": "/root/first_project_walkthrough (Codex agent)",
+    "reviewer": "/root (Codex coordinating agent; document reviewer)",
+    "review_status": "accepted",
+    "artifacts": [
+      {
+        "id": "problem-brief",
+        "sha256": "e23635924eb6fb2c9e19dd0c9284d5282f88fb7123407cfe590747914067a38f",
+        "revision": "c13f701bfafe7ffd5ace24acf84e446ebbed06a6"
+      }
+    ],
+    "observations": [
+      {
+        "id": "brief-reading-1",
+        "artifact_id": "problem-brief",
+        "artifact_sha256": "e23635924eb6fb2c9e19dd0c9284d5282f88fb7123407cfe590747914067a38f",
+        "observed_at": "2026-10-22T15:19:58.957008+00:00",
+        "environment": "Managed local workspace; Python stdlib and Git; reports/first-project/target/problem-brief.md in the isolated tutorial checkout.",
+        "method": "Read the actual Markdown bytes, compared them with git show HEAD:problem-brief.md and their SHA-256, and checked both intent-brief blocking conditions against the text. Looked for absent ownership, unevaluable success, unauthorized effects and false claims of executed website tests.",
+        "expected": "The brief states the user outcome, document owner, non-goals, observable future success check and stop decision, without claiming a website test ran.",
+        "actual": "The document names its actual agent author as owner of this local writing exercise, states finding the next event as the user outcome, proposes an evaluable three-event keyboard case, excludes accounts/payments/hosting, and stops for private data, spending or publication. It explicitly says the website does not exist, the proposed test is unrun, and human ownership of any real website is unresolved. Accepted only as the intent document for this local exercise; no website behavior, human approval or production ownership was verified.",
+        "outcome": "passed"
+      }
+    ]
+  },
+  "review_scope": "Independent agent reading of an original local document, not a human approval, executed website test, authenticated identity or production clearance.",
+  "limits": "Historical local observation, bound to the document SHA-256 above. This is not verification of every future run or of a generated application. Runtime and output assertions are unsigned."
+}

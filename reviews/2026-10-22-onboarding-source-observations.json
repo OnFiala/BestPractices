@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-22T15:26:34.643067+00:00",
+  "changed": [
+    "owasp-csrf",
+    "owasp-multi-tenant"
+  ],
+  "unavailable": [],
+  "overdue": [],
+  "action_required": true,
+  "observations": {
+    "agents-guardrails": {
+      "status": "ok",
+      "sha256": "ccdfa6eb4ca29ef5f265a2bad4d3d0b7786f1a3970f58cfcf07a641b3bb56667",
+      "bytes": 16786,
+      "url": "https://raw.githubusercontent.com/openai/openai-agents-python/main/docs/guardrails.md"
+    },
+    "azure-architecture-styles": {
+      "status": "ok",
+      "sha256": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a",
+      "bytes": 21894,
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/guide/architecture-styles/index.md"
+    },
+    "azure-cache-aside": {
+      "status": "ok",
+      "sha256": "eb19852e710d924d98a39f386928ef1b0d763391f0e9e22a353ce818dd57881f",
+      "bytes": 14318,
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/cache-aside-content.md"
+    },
+    "azure-cqrs": {
+      "status": "ok",
+      "sha256": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b",
+      "bytes": 20477,
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/cqrs.md"
+    },
+    "azure-data-partitioning": {
+      "status": "ok",
+      "sha256": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77",
+      "bytes": 12763,
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/best-practices/data-partitioning-strategies-content.md"
+    },
+    "azure-event-sourcing": {
+      "status": "ok",
+      "sha256": "3b43bdcdf4b17f9da1adbfd4f77fd767f1262a8baeb3aba232bbed293e2d2a49",
+      "bytes": 30015,
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/event-sourcing.md"
+    },
+    "azure-health-endpoints": {
+      "status": "ok",
+      "sha256": "2ffed47249e9c6e6dd5a2d2b36c73fcb2adcbd217377e60f3466c98cf9f9d08f",
+      "bytes": 22037,
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/health-endpoint-monitoring.md"
+    },
+    "azure-idempotent-consumer": {
+      "status": "ok",
+      "sha256": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+      "bytes": 19383,
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/idempotent-consumer.md"
+    },
+    "azure-outbox": {
+      "status": "ok",
+      "sha256": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
+      "bytes": 33262,
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/databases/guide/transactional-out-box-cosmos.md"
+    },
+    "azure-retry": {
+      "status": "ok",
+      "sha256": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab",
+      "bytes": 11945,
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/retry-content.md"
+    },
+    "codex": {
+      "status": "ok",
+      "sha256": "ba4e1f69ff48386e72a9c5e1edaf76aad64a475c2d51af79ccba6d1128261ba7",
+      "bytes": 3334,
+      "url": "https://raw.githubusercontent.com/openai/codex/main/README.md"
+    },
+    "codex-action": {
+      "status": "ok",
+      "sha256": "00083d3f3b7ab6b887e1efa198c79a3791e53c5aae534588c9eba6c7b056b741",
+      "bytes": 17938,
+      "url": "https://raw.githubusercontent.com/openai/codex-action/main/README.md"
+    },
+    "docker-security": {
+      "status": "ok",
+      "sha256": "bf9c126d4fc7bad25d75d1e1bce851d75738cdd8bc41561a39a9a8687ed1c9e0",
+      "bytes": 13998,
+      "url": "https://raw.githubusercontent.com/docker/docs/main/content/manuals/engine/security/_index.md"
+    },
+    "durable-workflows": {
+      "status": "ok",
+      "sha256": "269838d3de5da90d4c2c0b45bf7fc745b384a5a05c0932582e923638e8994189",
+      "bytes": 3888,
+      "url": "https://raw.githubusercontent.com/temporalio/temporal/main/README.md"
+    },
+    "github-rulesets": {
+      "status": "ok",
+      "sha256": "ad074c0507552b396bd5d506a7e80875c5664dd7e6f0e496f5a1dbc1bd039810",
+      "bytes": 6171,
+      "url": "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md"
+    },
+    "github-workflows": {
+      "status": "ok",
+      "sha256": "0b2d692984fae55eff6334aabb52ca3c97bd38757cca1e2cc3437460cbc4b1d5",
+      "bytes": 37281,
+      "url": "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/security/secure-use.md"
+    },
+    "k6-breakpoint-testing": {
+      "status": "ok",
+      "sha256": "37ae4ad38a793111dd96fb9eb672efe603b95f5262ae865f4de8695acae68974",
+      "bytes": 6043,
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/testing-guides/test-types/breakpoint-testing.md"
+    },
+    "k6-open-vs-closed": {
+      "status": "ok",
+      "sha256": "374d2ee2334444ff5a666e26f90dc79e7bebfac0304437c92a9d969dc1c8630c",
+      "bytes": 4166,
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/using-k6/scenarios/concepts/open-vs-closed.md"
+    },
+    "k6-soak-testing": {
+      "status": "ok",
+      "sha256": "8461b5e2bb6414f9fe62fb25733a58de0ff12508ef4a1de3c84536be2c4c39b5",
+      "bytes": 4601,
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/testing-guides/test-types/soak-testing.md"
+    },
+    "k6-spike-testing": {
+      "status": "ok",
+      "sha256": "67006a3eadacc6f1536dd40c447f3119d9d5ba6ad03721fc314febe64fb80916",
+      "bytes": 4431,
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/testing-guides/test-types/spike-testing.md"
+    },
+    "k6-stress-testing": {
+      "status": "ok",
+      "sha256": "705a154e718c32daa9760924503e25a6b6be635e3df80f3e767b3bac88aed47f",
+      "bytes": 5142,
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/testing-guides/test-types/stress-testing.md"
+    },
+    "k6-test-types": {
+      "status": "ok",
+      "sha256": "00d6c59d09e758240d3f4475cda7e327981195c3719576096fe639d710f944eb",
+      "bytes": 7065,
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/testing-guides/test-types/_index.md"
+    },
+    "k6-thresholds": {
+      "status": "ok",
+      "sha256": "429a8a5e46cf5fb11610fa552bb37e6a9ad07cffcb9e127fdda26d2889d7add2",
+      "bytes": 17833,
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/using-k6/thresholds.md"
+    },
+    "kubernetes": {
+      "status": "ok",
+      "sha256": "0fd1fc2f5ff1e715c5ef99bfd040803f75ec17807c35c863c2b6890620cc3d10",
+      "bytes": 10086,
+      "url": "https://raw.githubusercontent.com/kubernetes/website/main/content/en/docs/concepts/architecture/_index.md"
+    },
+    "mcp-python": {
+      "status": "ok",
+      "sha256": "51552fa66eee9852eb40f5bad68319df90800e88c399c4f404562c570216c05b",
+      "bytes": 4561,
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md"
+    },
+    "mcp-spec": {
+      "status": "ok",
+      "sha256": "7e98444c73ed5d923a3b02b1247e9cdf678d31a30cc32b1503bdcd906aa984e2",
+      "bytes": 876,
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/README.md"
+    },
+    "mkdocs-material": {
+      "status": "ok",
+      "sha256": "bd8225e2c9fe001b03a83fa2e7db8e154b361968154dc9fca7deb20607ff428a",
+      "bytes": 17357,
+      "url": "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/README.md"
+    },
+    "observability": {
+      "status": "ok",
+      "sha256": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
+      "bytes": 7669,
+      "url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/main/content/en/docs/concepts/observability-primer.md"
+    },
+    "openai-agents": {
+      "status": "ok",
+      "sha256": "a7610fba9f6f95e3fad126f23600f644464bafb1d6a7e020090beff86a4619c9",
+      "bytes": 17801,
+      "url": "https://raw.githubusercontent.com/openai/openai-agents-python/main/docs/agents.md"
+    },
+    "openai-apps": {
+      "status": "ok",
+      "sha256": "9faecc20f32fc628038d1cd3745b08e38a84b358e303a9ea70cd763e99241f98",
+      "bytes": 10659,
+      "url": "https://raw.githubusercontent.com/openai/openai-apps-sdk-examples/main/README.md"
+    },
+    "opentofu": {
+      "status": "ok",
+      "sha256": "60c539cfab196b4b39768781ee871f07b34aadcada2f4bef42393810e3dbfb92",
+      "bytes": 4419,
+      "url": "https://raw.githubusercontent.com/opentofu/opentofu/main/README.md"
+    },
+    "owasp": {
+      "status": "ok",
+      "sha256": "9a360766c67c8facb75a088656dfadad7b390a894acf439c49b2d6cd7b077876",
+      "bytes": 10970,
+      "url": "https://raw.githubusercontent.com/OWASP/ASVS/master/README.md"
+    },
+    "owasp-ai-agent": {
+      "status": "ok",
+      "sha256": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a",
+      "bytes": 26794,
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/AI_Agent_Security_Cheat_Sheet.md"
+    },
+    "owasp-asvs-requirements": {
+      "status": "ok",
+      "sha256": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+      "bytes": 105100,
+      "url": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    "owasp-authentication": {
+      "status": "ok",
+      "sha256": "92f7483b28548679917a329c7b9be1824f33e934d9eed670aaf3e9a1e7b37e83",
+      "bytes": 41242,
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Authentication_Cheat_Sheet.md"
+    },
+    "owasp-authorization": {
+      "status": "ok",
+      "sha256": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+      "bytes": 31021,
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Authorization_Cheat_Sheet.md"
+    },
+    "owasp-csrf": {
+      "status": "ok",
+      "sha256": "8393658c07a3ec99c8195781a376fde895a9a230ec9fe489743bb6821920ab75",
+      "bytes": 53629,
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md"
+    },
+    "owasp-multi-tenant": {
+      "status": "ok",
+      "sha256": "2dfdad6b9701f3023f3a3063435166ddafde144225ba612a5b2ded3f43991cde",
+      "bytes": 45138,
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.md"
+    },
+    "owasp-session": {
+      "status": "ok",
+      "sha256": "3c38656e2be6188be4fc31d8c1fadafaaa6f37accc27e411e3345c235d44c051",
+      "bytes": 56989,
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Session_Management_Cheat_Sheet.md"
+    },
+    "owasp-ssrf": {
+      "status": "ok",
+      "sha256": "3ae2f474449eceadd74cc2c28edfdc405d935166550b2bd67965729b7d707652",
+      "bytes": 29588,
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md"
+    },
+    "owasp-xss": {
+      "status": "ok",
+      "sha256": "199c484557a3d2e6732daec1d2b8d683645163ce1d7dd58f7e5590d93f5a2719",
+      "bytes": 30770,
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md"
+    },
+    "playwright-testing": {
+      "status": "ok",
+      "sha256": "785e6244815ed457ceb0a9109e0ead34a114fd89b09c0689174a5b421eed8512",
+      "bytes": 19880,
+      "url": "https://raw.githubusercontent.com/microsoft/playwright/main/docs/src/best-practices-js.md"
+    },
+    "plugins": {
+      "status": "ok",
+      "sha256": "b3681ebd15797bdee1d638c6520c7ba10a36e676760ea5c251530f53f843c852",
+      "bytes": 1283,
+      "url": "https://raw.githubusercontent.com/openai/plugins/main/README.md"
+    },
+    "postgres-backup": {
+      "status": "ok",
+      "sha256": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26",
+      "bytes": 76905,
+      "url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/backup.sgml"
+    },
+    "postgres-isolation": {
+      "status": "ok",
+      "sha256": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5",
+      "bytes": 84819,
+      "url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/mvcc.sgml"
+    },
+    "semver": {
+      "status": "ok",
+      "sha256": "33ebae1a97845991d0b916f3295a88b499e2ec71a6c1fe84c12429077b19ce08",
+      "bytes": 17474,
+      "url": "https://raw.githubusercontent.com/semver/semver/master/semver.md"
+    },
+    "skills": {
+      "status": "ok",
+      "sha256": "0f6a07580f3c627253e15a58dd0439e135049ec38eb16cf3587f7e50abc6f590",
+      "bytes": 1840,
+      "url": "https://raw.githubusercontent.com/openai/skills/main/README.md"
+    },
+    "wcag": {
+      "status": "ok",
+      "sha256": "26fd85fad76ac1f8d0a08f595099d0435a8b9af5656e1c0f2596eef2519ad37c",
+      "bytes": 65256,
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/index.html"
+    },
+    "wcag-contrast": {
+      "status": "ok",
+      "sha256": "f1d819b44cc5ba64e962ce64889de2ab214af6911b27a119f7d24c43197b2e64",
+      "bytes": 1071,
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/sc/20/contrast-minimum.html"
+    },
+    "wcag-focus-order": {
+      "status": "ok",
+      "sha256": "a21c9b35f8057c8ba2f3b93a76d463181a510677bb276912fd989d4a1adb2d6b",
+      "bytes": 350,
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/sc/20/focus-order.html"
+    },
+    "wcag-focus-visible": {
+      "status": "ok",
+      "sha256": "7c3e6f6309edf9da9b232c78a16c33b074da56840e2b0ab27971f531162f92d6",
+      "bytes": 261,
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/sc/20/focus-visible.html"
+    },
+    "wcag-keyboard": {
+      "status": "ok",
+      "sha256": "8724a66650968536ac46ec2cb486c4cedeade25531d2840f75aedf6826e7aed1",
+      "bytes": 872,
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/sc/20/keyboard.html"
+    },
+    "webmcp": {
+      "status": "ok",
+      "sha256": "184c519af9ed728e77249423ff376c7d99367cd340e80a2d7f3a4a789e3fc7d6",
+      "bytes": 37575,
+      "url": "https://raw.githubusercontent.com/webmachinelearning/webmcp/main/README.md"
+    }
+  },
+  "meaning": "Retrieval and hash comparison only; not semantic approval.",
+  "baseline_changed": false,
+  "rights_scope": "Observation metadata only; no fetched upstream prose is included."
+}

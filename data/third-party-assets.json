@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-10-22",
+  "scope": "Redistributed static website components; original prose remains CC-BY-4.0 in HTML, JSON, and MCP exports. Installed server/build dependency licenses are separately available in their distributions.",
+  "build_dependencies": {
+    "mkdocs-material": "9.7.7",
+    "mkdocs": "1.6.1"
+  },
+  "upstream_build_lock": "https://github.com/squidfunk/mkdocs-material/blob/b3e6dd886a974aa8200759ecfd7db28c598a2894/package-lock.json",
+  "components": [
+    {
+      "id": "mkdocs-material",
+      "version": "9.7.7",
+      "license": "MIT",
+      "license_files": [
+        "LICENSES/mkdocs-material-MIT.txt"
+      ],
+      "upstream": "https://github.com/squidfunk/mkdocs-material/tree/b3e6dd886a974aa8200759ecfd7db28c598a2894",
+      "role": "Theme templates, JavaScript, styles, source maps, and favicon"
+    },
+    {
+      "id": "mkdocs",
+      "version": "1.6.1",
+      "license": "BSD-2-Clause",
+      "license_files": [
+        "LICENSES/mkdocs-BSD-2-Clause.txt"
+      ],
+      "upstream": "https://github.com/mkdocs/mkdocs/tree/1.6.1",
+      "role": "Static site renderer; notice retained with generated output"
+    },
+    {
+      "id": "clipboard",
+      "version": "2.0.11",
+      "license": "MIT",
+      "license_files": [
+        "LICENSES/clipboard-LICENSE.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/clipboard/-/clipboard-2.0.11.tgz",
+      "archive_integrity": "sha512-C+0bbOqkezLIsmWSvlsXS0Q0bmkugu7jcfMIACB+RDEntIzQIkdr148we28AfSloQLRdZlYL/QYyrq05j/3Faw==",
+      "role": "Bundled browser dependency"
+    },
+    {
+      "id": "escape-html",
+      "version": "1.0.3",
+      "license": "MIT",
+      "license_files": [
+        "LICENSES/escape-html-LICENSE.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz",
+      "archive_integrity": "sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=",
+      "role": "Bundled browser dependency"
+    },
+    {
+      "id": "focus-visible",
+      "version": "5.2.1",
+      "license": "W3C-20150513",
+      "license_files": [
+        "LICENSES/focus-visible-NOTICE.txt",
+        "LICENSES/W3C-20150513.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/focus-visible/-/focus-visible-5.2.1.tgz",
+      "archive_integrity": "sha512-8Bx950VD1bWTQJEH/AM6SpEk+SU55aVnp4Ujhuuxy3eMEBCRwBnTBnVXr9YAPvZL3/CNjCa8u4IWfNmEO53whA==",
+      "role": "Bundled browser dependency",
+      "note": "Upstream LICENSE points to W3C 2015 Software and Document License; full terms mirrored from SPDX license-list-data are included."
+    },
+    {
+      "id": "rxjs",
+      "version": "7.8.2",
+      "license": "Apache-2.0",
+      "license_files": [
+        "LICENSES/rxjs-Apache-2.0.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/rxjs/-/rxjs-7.8.2.tgz",
+      "archive_integrity": "sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==",
+      "role": "Bundled browser dependency"
+    },
+    {
+      "id": "tslib",
+      "version": "2.7.0",
+      "license": "0BSD",
+      "license_files": [
+        "LICENSES/tslib-0BSD.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/tslib/-/tslib-2.7.0.tgz",
+      "archive_integrity": "sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==",
+      "role": "Bundled browser dependency"
+    },
+    {
+      "id": "lunr",
+      "version": "2.3.9",
+      "license": "MIT",
+      "license_files": [
+        "LICENSES/lunr-LICENSE.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/lunr/-/lunr-2.3.9.tgz",
+      "archive_integrity": "sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==",
+      "role": "Bundled browser dependency"
+    },
+    {
+      "id": "lunr-languages",
+      "version": "1.14.0",
+      "license": "MPL-1.1",
+      "license_files": [
+        "LICENSES/lunr-languages-MPL-1.1.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/lunr-languages/-/lunr-languages-1.14.0.tgz",
+      "archive_integrity": "sha512-hWUAb2KqM3L7J5bcrngszzISY4BxrXn/Xhbb9TTCJYEGqlR1nG67/M14sp09+PTIRklobrn57IAxcdcO/ZFyNA==",
+      "role": "German/Spanish stemming with preferred-form source under MPL-1.1"
+    },
+    {
+      "id": "material-design-color",
+      "version": "2.3.2",
+      "license": "MIT",
+      "license_files": [
+        "LICENSES/material-design-color-LICENSE.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/material-design-color/-/material-design-color-2.3.2.tgz",
+      "archive_integrity": "sha1-6K+VjYUqh0e/shHkjOEoK9qRiBU=",
+      "role": "Bundled browser dependency"
+    },
+    {
+      "id": "tiny-emitter",
+      "version": "2.1.0",
+      "license": "MIT",
+      "license_files": [
+        "LICENSES/tiny-emitter-LICENSE.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/tiny-emitter/-/tiny-emitter-2.1.0.tgz",
+      "archive_integrity": "sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==",
+      "role": "Bundled browser dependency"
+    },
+    {
+      "id": "good-listener",
+      "version": "1.2.2",
+      "license": "MIT",
+      "license_files": [
+        "LICENSES/zenorocha-MIT.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/good-listener/-/good-listener-1.2.2.tgz",
+      "archive_integrity": "sha1-1TswzfkxPf+33JoNR3CWqm0UXFA=",
+      "role": "Bundled browser dependency",
+      "license_evidence": "https://github.com/zenorocha/good-listener/blob/v1.2.2/readme.md#license",
+      "note": "Package metadata and README declare MIT with copyright Zeno Rocha; the npm tarball does not include a standalone license. The standard MIT terms with that attribution are retained."
+    },
+    {
+      "id": "delegate",
+      "version": "3.2.0",
+      "license": "MIT",
+      "license_files": [
+        "LICENSES/zenorocha-MIT.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/delegate/-/delegate-3.2.0.tgz",
+      "archive_integrity": "sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==",
+      "role": "Bundled browser dependency",
+      "license_evidence": "https://github.com/zenorocha/delegate/blob/v3.2.0/readme.md#license",
+      "note": "Package metadata and README declare MIT with copyright Zeno Rocha; the npm tarball does not include a standalone license. The standard MIT terms with that attribution are retained."
+    },
+    {
+      "id": "select",
+      "version": "1.1.2",
+      "license": "MIT",
+      "license_files": [
+        "LICENSES/zenorocha-MIT.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/select/-/select-1.1.2.tgz",
+      "archive_integrity": "sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=",
+      "role": "Bundled browser dependency",
+      "license_evidence": "https://github.com/zenorocha/select/blob/v1.1.2/readme.md#license",
+      "note": "Package metadata and README declare MIT with copyright Zeno Rocha; the npm tarball does not include a standalone license. The standard MIT terms with that attribution are retained."
+    },
+    {
+      "id": "@mdi/svg",
+      "version": "7.4.47",
+      "license": "Apache-2.0",
+      "license_files": [
+        "LICENSES/pictogrammers-NOTICE.txt",
+        "LICENSES/Apache-2.0.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/@mdi/svg/-/svg-7.4.47.tgz",
+      "archive_integrity": "sha512-WQ2gDll12T9WD34fdRFgQVgO8bag3gavrAgJ0frN4phlwdJARpE6gO1YvLEMJR0KKgoc+/Ea/A0Pp11I00xBvw==",
+      "role": "Inline Pictogrammers / Material Design SVG icons (Apache-2.0)"
+    },
+    {
+      "id": "@fortawesome/fontawesome-free",
+      "version": "7.1.0",
+      "license": "(CC-BY-4.0 AND OFL-1.1 AND MIT)",
+      "license_files": [
+        "LICENSES/fontawesome-LICENSE.txt"
+      ],
+      "upstream_archive": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-7.1.0.tgz",
+      "archive_integrity": "sha512-+WxNld5ZCJHvPQCr/GnzCTVREyStrAJjisUPtUxG5ngDA8TMlPnKp6dddlTpai4+1GNmltAeuk1hJEkBohwZYA==",
+      "role": "Inline Font Awesome SVG icon only (CC-BY-4.0); no font files are used"
+    }
+  ],
+  "vendor_assets": [
+    {
+      "path": "assets/images/favicon.png",
+      "sha256": "023854c43fc4b25b795ee4951c8019e3de0593ffeb6f918b5d1f2a9b47a57cfe",
+      "components": [
+        "mkdocs-material"
+      ]
+    },
+    {
+      "path": "assets/javascripts/bundle.d7400e89.min.js",
+      "sha256": "f288ab99e197c406766aea4581ba6e902d7d0e28c013bdd3cd3fab6cc77fb7c8",
+      "components": [
+        "mkdocs-material",
+        "clipboard",
+        "good-listener",
+        "delegate",
+        "select",
+        "tiny-emitter",
+        "escape-html",
+        "focus-visible",
+        "rxjs",
+        "tslib"
+      ]
+    },
+    {
+      "path": "assets/javascripts/bundle.d7400e89.min.js.map",
+      "sha256": "dcfd5eb85b43e975773ecf102220197ef3f985f45abbbee4a5286e137f8097ba",
+      "components": [
+        "mkdocs-material",
+        "clipboard",
+        "good-listener",
+        "delegate",
+        "select",
+        "tiny-emitter",
+        "escape-html",
+        "focus-visible",
+        "rxjs",
+        "tslib"
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.de.min.js",
+      "sha256": "bcaa7c5c19bc730c05bb91e22ae0e386e1ac4a0580c42b7d94f9b8757aadadab",
+      "components": [
+        "lunr-languages"
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.es.min.js",
+      "sha256": "dec4ec90bd6f478ca3e65636a8e3fedf512b23d01a51a01d7e7822f67ebbaaf8",
+      "components": [
+        "lunr-languages"
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.stemmer.support.min.js",
+      "sha256": "2e7213605846a18014ec750910cb18a8a4c60bb23200103b3fad9ef27b10c705",
+      "components": [
+        "lunr-languages"
+      ]
+    },
+    {
+      "path": "assets/javascripts/workers/search.2c215733.min.js",
+      "sha256": "cfb35333fafd6d2eb148eba21452849fb7fbde32fdfbf986836573f963106188",
+      "components": [
+        "mkdocs-material",
+        "lunr"
+      ]
+    },
+    {
+      "path": "assets/javascripts/workers/search.2c215733.min.js.map",
+      "sha256": "780dccece24891aa19da6285715e2c7d0cd884237a87a3a9be6684823584921f",
+      "components": [
+        "mkdocs-material",
+        "lunr"
+      ]
+    },
+    {
+      "path": "assets/stylesheets/main.ec1eaa64.min.css",
+      "sha256": "ec1eaa640ab3790ea234d5a09da26015eb070222da8185a1e532d99cb022d68d",
+      "components": [
+        "mkdocs-material",
+        "material-design-color",
+        "@mdi/svg"
+      ]
+    },
+    {
+      "path": "assets/stylesheets/main.ec1eaa64.min.css.map",
+      "sha256": "0202466a8ddb51487b325e6df1b6e3a704d7506cf5762617301e5d4bff3a0f54",
+      "components": [
+        "mkdocs-material",
+        "material-design-color",
+        "@mdi/svg"
+      ]
+    },
+    {
+      "path": "assets/stylesheets/palette.ab4e12ef.min.css",
+      "sha256": "ab4e12ef511f9c36de818455892c5c57cc3f98a8c86c36fa609601a88a720da2",
+      "components": [
+        "mkdocs-material"
+      ]
+    },
+    {
+      "path": "assets/stylesheets/palette.ab4e12ef.min.css.map",
+      "sha256": "bcf19de0132bed966de2c46b3b56b69f4bf720b2fe35e8dca22b568a017ee3f9",
+      "components": [
+        "mkdocs-material"
+      ]
+    }
+  ],
+  "prune_unused": [
+    {
+      "directory": "assets/javascripts/lunr",
+      "keep": [
+        "min/lunr.de.min.js",
+        "min/lunr.es.min.js",
+        "min/lunr.stemmer.support.min.js"
+      ]
+    }
+  ],
+  "legal_files": [
+    {
+      "path": "LICENSES/Apache-2.0.txt",
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff"
+    },
+    {
+      "path": "LICENSES/W3C-20150513.txt",
+      "sha256": "38b688e653a972897f6a875c53abbf867b261cbeba7ded0bdf100ae9907a6c19"
+    },
+    {
+      "path": "LICENSES/clipboard-LICENSE.txt",
+      "sha256": "a798e7b5fa604117d52d607e05f1cbac3b2fa5da087837f412a1a3c866b4b748"
+    },
+    {
+      "path": "LICENSES/escape-html-LICENSE.txt",
+      "sha256": "255aa557a1f55224ce522f311629c0bf20854740a67955cefd798fbd1d3d1ded"
+    },
+    {
+      "path": "LICENSES/focus-visible-NOTICE.txt",
+      "sha256": "7aeb3acf108717fd0f68ada2eebeaaec46dcdd239b4c5e7b4b8e6ea8861acfdd"
+    },
+    {
+      "path": "LICENSES/fontawesome-LICENSE.txt",
+      "sha256": "329f24fdba0c57714d7d202d30a74767feac6907685ee24f0abbf1bd47581a07"
+    },
+    {
+      "path": "LICENSES/lunr-LICENSE.txt",
+      "sha256": "ae33f5a0d538cd93de1136a052ffa734b59d6b28e7cfc19e03de1d8b5d9f40ea"
+    },
+    {
+      "path": "LICENSES/lunr-languages-MPL-1.1.txt",
+      "sha256": "1a2c0a1e111a34ce11f56d6b7ee6270efe616dfaa90c5858312d5052e5778d72"
+    },
+    {
+      "path": "LICENSES/material-design-color-LICENSE.txt",
+      "sha256": "9363d160bf41d46d83901a5d24fc3fe2094c2afc17b4a2378914b273977ee2de"
+    },
+    {
+      "path": "LICENSES/mkdocs-BSD-2-Clause.txt",
+      "sha256": "26041bd625fc39411dc4b32748216236931c904adb90c2b3e0ba697090a5d54e"
+    },
+    {
+      "path": "LICENSES/mkdocs-material-MIT.txt",
+      "sha256": "e1150f26b4c0f872627b39fda49ae3bd850304f2f7f3171ae0531c1f8f4dd078"
+    },
+    {
+      "path": "LICENSES/pictogrammers-NOTICE.txt",
+      "sha256": "f3bc8715bad84b26396bb42d2abd11f919cf58163be158eab79ecbaabf84cdf2"
+    },
+    {
+      "path": "LICENSES/rxjs-Apache-2.0.txt",
+      "sha256": "81c407ac717813b0e3795402960e04003c7bba8ba59b621624707028531c9ade"
+    },
+    {
+      "path": "LICENSES/tiny-emitter-LICENSE.txt",
+      "sha256": "aada4c7da6a5be46beadf9d4f40d7dba9e222e57180d46289b2bb9112e65daae"
+    },
+    {
+      "path": "LICENSES/tslib-0BSD.txt",
+      "sha256": "210b19e543130388c68654b7497e967119ce17145f66ab7d85688fbd70f08751"
+    },
+    {
+      "path": "LICENSES/zenorocha-MIT.txt",
+      "sha256": "a798e7b5fa604117d52d607e05f1cbac3b2fa5da087837f412a1a3c866b4b748"
+    }
+  ],
+  "corresponding_sources": [
+    {
+      "path": "third_party/lunr_languages/README.md",
+      "sha256": "d3eae77e4579912afbcdaadc3ed792e2f6b47618b6401a42e2f75991e2d4c664"
+    },
+    {
+      "path": "third_party/lunr_languages/lunr.de.js",
+      "sha256": "69ebe4ca1354e9c6a3bade2f2a267102837aa9c7a5a0d49ca2ddf75fb5a2149e"
+    },
+    {
+      "path": "third_party/lunr_languages/lunr.es.js",
+      "sha256": "64595a693de6028a6ec6f4d63866b8a0269cb67c1adad19e7964ce9eb4d2b3d6"
+    },
+    {
+      "path": "third_party/lunr_languages/lunr.stemmer.support.js",
+      "sha256": "9acfb121aae107828dc54f15cf779ef4a151cdaaade158be705a26e6e96ec618"
+    }
+  ],
+  "upstream_build_commit": "b3e6dd886a974aa8200759ecfd7db28c598a2894"
+}

@@ -1,0 +1,79 @@
+name: Propose guidance update (private repositories only)
+on:
+  schedule:
+    - cron: '43 8 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: agent-maintenance
+  cancel-in-progress: false
+jobs:
+  propose:
+    # Source-fed model logs can contain unapproved prose. No public override exists.
+    if: github.event.repository.private == true && vars.ENABLE_AGENT_MAINTENANCE == 'true' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      base: ${{ github.sha }}
+      proposal: ${{ steps.agent.outputs.final-message }}
+    steps:
+      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@18d369b23da25a81e9458561248e1aafff6a70fa
+        with:
+          version: '0.12.23'
+          python-version: '3.12'
+      - run: uv sync --frozen
+      - run: uv run python -m library.sources check --documents reports/evidence
+      # Last worker step: no scripts, Git operations, or artifact upload follow it.
+      - uses: openai/codex-action@c05cfd74ad95c626cdf05c6685e62becc3bf7813
+        id: agent
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          codex-version: '0.163.0'
+          model: ${{ vars.CODEX_MODEL }}
+          permission-profile: ':read-only'
+          safety-strategy: drop-sudo
+          prompt-file: automation/maintain.md
+          output-schema-file: automation/proposal.schema.json
+  open-pr:
+    needs: propose
+    # Defense in depth: this job only ever opens a PRIVATE proposal.
+    if: github.event.repository.private == true && vars.ENABLE_AGENT_MAINTENANCE == 'true' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a
+        with:
+          ref: ${{ needs.propose.outputs.base }}
+          persist-credentials: false
+      - name: Validate and apply private structured proposal
+        env:
+          BASE_SHA: ${{ needs.propose.outputs.base }}
+          AGENT_PROPOSAL: ${{ needs.propose.outputs.proposal }}
+        run: |
+          python -I library/agent_gate.py "$BASE_SHA" --proposal-env AGENT_PROPOSAL
+          python -m library.validate
+      - uses: peter-evans/create-pull-request@bd09a93810788ce61d2d5fb7d6b221b9b4a4aab7
+        with:
+          branch: automation/guidance-update
+          base: main
+          add-paths: |
+            docs/
+            data/catalog.json
+          title: 'docs: private guidance proposal awaiting rights and content review'
+          commit-message: 'docs: propose private guidance changes for human review'
+          draft: true
+          body: |
+            This private proposal is unapproved model output, not publishable evidence.
+            Inspect the final diff against primary sources, applicability, translation meaning,
+            originality, and reuse rights. Source references do not grant copying permission.
+            The accepted source baseline is unchanged. No automatic approval or merge.
+            Run Validate manually on this branch if PR checks were not triggered.
+            Only a human may transfer reviewed prose to a separate public PR after rights review.
+            No public transfer, public artifact upload, or publication is performed here.

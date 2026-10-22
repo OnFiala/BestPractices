@@ -1,0 +1,11 @@
+{
+  "name": "bestpractices",
+  "version": "0.1.0",
+  "description": "Evidence-based architecture, bounded project delivery, testing, release review and maintenance under human approval.",
+  "author": {
+    "name": "OnFiala"
+  },
+  "repository": "https://github.com/OnFiala/BestPractices",
+  "license": "MIT AND CC-BY-4.0",
+  "skills": "./skills/"
+}

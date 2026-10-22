@@ -1,0 +1,68 @@
+name: Observe primary sources
+on:
+  schedule:
+    - cron: '23 7 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: source-observation
+  cancel-in-progress: false
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ec52d0af729a7c50ced4261d17a07916f43f5b8e
+        with:
+          python-version: '3.12'
+      - run: python -m library.sources check --candidate reports/source-observations.json
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: source-evidence
+          # Public artifacts contain retrieval metadata only, never source bodies.
+          path: |
+            reports/sources.json
+            reports/source-observations.json
+          retention-days: 14
+  propose:
+    needs: observe
+    if: ${{ always() && !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: read
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Download evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download "$GITHUB_RUN_ID" --name source-evidence --dir reports
+      - name: Stage candidate if review is needed
+        run: |
+          if [ -f reports/source-observations.json ]; then
+            cp reports/source-observations.json data/source-observations.json
+          fi
+      - uses: peter-evans/create-pull-request@bd09a93810788ce61d2d5fb7d6b221b9b4a4aab7
+        with:
+          branch: automation/source-observations
+          base: main
+          add-paths: data/source-observations.json
+          title: 'docs: review primary-source observations'
+          commit-message: 'docs: record source observations for human review'
+          draft: true
+          body: |
+            Source availability, hash drift, or review age needs inspection.
+            This does not accept the baseline or update recommendations.
+            Read the run artifact and affected primary sources; review all relevant locales.
+            Run Validate manually on this branch if GITHUB_TOKEN did not trigger PR checks.
+            A human must decide, approve, and merge.

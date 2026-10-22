@@ -1,0 +1,949 @@
+{
+  "schema_version": 1,
+  "canonical_language": "en",
+  "languages": [
+    "en",
+    "cs",
+    "de",
+    "es"
+  ],
+  "guides": [
+    {
+      "id": "start",
+      "path": "index.md",
+      "title": {
+        "en": "Build systems that can last",
+        "cs": "Budujte systémy, které vydrží",
+        "de": "Systeme bauen, die Bestand haben",
+        "es": "Construir sistemas que perduren"
+      },
+      "sources": [
+        "github-rulesets",
+        "observability",
+        "plugins"
+      ],
+      "related": [
+        "foundations",
+        "lifecycle",
+        "architecture",
+        "adoption",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing",
+        "project-delivery",
+        "coverage",
+        "reference-labs",
+        "first-project"
+      ],
+      "area": "start",
+      "revision": 3,
+      "status": "proposed"
+    },
+    {
+      "id": "first-project",
+      "path": "guides/first-project.md",
+      "area": "start",
+      "status": "proposed",
+      "revision": 1,
+      "title": {
+        "en": "Complete your first evidence gate",
+        "cs": "Dokončete první kontrolní bránu s důkazy",
+        "de": "Den ersten Prüfpunkt mit Nachweisen abschließen",
+        "es": "Completar el primer punto de control con evidencias"
+      },
+      "sources": [
+        "github-rulesets",
+        "github-workflows",
+        "owasp-ai-agent",
+        "skills"
+      ],
+      "related": [
+        "adoption",
+        "project-delivery",
+        "testing-strategy",
+        "coverage"
+      ]
+    },
+    {
+      "id": "foundations",
+      "path": "guides/foundations.md",
+      "title": {
+        "en": "Decision principles",
+        "cs": "Principy rozhodování",
+        "de": "Entscheidungsprinzipien",
+        "es": "Principios de decisión"
+      },
+      "sources": [
+        "github-rulesets",
+        "observability",
+        "owasp"
+      ],
+      "related": [
+        "architecture",
+        "scaling",
+        "governance"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "lifecycle",
+      "path": "guides/lifecycle.md",
+      "title": {
+        "en": "The complete project lifecycle",
+        "cs": "Úplný životní cyklus projektu",
+        "de": "Der vollständige Projektlebenszyklus",
+        "es": "El ciclo de vida completo del proyecto"
+      },
+      "sources": [
+        "github-rulesets",
+        "observability",
+        "postgres-backup"
+      ],
+      "related": [
+        "quality",
+        "operations",
+        "agents",
+        "adoption",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "architecture",
+      "path": "guides/architecture.md",
+      "title": {
+        "en": "Choose and connect architectures",
+        "cs": "Volba a propojení architektur",
+        "de": "Architekturen auswählen und verbinden",
+        "es": "Elegir y conectar arquitecturas"
+      },
+      "sources": [
+        "azure-architecture-styles",
+        "azure-cqrs",
+        "azure-event-sourcing",
+        "durable-workflows",
+        "postgres-isolation"
+      ],
+      "related": [
+        "durability",
+        "frontend",
+        "scaling",
+        "hosting",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "durability",
+      "path": "guides/durability.md",
+      "title": {
+        "en": "Durability and distributed work",
+        "cs": "Odolnost a distribuovaná práce",
+        "de": "Beständigkeit und verteilte Arbeit",
+        "es": "Durabilidad y trabajo distribuido"
+      },
+      "sources": [
+        "azure-cqrs",
+        "azure-idempotent-consumer",
+        "azure-outbox",
+        "azure-retry",
+        "durable-workflows",
+        "postgres-backup",
+        "postgres-isolation"
+      ],
+      "related": [
+        "data",
+        "operations",
+        "architecture",
+        "testing-strategy",
+        "performance-testing"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "scaling",
+      "path": "guides/scaling.md",
+      "title": {
+        "en": "Scale from measurements",
+        "cs": "Škálování podle měření",
+        "de": "Anhand von Messungen skalieren",
+        "es": "Escalar con mediciones"
+      },
+      "sources": [
+        "azure-cache-aside",
+        "azure-data-partitioning",
+        "observability",
+        "postgres-isolation"
+      ],
+      "related": [
+        "hosting",
+        "data",
+        "operations",
+        "architecture",
+        "performance-testing"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "hosting",
+      "path": "guides/hosting.md",
+      "title": {
+        "en": "Hosting and exit strategies",
+        "cs": "Hosting a cesta k migraci",
+        "de": "Hosting und Ausstiegswege",
+        "es": "Alojamiento y estrategias de salida"
+      },
+      "sources": [
+        "docker-security",
+        "kubernetes",
+        "opentofu",
+        "postgres-backup",
+        "postgres-isolation"
+      ],
+      "related": [
+        "self-hosting",
+        "scaling",
+        "operations",
+        "performance-testing",
+        "security-testing"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "self-hosting",
+      "path": "guides/self-hosting.md",
+      "title": {
+        "en": "Operate your own servers",
+        "cs": "Provoz vlastních serverů",
+        "de": "Eigene Server betreiben",
+        "es": "Operar servidores propios"
+      },
+      "sources": [
+        "docker-security",
+        "opentofu",
+        "postgres-backup"
+      ],
+      "related": [
+        "security",
+        "hosting",
+        "operations",
+        "performance-testing",
+        "security-testing"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "frontend",
+      "path": "guides/frontend.md",
+      "title": {
+        "en": "Frontend architecture and contracts",
+        "cs": "Architektura frontendu a kontrakty",
+        "de": "Frontendarchitektur und Verträge",
+        "es": "Arquitectura y contratos del frontend"
+      },
+      "sources": [
+        "azure-cqrs",
+        "owasp",
+        "wcag",
+        "wcag-contrast",
+        "wcag-focus-order",
+        "wcag-focus-visible",
+        "wcag-keyboard",
+        "webmcp"
+      ],
+      "related": [
+        "architecture",
+        "quality",
+        "integrations",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "data",
+      "path": "guides/data.md",
+      "title": {
+        "en": "Data, contracts, and migrations",
+        "cs": "Data, kontrakty a migrace",
+        "de": "Daten, Verträge und Migrationen",
+        "es": "Datos, contratos y migraciones"
+      },
+      "sources": [
+        "azure-cqrs",
+        "azure-data-partitioning",
+        "azure-idempotent-consumer",
+        "azure-outbox",
+        "owasp",
+        "postgres-backup",
+        "postgres-isolation"
+      ],
+      "related": [
+        "durability",
+        "security",
+        "scaling",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "quality",
+      "path": "guides/quality.md",
+      "title": {
+        "en": "Quality gates that prove behavior",
+        "cs": "Kontroly kvality dokazující chování",
+        "de": "Qualitätsprüfungen mit Verhaltensnachweis",
+        "es": "Controles de calidad que demuestran comportamiento"
+      },
+      "sources": [
+        "github-workflows",
+        "owasp-ai-agent",
+        "owasp-authorization",
+        "playwright-testing"
+      ],
+      "related": [
+        "github",
+        "agents",
+        "lifecycle",
+        "testing-strategy",
+        "security-testing",
+        "performance-testing"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "testing-strategy",
+      "path": "guides/testing-strategy.md",
+      "title": {
+        "en": "Choose a testing strategy",
+        "cs": "Strategie testování",
+        "de": "Eine Teststrategie auswählen",
+        "es": "Elegir una estrategia de pruebas"
+      },
+      "sources": [
+        "owasp-ai-agent",
+        "owasp-authorization",
+        "owasp-multi-tenant",
+        "playwright-testing",
+        "postgres-isolation"
+      ],
+      "related": [
+        "quality",
+        "performance-testing",
+        "security-testing",
+        "data",
+        "durability"
+      ],
+      "area": "verification",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "performance-testing",
+      "path": "guides/performance-testing.md",
+      "title": {
+        "en": "Performance, load, and stress testing",
+        "cs": "Výkonnostní a zátěžové testování",
+        "de": "Leistungs-, Last- und Stresstests",
+        "es": "Pruebas de rendimiento, carga y estrés"
+      },
+      "sources": [
+        "k6-breakpoint-testing",
+        "k6-open-vs-closed",
+        "k6-soak-testing",
+        "k6-spike-testing",
+        "k6-stress-testing",
+        "k6-test-types",
+        "k6-thresholds"
+      ],
+      "related": [
+        "testing-strategy",
+        "scaling",
+        "operations",
+        "durability",
+        "quality"
+      ],
+      "area": "verification",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "security-testing",
+      "path": "guides/security-testing.md",
+      "title": {
+        "en": "Select and run security tests",
+        "cs": "Bezpečnostní testování",
+        "de": "Sicherheitstests auswählen und durchführen",
+        "es": "Seleccionar y ejecutar pruebas de seguridad"
+      },
+      "sources": [
+        "github-workflows",
+        "owasp-ai-agent",
+        "owasp-asvs-requirements",
+        "owasp-authorization",
+        "owasp-multi-tenant",
+        "owasp-session",
+        "owasp-ssrf"
+      ],
+      "related": [
+        "security",
+        "testing-strategy",
+        "quality",
+        "agents",
+        "performance-testing"
+      ],
+      "area": "verification",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "security",
+      "path": "guides/security.md",
+      "title": {
+        "en": "Security, privacy, and supply chain",
+        "cs": "Bezpečnost, soukromí a dodavatelský řetězec softwaru",
+        "de": "Sicherheit, Datenschutz und Lieferkette",
+        "es": "Seguridad, privacidad y cadena de suministro"
+      },
+      "sources": [
+        "github-workflows",
+        "owasp-ai-agent",
+        "owasp-asvs-requirements",
+        "owasp-authentication",
+        "owasp-authorization",
+        "owasp-csrf",
+        "owasp-multi-tenant",
+        "owasp-session",
+        "owasp-ssrf",
+        "owasp-xss"
+      ],
+      "related": [
+        "agents",
+        "self-hosting",
+        "data",
+        "security-testing",
+        "testing-strategy"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "operations",
+      "path": "guides/operations.md",
+      "title": {
+        "en": "Health, recovery, and cost",
+        "cs": "Zdraví systému, obnova a náklady",
+        "de": "Zustand, Wiederherstellung und Kosten",
+        "es": "Salud, recuperación y coste"
+      },
+      "sources": [
+        "azure-health-endpoints",
+        "observability",
+        "postgres-backup"
+      ],
+      "related": [
+        "durability",
+        "scaling",
+        "lifecycle",
+        "testing-strategy",
+        "performance-testing"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "github",
+      "path": "guides/github.md",
+      "title": {
+        "en": "GitHub, versions, and clean trees",
+        "cs": "GitHub, verze a čisté stromy",
+        "de": "GitHub, Versionen und saubere Arbeitsbäume",
+        "es": "GitHub, versiones y árboles de trabajo limpios"
+      },
+      "sources": [
+        "github-rulesets",
+        "github-workflows",
+        "semver"
+      ],
+      "related": [
+        "quality",
+        "agents",
+        "maintenance"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "agents",
+      "path": "guides/agents.md",
+      "title": {
+        "en": "Human direction, agent execution",
+        "cs": "Člověk určuje směr, agent vykonává",
+        "de": "Menschen steuern, Agenten führen aus",
+        "es": "Dirección humana, ejecución de agentes"
+      },
+      "sources": [
+        "agents-guardrails",
+        "codex-action",
+        "openai-agents",
+        "plugins"
+      ],
+      "related": [
+        "quality",
+        "security",
+        "maintenance",
+        "integrations",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "integrations",
+      "path": "guides/integrations.md",
+      "title": {
+        "en": "Skills, plugins, MCP, and WebMCP",
+        "cs": "Skills, pluginy, MCP a WebMCP",
+        "de": "Skills, Plugins, MCP und WebMCP",
+        "es": "Skills, plugins, MCP y WebMCP"
+      },
+      "sources": [
+        "mcp-python",
+        "openai-apps",
+        "plugins",
+        "skills",
+        "webmcp"
+      ],
+      "related": [
+        "agents",
+        "frontend",
+        "security",
+        "maintenance",
+        "testing-strategy",
+        "security-testing"
+      ],
+      "area": "engineering",
+      "revision": 3,
+      "status": "proposed"
+    },
+    {
+      "id": "maintenance",
+      "path": "guides/maintenance.md",
+      "title": {
+        "en": "Evidence and automated maintenance",
+        "cs": "Důkazy a automatická údržba",
+        "de": "Belege und automatische Pflege",
+        "es": "Evidencia y mantenimiento automático"
+      },
+      "sources": [
+        "codex-action",
+        "github-workflows",
+        "plugins"
+      ],
+      "related": [
+        "github",
+        "agents",
+        "governance"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "adoption",
+      "path": "guides/adoption.md",
+      "title": {
+        "en": "Adopt the library in a project",
+        "cs": "Použití knihovny v projektu",
+        "de": "Die Bibliothek im Projekt einsetzen",
+        "es": "Adoptar la biblioteca en un proyecto"
+      },
+      "sources": [
+        "github-rulesets",
+        "observability",
+        "owasp-authorization",
+        "plugins"
+      ],
+      "related": [
+        "foundations",
+        "lifecycle",
+        "agents",
+        "governance",
+        "testing-strategy",
+        "examples",
+        "project-delivery",
+        "coverage",
+        "reference-labs",
+        "first-project"
+      ],
+      "area": "start",
+      "revision": 3,
+      "status": "proposed"
+    },
+    {
+      "id": "governance",
+      "path": "guides/governance.md",
+      "title": {
+        "en": "Governance and unanswered decisions",
+        "cs": "Správa a nezodpovězená rozhodnutí",
+        "de": "Verantwortung und offene Entscheidungen",
+        "es": "Gobierno y decisiones abiertas"
+      },
+      "sources": [
+        "github-rulesets",
+        "plugins",
+        "semver"
+      ],
+      "related": [
+        "maintenance",
+        "adoption",
+        "github"
+      ],
+      "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "examples",
+      "path": "reference/examples.md",
+      "title": {
+        "en": "Reference project paths",
+        "cs": "Referenční cesty projektů",
+        "de": "Referenzpfade für Projekte",
+        "es": "Rutas de referencia para proyectos"
+      },
+      "sources": [
+        "azure-architecture-styles",
+        "azure-idempotent-consumer",
+        "azure-retry",
+        "openai-agents",
+        "owasp",
+        "postgres-backup",
+        "wcag"
+      ],
+      "related": [
+        "adoption",
+        "architecture",
+        "agents",
+        "frontend",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing"
+      ],
+      "area": "reference",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "tools",
+      "path": "reference/tools.md",
+      "title": {
+        "en": "Sources and tools",
+        "cs": "Zdroje a nástroje",
+        "de": "Quellen und Werkzeuge",
+        "es": "Fuentes y herramientas"
+      },
+      "sources": [
+        "agents-guardrails",
+        "codex",
+        "docker-security",
+        "durable-workflows",
+        "github-rulesets",
+        "github-workflows",
+        "k6-test-types",
+        "k6-thresholds",
+        "kubernetes",
+        "mcp-python",
+        "mkdocs-material",
+        "observability",
+        "openai-agents",
+        "opentofu",
+        "playwright-testing",
+        "plugins",
+        "postgres-backup",
+        "postgres-isolation",
+        "webmcp"
+      ],
+      "related": [
+        "integrations",
+        "hosting",
+        "maintenance",
+        "testing-strategy",
+        "performance-testing"
+      ],
+      "area": "reference",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "playbook-public-website",
+      "path": "guides/playbook-public-website.md",
+      "title": {
+        "en": "Deliver a public website",
+        "cs": "Dodání veřejného webu",
+        "de": "Eine öffentliche Website bereitstellen",
+        "es": "Entregar un sitio web público"
+      },
+      "sources": [
+        "github-workflows",
+        "owasp-xss",
+        "playwright-testing",
+        "wcag-keyboard",
+        "observability"
+      ],
+      "related": [
+        "frontend",
+        "hosting",
+        "github",
+        "testing-strategy"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "playbook-saas",
+      "path": "guides/playbook-saas.md",
+      "title": {
+        "en": "Deliver a tenant-aware SaaS",
+        "cs": "Dodání SaaS s oddělenými tenanty",
+        "de": "Ein mandantenfähiges SaaS bereitstellen",
+        "es": "Entregar un SaaS con aislamiento entre inquilinos"
+      },
+      "sources": [
+        "owasp-multi-tenant",
+        "owasp-authorization",
+        "postgres-isolation",
+        "postgres-backup",
+        "azure-outbox",
+        "azure-idempotent-consumer"
+      ],
+      "related": [
+        "data",
+        "durability",
+        "security-testing",
+        "scaling"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "playbook-internal-tool",
+      "path": "guides/playbook-internal-tool.md",
+      "title": {
+        "en": "Deliver an internal operations tool",
+        "cs": "Dodání interního provozního nástroje",
+        "de": "Ein internes Betriebswerkzeug bereitstellen",
+        "es": "Entregar una herramienta interna de operaciones"
+      },
+      "sources": [
+        "owasp-authorization",
+        "owasp-session",
+        "azure-idempotent-consumer",
+        "observability"
+      ],
+      "related": [
+        "security",
+        "operations",
+        "testing-strategy",
+        "durability"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "playbook-ai-application",
+      "path": "guides/playbook-ai-application.md",
+      "title": {
+        "en": "Deliver an AI application",
+        "cs": "Dodání aplikace s AI",
+        "de": "Eine KI-Anwendung bereitstellen",
+        "es": "Entregar una aplicación de IA"
+      },
+      "sources": [
+        "owasp-ai-agent",
+        "owasp-authorization",
+        "owasp-xss",
+        "observability"
+      ],
+      "related": [
+        "agents",
+        "security",
+        "quality",
+        "testing-strategy"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "playbook-agent-automation",
+      "path": "guides/playbook-agent-automation.md",
+      "title": {
+        "en": "Deliver bounded agent automation",
+        "cs": "Dodání ohraničené agentní automatizace",
+        "de": "Begrenzte Agentenautomatisierung bereitstellen",
+        "es": "Entregar automatización de agentes con límites"
+      },
+      "sources": [
+        "owasp-ai-agent",
+        "azure-idempotent-consumer",
+        "observability"
+      ],
+      "related": [
+        "agents",
+        "durability",
+        "integrations",
+        "security-testing"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "playbook-mobile-backend",
+      "path": "guides/playbook-mobile-backend.md",
+      "title": {
+        "en": "Deliver a backend for mobile clients",
+        "cs": "Dodání backendu pro mobilní klienty",
+        "de": "Ein Backend für mobile Clients bereitstellen",
+        "es": "Entregar un backend para clientes móviles"
+      },
+      "sources": [
+        "owasp-authorization",
+        "owasp-session",
+        "postgres-isolation",
+        "postgres-backup",
+        "semver"
+      ],
+      "related": [
+        "frontend",
+        "data",
+        "security",
+        "testing-strategy"
+      ],
+      "area": "project-playbooks",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "project-delivery",
+      "path": "guides/project-delivery.md",
+      "area": "agent-delivery",
+      "status": "proposed",
+      "revision": 2,
+      "title": {
+        "en": "Run a project through the agent delivery system",
+        "cs": "Proveďte projekt systémem agentního dodávání",
+        "de": "Ein Projekt durch das agentengestützte Auslieferungssystem führen",
+        "es": "Ejecutar un proyecto mediante el sistema de entrega con agentes"
+      },
+      "sources": [
+        "github-rulesets",
+        "github-workflows",
+        "owasp-ai-agent",
+        "skills"
+      ],
+      "related": [
+        "testing-strategy",
+        "agents",
+        "lifecycle",
+        "first-project"
+      ]
+    },
+    {
+      "id": "coverage",
+      "path": "guides/coverage.md",
+      "area": "agent-delivery",
+      "status": "proposed",
+      "revision": 1,
+      "title": {
+        "en": "Read coverage and verification honestly",
+        "cs": "Posuzujte pokrytí a ověření poctivě",
+        "de": "Abdeckung und Verifikation ehrlich beurteilen",
+        "es": "Interpretar con honestidad la cobertura y la verificación"
+      },
+      "sources": [
+        "github-workflows",
+        "owasp-asvs-requirements"
+      ],
+      "related": [
+        "quality",
+        "maintenance"
+      ]
+    },
+    {
+      "id": "reference-labs",
+      "path": "guides/reference-labs.md",
+      "area": "agent-delivery",
+      "status": "proposed",
+      "revision": 1,
+      "title": {
+        "en": "Run and interpret the reference projects",
+        "cs": "Spouštění a interpretace referenčních projektů",
+        "de": "Referenzprojekte ausführen und auswerten",
+        "es": "Ejecutar e interpretar los proyectos de referencia"
+      },
+      "sources": [
+        "azure-idempotent-consumer",
+        "azure-outbox",
+        "owasp-authorization",
+        "owasp-ai-agent",
+        "playwright-testing",
+        "k6-open-vs-closed"
+      ],
+      "related": [
+        "durability",
+        "security-testing",
+        "performance-testing"
+      ]
+    }
+  ],
+  "agent_system": {
+    "authorship": "agent-assisted",
+    "human_review_required": true,
+    "autonomous_merge": false,
+    "content_license": "CC-BY-4.0"
+  }
+}

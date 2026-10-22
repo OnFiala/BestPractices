@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "base_commit", "human_review_required", "rights_status", "summary", "source_ids", "files"],
+  "properties": {
+    "schema_version": {"type": "integer", "enum": [1]},
+    "base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "human_review_required": {"type": "boolean", "enum": [true]},
+    "rights_status": {"type": "string", "enum": ["unreviewed"]},
+    "summary": {"type": "string", "maxLength": 1000},
+    "source_ids": {"type": "array", "maxItems": 64, "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}},
+    "files": {
+      "type": "array",
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "content"],
+        "properties": {
+          "path": {"type": "string", "maxLength": 120},
+          "content": {"type": "string", "minLength": 1, "maxLength": 60000}
+        }
+      }
+    }
+  }
+}

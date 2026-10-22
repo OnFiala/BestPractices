@@ -1,0 +1,573 @@
+{
+  "method": "NFKC casefold Unicode word/number tokens; ten consecutive exact tokens",
+  "exclusions": "guide frontmatter and final primary-evidence section; URLs and HTML tags",
+  "limits": "Finite literal screen, not close-paraphrase, translation, unseen-source or legal clearance.",
+  "sources": [
+    {
+      "id": "agents-guardrails",
+      "sha256": "ccdfa6eb4ca29ef5f265a2bad4d3d0b7786f1a3970f58cfcf07a641b3bb56667",
+      "bytes": 16786,
+      "tokens": 2309
+    },
+    {
+      "id": "azure-architecture-styles",
+      "sha256": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a",
+      "bytes": 21894,
+      "tokens": 2961
+    },
+    {
+      "id": "azure-cache-aside",
+      "sha256": "eb19852e710d924d98a39f386928ef1b0d763391f0e9e22a353ce818dd57881f",
+      "bytes": 14318,
+      "tokens": 2150
+    },
+    {
+      "id": "azure-cqrs",
+      "sha256": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b",
+      "bytes": 20477,
+      "tokens": 2881
+    },
+    {
+      "id": "azure-data-partitioning",
+      "sha256": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77",
+      "bytes": 12763,
+      "tokens": 1926
+    },
+    {
+      "id": "azure-event-sourcing",
+      "sha256": "3b43bdcdf4b17f9da1adbfd4f77fd767f1262a8baeb3aba232bbed293e2d2a49",
+      "bytes": 30015,
+      "tokens": 4628
+    },
+    {
+      "id": "azure-health-endpoints",
+      "sha256": "2ffed47249e9c6e6dd5a2d2b36c73fcb2adcbd217377e60f3466c98cf9f9d08f",
+      "bytes": 22037,
+      "tokens": 3127
+    },
+    {
+      "id": "azure-idempotent-consumer",
+      "sha256": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+      "bytes": 19383,
+      "tokens": 2860
+    },
+    {
+      "id": "azure-outbox",
+      "sha256": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
+      "bytes": 33262,
+      "tokens": 3832
+    },
+    {
+      "id": "azure-retry",
+      "sha256": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab",
+      "bytes": 11945,
+      "tokens": 1836
+    },
+    {
+      "id": "codex",
+      "sha256": "ba4e1f69ff48386e72a9c5e1edaf76aad64a475c2d51af79ccba6d1128261ba7",
+      "bytes": 3334,
+      "tokens": 394
+    },
+    {
+      "id": "codex-action",
+      "sha256": "00083d3f3b7ab6b887e1efa198c79a3791e53c5aae534588c9eba6c7b056b741",
+      "bytes": 17938,
+      "tokens": 2214
+    },
+    {
+      "id": "docker-security",
+      "sha256": "bf9c126d4fc7bad25d75d1e1bce851d75738cdd8bc41561a39a9a8687ed1c9e0",
+      "bytes": 13998,
+      "tokens": 2138
+    },
+    {
+      "id": "durable-workflows",
+      "sha256": "269838d3de5da90d4c2c0b45bf7fc745b384a5a05c0932582e923638e8994189",
+      "bytes": 3888,
+      "tokens": 315
+    },
+    {
+      "id": "github-rulesets",
+      "sha256": "ad074c0507552b396bd5d506a7e80875c5664dd7e6f0e496f5a1dbc1bd039810",
+      "bytes": 6171,
+      "tokens": 896
+    },
+    {
+      "id": "github-workflows",
+      "sha256": "0b2d692984fae55eff6334aabb52ca3c97bd38757cca1e2cc3437460cbc4b1d5",
+      "bytes": 37281,
+      "tokens": 5332
+    },
+    {
+      "id": "k6-breakpoint-testing",
+      "sha256": "37ae4ad38a793111dd96fb9eb672efe603b95f5262ae865f4de8695acae68974",
+      "bytes": 6043,
+      "tokens": 904
+    },
+    {
+      "id": "k6-open-vs-closed",
+      "sha256": "374d2ee2334444ff5a666e26f90dc79e7bebfac0304437c92a9d969dc1c8630c",
+      "bytes": 4166,
+      "tokens": 607
+    },
+    {
+      "id": "k6-soak-testing",
+      "sha256": "8461b5e2bb6414f9fe62fb25733a58de0ff12508ef4a1de3c84536be2c4c39b5",
+      "bytes": 4601,
+      "tokens": 684
+    },
+    {
+      "id": "k6-spike-testing",
+      "sha256": "67006a3eadacc6f1536dd40c447f3119d9d5ba6ad03721fc314febe64fb80916",
+      "bytes": 4431,
+      "tokens": 702
+    },
+    {
+      "id": "k6-stress-testing",
+      "sha256": "705a154e718c32daa9760924503e25a6b6be635e3df80f3e767b3bac88aed47f",
+      "bytes": 5142,
+      "tokens": 781
+    },
+    {
+      "id": "k6-test-types",
+      "sha256": "00d6c59d09e758240d3f4475cda7e327981195c3719576096fe639d710f944eb",
+      "bytes": 7065,
+      "tokens": 826
+    },
+    {
+      "id": "k6-thresholds",
+      "sha256": "429a8a5e46cf5fb11610fa552bb37e6a9ad07cffcb9e127fdda26d2889d7add2",
+      "bytes": 17833,
+      "tokens": 1400
+    },
+    {
+      "id": "kubernetes",
+      "sha256": "0fd1fc2f5ff1e715c5ef99bfd040803f75ec17807c35c863c2b6890620cc3d10",
+      "bytes": 10086,
+      "tokens": 1246
+    },
+    {
+      "id": "mcp-python",
+      "sha256": "51552fa66eee9852eb40f5bad68319df90800e88c399c4f404562c570216c05b",
+      "bytes": 4561,
+      "tokens": 495
+    },
+    {
+      "id": "mcp-spec",
+      "sha256": "7e98444c73ed5d923a3b02b1247e9cdf678d31a30cc32b1503bdcd906aa984e2",
+      "bytes": 876,
+      "tokens": 107
+    },
+    {
+      "id": "mkdocs-material",
+      "sha256": "bd8225e2c9fe001b03a83fa2e7db8e154b361968154dc9fca7deb20607ff428a",
+      "bytes": 17357,
+      "tokens": 583
+    },
+    {
+      "id": "observability",
+      "sha256": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
+      "bytes": 7669,
+      "tokens": 1015
+    },
+    {
+      "id": "openai-agents",
+      "sha256": "a7610fba9f6f95e3fad126f23600f644464bafb1d6a7e020090beff86a4619c9",
+      "bytes": 17801,
+      "tokens": 2469
+    },
+    {
+      "id": "openai-apps",
+      "sha256": "9faecc20f32fc628038d1cd3745b08e38a84b358e303a9ea70cd763e99241f98",
+      "bytes": 10659,
+      "tokens": 1555
+    },
+    {
+      "id": "opentofu",
+      "sha256": "60c539cfab196b4b39768781ee871f07b34aadcada2f4bef42393810e3dbfb92",
+      "bytes": 4419,
+      "tokens": 432
+    },
+    {
+      "id": "owasp",
+      "sha256": "9a360766c67c8facb75a088656dfadad7b390a894acf439c49b2d6cd7b077876",
+      "bytes": 10970,
+      "tokens": 1066
+    },
+    {
+      "id": "owasp-ai-agent",
+      "sha256": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a",
+      "bytes": 26794,
+      "tokens": 3119
+    },
+    {
+      "id": "owasp-asvs-requirements",
+      "sha256": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+      "bytes": 105100,
+      "tokens": 16878
+    },
+    {
+      "id": "owasp-authentication",
+      "sha256": "92f7483b28548679917a329c7b9be1824f33e934d9eed670aaf3e9a1e7b37e83",
+      "bytes": 41242,
+      "tokens": 5701
+    },
+    {
+      "id": "owasp-authorization",
+      "sha256": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+      "bytes": 31021,
+      "tokens": 4221
+    },
+    {
+      "id": "owasp-csrf",
+      "sha256": "6efa25bf9a69aefdb58f41d8c9cdcc1d0f1e84cc82570f11b77a4ed46eab2ded",
+      "bytes": 57348,
+      "tokens": 5480
+    },
+    {
+      "id": "owasp-multi-tenant",
+      "sha256": "f1286c7bada7b7361922405157aaae8c86fb5198347a85fcdf4bfb207904790e",
+      "bytes": 50400,
+      "tokens": 6101
+    },
+    {
+      "id": "owasp-session",
+      "sha256": "3c38656e2be6188be4fc31d8c1fadafaaa6f37accc27e411e3345c235d44c051",
+      "bytes": 56989,
+      "tokens": 8275
+    },
+    {
+      "id": "owasp-ssrf",
+      "sha256": "3ae2f474449eceadd74cc2c28edfdc405d935166550b2bd67965729b7d707652",
+      "bytes": 29588,
+      "tokens": 3968
+    },
+    {
+      "id": "owasp-xss",
+      "sha256": "199c484557a3d2e6732daec1d2b8d683645163ce1d7dd58f7e5590d93f5a2719",
+      "bytes": 30770,
+      "tokens": 4360
+    },
+    {
+      "id": "playwright-testing",
+      "sha256": "785e6244815ed457ceb0a9109e0ead34a114fd89b09c0689174a5b421eed8512",
+      "bytes": 19880,
+      "tokens": 2514
+    },
+    {
+      "id": "plugins",
+      "sha256": "b3681ebd15797bdee1d638c6520c7ba10a36e676760ea5c251530f53f843c852",
+      "bytes": 1283,
+      "tokens": 177
+    },
+    {
+      "id": "postgres-backup",
+      "sha256": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26",
+      "bytes": 76905,
+      "tokens": 9560
+    },
+    {
+      "id": "postgres-isolation",
+      "sha256": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5",
+      "bytes": 84819,
+      "tokens": 8851
+    },
+    {
+      "id": "semver",
+      "sha256": "33ebae1a97845991d0b916f3295a88b499e2ec71a6c1fe84c12429077b19ce08",
+      "bytes": 17474,
+      "tokens": 2419
+    },
+    {
+      "id": "skills",
+      "sha256": "0f6a07580f3c627253e15a58dd0439e135049ec38eb16cf3587f7e50abc6f590",
+      "bytes": 1840,
+      "tokens": 226
+    },
+    {
+      "id": "wcag",
+      "sha256": "26fd85fad76ac1f8d0a08f595099d0435a8b9af5656e1c0f2596eef2519ad37c",
+      "bytes": 65256,
+      "tokens": 4750
+    },
+    {
+      "id": "wcag-contrast",
+      "sha256": "f1d819b44cc5ba64e962ce64889de2ab214af6911b27a119f7d24c43197b2e64",
+      "bytes": 1071,
+      "tokens": 103
+    },
+    {
+      "id": "wcag-focus-order",
+      "sha256": "a21c9b35f8057c8ba2f3b93a76d463181a510677bb276912fd989d4a1adb2d6b",
+      "bytes": 350,
+      "tokens": 31
+    },
+    {
+      "id": "wcag-focus-visible",
+      "sha256": "7c3e6f6309edf9da9b232c78a16c33b074da56840e2b0ab27971f531162f92d6",
+      "bytes": 261,
+      "tokens": 20
+    },
+    {
+      "id": "wcag-keyboard",
+      "sha256": "8724a66650968536ac46ec2cb486c4cedeade25531d2840f75aedf6826e7aed1",
+      "bytes": 872,
+      "tokens": 97
+    },
+    {
+      "id": "webmcp",
+      "sha256": "184c519af9ed728e77249423ff376c7d99367cd340e80a2d7f3a4a789e3fc7d6",
+      "bytes": 37575,
+      "tokens": 4941
+    }
+  ],
+  "pages": [
+    {
+      "path": "docs/cs/guides/playbook-agent-automation.md",
+      "sha256": "fafee502160b33980a0f11f0b2f49c7c7d902165e9c8c16c9ddd3bf04cca75ba",
+      "tokens": 798
+    },
+    {
+      "path": "docs/cs/guides/playbook-ai-application.md",
+      "sha256": "0972aec2f1f13178449b49ae9a58c0d803a7bf1b426569cd79a6dbe566d8b0b2",
+      "tokens": 780
+    },
+    {
+      "path": "docs/cs/guides/playbook-internal-tool.md",
+      "sha256": "95db2563a4fa3aa72f4f6e53b448803a6d54020eb28bc86f12dd98a67893a168",
+      "tokens": 772
+    },
+    {
+      "path": "docs/cs/guides/playbook-mobile-backend.md",
+      "sha256": "5243f7a10253cdb67fc999ff88786085f8fd28553471d7d7214a6126647d53e2",
+      "tokens": 841
+    },
+    {
+      "path": "docs/cs/guides/playbook-public-website.md",
+      "sha256": "a9e62f0bd18774f134a0e344417f2db6dbae95339be29d46fb34be51244d39f6",
+      "tokens": 745
+    },
+    {
+      "path": "docs/cs/guides/playbook-saas.md",
+      "sha256": "ae67f46c178678e0b2f094c29f47e04c882d6d79c09e3605a00ef0d96ed62172",
+      "tokens": 778
+    },
+    {
+      "path": "docs/de/guides/playbook-agent-automation.md",
+      "sha256": "99a7ad3a8093bfe1958dc0b5cdae1c1dee087f3019f54a53d7f419b1d8a98eed",
+      "tokens": 913
+    },
+    {
+      "path": "docs/de/guides/playbook-ai-application.md",
+      "sha256": "db26dfcdc488997a6581c87ce92eb553bcdd3860beaa67d4336c8926d58bfda9",
+      "tokens": 855
+    },
+    {
+      "path": "docs/de/guides/playbook-internal-tool.md",
+      "sha256": "08b5a11d3f809fed465baf19550f16418229f3cced8b16861d9ab4d201f431a2",
+      "tokens": 889
+    },
+    {
+      "path": "docs/de/guides/playbook-mobile-backend.md",
+      "sha256": "24e75c65d70d6aa40bf7e2389b7608c511568a8a85e4f7be8c029c8171a322b2",
+      "tokens": 925
+    },
+    {
+      "path": "docs/de/guides/playbook-public-website.md",
+      "sha256": "30678f401d34e309b047714bf2fb06b4153b08b9bb4632b2634cb389d1d31a16",
+      "tokens": 875
+    },
+    {
+      "path": "docs/de/guides/playbook-saas.md",
+      "sha256": "2aed76f123d0db09a83673574f80c4e774843143e86a8bec9a079df19730d607",
+      "tokens": 873
+    },
+    {
+      "path": "docs/en/guides/playbook-agent-automation.md",
+      "sha256": "8efa3a8c2f13295bc764e65608980b023ba44ee8758e5cb3e18c18e8c9b31f84",
+      "tokens": 860
+    },
+    {
+      "path": "docs/en/guides/playbook-ai-application.md",
+      "sha256": "c4eefbbfaa98cf5e7c46edb68b8b9a7c072e8baa2b8043c43c723fed6d9bffef",
+      "tokens": 837
+    },
+    {
+      "path": "docs/en/guides/playbook-internal-tool.md",
+      "sha256": "a74c211d6e8ffda1b4ee55a9639a1b826e5b881ae8bfeeb1682003d1dab415e0",
+      "tokens": 835
+    },
+    {
+      "path": "docs/en/guides/playbook-mobile-backend.md",
+      "sha256": "9e9c8bedd674d69639642cc1d99e255e8aa7ca5a788b4ede44b5983b659cd0bf",
+      "tokens": 880
+    },
+    {
+      "path": "docs/en/guides/playbook-public-website.md",
+      "sha256": "14859902f4a97aa7e676dfb93618d0a6edf7082fcc5d71b88f86646a675843cb",
+      "tokens": 803
+    },
+    {
+      "path": "docs/en/guides/playbook-saas.md",
+      "sha256": "cc7a2ee6219bf150e93898e36b81788ccf3dce82d0d81618cb7d414b125db373",
+      "tokens": 806
+    },
+    {
+      "path": "docs/es/guides/playbook-agent-automation.md",
+      "sha256": "56a29a3d3a53e16cf05139786497f8ff43760d82513a36c2cac5ceca23db89e2",
+      "tokens": 1134
+    },
+    {
+      "path": "docs/es/guides/playbook-ai-application.md",
+      "sha256": "cddd63e3449531d27c4900167249069d4103343a24d7533cedb5806c2a175097",
+      "tokens": 1102
+    },
+    {
+      "path": "docs/es/guides/playbook-internal-tool.md",
+      "sha256": "5a350bdc48dd2778d8e74dfeff2159d69c3d15d52c4d05c3270566b0e27f056f",
+      "tokens": 1101
+    },
+    {
+      "path": "docs/es/guides/playbook-mobile-backend.md",
+      "sha256": "0f346b8ef21c48518bb2fa2fbf116e39a6ebadb39d2c6e5afde26713268d467b",
+      "tokens": 1160
+    },
+    {
+      "path": "docs/es/guides/playbook-public-website.md",
+      "sha256": "784ad4ab9f8dfd44761ca7b30078a45536d67058d88755fadf91fbd2bc3af7e7",
+      "tokens": 1084
+    },
+    {
+      "path": "docs/es/guides/playbook-saas.md",
+      "sha256": "0609e49eeb672605888cdc29593a0d84d45e711e988ca3d0a3c73b12bcbeadd3",
+      "tokens": 1126
+    },
+    {
+      "path": "docs/cs/guides/project-delivery.md",
+      "sha256": "ac4c531ada603cc93dd463ae692e59dd9bfd3a5cf5787bb59ba0a5a2d0c9ded6",
+      "tokens": 789
+    },
+    {
+      "path": "docs/de/guides/project-delivery.md",
+      "sha256": "8b1d2378e39636bbdc97a230aea1e4a38387d0a5fef34aa9abbe1fda195f4c3a",
+      "tokens": 881
+    },
+    {
+      "path": "docs/en/guides/project-delivery.md",
+      "sha256": "863df2eb218288941dc92e85a15a19221e0b27ce17a7ccf3247e2228cfadcff9",
+      "tokens": 858
+    },
+    {
+      "path": "docs/es/guides/project-delivery.md",
+      "sha256": "3ba515f0a8350320788557176f696d708fb452dec5ecc749d05886bfb385bd6f",
+      "tokens": 1055
+    },
+    {
+      "path": "docs/cs/guides/coverage.md",
+      "sha256": "c82aa1e0db99a0280abac084382600f73905a7c3e6221dfd6f39c573df89ae4d",
+      "tokens": 478
+    },
+    {
+      "path": "docs/de/guides/coverage.md",
+      "sha256": "7d857541a1c3297c5e980481a3e0c48ddab0e700ce19148318cb43be2b8eac75",
+      "tokens": 521
+    },
+    {
+      "path": "docs/en/guides/coverage.md",
+      "sha256": "1b66c60a7a10c001a96fd6d65e900a35cbd4af294ddc605719913c17e18a18e8",
+      "tokens": 528
+    },
+    {
+      "path": "docs/es/guides/coverage.md",
+      "sha256": "48c7acb74c10affe9ac4ad425131205a6c511ae77b45314ab0183fada4ddb318",
+      "tokens": 652
+    },
+    {
+      "path": "docs/cs/guides/reference-labs.md",
+      "sha256": "694ab98a864c5a94388a8b7a90b6842a8eac9b173ee2ca3be25364953e58d737",
+      "tokens": 741
+    },
+    {
+      "path": "docs/de/guides/reference-labs.md",
+      "sha256": "1406f7bce8d27c307533e36bbf571c8a4fb1655eb7aed40e29be148844d812f1",
+      "tokens": 764
+    },
+    {
+      "path": "docs/en/guides/reference-labs.md",
+      "sha256": "4621582228f66a8a62cc261b2e8362b8031224698050a3ccddd05276fdfab224",
+      "tokens": 752
+    },
+    {
+      "path": "docs/es/guides/reference-labs.md",
+      "sha256": "4e9ef73cf797403db1fd39b07c2252f9670cc18925ab40a665e8ff9c457e3cb4",
+      "tokens": 947
+    },
+    {
+      "path": "docs/cs/guides/integrations.md",
+      "sha256": "0ee11ec1448ab4c0bef1cde10374f372f3b401f7bcdfdb8b3a70c65281c09375",
+      "tokens": 524
+    },
+    {
+      "path": "docs/de/guides/integrations.md",
+      "sha256": "015fba50867177eaf57307960d553a2db198df385438deae72a9ecbe8237a604",
+      "tokens": 494
+    },
+    {
+      "path": "docs/en/guides/integrations.md",
+      "sha256": "d2579a76b7b08c1ee415b7bd1f618da3d9890c7c73ba69c8b5c5c0cc29ebdfd7",
+      "tokens": 510
+    },
+    {
+      "path": "docs/es/guides/integrations.md",
+      "sha256": "942a06484ba9939429dbd791120a169d9342a5453dc7f64fa95d38e74229b201",
+      "tokens": 645
+    },
+    {
+      "path": "examples/agent_workflow/README.md",
+      "sha256": "1eebee2198b63fa3e9127041d6ac51486cd0303b3b72746ccc4b616fc0cdb797",
+      "tokens": 1360
+    },
+    {
+      "path": "examples/durable_service/README.md",
+      "sha256": "80b7812efc25e7a103ee8b62489ac2a8b4df6e0487f58e4ee939ab093e79b272",
+      "tokens": 1737
+    },
+    {
+      "path": "examples/frontend/README.md",
+      "sha256": "d8cce3c9281bb38bdfc2a62edaa01fb4a4fd5af17b0a7eb501147be0e9cf0a8e",
+      "tokens": 1506
+    },
+    {
+      "path": "README.md",
+      "sha256": "378c59c5ba93ecde5296e65d55e4a581943974a423799da9a31e330e843bb111",
+      "tokens": 1639
+    },
+    {
+      "path": "AGENT_SYSTEM.md",
+      "sha256": "615686b6e7a6de6de2d5a9f8ee4f54c97ad6ed07e85391eb407b7e45305a29a2",
+      "tokens": 1095
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "1ba324d5717e3a5331b1ac9d859ae894cc5bfa995f25cdbf66c3c91b4219f703",
+      "tokens": 948
+    },
+    {
+      "path": "decisions/0002-operational-delivery.md",
+      "sha256": "984bfecc40807f3c756a0b80a589c654d53c2693d4b25fc4d677aac01cfbf789",
+      "tokens": 876
+    },
+    {
+      "path": "plugins/bestpractices/skills/project-delivery/SKILL.md",
+      "sha256": "0bb554f24b16500d2e42be8e2fdd1d474183d2d1bca20f6f4b1fe9609ac932d0",
+      "tokens": 786
+    },
+    {
+      "path": "plugins/bestpractices/skills/release-review/SKILL.md",
+      "sha256": "2ac9d76d9cc9bd7a4d7200f2c52b0469af06e01ebd788ba9ea05d30f9960efb2",
+      "tokens": 612
+    }
+  ],
+  "matches": []
+}

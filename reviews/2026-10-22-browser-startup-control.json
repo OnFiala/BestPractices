@@ -1,0 +1,18 @@
+{
+  "scope": "Independent actual driver timeout and owned-child/profile cleanup with synthetic non-ready browser; not a Chromium launch measurement.",
+  "source_files": {
+    "examples/frontend/browser-startup.mjs": "646683fae65e567165b52be81b9ac3b56f954ec76041f706f0a62a996ae18253",
+    "examples/frontend/browser-smoke.mjs": "53c4fc2c376e5e62ae119e2bc6ed5d6bd5f54ae93ec210acfb8fcb477e1dd310",
+    "examples/frontend/README.md": "d7f6763e5431327545670952509fcd62e251bf2cb04cedf065b8d0caa53d4385",
+    "tests/frontend.test.cjs": "ba4c99471b1fb1b507ff7dd97696011b5322c326de46e5422414a0e18352e2ee"
+  },
+  "elapsed_seconds": 20.091,
+  "exit_code": 1,
+  "browser_process_stopped": true,
+  "fixture_process_stopped": true,
+  "temporary_browser_profile_removed": true,
+  "bounded_timeout_and_runtime_diagnostic_verified": true,
+  "inputs_unchanged": true,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "cf748d469667eef2150b26b2f56664798606554c3b482089cdf4d07f323cb7e6"
+}

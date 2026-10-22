@@ -1,0 +1,39 @@
+# Optional human-readable decision brief; not input to library.delivery or library.project.
+# For executable planning use delivery-profile.json; see docs/en/guides/adoption.md.
+# Copy into your project and replace nulls with reviewed decisions, not guesses.
+schema_version: 1
+name: null
+human_owner: null
+outcome: null
+non_goals: []
+library_revision: null # release or full commit, not mutable main
+applicable_guides: []
+data:
+  classification: null
+  residency: null
+  retention_and_deletion: null
+workload:
+  peak_requests_per_second: null
+  concurrency: null
+  payload_and_growth: null
+service:
+  user_journey: null
+  sli: null
+  slo_and_window: null
+  rto: null
+  rpo: null
+budget:
+  infrastructure_monthly: null
+  agent_spend_limit: null
+  stop_mechanism: null
+operations:
+  incident_owner: null
+  support_hours: null
+  backup_restore_evidence: null
+  provider_exit_plan: null
+  successor_owner: null
+approvals:
+  irreversible_actions: human
+  merge: human
+  production_release: human
+exceptions: []

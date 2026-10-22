@@ -1,0 +1,22 @@
+:root { --md-primary-fg-color: #12645a; --md-accent-fg-color: #12645a; }
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.md-grid { max-width: 82rem; }
+.md-typeset { font-size: .86rem; line-height: 1.7; }
+.md-typeset h1 { color: #133b35; font-weight: 750; letter-spacing: -.035em; }
+.md-typeset h2 { color: #164f46; font-weight: 650; }
+.bp-status { font-size: .67rem; color: #52564c; border-left: .18rem solid #b08a36;
+  padding: .4rem .7rem; background: #faf7ef; }
+.bp-agent { font-size: .72rem; color: #164f46; padding: .55rem .75rem;
+  background: #edf5f1; border-left: .18rem solid #12645a; }
+.bp-flow { border-radius: .7rem; padding: 1.1rem; background: #e6f2ed;
+  color: #164f46; font-weight: 650; line-height: 2; }
+.bp-languages { position: relative; font-size: .7rem; margin: 0 .7rem; }
+.bp-languages summary { cursor: pointer; padding: .5rem; }
+.bp-languages ul { position: absolute; top: 100%; right: 0; min-width: 9rem;
+  list-style: none; margin: 0; padding: .4rem; border-radius: .4rem;
+  color: #173f37; background: white; box-shadow: 0 .2rem 1rem #0003; }
+.bp-languages li a { display: block; padding: .5rem .8rem; }
+.bp-languages a:hover, .bp-languages a[aria-current] { background: #e6f2ed; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #cc8428; outline-offset: 3px; }
+.md-typeset table:not([class]) th { background: #edf5f1; color: #173f37; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }

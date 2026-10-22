@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "status": "design-reference",
+  "production_targets": "SLO, RTO, RPO, budget and residency require project-specific human agreement.",
+  "profiles": [
+    {
+      "id": "public-website",
+      "components": [
+        "static generator",
+        "CDN",
+        "Git content"
+      ],
+      "boundaries": [
+        "No secrets or private source data in generated assets",
+        "Build identity separate from content author"
+      ],
+      "acceptance": [
+        "All supported locale routes and search work with keyboard",
+        "Previous artifact can be redeployed",
+        "Unknown route gives an accessible 404"
+      ],
+      "recovery": "Redeploy a known artifact; restore content from Git; retain domain control.",
+      "evolve_when": "Authenticated writes need a server boundary; measured build time exceeds publishing needs.",
+      "guides": [
+        "frontend",
+        "hosting",
+        "github",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing",
+        "playbook-public-website",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
+      ],
+      "assumptions": [
+        "Public authored content only; no private notes, credentials or tenant data in Git or generated assets.",
+        "No server-side user writes; each supported locale has a public route and search index."
+      ],
+      "rollout": "Release a reviewed artifact to an isolated or bounded audience, verify the profile acceptance cases, observe agreed success/abort metrics, and require human production approval.",
+      "recovery_boundary": "Content rollback does not erase copies already published to browsers, caches or Git history.",
+      "test_plan": {
+        "when": "Before publishing a new generator, theme, routing, search or content-pipeline change.",
+        "setup": "Build an isolated static artifact from a known commit with synthetic public content and all supported locales.",
+        "exercise": "Navigate, search and use keyboard/focus at desktop and narrow viewport; request an unknown route; redeploy a previous artifact.",
+        "oracle": "Expected content and language remain reachable, unknown routes are understandable, no private source appears in assets/indexes, and the old artifact restores the intended public journey.",
+        "evidence": [
+          "Artifact digest and commit",
+          "Observed route/search/accessibility results for each locale",
+          "Output-data review and recovery result"
+        ],
+        "status": "planned-not-executed",
+        "stop_conditions": [
+          "Stop on unauthorized data/effects, an unavailable required isolation boundary, exhausted agreed budget, or violated environment safety limits.",
+          "Record failed, skipped and unrun cases; do not infer a pass from missing evidence."
+        ]
+      }
+    },
+    {
+      "id": "saas",
+      "components": [
+        "modular API",
+        "relational database",
+        "bounded worker",
+        "payment provider"
+      ],
+      "boundaries": [
+        "Tenant ID bound to authenticated principal",
+        "Billing module owns provider reconciliation",
+        "Worker writes through business contracts"
+      ],
+      "acceptance": [
+        "Tenant A cannot read/export/update tenant B records",
+        "Repeated payment request has one intended charge",
+        "Restore preserves order/payment reconciliation"
+      ],
+      "recovery": "Restore isolated data, reconcile external payments, then resume outbox and workers.",
+      "evolve_when": "Measured lock contention or an independently owned domain justifies extraction.",
+      "guides": [
+        "data",
+        "durability",
+        "scaling",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing",
+        "playbook-saas",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
+      ],
+      "assumptions": [
+        "Several tenants share application infrastructure.",
+        "A separate payment provider can succeed even when its response is lost."
+      ],
+      "rollout": "Release a reviewed artifact to an isolated or bounded audience, verify the profile acceptance cases, observe agreed success/abort metrics, and require human production approval.",
+      "recovery_boundary": "Restoring the database does not undo a provider charge; reconcile provider state before resuming workers.",
+      "test_plan": {
+        "when": "Before authorization, billing, persistence, retry or migration changes and before first production use.",
+        "setup": "Two synthetic tenants, isolated database/queue, controlled payment provider and known operation IDs; disable real financial side effects.",
+        "exercise": "Attempt cross-tenant API/export/worker access; submit duplicate and concurrent operations; lose the payment response; interrupt an outbox relay and restore data.",
+        "oracle": "No unauthorized data/effect is observed; one intended local/provider business outcome or an explicit reconciliation state remains; recovery preserves declared invariants.",
+        "evidence": [
+          "Principal/action/object matrix",
+          "Local and provider operation records",
+          "Crash point, retry budget, restore and reconciliation results"
+        ],
+        "status": "planned-not-executed",
+        "stop_conditions": [
+          "Stop on unauthorized data/effects, an unavailable required isolation boundary, exhausted agreed budget, or violated environment safety limits.",
+          "Record failed, skipped and unrun cases; do not infer a pass from missing evidence."
+        ]
+      }
+    },
+    {
+      "id": "internal-tool",
+      "components": [
+        "SSO",
+        "small application",
+        "audit store",
+        "upstream integrations"
+      ],
+      "boundaries": [
+        "SSO identity is mapped to per-action permissions",
+        "Exports are separately authorized",
+        "Upstream writes require business approval"
+      ],
+      "acceptance": [
+        "Revoked account loses access within the agreed window",
+        "Export cannot exceed authorized scope",
+        "Unavailable upstream produces actionable pending state"
+      ],
+      "recovery": "Restore records; reconcile upstream operations using stable operation IDs.",
+      "evolve_when": "Different integration owners or reliability obligations require isolated workers.",
+      "guides": [
+        "security",
+        "architecture",
+        "operations",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing",
+        "playbook-internal-tool",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
+      ],
+      "assumptions": [
+        "An organization identity provider authenticates people.",
+        "The application independently authorizes actions, exports and queued upstream work."
+      ],
+      "rollout": "Release a reviewed artifact to an isolated or bounded audience, verify the profile acceptance cases, observe agreed success/abort metrics, and require human production approval.",
+      "recovery_boundary": "Replaying an upstream write is unsafe until its prior outcome is known or the provider supports a stable idempotency contract.",
+      "test_plan": {
+        "when": "Before identity/session, export, integration or worker-permission changes.",
+        "setup": "Synthetic active/revoked accounts, scoped sample records and an isolated upstream simulator with stable operation IDs.",
+        "exercise": "Revoke an account while a session and job exist; request an overbroad export; delay/fail an upstream write and retry within the agreed policy.",
+        "oracle": "Access is denied within the documented revocation window; export scope stays bounded; pending and uncertain upstream effects remain visible and reconcilable.",
+        "evidence": [
+          "Revocation timeline and authorization results",
+          "Export contents/counts under each role",
+          "Upstream operation ledger and recovery outcome"
+        ],
+        "status": "planned-not-executed",
+        "stop_conditions": [
+          "Stop on unauthorized data/effects, an unavailable required isolation boundary, exhausted agreed budget, or violated environment safety limits.",
+          "Record failed, skipped and unrun cases; do not infer a pass from missing evidence."
+        ]
+      }
+    },
+    {
+      "id": "ai-application",
+      "components": [
+        "API gateway",
+        "model adapter",
+        "authorized retrieval",
+        "evaluation dataset"
+      ],
+      "boundaries": [
+        "Document ACL applied before retrieval",
+        "Model output is untrusted input",
+        "No model access to raw production credentials"
+      ],
+      "acceptance": [
+        "Unauthorized documents never enter prompt context",
+        "Provider timeout respects deadline and cost cap",
+        "Deletion propagates to indexes and caches",
+        "Evaluation measures grounded answers and abstention"
+      ],
+      "recovery": "Disable model features or degrade to ordinary search; preserve user records; replay only safe bounded jobs.",
+      "evolve_when": "Measured quality, latency, residency or price requires another model/provider; rerun evaluations.",
+      "guides": [
+        "agents",
+        "security",
+        "quality",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing",
+        "playbook-ai-application",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
+      ],
+      "assumptions": [
+        "The model feature is bounded by an authenticated user task and enforced resource limits.",
+        "Retrieval applies document access policy before content reaches the model."
+      ],
+      "rollout": "Release a reviewed artifact to an isolated or bounded audience, verify the profile acceptance cases, observe agreed success/abort metrics, and require human production approval.",
+      "recovery_boundary": "Disabling a model does not retract previously exposed data; handle any disclosure as an incident.",
+      "test_plan": {
+        "when": "Before changing model, prompt, retrieval/indexing, tool schema, data policy or provider fallback.",
+        "setup": "Versioned privacy-safe evaluation set with held-out expected outcomes, authorized/denied documents, adversarial instructions and a controlled unavailable provider.",
+        "exercise": "Run representative tasks, denied-document queries, deletion/revocation propagation, abstention and injection cases; force provider timeout and budget exhaustion.",
+        "oracle": "Unauthorized content never reaches context; accepted outcomes satisfy the declared rubric; unsafe authority expansion is denied and latency/cost/fallback respect agreed bounds.",
+        "evidence": [
+          "Model/prompt/retrieval versions and evaluation dataset identity",
+          "Per-case scores, refusals/abstentions, failures and human adjudication",
+          "Authorization traces, cost/latency and fallback observations"
+        ],
+        "status": "planned-not-executed",
+        "stop_conditions": [
+          "Stop on unauthorized data/effects, an unavailable required isolation boundary, exhausted agreed budget, or violated environment safety limits.",
+          "Record failed, skipped and unrun cases; do not infer a pass from missing evidence."
+        ]
+      }
+    },
+    {
+      "id": "agent-automation",
+      "components": [
+        "queue",
+        "durable run ledger",
+        "bounded worker",
+        "scoped tool gateway",
+        "human approval"
+      ],
+      "boundaries": [
+        "Write capabilities granted per task",
+        "Approval bound to exact intended action and expires",
+        "Source text cannot change tool policy"
+      ],
+      "acceptance": [
+        "Duplicate tasks do not blindly repeat external effects; uncertain outcomes are reconciled or escalated",
+        "Token/time/cost cap stops a run",
+        "Expired approval blocks execution",
+        "Hostile tool text cannot authorize new destinations"
+      ],
+      "recovery": "Cancel work, reconcile external effects, resume from durable checkpoint after human review.",
+      "evolve_when": "Independent tool domains or priorities require separate queues, identities and owners.",
+      "guides": [
+        "agents",
+        "durability",
+        "integrations",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing",
+        "playbook-agent-automation",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
+      ],
+      "assumptions": [
+        "Tasks can invoke consequential external tools through an independently enforced policy boundary.",
+        "The run ledger and approval binding survive worker interruption."
+      ],
+      "rollout": "Release a reviewed artifact to an isolated or bounded audience, verify the profile acceptance cases, observe agreed success/abort metrics, and require human production approval.",
+      "recovery_boundary": "A new model message or worker restart cannot renew human approval or undo an external effect.",
+      "test_plan": {
+        "when": "Before tool permissions, approval semantics, orchestration, retries or budget controls change.",
+        "setup": "Isolated tool destinations, fake irreversible effects, controlled time/budget and exact-action approvals tied to stable task IDs.",
+        "exercise": "Duplicate a task, expire its approval, alter the intended action, inject hostile retrieved instructions, consume the budget and crash after an effect but before acknowledgement.",
+        "oracle": "Expired/mismatched/unauthorized operations are blocked outside the model; budgets stop new work; repeated tasks do not blindly repeat effects; uncertain effects go to reconciliation.",
+        "evidence": [
+          "Approved action identity and policy decisions",
+          "Run/tool ledger with effects and crash point",
+          "Budget-stop, cancellation and reconciliation outcomes"
+        ],
+        "status": "planned-not-executed",
+        "stop_conditions": [
+          "Stop on unauthorized data/effects, an unavailable required isolation boundary, exhausted agreed budget, or violated environment safety limits.",
+          "Record failed, skipped and unrun cases; do not infer a pass from missing evidence."
+        ]
+      }
+    },
+    {
+      "id": "mobile-backend",
+      "components": [
+        "mobile UI",
+        "platform credential storage",
+        "local cache",
+        "versioned API",
+        "sync worker"
+      ],
+      "boundaries": [
+        "Device stores only necessary data",
+        "Server owns authorization and canonical state",
+        "Push payload contains no sensitive record content"
+      ],
+      "acceptance": [
+        "Offline edits resume without duplicates",
+        "Conflicting edits follow an explicit resolution rule",
+        "Previous supported client version still works",
+        "Revoked device cannot refresh credentials"
+      ],
+      "recovery": "Restore server state and reconcile client sync cursors; avoid forcing all clients to update at once.",
+      "evolve_when": "Measured sync volume, conflict rate or geography requires partitioning or regional design.",
+      "guides": [
+        "frontend",
+        "data",
+        "security",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing",
+        "playbook-mobile-backend",
+        "project-delivery",
+        "coverage",
+        "reference-labs"
+      ],
+      "assumptions": [
+        "The supported client-version range is explicit and older clients remain in use.",
+        "Offline clients can retain necessary protected data and submit conflicting edits later."
+      ],
+      "rollout": "Release a reviewed artifact to an isolated or bounded audience, verify the profile acceptance cases, observe agreed success/abort metrics, and require human production approval.",
+      "recovery_boundary": "Server rollback cannot erase already downloaded device data or assume every installed client can update immediately.",
+      "test_plan": {
+        "when": "Before client/API contract, synchronization, local storage or device-session changes.",
+        "setup": "Oldest supported and new clients, two offline devices, synthetic records, controlled network loss and revocable credentials.",
+        "exercise": "Edit concurrently offline, interrupt/resume sync, replay an upload, deploy the new API and revoke a device before refresh and protected access.",
+        "oracle": "Supported clients keep the agreed contract; duplicates do not add effects; conflicts follow the declared rule; revoked credentials cannot regain access through refresh.",
+        "evidence": [
+          "Client/API versions and contract results",
+          "Sync operation IDs, conflict result and data reconciliation",
+          "Revocation timing and storage/data-handling checks"
+        ],
+        "status": "planned-not-executed",
+        "stop_conditions": [
+          "Stop on unauthorized data/effects, an unavailable required isolation boundary, exhausted agreed budget, or violated environment safety limits.",
+          "Record failed, skipped and unrun cases; do not infer a pass from missing evidence."
+        ]
+      }
+    }
+  ],
+  "execution_status": "not-executed",
+  "agent_use": "Original design profiles and planned acceptance cases. Select applicable checks, agree limits with the human owner, implement in the actual stack, and retain observed evidence; never report planned cases as passed."
+}

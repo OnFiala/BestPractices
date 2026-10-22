@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "source_id": "owasp-csrf",
+  "review_kind": "targeted_agent_source_drift_impact_review",
+  "recorded_at": "2026-10-22T11:08:01.085120+00:00",
+  "source_document_path": "cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md",
+  "observation": {
+    "tracking_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md",
+    "sha256": "8393658c07a3ec99c8195781a376fde895a9a230ec9fe489743bb6821920ab75",
+    "bytes": 53629,
+    "immutable_commit": "1b996533413891799a203eab5d9e49c50f7ef7b3",
+    "immutable_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/1b996533413891799a203eab5d9e49c50f7ef7b3/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md",
+    "matches_latest_monitoring_report": true,
+    "immutable_hash_matches_observation": true
+  },
+  "comparison": {
+    "url": "https://github.com/OWASP/CheatSheetSeries/compare/4a2852f456ccac403e140b6b48beb53ce505a550...1b996533413891799a203eab5d9e49c50f7ef7b3",
+    "status": "ahead",
+    "ahead_by": 3,
+    "behind_by": 0,
+    "total_commits": 3,
+    "net_added_lines": 15,
+    "net_deleted_lines": 52,
+    "changed_blocks": [
+      {
+        "old_lines": [
+          355,
+          378
+        ],
+        "new_lines": [
+          355,
+          374
+        ]
+      },
+      {
+        "old_lines": [
+          488,
+          544
+        ],
+        "new_lines": [
+          484,
+          507
+        ]
+      }
+    ]
+  },
+  "document_changes": [
+    {
+      "commit": "85e254c0d103aecdc52850bc082faa293e454950",
+      "committed_at": "2026-10-22T10:17:45Z",
+      "url": "https://github.com/OWASP/CheatSheetSeries/commit/85e254c0d103aecdc52850bc082faa293e454950",
+      "document_sha256": "087b399578c35e2b517a777263bab41fbcb22ac0becdea396ba6cd0652ff0ecc",
+      "added_lines": 7,
+      "deleted_lines": 11,
+      "topic_keys": [
+        "samesite-cookie-modes",
+        "documentation-reference-version"
+      ],
+      "change_kinds": [
+        "content-condensation",
+        "reference-update"
+      ]
+    },
+    {
+      "commit": "1b996533413891799a203eab5d9e49c50f7ef7b3",
+      "committed_at": "2026-10-22T10:34:54Z",
+      "url": "https://github.com/OWASP/CheatSheetSeries/commit/1b996533413891799a203eab5d9e49c50f7ef7b3",
+      "document_sha256": "8393658c07a3ec99c8195781a376fde895a9a230ec9fe489743bb6821920ab75",
+      "added_lines": 8,
+      "deleted_lines": 41,
+      "topic_keys": [
+        "client-framework-csrf-integration",
+        "server-validation",
+        "trusted-destinations"
+      ],
+      "change_kinds": [
+        "content-condensation",
+        "framework-documentation-delegation"
+      ]
+    }
+  ],
+  "preserved_support": {
+    "same_site_supplementary_control_lines": [
+      {
+        "old_line": 378,
+        "matching_new_lines": [
+          374
+        ],
+        "line_sha256": "ddb5e30d956bec0e891eb77b600cd18ba3066322b826be1408597199b1074fbe",
+        "preserved_exactly": true
+      },
+      {
+        "old_line": 380,
+        "matching_new_lines": [
+          376
+        ],
+        "line_sha256": "07dd77033d5b7588c295bb9dca6485514d0757bbe1b0edf0350125178b2fb86f",
+        "preserved_exactly": true
+      },
+      {
+        "old_line": 388,
+        "matching_new_lines": [
+          384
+        ],
+        "line_sha256": "7fa9648814390262796d8b368ce1fe1268e5e20a12b006c27d04bb741659a169",
+        "preserved_exactly": true
+      },
+      {
+        "old_line": 396,
+        "matching_new_lines": [
+          392
+        ],
+        "line_sha256": "52e97de53fb893f78db738d345b7e832b2527d3c05d595e8d26d634d571e602e",
+        "preserved_exactly": true
+      }
+    ],
+    "framework_control_and_server_validation_references_retained": true
+  },
+  "local_impact": {
+    "direct_guide_ids": [
+      "security"
+    ],
+    "direct_claim_ids": [
+      "security/browser-session"
+    ],
+    "indirect_guide_ids": [
+      "security-testing",
+      "frontend",
+      "playbook-public-website",
+      "playbook-saas",
+      "playbook-internal-tool",
+      "playbook-ai-application",
+      "playbook-agent-automation",
+      "playbook-mobile-backend"
+    ],
+    "required_guidance_change_detected": false,
+    "local_framework_specific_instructions_affected": false,
+    "status": "no-local-obligation-change-identified-in-targeted-review"
+  },
+  "approval": {
+    "human_review_required_before_baseline_acceptance": true,
+    "human_approved": false,
+    "semantic_source_refresh_automatically_accepted": false,
+    "legal_clearance": false
+  },
+  "mutation": {
+    "repository_files_written": [],
+    "baseline_replaced": false,
+    "source_registry_changed": false,
+    "reviewed_on_changed": false,
+    "commits_created": false
+  },
+  "rights": {
+    "source_license_spdx": "CC-BY-SA-4.0",
+    "reference_only": true,
+    "upstream_prose_in_report": false,
+    "upstream_patch_in_report": false
+  },
+  "reviewed_reference": {
+    "commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+    "sha256": "6efa25bf9a69aefdb58f41d8c9cdcc1d0f1e84cc82570f11b77a4ed46eab2ded",
+    "bytes": 57348,
+    "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md",
+    "reviewed_on": "2026-10-22",
+    "refetched_hash_matches_registry_and_baseline": true
+  }
+}
