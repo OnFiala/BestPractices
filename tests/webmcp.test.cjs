@@ -40,3 +40,29 @@ test("denied registration and unavailable index are explicit", async () => {
   await harness({ registerTool: async (t) => { tool = t; } }, async () => ({ ok: false })).run();
   await assert.rejects(() => tool.execute({ query: "data" }), /unavailable/);
 });
+
+test("bfcache restores search with a fresh controller without duplicate tools", async () => {
+  const registrations = [];
+  const h = harness({ registerTool: async (tool, options) => {
+    registrations.push({ tool, signal: options.signal });
+  } }, async () => ({ ok: true, json: async () => [] }));
+  await h.run();
+  assert.equal(registrations.length, 1);
+  await h.events.pageshow({ persisted: false });
+  await h.events.pageshow({ persisted: true });
+  assert.equal(registrations.length, 1);
+  h.events.pagehide();
+  assert.equal(registrations[0].signal.aborted, true);
+  await h.events.pageshow({ persisted: true });
+  assert.equal(registrations.length, 2);
+  assert.notEqual(registrations[0].signal, registrations[1].signal);
+  assert.equal(registrations[1].signal.aborted, false);
+  await h.events.pageshow({ persisted: true });
+  assert.equal(registrations.length, 2);
+  const result = await registrations[1].tool.execute({ query: "architecture" });
+  assert.equal(result.content[0].text, "[]");
+  h.events.pagehide();
+  assert.equal(registrations[1].signal.aborted, true);
+  await h.events.pageshow({ persisted: true });
+  assert.equal(registrations.length, 3);
+});

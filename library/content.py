@@ -45,6 +45,9 @@ def guide(guide_id: str, language: str = "en", root: Path = ROOT) -> dict:
         "sources": entry["sources"],
         "related": entry["related"],
         "reviewed_on": metadata["reviewed_on"],
+        "authorship": "agent-assisted",
+        "human_review_required": True,
+        "content_license": "CC-BY-4.0",
         "content": body,
     }
 

@@ -136,6 +136,29 @@
       "use_when": "Long-running durable business workflows",
       "cost": "Determinism, replay, versioning, hosting and operational cost",
       "reviewed_on": "2026-10-21"
+    },
+    {
+      "id": "playwright",
+      "name": "Playwright",
+      "status": "candidate",
+      "sources": [
+        "playwright-testing"
+      ],
+      "use_when": "Observable browser journeys with isolated state and meaningful assertions",
+      "cost": "Browser installation and reproducible test state; separate accessibility/security assessments",
+      "reviewed_on": "2026-10-22"
+    },
+    {
+      "id": "k6",
+      "name": "Grafana k6",
+      "status": "candidate",
+      "sources": [
+        "k6-test-types",
+        "k6-thresholds"
+      ],
+      "use_when": "Authorized, representative load/stress/spike/soak/capacity experiments",
+      "cost": "Traffic, resource and financial ceilings; interpretable workload model and abort procedure",
+      "reviewed_on": "2026-10-22"
     }
   ]
 }

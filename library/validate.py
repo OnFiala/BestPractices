@@ -4,6 +4,7 @@ import argparse
 import datetime as dt
 import re
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from library.content import LANGUAGES, ROOT, catalog, read_json, read_markdown
 
@@ -15,7 +16,7 @@ def validate(root: Path = ROOT) -> list[str]:
         if not condition:
             errors.append(message)
 
-    for filename in ("catalog", "sources", "source-baseline", "tools", "blueprints"):
+    for filename in ("catalog", "sources", "source-baseline", "tools", "blueprints", "evidence"):
         require(read_json(root / f"data/{filename}.json").get("schema_version") == 1,
                 f"Unsupported schema version: {filename}")
     sources = read_json(root / "data/sources.json")["sources"]
@@ -27,7 +28,34 @@ def validate(root: Path = ROOT) -> list[str]:
                 f"Source must use the reviewed fetch host: {source['id']}")
         require(source["authority"] == "primary", f"Unclassified source: {source['id']}")
         require(source["review_days"] in range(7, 366), "Invalid source review window")
+        reviewed = urlsplit(source.get("reviewed_url", ""))
+        segments = reviewed.path.strip("/").split("/", 3)
+        commit = source.get("reviewed_commit", "")
+        require(reviewed.scheme == "https" and reviewed.hostname == "raw.githubusercontent.com"
+                and reviewed.username is None and reviewed.password is None
+                and reviewed.netloc == "raw.githubusercontent.com"
+                and not reviewed.query and not reviewed.fragment
+                and len(segments) == 4 and bool(re.fullmatch(r"[0-9a-f]{40}", commit))
+                and segments[2] == commit,
+                f"Source lacks immutable reviewed evidence: {source['id']}")
+        tracking = urlsplit(source["url"]).path.strip("/").split("/", 3)
+        require(len(tracking) == 4 and len(segments) == 4
+                and tracking[:2] == segments[:2] and tracking[3] == segments[3],
+                f"Tracking/reviewed source mismatch: {source['id']}")
+        license_info = source.get("document_license", {})
+        require(license_info.get("reference_only") is True
+                and license_info.get("status") in {"reviewed", "mixed", "unresolved"}
+                and bool(license_info.get("name")) and bool(license_info.get("evidence_urls")),
+                f"Missing reference-only license evidence: {source['id']}")
+        require(all(url.startswith("https://") for url in license_info.get("evidence_urls", [])),
+                f"Invalid license evidence URL: {source['id']}")
+        require(license_info.get("reviewed_commit") == commit,
+                f"Source/license revision mismatch: {source['id']}")
     guides = catalog(root)
+    disclosure = read_json(root / "data/catalog.json").get("agent_system", {})
+    require(disclosure == {"authorship": "agent-assisted", "human_review_required": True,
+                           "autonomous_merge": False, "content_license": "CC-BY-4.0"},
+            "Missing agent-system authorship/review/license contract")
     ids = {g["id"] for g in guides}
     profiles = read_json(root / "data/blueprints.json")["profiles"]
     require(len({p["id"] for p in profiles}) == len(profiles), "Duplicate blueprint ID")
@@ -67,8 +95,13 @@ def validate(root: Path = ROOT) -> list[str]:
                 require(reviewed <= dt.date.today(), f"Future review: {path}")
                 require(len(body.split()) >= 100, f"Incomplete guide: {path}")
                 require(body.startswith("# "), f"Missing page title: {path}")
+                require(body.lstrip().splitlines()[0] == "# " + g["title"][lang],
+                        f"Catalog/page title mismatch: {path}")
                 require(not re.search(r"\b(TODO|TBD|LOREM IPSUM)\b", body),
                         f"Unresolved placeholder: {path}")
+                cited = set(re.findall(r"\[[^\]]*\]\((https://raw\.githubusercontent\.com/[^)\s]+)\)", body))
+                expected = {s.get("reviewed_url") for s in sources if s["id"] in g["sources"]}
+                require(cited == expected, f"Unpinned/missing/extra source citations: {path}")
                 # Check file links here; strict MkDocs builds check rendered anchors.
                 for target in re.findall(r"\[[^\]]*\]\(([^)\s]+)\)", body):
                     if ":" in target or target.startswith("#"):
@@ -93,6 +126,35 @@ def validate(root: Path = ROOT) -> list[str]:
         require(bool(re.fullmatch(r"[0-9a-f]{64}", observation["sha256"])),
                 f"Invalid source hash: {sid}")
         require(observation["status"] == "ok", f"Unverified baseline: {sid}")
+    sources_by_id = {s["id"]: s for s in sources}
+    for source in sources:
+        require(source.get("reviewed_sha256") == baseline.get(source["id"], {}).get("sha256")
+                and bool(re.fullmatch(r"[0-9a-f]{64}", source.get("reviewed_sha256", ""))),
+                f"Reviewed source hash differs from snapshot: {source['id']}")
+    evidence = read_json(root / "data/evidence.json")
+    require(evidence.get("review_status") == "agent-reviewed-proposal"
+            and evidence.get("human_approved") is False and bool(evidence.get("coverage")),
+            "Evidence must disclose review status and coverage limits")
+    claim_keys = set()
+    guide_sources = {g["id"]: set(g["sources"]) for g in guides}
+    for claim in evidence.get("claims", []):
+        key = (claim.get("guide_id"), claim.get("claim_id"))
+        require(key not in claim_keys, f"Duplicate claim: {key}")
+        claim_keys.add(key)
+        refs = claim.get("sources", [])
+        require(key[0] in ids and bool(re.fullmatch(r"[a-z0-9-]+", key[1] or ""))
+                and bool(claim.get("claim")) and bool(claim.get("limits"))
+                and claim.get("support") in {"direct", "synthesis"},
+                f"Unscoped claim evidence: {key}")
+        require(bool(refs) and set(refs) <= guide_sources.get(key[0], set()),
+                f"Claim sources are absent from guide evidence: {key}")
+        hashes = claim.get("source_hashes", {})
+        require(set(hashes) == set(refs)
+                and all(hashes[sid] == sources_by_id.get(sid, {}).get("reviewed_sha256")
+                        for sid in hashes), f"Stale claim evidence: {key}")
+    require({"architecture", "durability", "frontend", "security", "quality",
+             "testing-strategy", "performance-testing", "security-testing"}
+            <= {key[0] for key in claim_keys}, "Missing critical claim evidence")
     return errors
 
 

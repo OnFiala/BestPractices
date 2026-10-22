@@ -1,8 +1,16 @@
 # BestPractices
 
-A decision library for durable software built by agents under human direction.
+**An agent-maintained decision system, created with AI agents under human direction.**
+It helps humans and agents choose, build, test, and operate durable software.
 English is canonical; the website switches between **EN / CS / DE / ES** on the
 same page. This first edition is proposed guidance, pending human editorial review.
+
+Agent authorship is disclosed on every guide and in machine-readable exports.
+Passing checks does not certify factual correctness, translation quality, legal
+clearance, or suitability for a particular project. See [AGENT_SYSTEM.md](AGENT_SYSTEM.md)
+for roles and authority, and [PROVENANCE.md](PROVENANCE.md) for evidence and original-writing rules.
+The [independent and specialist review](reviews/2026-10-22-agent-system-review.md)
+records findings, corrections, verification and remaining limits.
 
 Start with [the library](docs/en/index.md), [the decision matrix](docs/en/guides/architecture.md),
 [six project paths](docs/en/reference/examples.md), or [the full catalog](data/catalog.json).
@@ -36,7 +44,7 @@ for live source availability, drift, and overdue review. It never accepts new ad
 | --- | --- |
 | `docs/{en,cs,de,es}` | Canonical prose and complete translations |
 | `data/` | Stable guide IDs, primary sources, retrieval baseline, tool and project registries |
-| `templates/` | Project profile, ADR, agent task, review, release, incident, exception |
+| `templates/` | Project profile, ADR, agent task, test plan, review, release, incident, exception |
 | `decisions/` | Decisions about this library itself |
 | `library/` | Validation, source observation, static build, read-only MCP |
 | `plugins/bestpractices/` | Local Codex skill bundle |
@@ -50,6 +58,12 @@ Read [AGENTS.md](AGENTS.md). Start the read-only MCP server with
 `uv --directory /absolute/path/BestPractices run --frozen python -m library.mcp_server`.
 This is local stdio, not a deployed ChatGPT connector. See the
 [integration guide](docs/en/guides/integrations.md) for the distinction.
+
+The [test-strategy skill](plugins/bestpractices/skills/test-strategy/SKILL.md) helps
+agents choose when, what, and how to test using a
+[bounded test plan](templates/test-plan.yaml). The plan separates knowledge level
+(black/gray/white box), test boundary, and objective; recording a plan does not
+authorize or execute a load or security test.
 
 The static site includes a feature-detected **experimental** WebMCP search adapter.
 Normal reading and search do not depend on browser support. Current API assumptions
@@ -70,11 +84,18 @@ are exported with the website for plain retrieval.
    Weekly evidence PRs require `contents: write` and `pull-requests: write` only in
    the publication job. PRs created with `GITHUB_TOKEN` may not trigger new workflow
    runs: run **Validate** manually on the bot branch before human review/merge.
-4. For the optional agent workflow, add `OPENAI_API_KEY` in **GitHub Actions secrets**,
-   set repository variable `ENABLE_AGENT_MAINTENANCE=true`, and optionally set
+4. For source-fed AI generation, use a **separate private repository/mirror or private workspace**.
+   The model-generation and proposal jobs refuse to run in a public repository:
+   logs, model output, patches, and artifacts may contain third-party text before
+   anyone has checked rights or originality. In the private repository, add
+   `OPENAI_API_KEY` in **GitHub Actions secrets**, set repository variable
+   `ENABLE_AGENT_MAINTENANCE=true`, and optionally set
    `CODEX_MODEL` to an account-supported evaluated model. Set provider spending
    limits. Never paste the key in chat or Git. The job has a timeout, not a guaranteed
-   token-spend ceiling; provider limits and human review remain necessary.
+   token-spend ceiling; provider limits and human review remain necessary. Review
+   original wording, source use, licensing, and technical evidence privately before
+   a human transfers approved prose to a public PR. There is no automatic public
+   transfer. Public source-observation PRs contain metadata, not source documents.
 5. For the website, choose GitHub Pages source **GitHub Actions**, configure the
    `github-pages` environment with human approval, then manually run **Publish docs**
    on `main`. This publishes only static documentation, never MCP hosting.

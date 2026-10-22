@@ -13,23 +13,26 @@
       "path": "index.md",
       "title": {
         "en": "Build systems that can last",
-        "cs": "Stavějte systémy, které vydrží",
+        "cs": "Budujte systémy, které vydrží",
         "de": "Systeme bauen, die Bestand haben",
-        "es": "Construye sistemas que perduren"
+        "es": "Construir sistemas que perduren"
       },
       "sources": [
-        "plugins",
         "github-rulesets",
-        "observability"
+        "observability",
+        "plugins"
       ],
       "related": [
         "foundations",
         "lifecycle",
         "architecture",
-        "adoption"
+        "adoption",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing"
       ],
       "area": "start",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -42,9 +45,9 @@
         "es": "Principios de decisión"
       },
       "sources": [
-        "owasp",
+        "github-rulesets",
         "observability",
-        "github-rulesets"
+        "owasp"
       ],
       "related": [
         "architecture",
@@ -52,7 +55,7 @@
         "governance"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -60,9 +63,9 @@
       "path": "guides/lifecycle.md",
       "title": {
         "en": "The complete project lifecycle",
-        "cs": "Celý životní cyklus projektu",
+        "cs": "Úplný životní cyklus projektu",
         "de": "Der vollständige Projektlebenszyklus",
-        "es": "El ciclo de vida completo"
+        "es": "El ciclo de vida completo del proyecto"
       },
       "sources": [
         "github-rulesets",
@@ -73,10 +76,13 @@
         "quality",
         "operations",
         "agents",
-        "adoption"
+        "adoption",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -89,18 +95,23 @@
         "es": "Elegir y conectar arquitecturas"
       },
       "sources": [
-        "kubernetes",
-        "postgres-isolation",
-        "durable-workflows"
+        "azure-architecture-styles",
+        "azure-cqrs",
+        "azure-event-sourcing",
+        "durable-workflows",
+        "postgres-isolation"
       ],
       "related": [
         "durability",
         "frontend",
         "scaling",
-        "hosting"
+        "hosting",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -113,17 +124,23 @@
         "es": "Durabilidad y trabajo distribuido"
       },
       "sources": [
-        "postgres-isolation",
+        "azure-cqrs",
+        "azure-idempotent-consumer",
+        "azure-outbox",
+        "azure-retry",
+        "durable-workflows",
         "postgres-backup",
-        "durable-workflows"
+        "postgres-isolation"
       ],
       "related": [
         "data",
         "operations",
-        "architecture"
+        "architecture",
+        "testing-strategy",
+        "performance-testing"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -136,18 +153,20 @@
         "es": "Escalar con mediciones"
       },
       "sources": [
+        "azure-cache-aside",
+        "azure-data-partitioning",
         "observability",
-        "kubernetes",
         "postgres-isolation"
       ],
       "related": [
         "hosting",
         "data",
         "operations",
-        "architecture"
+        "architecture",
+        "performance-testing"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -163,15 +182,18 @@
         "docker-security",
         "kubernetes",
         "opentofu",
-        "postgres-backup"
+        "postgres-backup",
+        "postgres-isolation"
       ],
       "related": [
         "self-hosting",
         "scaling",
-        "operations"
+        "operations",
+        "performance-testing",
+        "security-testing"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -185,16 +207,18 @@
       },
       "sources": [
         "docker-security",
-        "postgres-backup",
-        "opentofu"
+        "opentofu",
+        "postgres-backup"
       ],
       "related": [
         "security",
         "hosting",
-        "operations"
+        "operations",
+        "performance-testing",
+        "security-testing"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -202,22 +226,30 @@
       "path": "guides/frontend.md",
       "title": {
         "en": "Frontend architecture and contracts",
-        "cs": "Architektura frontendu a smlouvy",
+        "cs": "Architektura frontendu a kontrakty",
         "de": "Frontendarchitektur und Verträge",
-        "es": "Arquitectura frontend y contratos"
+        "es": "Arquitectura y contratos del frontend"
       },
       "sources": [
-        "wcag",
+        "azure-cqrs",
         "owasp",
+        "wcag",
+        "wcag-contrast",
+        "wcag-focus-order",
+        "wcag-focus-visible",
+        "wcag-keyboard",
         "webmcp"
       ],
       "related": [
         "architecture",
         "quality",
-        "integrations"
+        "integrations",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -225,22 +257,29 @@
       "path": "guides/data.md",
       "title": {
         "en": "Data, contracts, and migrations",
-        "cs": "Data, smlouvy a migrace",
+        "cs": "Data, kontrakty a migrace",
         "de": "Daten, Verträge und Migrationen",
         "es": "Datos, contratos y migraciones"
       },
       "sources": [
-        "postgres-isolation",
+        "azure-cqrs",
+        "azure-data-partitioning",
+        "azure-idempotent-consumer",
+        "azure-outbox",
+        "owasp",
         "postgres-backup",
-        "owasp"
+        "postgres-isolation"
       ],
       "related": [
         "durability",
         "security",
-        "scaling"
+        "scaling",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -250,19 +289,108 @@
         "en": "Quality gates that prove behavior",
         "cs": "Kontroly kvality dokazující chování",
         "de": "Qualitätsprüfungen mit Verhaltensnachweis",
-        "es": "Controles que demuestran comportamiento"
+        "es": "Controles de calidad que demuestran comportamiento"
       },
       "sources": [
-        "owasp",
-        "wcag",
-        "github-workflows"
+        "github-workflows",
+        "owasp-ai-agent",
+        "owasp-authorization",
+        "playwright-testing"
       ],
       "related": [
         "github",
         "agents",
-        "lifecycle"
+        "lifecycle",
+        "testing-strategy",
+        "security-testing",
+        "performance-testing"
       ],
       "area": "engineering",
+      "revision": 2,
+      "status": "proposed"
+    },
+    {
+      "id": "testing-strategy",
+      "path": "guides/testing-strategy.md",
+      "title": {
+        "en": "Choose a testing strategy",
+        "cs": "Strategie testování",
+        "de": "Eine Teststrategie auswählen",
+        "es": "Elegir una estrategia de pruebas"
+      },
+      "sources": [
+        "owasp-ai-agent",
+        "owasp-authorization",
+        "owasp-multi-tenant",
+        "playwright-testing",
+        "postgres-isolation"
+      ],
+      "related": [
+        "quality",
+        "performance-testing",
+        "security-testing",
+        "data",
+        "durability"
+      ],
+      "area": "verification",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "performance-testing",
+      "path": "guides/performance-testing.md",
+      "title": {
+        "en": "Performance, load, and stress testing",
+        "cs": "Výkonnostní a zátěžové testování",
+        "de": "Leistungs-, Last- und Stresstests",
+        "es": "Pruebas de rendimiento, carga y estrés"
+      },
+      "sources": [
+        "k6-breakpoint-testing",
+        "k6-open-vs-closed",
+        "k6-soak-testing",
+        "k6-spike-testing",
+        "k6-stress-testing",
+        "k6-test-types",
+        "k6-thresholds"
+      ],
+      "related": [
+        "testing-strategy",
+        "scaling",
+        "operations",
+        "durability",
+        "quality"
+      ],
+      "area": "verification",
+      "revision": 1,
+      "status": "proposed"
+    },
+    {
+      "id": "security-testing",
+      "path": "guides/security-testing.md",
+      "title": {
+        "en": "Select and run security tests",
+        "cs": "Bezpečnostní testování",
+        "de": "Sicherheitstests auswählen und durchführen",
+        "es": "Seleccionar y ejecutar pruebas de seguridad"
+      },
+      "sources": [
+        "github-workflows",
+        "owasp-ai-agent",
+        "owasp-asvs-requirements",
+        "owasp-authorization",
+        "owasp-multi-tenant",
+        "owasp-session",
+        "owasp-ssrf"
+      ],
+      "related": [
+        "security",
+        "testing-strategy",
+        "quality",
+        "agents",
+        "performance-testing"
+      ],
+      "area": "verification",
       "revision": 1,
       "status": "proposed"
     },
@@ -271,22 +399,31 @@
       "path": "guides/security.md",
       "title": {
         "en": "Security, privacy, and supply chain",
-        "cs": "Bezpečnost, soukromí a závislosti",
+        "cs": "Bezpečnost, soukromí a dodavatelský řetězec softwaru",
         "de": "Sicherheit, Datenschutz und Lieferkette",
-        "es": "Seguridad, privacidad y dependencias"
+        "es": "Seguridad, privacidad y cadena de suministro"
       },
       "sources": [
-        "owasp",
-        "docker-security",
-        "github-workflows"
+        "github-workflows",
+        "owasp-ai-agent",
+        "owasp-asvs-requirements",
+        "owasp-authentication",
+        "owasp-authorization",
+        "owasp-csrf",
+        "owasp-multi-tenant",
+        "owasp-session",
+        "owasp-ssrf",
+        "owasp-xss"
       ],
       "related": [
         "agents",
         "self-hosting",
-        "data"
+        "data",
+        "security-testing",
+        "testing-strategy"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -294,21 +431,24 @@
       "path": "guides/operations.md",
       "title": {
         "en": "Health, recovery, and cost",
-        "cs": "Zdraví, obnova a náklady",
+        "cs": "Zdraví systému, obnova a náklady",
         "de": "Zustand, Wiederherstellung und Kosten",
-        "es": "Salud, recuperación y costes"
+        "es": "Salud, recuperación y coste"
       },
       "sources": [
+        "azure-health-endpoints",
         "observability",
         "postgres-backup"
       ],
       "related": [
         "durability",
         "scaling",
-        "lifecycle"
+        "lifecycle",
+        "testing-strategy",
+        "performance-testing"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -318,7 +458,7 @@
         "en": "GitHub, versions, and clean trees",
         "cs": "GitHub, verze a čisté stromy",
         "de": "GitHub, Versionen und saubere Arbeitsbäume",
-        "es": "GitHub, versiones y árboles limpios"
+        "es": "GitHub, versiones y árboles de trabajo limpios"
       },
       "sources": [
         "github-rulesets",
@@ -331,7 +471,7 @@
         "maintenance"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -339,24 +479,27 @@
       "path": "guides/agents.md",
       "title": {
         "en": "Human direction, agent execution",
-        "cs": "Člověk řídí, agent vykonává",
+        "cs": "Člověk určuje směr, agent vykonává",
         "de": "Menschen steuern, Agenten führen aus",
         "es": "Dirección humana, ejecución de agentes"
       },
       "sources": [
-        "openai-agents",
         "agents-guardrails",
         "codex-action",
+        "openai-agents",
         "plugins"
       ],
       "related": [
         "quality",
         "security",
         "maintenance",
-        "integrations"
+        "integrations",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -369,20 +512,22 @@
         "es": "Skills, plugins, MCP y WebMCP"
       },
       "sources": [
+        "mcp-python",
+        "openai-apps",
         "plugins",
         "skills",
-        "openai-apps",
-        "mcp-python",
         "webmcp"
       ],
       "related": [
         "agents",
         "frontend",
         "security",
-        "maintenance"
+        "maintenance",
+        "testing-strategy",
+        "security-testing"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -405,7 +550,7 @@
         "governance"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -418,18 +563,21 @@
         "es": "Adoptar la biblioteca en un proyecto"
       },
       "sources": [
-        "plugins",
         "github-rulesets",
-        "observability"
+        "observability",
+        "owasp-authorization",
+        "plugins"
       ],
       "related": [
         "foundations",
         "lifecycle",
         "agents",
-        "governance"
+        "governance",
+        "testing-strategy",
+        "examples"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -437,14 +585,14 @@
       "path": "guides/governance.md",
       "title": {
         "en": "Governance and unanswered decisions",
-        "cs": "Správa a otevřená rozhodnutí",
+        "cs": "Správa a nezodpovězená rozhodnutí",
         "de": "Verantwortung und offene Entscheidungen",
         "es": "Gobierno y decisiones abiertas"
       },
       "sources": [
         "github-rulesets",
-        "semver",
-        "plugins"
+        "plugins",
+        "semver"
       ],
       "related": [
         "maintenance",
@@ -452,7 +600,7 @@
         "github"
       ],
       "area": "engineering",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -462,11 +610,14 @@
         "en": "Reference project paths",
         "cs": "Referenční cesty projektů",
         "de": "Referenzpfade für Projekte",
-        "es": "Rutas de proyectos de referencia"
+        "es": "Rutas de referencia para proyectos"
       },
       "sources": [
-        "owasp",
+        "azure-architecture-styles",
+        "azure-idempotent-consumer",
+        "azure-retry",
         "openai-agents",
+        "owasp",
         "postgres-backup",
         "wcag"
       ],
@@ -474,10 +625,13 @@
         "adoption",
         "architecture",
         "agents",
-        "frontend"
+        "frontend",
+        "testing-strategy",
+        "performance-testing",
+        "security-testing"
       ],
       "area": "reference",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -490,18 +644,42 @@
         "es": "Fuentes y herramientas"
       },
       "sources": [
-        "mkdocs-material",
+        "agents-guardrails",
+        "codex",
+        "docker-security",
+        "durable-workflows",
+        "github-rulesets",
+        "github-workflows",
+        "k6-test-types",
+        "k6-thresholds",
+        "kubernetes",
         "mcp-python",
-        "plugins"
+        "mkdocs-material",
+        "observability",
+        "openai-agents",
+        "opentofu",
+        "playwright-testing",
+        "plugins",
+        "postgres-backup",
+        "postgres-isolation",
+        "webmcp"
       ],
       "related": [
         "integrations",
         "hosting",
-        "maintenance"
+        "maintenance",
+        "testing-strategy",
+        "performance-testing"
       ],
       "area": "reference",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     }
-  ]
+  ],
+  "agent_system": {
+    "authorship": "agent-assisted",
+    "human_review_required": true,
+    "autonomous_merge": false,
+    "content_license": "CC-BY-4.0"
+  }
 }

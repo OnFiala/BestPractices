@@ -2,9 +2,9 @@
 {
   "id": "github",
   "language": "en",
-  "revision": 1,
-  "translation_revision": 1,
-  "reviewed_on": "2026-10-21"
+  "revision": 2,
+  "translation_revision": 2,
+  "reviewed_on": "2026-10-22"
 }
 ---
 # GitHub, versions, and clean trees
@@ -27,4 +27,4 @@ Before editing, inspect status and preserve other work. Ignore generated outputs
 
 ## Primary evidence
 
-[github-rulesets](https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md) · [github-workflows](https://raw.githubusercontent.com/github/docs/main/content/actions/reference/security/secure-use.md) · [semver](https://raw.githubusercontent.com/semver/semver/master/semver.md)
+[github-rulesets](https://raw.githubusercontent.com/github/docs/5815d11586b0796688963a98c889680e60d72dc4/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md) · [github-workflows](https://raw.githubusercontent.com/github/docs/5815d11586b0796688963a98c889680e60d72dc4/content/actions/reference/security/secure-use.md) · [semver](https://raw.githubusercontent.com/semver/semver/f99d5485190a47c0863949e7da810a5553e0ed4d/semver.md)

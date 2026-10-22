@@ -2,9 +2,9 @@
 {
   "id": "foundations",
   "language": "en",
-  "revision": 1,
-  "translation_revision": 1,
-  "reviewed_on": "2026-10-21"
+  "revision": 2,
+  "translation_revision": 2,
+  "reviewed_on": "2026-10-22"
 }
 ---
 # Decision principles
@@ -38,4 +38,4 @@ A new contributor must reproduce the development workflow, trace a user action t
 
 ## Primary evidence
 
-[owasp](https://raw.githubusercontent.com/OWASP/ASVS/master/README.md) · [observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/main/content/en/docs/concepts/observability-primer.md) · [github-rulesets](https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md)
+[owasp](https://raw.githubusercontent.com/OWASP/ASVS/2b47a9dd16760ee484a6672d197f1f7e25d9c632/README.md) · [observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [github-rulesets](https://raw.githubusercontent.com/github/docs/5815d11586b0796688963a98c889680e60d72dc4/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md)

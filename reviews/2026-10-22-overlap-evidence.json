@@ -1,0 +1,737 @@
+{
+  "reviewed_at": "2026-10-22T10:21:44.680653+00:00",
+  "locales": [
+    "en",
+    "cs",
+    "de",
+    "es"
+  ],
+  "source_count": 53,
+  "cache_hash_matches": 53,
+  "network_fetches": 0,
+  "fetch_failures": [],
+  "missing_sources": [],
+  "total_source_bytes": 1156007,
+  "total_source_tokens": 145787,
+  "minimum_consecutive_tokens": 10,
+  "normalization": "NFC Unicode, casefold, HTML entity decoding, remove URLs and HTML/XML tags, tokenize Unicode words/numbers retaining internal apostrophes; punctuation/Markdown formatting ignored. Original page front matter and primary-evidence footers excluded. Body, tables and code examples retained.",
+  "page_count": 96,
+  "guides_per_locale": {
+    "en": 21,
+    "cs": 21,
+    "de": 21,
+    "es": 21
+  },
+  "other_pages_per_locale": 3,
+  "evidence_claim_count": 57,
+  "page_matches": [],
+  "claim_matches": [],
+  "sources": [
+    {
+      "id": "agents-guardrails",
+      "sha256": "ccdfa6eb4ca29ef5f265a2bad4d3d0b7786f1a3970f58cfcf07a641b3bb56667",
+      "bytes": 16786,
+      "reviewed_url": "https://raw.githubusercontent.com/openai/openai-agents-python/841dfdd938bfd4ca052475eb76d6245a356868e0/docs/guardrails.md"
+    },
+    {
+      "id": "azure-architecture-styles",
+      "sha256": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a",
+      "bytes": 21894,
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/guide/architecture-styles/index.md"
+    },
+    {
+      "id": "azure-cache-aside",
+      "sha256": "eb19852e710d924d98a39f386928ef1b0d763391f0e9e22a353ce818dd57881f",
+      "bytes": 14318,
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cache-aside-content.md"
+    },
+    {
+      "id": "azure-cqrs",
+      "sha256": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b",
+      "bytes": 20477,
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cqrs.md"
+    },
+    {
+      "id": "azure-data-partitioning",
+      "sha256": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77",
+      "bytes": 12763,
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/best-practices/data-partitioning-strategies-content.md"
+    },
+    {
+      "id": "azure-event-sourcing",
+      "sha256": "3b43bdcdf4b17f9da1adbfd4f77fd767f1262a8baeb3aba232bbed293e2d2a49",
+      "bytes": 30015,
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/event-sourcing.md"
+    },
+    {
+      "id": "azure-health-endpoints",
+      "sha256": "2ffed47249e9c6e6dd5a2d2b36c73fcb2adcbd217377e60f3466c98cf9f9d08f",
+      "bytes": 22037,
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/health-endpoint-monitoring.md"
+    },
+    {
+      "id": "azure-idempotent-consumer",
+      "sha256": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+      "bytes": 19383,
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/idempotent-consumer.md"
+    },
+    {
+      "id": "azure-outbox",
+      "sha256": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
+      "bytes": 33262,
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/databases/guide/transactional-out-box-cosmos.md"
+    },
+    {
+      "id": "azure-retry",
+      "sha256": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab",
+      "bytes": 11945,
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/retry-content.md"
+    },
+    {
+      "id": "codex",
+      "sha256": "ba4e1f69ff48386e72a9c5e1edaf76aad64a475c2d51af79ccba6d1128261ba7",
+      "bytes": 3334,
+      "reviewed_url": "https://raw.githubusercontent.com/openai/codex/b337fe06b7d8d6e5b42295e04c5e92c2b9c46567/README.md"
+    },
+    {
+      "id": "codex-action",
+      "sha256": "00083d3f3b7ab6b887e1efa198c79a3791e53c5aae534588c9eba6c7b056b741",
+      "bytes": 17938,
+      "reviewed_url": "https://raw.githubusercontent.com/openai/codex-action/c05cfd74ad95c626cdf05c6685e62becc3bf7813/README.md"
+    },
+    {
+      "id": "docker-security",
+      "sha256": "bf9c126d4fc7bad25d75d1e1bce851d75738cdd8bc41561a39a9a8687ed1c9e0",
+      "bytes": 13998,
+      "reviewed_url": "https://raw.githubusercontent.com/docker/docs/4d64a8e4f0a59967fc0b391120d54a90e9ccb60d/content/manuals/engine/security/_index.md"
+    },
+    {
+      "id": "durable-workflows",
+      "sha256": "269838d3de5da90d4c2c0b45bf7fc745b384a5a05c0932582e923638e8994189",
+      "bytes": 3888,
+      "reviewed_url": "https://raw.githubusercontent.com/temporalio/temporal/e8ee627110a98501103827745aab18aedf312dd0/README.md"
+    },
+    {
+      "id": "github-rulesets",
+      "sha256": "ad074c0507552b396bd5d506a7e80875c5664dd7e6f0e496f5a1dbc1bd039810",
+      "bytes": 6171,
+      "reviewed_url": "https://raw.githubusercontent.com/github/docs/5815d11586b0796688963a98c889680e60d72dc4/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md"
+    },
+    {
+      "id": "github-workflows",
+      "sha256": "0b2d692984fae55eff6334aabb52ca3c97bd38757cca1e2cc3437460cbc4b1d5",
+      "bytes": 37281,
+      "reviewed_url": "https://raw.githubusercontent.com/github/docs/5815d11586b0796688963a98c889680e60d72dc4/content/actions/reference/security/secure-use.md"
+    },
+    {
+      "id": "k6-breakpoint-testing",
+      "sha256": "37ae4ad38a793111dd96fb9eb672efe603b95f5262ae865f4de8695acae68974",
+      "bytes": 6043,
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/breakpoint-testing.md"
+    },
+    {
+      "id": "k6-open-vs-closed",
+      "sha256": "374d2ee2334444ff5a666e26f90dc79e7bebfac0304437c92a9d969dc1c8630c",
+      "bytes": 4166,
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/using-k6/scenarios/concepts/open-vs-closed.md"
+    },
+    {
+      "id": "k6-soak-testing",
+      "sha256": "8461b5e2bb6414f9fe62fb25733a58de0ff12508ef4a1de3c84536be2c4c39b5",
+      "bytes": 4601,
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/soak-testing.md"
+    },
+    {
+      "id": "k6-spike-testing",
+      "sha256": "67006a3eadacc6f1536dd40c447f3119d9d5ba6ad03721fc314febe64fb80916",
+      "bytes": 4431,
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/spike-testing.md"
+    },
+    {
+      "id": "k6-stress-testing",
+      "sha256": "705a154e718c32daa9760924503e25a6b6be635e3df80f3e767b3bac88aed47f",
+      "bytes": 5142,
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/stress-testing.md"
+    },
+    {
+      "id": "k6-test-types",
+      "sha256": "00d6c59d09e758240d3f4475cda7e327981195c3719576096fe639d710f944eb",
+      "bytes": 7065,
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/_index.md"
+    },
+    {
+      "id": "k6-thresholds",
+      "sha256": "429a8a5e46cf5fb11610fa552bb37e6a9ad07cffcb9e127fdda26d2889d7add2",
+      "bytes": 17833,
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/using-k6/thresholds.md"
+    },
+    {
+      "id": "kubernetes",
+      "sha256": "0fd1fc2f5ff1e715c5ef99bfd040803f75ec17807c35c863c2b6890620cc3d10",
+      "bytes": 10086,
+      "reviewed_url": "https://raw.githubusercontent.com/kubernetes/website/bc7f3479bc8b0af48097b155c22c8d58e8e1afe4/content/en/docs/concepts/architecture/_index.md"
+    },
+    {
+      "id": "mcp-python",
+      "sha256": "51552fa66eee9852eb40f5bad68319df90800e88c399c4f404562c570216c05b",
+      "bytes": 4561,
+      "reviewed_url": "https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/2af9e3089ac66b35c1550c500aae86a82efb1e17/README.md"
+    },
+    {
+      "id": "mcp-spec",
+      "sha256": "7e98444c73ed5d923a3b02b1247e9cdf678d31a30cc32b1503bdcd906aa984e2",
+      "bytes": 876,
+      "reviewed_url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/80041ab0a139a8f4fb3adbc99f7ae9113ea59671/README.md"
+    },
+    {
+      "id": "mkdocs-material",
+      "sha256": "bd8225e2c9fe001b03a83fa2e7db8e154b361968154dc9fca7deb20607ff428a",
+      "bytes": 17357,
+      "reviewed_url": "https://raw.githubusercontent.com/squidfunk/mkdocs-material/cbee8f352745a974e1bae7dc595793be9b6875d7/README.md"
+    },
+    {
+      "id": "observability",
+      "sha256": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
+      "bytes": 7669,
+      "reviewed_url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md"
+    },
+    {
+      "id": "openai-agents",
+      "sha256": "a7610fba9f6f95e3fad126f23600f644464bafb1d6a7e020090beff86a4619c9",
+      "bytes": 17801,
+      "reviewed_url": "https://raw.githubusercontent.com/openai/openai-agents-python/841dfdd938bfd4ca052475eb76d6245a356868e0/docs/agents.md"
+    },
+    {
+      "id": "openai-apps",
+      "sha256": "9faecc20f32fc628038d1cd3745b08e38a84b358e303a9ea70cd763e99241f98",
+      "bytes": 10659,
+      "reviewed_url": "https://raw.githubusercontent.com/openai/openai-apps-sdk-examples/18cc38e78a968712c357bacdc3c79fead5bfc6b4/README.md"
+    },
+    {
+      "id": "opentofu",
+      "sha256": "60c539cfab196b4b39768781ee871f07b34aadcada2f4bef42393810e3dbfb92",
+      "bytes": 4419,
+      "reviewed_url": "https://raw.githubusercontent.com/opentofu/opentofu/ec773ed37be4d07e00d4a2fbb237d0c0fe1ca3ce/README.md"
+    },
+    {
+      "id": "owasp",
+      "sha256": "9a360766c67c8facb75a088656dfadad7b390a894acf439c49b2d6cd7b077876",
+      "bytes": 10970,
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/ASVS/2b47a9dd16760ee484a6672d197f1f7e25d9c632/README.md"
+    },
+    {
+      "id": "owasp-ai-agent",
+      "sha256": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a",
+      "bytes": 26794,
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/AI_Agent_Security_Cheat_Sheet.md"
+    },
+    {
+      "id": "owasp-asvs-requirements",
+      "sha256": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+      "bytes": 105100,
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/ASVS/3383877f732ce89a458a1af43288f2f1b1d7db0c/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv"
+    },
+    {
+      "id": "owasp-authentication",
+      "sha256": "92f7483b28548679917a329c7b9be1824f33e934d9eed670aaf3e9a1e7b37e83",
+      "bytes": 41242,
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Authentication_Cheat_Sheet.md"
+    },
+    {
+      "id": "owasp-authorization",
+      "sha256": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+      "bytes": 31021,
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Authorization_Cheat_Sheet.md"
+    },
+    {
+      "id": "owasp-csrf",
+      "sha256": "6efa25bf9a69aefdb58f41d8c9cdcc1d0f1e84cc82570f11b77a4ed46eab2ded",
+      "bytes": 57348,
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md"
+    },
+    {
+      "id": "owasp-multi-tenant",
+      "sha256": "f1286c7bada7b7361922405157aaae8c86fb5198347a85fcdf4bfb207904790e",
+      "bytes": 50400,
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.md"
+    },
+    {
+      "id": "owasp-session",
+      "sha256": "3c38656e2be6188be4fc31d8c1fadafaaa6f37accc27e411e3345c235d44c051",
+      "bytes": 56989,
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Session_Management_Cheat_Sheet.md"
+    },
+    {
+      "id": "owasp-ssrf",
+      "sha256": "3ae2f474449eceadd74cc2c28edfdc405d935166550b2bd67965729b7d707652",
+      "bytes": 29588,
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md"
+    },
+    {
+      "id": "owasp-xss",
+      "sha256": "199c484557a3d2e6732daec1d2b8d683645163ce1d7dd58f7e5590d93f5a2719",
+      "bytes": 30770,
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md"
+    },
+    {
+      "id": "playwright-testing",
+      "sha256": "785e6244815ed457ceb0a9109e0ead34a114fd89b09c0689174a5b421eed8512",
+      "bytes": 19880,
+      "reviewed_url": "https://raw.githubusercontent.com/microsoft/playwright/ca7ca36145b84183cf423c2a099bd7e9cd8b1cb3/docs/src/best-practices-js.md"
+    },
+    {
+      "id": "plugins",
+      "sha256": "b3681ebd15797bdee1d638c6520c7ba10a36e676760ea5c251530f53f843c852",
+      "bytes": 1283,
+      "reviewed_url": "https://raw.githubusercontent.com/openai/plugins/0722921d5542fc593105c27bd52630babd8b8c2a/README.md"
+    },
+    {
+      "id": "postgres-backup",
+      "sha256": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26",
+      "bytes": 76905,
+      "reviewed_url": "https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/backup.sgml"
+    },
+    {
+      "id": "postgres-isolation",
+      "sha256": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5",
+      "bytes": 84819,
+      "reviewed_url": "https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml"
+    },
+    {
+      "id": "semver",
+      "sha256": "33ebae1a97845991d0b916f3295a88b499e2ec71a6c1fe84c12429077b19ce08",
+      "bytes": 17474,
+      "reviewed_url": "https://raw.githubusercontent.com/semver/semver/f99d5485190a47c0863949e7da810a5553e0ed4d/semver.md"
+    },
+    {
+      "id": "skills",
+      "sha256": "0f6a07580f3c627253e15a58dd0439e135049ec38eb16cf3587f7e50abc6f590",
+      "bytes": 1840,
+      "reviewed_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/README.md"
+    },
+    {
+      "id": "wcag",
+      "sha256": "26fd85fad76ac1f8d0a08f595099d0435a8b9af5656e1c0f2596eef2519ad37c",
+      "bytes": 65256,
+      "reviewed_url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/index.html"
+    },
+    {
+      "id": "wcag-contrast",
+      "sha256": "f1d819b44cc5ba64e962ce64889de2ab214af6911b27a119f7d24c43197b2e64",
+      "bytes": 1071,
+      "reviewed_url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/contrast-minimum.html"
+    },
+    {
+      "id": "wcag-focus-order",
+      "sha256": "a21c9b35f8057c8ba2f3b93a76d463181a510677bb276912fd989d4a1adb2d6b",
+      "bytes": 350,
+      "reviewed_url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/focus-order.html"
+    },
+    {
+      "id": "wcag-focus-visible",
+      "sha256": "7c3e6f6309edf9da9b232c78a16c33b074da56840e2b0ab27971f531162f92d6",
+      "bytes": 261,
+      "reviewed_url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/focus-visible.html"
+    },
+    {
+      "id": "wcag-keyboard",
+      "sha256": "8724a66650968536ac46ec2cb486c4cedeade25531d2840f75aedf6826e7aed1",
+      "bytes": 872,
+      "reviewed_url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/keyboard.html"
+    },
+    {
+      "id": "webmcp",
+      "sha256": "184c519af9ed728e77249423ff376c7d99367cd340e80a2d7f3a4a789e3fc7d6",
+      "bytes": 37575,
+      "reviewed_url": "https://raw.githubusercontent.com/webmachinelearning/webmcp/51ed75653aaa7f174f8dbe05d1bc327359bbc57c/README.md"
+    }
+  ],
+  "pages": [
+    {
+      "path": "docs/en/guides/adoption.md",
+      "sha256": "362799b0f2ee9725229570bfaf3803069fc329617c8cbd67d3bd4166e3825b3b"
+    },
+    {
+      "path": "docs/en/guides/agents.md",
+      "sha256": "e1df88f583eb36aab812f6fbff4560e82ac7e69893c29139d1b7e323db74fd49"
+    },
+    {
+      "path": "docs/en/guides/architecture.md",
+      "sha256": "14759c2c04fb17a7e021d72d5cf67c67f8e64c9b6b15151e94fd7390e6c5ea72"
+    },
+    {
+      "path": "docs/en/guides/data.md",
+      "sha256": "00512b4bff7248089226913f889c01eb6984af40bb78f381553cd2cb9f96a2b6"
+    },
+    {
+      "path": "docs/en/guides/durability.md",
+      "sha256": "da9719849e86238057428604ae8c42495cc0a1f7d8dd690d213fd42f8e6961b5"
+    },
+    {
+      "path": "docs/en/guides/foundations.md",
+      "sha256": "9f932a56fdaefee774059bcbf1af7b9be9f9dc89b56c4df980a778bf84229230"
+    },
+    {
+      "path": "docs/en/guides/frontend.md",
+      "sha256": "18e3542fed1de24fe89fbd27f67aa966439186f89b98539bfe3f2afd8993565f"
+    },
+    {
+      "path": "docs/en/guides/github.md",
+      "sha256": "7dc5e189a1b5e44727b05c43027d5efb662ac439b7616c4d5aa468b67267dab9"
+    },
+    {
+      "path": "docs/en/guides/governance.md",
+      "sha256": "00dc6cf989b4b19b27f08619fe039872d9f6bc6e966ed4344706945649fdbde1"
+    },
+    {
+      "path": "docs/en/guides/hosting.md",
+      "sha256": "9965cf952037a92195870da91c662c8f3acfbd6e55dee0d7003e9de73965df66"
+    },
+    {
+      "path": "docs/en/guides/integrations.md",
+      "sha256": "f166d9822741061a2d715c3d3878f797bbbca94be7ca42032c0398d75f4cd36f"
+    },
+    {
+      "path": "docs/en/guides/lifecycle.md",
+      "sha256": "746696f555034a7e2500dd1387934f04ae54c2c8579568594bb7d9c0f1dc541e"
+    },
+    {
+      "path": "docs/en/guides/maintenance.md",
+      "sha256": "b2bae820db1acef20c50b831d09b53724c2c0c4d3312689b39323fdeb8184420"
+    },
+    {
+      "path": "docs/en/guides/operations.md",
+      "sha256": "34782cbe64e3098cbf03900fa65bc13b077843fd992b8f9f510b547a49a4de3f"
+    },
+    {
+      "path": "docs/en/guides/performance-testing.md",
+      "sha256": "f94c9a53284f3687545cf17ddd9224d3c1f1d43ceceb91766f7b4a1eebd14c95"
+    },
+    {
+      "path": "docs/en/guides/quality.md",
+      "sha256": "c3528d1d53b8a1310eedb18a6f9748e7041303ec437afbd3460fa58301cd94bb"
+    },
+    {
+      "path": "docs/en/guides/scaling.md",
+      "sha256": "bfff8b2a7abe622077d2ec55ea9323f107b984a1a3b4d62579db33f5715beb3d"
+    },
+    {
+      "path": "docs/en/guides/security-testing.md",
+      "sha256": "988a422b85c1e7d8248a1d201ca8495f47aaba0da36030a7f50d7fabb193dce2"
+    },
+    {
+      "path": "docs/en/guides/security.md",
+      "sha256": "fde4e279fd1ba492f832babdf382f91a606ddb2f29776bb621c5d9b231998f95"
+    },
+    {
+      "path": "docs/en/guides/self-hosting.md",
+      "sha256": "a628d3b9141525b7663064ea58529b3a3e56a350022a1af035da86b7d12fcaf9"
+    },
+    {
+      "path": "docs/en/guides/testing-strategy.md",
+      "sha256": "695cc43b0a0506e16a4e54c5870307d5538582083555017f99a497d001810854"
+    },
+    {
+      "path": "docs/en/index.md",
+      "sha256": "f6af7514dfb58f9bb86e99fff2adb2e9cd95dad669917a7ad3f53211dc99efd8"
+    },
+    {
+      "path": "docs/en/reference/examples.md",
+      "sha256": "e5a1eaee8b80f94e6246c39137900414f4b8ca52e769a4076748a46775886d63"
+    },
+    {
+      "path": "docs/en/reference/tools.md",
+      "sha256": "6cb89dfe9f6791bb1de08506f1fd91eb1be2a4295717a1d8eda672d74882857e"
+    },
+    {
+      "path": "docs/cs/guides/adoption.md",
+      "sha256": "122a9f786b9184c21246b07ca9017b0d5abe3e659da2f38cae7710b12b459e28"
+    },
+    {
+      "path": "docs/cs/guides/agents.md",
+      "sha256": "595132c1eb7194c7f389625ec49c0167ead7c076e179abc1ae18321a6a3ed4cd"
+    },
+    {
+      "path": "docs/cs/guides/architecture.md",
+      "sha256": "cb76eba72c222e248bb16181a5ff4d111ad7807ad9cc3ca86ec77fe2b29a81c0"
+    },
+    {
+      "path": "docs/cs/guides/data.md",
+      "sha256": "913e1c8a2c58b99181203fafd91dd1174fead38a27c21a8457464be3a5425601"
+    },
+    {
+      "path": "docs/cs/guides/durability.md",
+      "sha256": "6dbbca0cc28927410088bfbe273c004f56d5f4b56a3830c5297fcfa6cda48141"
+    },
+    {
+      "path": "docs/cs/guides/foundations.md",
+      "sha256": "c05806aed17fb412180a7dd69e261e17b28f8f75387822c08ff292de833a3142"
+    },
+    {
+      "path": "docs/cs/guides/frontend.md",
+      "sha256": "e8bda79d1db749ba387d08244791bc6f3b547bbdc5a73053ef18715ea6e9fd3a"
+    },
+    {
+      "path": "docs/cs/guides/github.md",
+      "sha256": "04c1196eaf8fbcb8357983d68a1d1a6135c07c3217e3c6723c600143fa2f47cf"
+    },
+    {
+      "path": "docs/cs/guides/governance.md",
+      "sha256": "9634f3942f24e71d4effcbaed797d5fe260b80c81269c8a79928b917df4134d5"
+    },
+    {
+      "path": "docs/cs/guides/hosting.md",
+      "sha256": "86141f9717be9068a008a1d5d7ce0dd8476e6aad12bb435a594cccedb5548012"
+    },
+    {
+      "path": "docs/cs/guides/integrations.md",
+      "sha256": "2cfe5206e454514e0e14573765afeaf1e0f48f863946502383ed286a48640e40"
+    },
+    {
+      "path": "docs/cs/guides/lifecycle.md",
+      "sha256": "d9ff0a6c9740483cc4b7e1dea763a0df0c856c042855d624463794a0da272d85"
+    },
+    {
+      "path": "docs/cs/guides/maintenance.md",
+      "sha256": "bc1ee88e103b2051788aa3f4af3897d2e73e721284a92d4260efdbc7307703c7"
+    },
+    {
+      "path": "docs/cs/guides/operations.md",
+      "sha256": "92f77d5d76b5f3bd5f105ba76ffa97351a7cb8961ee6d036510101fd8403d1d7"
+    },
+    {
+      "path": "docs/cs/guides/performance-testing.md",
+      "sha256": "40d6d29ad3169236061a10d5e1d2725214e520a83944aa22590f5828320fd139"
+    },
+    {
+      "path": "docs/cs/guides/quality.md",
+      "sha256": "5271afc71a448782d4f59c7da79a4bbcb739af60ed4a528c274d5d1a76306fed"
+    },
+    {
+      "path": "docs/cs/guides/scaling.md",
+      "sha256": "d10e12610e51ee8166c74b8a123af9ab6601fac006fb5691284a77aab440a1a6"
+    },
+    {
+      "path": "docs/cs/guides/security-testing.md",
+      "sha256": "d65aae8ab45da17586c8778489d2b4ade299b5d521578fc0db114dfed71b9d28"
+    },
+    {
+      "path": "docs/cs/guides/security.md",
+      "sha256": "b97ff53157795801671ffbcb857f7184c3ca534564af436aa67339e1edbc9d14"
+    },
+    {
+      "path": "docs/cs/guides/self-hosting.md",
+      "sha256": "7535f11ac5e158eb8104788a89e67df03f9f3106744ea52327a0b872c2af265a"
+    },
+    {
+      "path": "docs/cs/guides/testing-strategy.md",
+      "sha256": "cfebeea7f34c257d1b320dadcf41228272e32c51de2fd98b2f4f118acaeb1875"
+    },
+    {
+      "path": "docs/cs/index.md",
+      "sha256": "529c04b06b789f8161959f3892ee478f71568b55da19ae3ed4c211e50a5ad4a2"
+    },
+    {
+      "path": "docs/cs/reference/examples.md",
+      "sha256": "46866ade0cdf27bbc039c0cc324d6f710640aae0617860cc6a33198a9042e049"
+    },
+    {
+      "path": "docs/cs/reference/tools.md",
+      "sha256": "18ec818458c65fec417da0a98bb14332dcfd00c6c2a14a99acf967c9772124f3"
+    },
+    {
+      "path": "docs/de/guides/adoption.md",
+      "sha256": "b95872925d5a60cb7516cbf9fab68110185d60daf659e5b0ee29b8bb0e3d4bca"
+    },
+    {
+      "path": "docs/de/guides/agents.md",
+      "sha256": "9cdda7e0afe71037b234e8ca8970a4ea2740b9eb27da72f1b3c8bf97c29dec43"
+    },
+    {
+      "path": "docs/de/guides/architecture.md",
+      "sha256": "48989b4f81b32c61ef07b04016e0418cdce91bcd53d836ad48a080dfba9a4194"
+    },
+    {
+      "path": "docs/de/guides/data.md",
+      "sha256": "a2bacff5090283c6329ed1ebfd584cfa82940e40a91576c588077493e4f3d5c5"
+    },
+    {
+      "path": "docs/de/guides/durability.md",
+      "sha256": "37ad3ab3c40af0497902095aa300977faba9ca3b507a3672675a6ee134c8a6bb"
+    },
+    {
+      "path": "docs/de/guides/foundations.md",
+      "sha256": "7c54ea8d6f2a8876c7d6e063df2e91defd3b7f2245daefb4740650d41d0037d9"
+    },
+    {
+      "path": "docs/de/guides/frontend.md",
+      "sha256": "8d9135fb28efe5a1b52bbca5abbc063406d9043bd28a99eb5a1e1250671eab8f"
+    },
+    {
+      "path": "docs/de/guides/github.md",
+      "sha256": "0ab143168f3f4ec1292a2783eeebfec26bc900771cb4a0e5be38e5c69c8fdfb4"
+    },
+    {
+      "path": "docs/de/guides/governance.md",
+      "sha256": "9fe49a60903d23b143559da364ccc8f4194e69e55864ecf3a64e0e597a5218f2"
+    },
+    {
+      "path": "docs/de/guides/hosting.md",
+      "sha256": "f7b3c52d7027ac8e2d20527c4096cdea1387857f77ffc9ecf16950c8f0ac1e22"
+    },
+    {
+      "path": "docs/de/guides/integrations.md",
+      "sha256": "8b499021a424c3a4ba01e53093e93ee670cd84d8f7fd6f825d627d953b499b9b"
+    },
+    {
+      "path": "docs/de/guides/lifecycle.md",
+      "sha256": "0009fcb5bb0293a9f53122d3c057869d6c46202bf26f18531e6747c8876afa3e"
+    },
+    {
+      "path": "docs/de/guides/maintenance.md",
+      "sha256": "d6a7c9c349f1ef8859c057b22650fcc6d926663d34979c7e99f42f9b2beaeb78"
+    },
+    {
+      "path": "docs/de/guides/operations.md",
+      "sha256": "7363d930440d884a95495b404340b76b7e2b5a1a6ca68aa9bb70eb499714495a"
+    },
+    {
+      "path": "docs/de/guides/performance-testing.md",
+      "sha256": "225dc32b63904607ed2e8492a68f04f4a69d61d2fb599bd35f39add602c35737"
+    },
+    {
+      "path": "docs/de/guides/quality.md",
+      "sha256": "11cb8f3dc8b1dc1c1198d707f2182b489ae1c3b0cbba8cc517bf987c5e808793"
+    },
+    {
+      "path": "docs/de/guides/scaling.md",
+      "sha256": "2f7d950b3f51dd2ca2bc947262d1c0163cb083b40fdccbd2a0d6b467d49765d5"
+    },
+    {
+      "path": "docs/de/guides/security-testing.md",
+      "sha256": "ea36f0ccb1a00e6b22f98ef756001e4f21b0a147b67c22e2c139a288674381b7"
+    },
+    {
+      "path": "docs/de/guides/security.md",
+      "sha256": "1b0e58c46c01459da0e155e0635b47764ad7285ef39de4f76423791a3ef04991"
+    },
+    {
+      "path": "docs/de/guides/self-hosting.md",
+      "sha256": "4059776183084f7d8f30aef271dc31c5e8c8911853f3d4e8364feebb6bab39cd"
+    },
+    {
+      "path": "docs/de/guides/testing-strategy.md",
+      "sha256": "f9529317b796d34f65eb7fe68123019e0bb6a39d7b24ed2c049b446cd3fbf5d5"
+    },
+    {
+      "path": "docs/de/index.md",
+      "sha256": "16d8ac9860d4e3f85e30b0b6fc5568ab25cc27ed6fe975957d8a3c74eb0c9fc0"
+    },
+    {
+      "path": "docs/de/reference/examples.md",
+      "sha256": "8c29afed96e1b8147cf02ddf241cd7b7b6ec34c6a23bfd549bf7dd6ca9118b33"
+    },
+    {
+      "path": "docs/de/reference/tools.md",
+      "sha256": "44ffedf2d8111ad8ccc488ec4ae7840e150a5d2fa4a7cf8b225f73100f94bcc6"
+    },
+    {
+      "path": "docs/es/guides/adoption.md",
+      "sha256": "71e6db8417d73fb35140150469cbe3cb7cf3def9f03842701b165caecaa7bb11"
+    },
+    {
+      "path": "docs/es/guides/agents.md",
+      "sha256": "50e77c3746bf519dd192fbd7bcf9bed1664ae4b0ed22feb4dff5834b2905dd90"
+    },
+    {
+      "path": "docs/es/guides/architecture.md",
+      "sha256": "82717eca5534054b1267055c54a4ce5e6270f30937c31f9829373044b1f103c7"
+    },
+    {
+      "path": "docs/es/guides/data.md",
+      "sha256": "46692c9a9e917f7f487032ac08fc8766af584484b64997a05e7765d4a396134f"
+    },
+    {
+      "path": "docs/es/guides/durability.md",
+      "sha256": "f0665a9c311590f638419d2444571d03db0c050d83f86d1a907fa67623287478"
+    },
+    {
+      "path": "docs/es/guides/foundations.md",
+      "sha256": "86e0b405c28282279a4f76b060a31ad7ae6e4a1e16039690d8db43253a8967a9"
+    },
+    {
+      "path": "docs/es/guides/frontend.md",
+      "sha256": "6ecb674324cfa9f72de56e850fc7ebb4885fa355a5c0c308238e66092e9293bc"
+    },
+    {
+      "path": "docs/es/guides/github.md",
+      "sha256": "1ccc415f942bd47f9fe94fe98f37d300e4e30f145c01e7f74ea20390c4d7f036"
+    },
+    {
+      "path": "docs/es/guides/governance.md",
+      "sha256": "f008d1a827711cb6dc012400936bff5c11581e34673c9650db03e7f41966a6e1"
+    },
+    {
+      "path": "docs/es/guides/hosting.md",
+      "sha256": "00f56ab93e24b4139f8203c3e640d112f43555d38dba1ab3a2623d9e2dfb9cf5"
+    },
+    {
+      "path": "docs/es/guides/integrations.md",
+      "sha256": "b4f893687e9ba554d59ef6fdc231e640f3b8cae7ef29d24d8c9593f65d737887"
+    },
+    {
+      "path": "docs/es/guides/lifecycle.md",
+      "sha256": "f747ea9ef2198645645e5971d3f75a618d7bdc39b2b10cd6cdb023a41c98fc7c"
+    },
+    {
+      "path": "docs/es/guides/maintenance.md",
+      "sha256": "f3a8da1083d388cfdbb47defcae285e4146f984d75e70ca172c2936087b66c5d"
+    },
+    {
+      "path": "docs/es/guides/operations.md",
+      "sha256": "e5a946c221f225565284b452b7ae62f2ba332b6b7e51c6f818372b9e2823ede6"
+    },
+    {
+      "path": "docs/es/guides/performance-testing.md",
+      "sha256": "3c70d38dbcf98be9d638ec4debd7cc18c0fa1402c6577c99c3c196f677228e83"
+    },
+    {
+      "path": "docs/es/guides/quality.md",
+      "sha256": "75849e6027f58e9e053029cbb203ee317018ac59d1d85a2adc65113732c5db6e"
+    },
+    {
+      "path": "docs/es/guides/scaling.md",
+      "sha256": "b8f6e3db5e0f2082ce939cdbebc5ec78cb6d20ea0b0d90bf14cb85010a1fda86"
+    },
+    {
+      "path": "docs/es/guides/security-testing.md",
+      "sha256": "e1445e9b1e5602d0057a3bbf926ae260f4faf3a2023a927fb8451ca7767c01be"
+    },
+    {
+      "path": "docs/es/guides/security.md",
+      "sha256": "557313a33f18098b8401a2fd288c0db2fdc6a91d52a43e809857a3204387334a"
+    },
+    {
+      "path": "docs/es/guides/self-hosting.md",
+      "sha256": "9c17008fd58e4cfb4d177ae9fbba70d30899f22745e2bd073a99c5c80c6b8d93"
+    },
+    {
+      "path": "docs/es/guides/testing-strategy.md",
+      "sha256": "e7c43f502871b46d4567b090cdc1e09b13ea740e09086191e4391b77c8add14e"
+    },
+    {
+      "path": "docs/es/index.md",
+      "sha256": "a2e0758ec5d68817c852f5ef03888ef4f5bc48b9861b588cbefb428d70349006"
+    },
+    {
+      "path": "docs/es/reference/examples.md",
+      "sha256": "8650f4a7c2a49f0f2aa88820bf578b9dcb3c6207d7364d05a7bc834ed8517cb7"
+    },
+    {
+      "path": "docs/es/reference/tools.md",
+      "sha256": "48465db78bbf4dab08c2d1cbc039e104d05dea5fed00819a22880c508fcd7685"
+    }
+  ],
+  "evidence_file_sha256": "998aaeb2c7684b938211b94f6d7020b1f22015f93f24b59ef4d5824521b77e12",
+  "limitations": "Finite literal screen of 53 predominantly English primary-source files, not an internet-wide plagiarism scan, translation similarity model, authorship investigation, complete technical claim review or legal clearance. It misses close paraphrase, translated copying, shorter distinctive expression, images, unregistered works and material removed by normalization. No match is not evidence of permission. License/source program texts intentionally redistributed under their own terms are excluded from this prose screen."
+}

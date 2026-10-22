@@ -9,7 +9,267 @@
       "reviewed_on": "2026-10-21",
       "review_days": 14,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/openai/openai-agents-python/841dfdd938bfd4ca052475eb76d6245a356868e0/docs/guardrails.md",
+      "reviewed_commit": "841dfdd938bfd4ca052475eb76d6245a356868e0",
+      "reviewed_sha256": "ccdfa6eb4ca29ef5f265a2bad4d3d0b7786f1a3970f58cfcf07a641b3bb56667",
+      "document_license": {
+        "name": "MIT",
+        "spdx": "MIT",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "openai/openai-agents-python",
+        "reviewed_commit": "841dfdd938bfd4ca052475eb76d6245a356868e0",
+        "evidence_urls": [
+          "https://github.com/openai/openai-agents-python/blob/841dfdd938bfd4ca052475eb76d6245a356868e0/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "13df7812ca53ecaae1cb4a868844bb598373047ae1d580e4debfbef1dd5b6915"
+      }
+    },
+    {
+      "id": "azure-architecture-styles",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/guide/architecture-styles/index.md",
+      "publisher": "MicrosoftDocs",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/guide/architecture-styles/index.md",
+      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+      "reviewed_sha256": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "MicrosoftDocs/architecture-center",
+        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+        "evidence_urls": [
+          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
+        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
+      }
+    },
+    {
+      "id": "azure-cache-aside",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/cache-aside-content.md",
+      "publisher": "MicrosoftDocs",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cache-aside-content.md",
+      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+      "reviewed_sha256": "eb19852e710d924d98a39f386928ef1b0d763391f0e9e22a353ce818dd57881f",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "MicrosoftDocs/architecture-center",
+        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+        "evidence_urls": [
+          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
+        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
+      }
+    },
+    {
+      "id": "azure-cqrs",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/cqrs.md",
+      "publisher": "MicrosoftDocs",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cqrs.md",
+      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+      "reviewed_sha256": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "MicrosoftDocs/architecture-center",
+        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+        "evidence_urls": [
+          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
+        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
+      }
+    },
+    {
+      "id": "azure-data-partitioning",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/best-practices/data-partitioning-strategies-content.md",
+      "publisher": "MicrosoftDocs",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/best-practices/data-partitioning-strategies-content.md",
+      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+      "reviewed_sha256": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "MicrosoftDocs/architecture-center",
+        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+        "evidence_urls": [
+          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
+        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
+      }
+    },
+    {
+      "id": "azure-event-sourcing",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/event-sourcing.md",
+      "publisher": "MicrosoftDocs",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/event-sourcing.md",
+      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+      "reviewed_sha256": "3b43bdcdf4b17f9da1adbfd4f77fd767f1262a8baeb3aba232bbed293e2d2a49",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "MicrosoftDocs/architecture-center",
+        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+        "evidence_urls": [
+          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
+        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
+      }
+    },
+    {
+      "id": "azure-health-endpoints",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/health-endpoint-monitoring.md",
+      "publisher": "MicrosoftDocs",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/health-endpoint-monitoring.md",
+      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+      "reviewed_sha256": "2ffed47249e9c6e6dd5a2d2b36c73fcb2adcbd217377e60f3466c98cf9f9d08f",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "MicrosoftDocs/architecture-center",
+        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+        "evidence_urls": [
+          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
+        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
+      }
+    },
+    {
+      "id": "azure-idempotent-consumer",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/idempotent-consumer.md",
+      "publisher": "MicrosoftDocs",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/idempotent-consumer.md",
+      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+      "reviewed_sha256": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "MicrosoftDocs/architecture-center",
+        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+        "evidence_urls": [
+          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
+        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
+      }
+    },
+    {
+      "id": "azure-outbox",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/databases/guide/transactional-out-box-cosmos.md",
+      "publisher": "MicrosoftDocs",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/databases/guide/transactional-out-box-cosmos.md",
+      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+      "reviewed_sha256": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "MicrosoftDocs/architecture-center",
+        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+        "evidence_urls": [
+          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
+        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
+      }
+    },
+    {
+      "id": "azure-retry",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/retry-content.md",
+      "publisher": "MicrosoftDocs",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/retry-content.md",
+      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+      "reviewed_sha256": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "MicrosoftDocs/architecture-center",
+        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+        "evidence_urls": [
+          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
+        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
+      }
     },
     {
       "id": "codex",
@@ -19,7 +279,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 14,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/openai/codex/b337fe06b7d8d6e5b42295e04c5e92c2b9c46567/README.md",
+      "reviewed_commit": "b337fe06b7d8d6e5b42295e04c5e92c2b9c46567",
+      "reviewed_sha256": "ba4e1f69ff48386e72a9c5e1edaf76aad64a475c2d51af79ccba6d1128261ba7",
+      "document_license": {
+        "name": "Apache-2.0",
+        "spdx": "Apache-2.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "openai/codex",
+        "reviewed_commit": "b337fe06b7d8d6e5b42295e04c5e92c2b9c46567",
+        "evidence_urls": [
+          "https://github.com/openai/codex/blob/b337fe06b7d8d6e5b42295e04c5e92c2b9c46567/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc"
+      }
     },
     {
       "id": "codex-action",
@@ -29,7 +306,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 14,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/openai/codex-action/c05cfd74ad95c626cdf05c6685e62becc3bf7813/README.md",
+      "reviewed_commit": "c05cfd74ad95c626cdf05c6685e62becc3bf7813",
+      "reviewed_sha256": "00083d3f3b7ab6b887e1efa198c79a3791e53c5aae534588c9eba6c7b056b741",
+      "document_license": {
+        "name": "Apache-2.0",
+        "spdx": "Apache-2.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "openai/codex-action",
+        "reviewed_commit": "c05cfd74ad95c626cdf05c6685e62becc3bf7813",
+        "evidence_urls": [
+          "https://github.com/openai/codex-action/blob/c05cfd74ad95c626cdf05c6685e62becc3bf7813/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc"
+      }
     },
     {
       "id": "docker-security",
@@ -39,7 +333,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/docker/docs/4d64a8e4f0a59967fc0b391120d54a90e9ccb60d/content/manuals/engine/security/_index.md",
+      "reviewed_commit": "4d64a8e4f0a59967fc0b391120d54a90e9ccb60d",
+      "reviewed_sha256": "bf9c126d4fc7bad25d75d1e1bce851d75738cdd8bc41561a39a9a8687ed1c9e0",
+      "document_license": {
+        "name": "Apache-2.0",
+        "spdx": "Apache-2.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "docker/docs",
+        "reviewed_commit": "4d64a8e4f0a59967fc0b391120d54a90e9ccb60d",
+        "evidence_urls": [
+          "https://github.com/docker/docs/blob/4d64a8e4f0a59967fc0b391120d54a90e9ccb60d/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "089009c932d3cc296355e429fa9d6faf80ac89597da866e2424b4ea09add64b1"
+      }
     },
     {
       "id": "durable-workflows",
@@ -49,7 +360,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/temporalio/temporal/e8ee627110a98501103827745aab18aedf312dd0/README.md",
+      "reviewed_commit": "e8ee627110a98501103827745aab18aedf312dd0",
+      "reviewed_sha256": "269838d3de5da90d4c2c0b45bf7fc745b384a5a05c0932582e923638e8994189",
+      "document_license": {
+        "name": "MIT",
+        "spdx": "MIT",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "temporalio/temporal",
+        "reviewed_commit": "e8ee627110a98501103827745aab18aedf312dd0",
+        "evidence_urls": [
+          "https://github.com/temporalio/temporal/blob/e8ee627110a98501103827745aab18aedf312dd0/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "6aab9afd99ceb1dcaf6a0d91386b46baef9bce17ae4006044e0f231e31430b69"
+      }
     },
     {
       "id": "github-rulesets",
@@ -59,7 +387,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/github/docs/5815d11586b0796688963a98c889680e60d72dc4/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md",
+      "reviewed_commit": "5815d11586b0796688963a98c889680e60d72dc4",
+      "reviewed_sha256": "ad074c0507552b396bd5d506a7e80875c5664dd7e6f0e496f5a1dbc1bd039810",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "github/docs",
+        "reviewed_commit": "5815d11586b0796688963a98c889680e60d72dc4",
+        "evidence_urls": [
+          "https://github.com/github/docs/blob/5815d11586b0796688963a98c889680e60d72dc4/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "12d3a82a7d1378e6f597ec23d63a081aeb6ec4bc8de2a76ee9dc96c34c6d7a1b"
+      }
     },
     {
       "id": "github-workflows",
@@ -69,7 +414,206 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/github/docs/5815d11586b0796688963a98c889680e60d72dc4/content/actions/reference/security/secure-use.md",
+      "reviewed_commit": "5815d11586b0796688963a98c889680e60d72dc4",
+      "reviewed_sha256": "0b2d692984fae55eff6334aabb52ca3c97bd38757cca1e2cc3437460cbc4b1d5",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "github/docs",
+        "reviewed_commit": "5815d11586b0796688963a98c889680e60d72dc4",
+        "evidence_urls": [
+          "https://github.com/github/docs/blob/5815d11586b0796688963a98c889680e60d72dc4/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "12d3a82a7d1378e6f597ec23d63a081aeb6ec4bc8de2a76ee9dc96c34c6d7a1b"
+      }
+    },
+    {
+      "id": "k6-breakpoint-testing",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/testing-guides/test-types/breakpoint-testing.md",
+      "publisher": "grafana",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Grafana k6 2.3.x documentation, inspected at immutable docs commit. k6 v2.3.0 release verified 2026-09-21. Workload/threshold mechanisms only; project policy and numbers are local decisions.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/breakpoint-testing.md",
+      "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+      "reviewed_sha256": "37ae4ad38a793111dd96fb9eb672efe603b95f5262ae865f4de8695acae68974",
+      "document_license": {
+        "name": "NOASSERTION",
+        "spdx": "NOASSERTION",
+        "status": "unresolved",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "grafana/k6-docs",
+        "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+        "evidence_urls": [
+          "https://github.com/grafana/k6-docs/tree/151bf3efc34b5a23b5f338d6ea341af48f1f4d69"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. No root license file or explicit documentation grant was established in the pinned tree, README, or package metadata. Do not infer documentation rights from the k6 runtime software license."
+      }
+    },
+    {
+      "id": "k6-open-vs-closed",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/using-k6/scenarios/concepts/open-vs-closed.md",
+      "publisher": "grafana",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Grafana k6 2.3.x documentation, inspected at immutable docs commit. k6 v2.3.0 release verified 2026-09-21. Workload/threshold mechanisms only; project policy and numbers are local decisions.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/using-k6/scenarios/concepts/open-vs-closed.md",
+      "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+      "reviewed_sha256": "374d2ee2334444ff5a666e26f90dc79e7bebfac0304437c92a9d969dc1c8630c",
+      "document_license": {
+        "name": "NOASSERTION",
+        "spdx": "NOASSERTION",
+        "status": "unresolved",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "grafana/k6-docs",
+        "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+        "evidence_urls": [
+          "https://github.com/grafana/k6-docs/tree/151bf3efc34b5a23b5f338d6ea341af48f1f4d69"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. No root license file or explicit documentation grant was established in the pinned tree, README, or package metadata. Do not infer documentation rights from the k6 runtime software license."
+      }
+    },
+    {
+      "id": "k6-soak-testing",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/testing-guides/test-types/soak-testing.md",
+      "publisher": "grafana",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Grafana k6 2.3.x documentation, inspected at immutable docs commit. k6 v2.3.0 release verified 2026-09-21. Workload/threshold mechanisms only; project policy and numbers are local decisions.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/soak-testing.md",
+      "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+      "reviewed_sha256": "8461b5e2bb6414f9fe62fb25733a58de0ff12508ef4a1de3c84536be2c4c39b5",
+      "document_license": {
+        "name": "NOASSERTION",
+        "spdx": "NOASSERTION",
+        "status": "unresolved",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "grafana/k6-docs",
+        "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+        "evidence_urls": [
+          "https://github.com/grafana/k6-docs/tree/151bf3efc34b5a23b5f338d6ea341af48f1f4d69"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. No root license file or explicit documentation grant was established in the pinned tree, README, or package metadata. Do not infer documentation rights from the k6 runtime software license."
+      }
+    },
+    {
+      "id": "k6-spike-testing",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/testing-guides/test-types/spike-testing.md",
+      "publisher": "grafana",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Grafana k6 2.3.x documentation, inspected at immutable docs commit. k6 v2.3.0 release verified 2026-09-21. Workload/threshold mechanisms only; project policy and numbers are local decisions.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/spike-testing.md",
+      "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+      "reviewed_sha256": "67006a3eadacc6f1536dd40c447f3119d9d5ba6ad03721fc314febe64fb80916",
+      "document_license": {
+        "name": "NOASSERTION",
+        "spdx": "NOASSERTION",
+        "status": "unresolved",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "grafana/k6-docs",
+        "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+        "evidence_urls": [
+          "https://github.com/grafana/k6-docs/tree/151bf3efc34b5a23b5f338d6ea341af48f1f4d69"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. No root license file or explicit documentation grant was established in the pinned tree, README, or package metadata. Do not infer documentation rights from the k6 runtime software license."
+      }
+    },
+    {
+      "id": "k6-stress-testing",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/testing-guides/test-types/stress-testing.md",
+      "publisher": "grafana",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Grafana k6 2.3.x documentation, inspected at immutable docs commit. k6 v2.3.0 release verified 2026-09-21. Workload/threshold mechanisms only; project policy and numbers are local decisions.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/stress-testing.md",
+      "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+      "reviewed_sha256": "705a154e718c32daa9760924503e25a6b6be635e3df80f3e767b3bac88aed47f",
+      "document_license": {
+        "name": "NOASSERTION",
+        "spdx": "NOASSERTION",
+        "status": "unresolved",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "grafana/k6-docs",
+        "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+        "evidence_urls": [
+          "https://github.com/grafana/k6-docs/tree/151bf3efc34b5a23b5f338d6ea341af48f1f4d69"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. No root license file or explicit documentation grant was established in the pinned tree, README, or package metadata. Do not infer documentation rights from the k6 runtime software license."
+      }
+    },
+    {
+      "id": "k6-test-types",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/testing-guides/test-types/_index.md",
+      "publisher": "grafana",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Grafana k6 2.3.x documentation, inspected at immutable docs commit. k6 v2.3.0 release verified 2026-09-21. Workload/threshold mechanisms only; project policy and numbers are local decisions.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/_index.md",
+      "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+      "reviewed_sha256": "00d6c59d09e758240d3f4475cda7e327981195c3719576096fe639d710f944eb",
+      "document_license": {
+        "name": "NOASSERTION",
+        "spdx": "NOASSERTION",
+        "status": "unresolved",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "grafana/k6-docs",
+        "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+        "evidence_urls": [
+          "https://github.com/grafana/k6-docs/tree/151bf3efc34b5a23b5f338d6ea341af48f1f4d69"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. No root license file or explicit documentation grant was established in the pinned tree, README, or package metadata. Do not infer documentation rights from the k6 runtime software license."
+      }
+    },
+    {
+      "id": "k6-thresholds",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/main/docs/sources/k6/v2.3.x/using-k6/thresholds.md",
+      "publisher": "grafana",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Grafana k6 2.3.x documentation, inspected at immutable docs commit. k6 v2.3.0 release verified 2026-09-21. Workload/threshold mechanisms only; project policy and numbers are local decisions.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/using-k6/thresholds.md",
+      "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+      "reviewed_sha256": "429a8a5e46cf5fb11610fa552bb37e6a9ad07cffcb9e127fdda26d2889d7add2",
+      "document_license": {
+        "name": "NOASSERTION",
+        "spdx": "NOASSERTION",
+        "status": "unresolved",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "grafana/k6-docs",
+        "reviewed_commit": "151bf3efc34b5a23b5f338d6ea341af48f1f4d69",
+        "evidence_urls": [
+          "https://github.com/grafana/k6-docs/tree/151bf3efc34b5a23b5f338d6ea341af48f1f4d69"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. No root license file or explicit documentation grant was established in the pinned tree, README, or package metadata. Do not infer documentation rights from the k6 runtime software license."
+      }
     },
     {
       "id": "kubernetes",
@@ -79,7 +623,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/kubernetes/website/bc7f3479bc8b0af48097b155c22c8d58e8e1afe4/content/en/docs/concepts/architecture/_index.md",
+      "reviewed_commit": "bc7f3479bc8b0af48097b155c22c8d58e8e1afe4",
+      "reviewed_sha256": "0fd1fc2f5ff1e715c5ef99bfd040803f75ec17807c35c863c2b6890620cc3d10",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "kubernetes/website",
+        "reviewed_commit": "bc7f3479bc8b0af48097b155c22c8d58e8e1afe4",
+        "evidence_urls": [
+          "https://github.com/kubernetes/website/blob/bc7f3479bc8b0af48097b155c22c8d58e8e1afe4/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      }
     },
     {
       "id": "mcp-python",
@@ -89,7 +650,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 14,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/2af9e3089ac66b35c1550c500aae86a82efb1e17/README.md",
+      "reviewed_commit": "2af9e3089ac66b35c1550c500aae86a82efb1e17",
+      "reviewed_sha256": "51552fa66eee9852eb40f5bad68319df90800e88c399c4f404562c570216c05b",
+      "document_license": {
+        "name": "MIT",
+        "spdx": "MIT",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "modelcontextprotocol/python-sdk",
+        "reviewed_commit": "2af9e3089ac66b35c1550c500aae86a82efb1e17",
+        "evidence_urls": [
+          "https://github.com/modelcontextprotocol/python-sdk/blob/2af9e3089ac66b35c1550c500aae86a82efb1e17/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "5e13dbbc1d120fc2a03cecde7c91424ae2d7de11b63d58ded2f4431e261ee50d"
+      }
     },
     {
       "id": "mcp-spec",
@@ -99,7 +677,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 14,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/80041ab0a139a8f4fb3adbc99f7ae9113ea59671/README.md",
+      "reviewed_commit": "80041ab0a139a8f4fb3adbc99f7ae9113ea59671",
+      "reviewed_sha256": "7e98444c73ed5d923a3b02b1247e9cdf678d31a30cc32b1503bdcd906aa984e2",
+      "document_license": {
+        "name": "MCP licensing transition: Apache-2.0 / MIT / CC-BY-4.0",
+        "spdx": "NOASSERTION",
+        "status": "mixed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "modelcontextprotocol/modelcontextprotocol",
+        "reviewed_commit": "80041ab0a139a8f4fb3adbc99f7ae9113ea59671",
+        "evidence_urls": [
+          "https://github.com/modelcontextprotocol/modelcontextprotocol/blob/80041ab0a139a8f4fb3adbc99f7ae9113ea59671/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. LICENSE describes Apache-2.0 for new specification/code contributions, CC-BY-4.0 for non-spec documentation, and retained MIT contributions without relicensing consent. README still claims MIT; no blanket license is inferred for its mixed contribution history.",
+        "evidence_sha256": "0382b0057770ca05e9c350a50aa3b1c1fea84da0bc81d723bf00b9aa841be58a"
+      }
     },
     {
       "id": "mkdocs-material",
@@ -109,7 +704,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/squidfunk/mkdocs-material/cbee8f352745a974e1bae7dc595793be9b6875d7/README.md",
+      "reviewed_commit": "cbee8f352745a974e1bae7dc595793be9b6875d7",
+      "reviewed_sha256": "bd8225e2c9fe001b03a83fa2e7db8e154b361968154dc9fca7deb20607ff428a",
+      "document_license": {
+        "name": "MIT",
+        "spdx": "MIT",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "squidfunk/mkdocs-material",
+        "reviewed_commit": "cbee8f352745a974e1bae7dc595793be9b6875d7",
+        "evidence_urls": [
+          "https://github.com/squidfunk/mkdocs-material/blob/cbee8f352745a974e1bae7dc595793be9b6875d7/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "e1150f26b4c0f872627b39fda49ae3bd850304f2f7f3171ae0531c1f8f4dd078"
+      }
     },
     {
       "id": "observability",
@@ -119,7 +731,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md",
+      "reviewed_commit": "2cc7b050cecdab1a7daadb6b78ce51b15a18bec8",
+      "reviewed_sha256": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "spdx": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "open-telemetry/opentelemetry.io",
+        "reviewed_commit": "2cc7b050cecdab1a7daadb6b78ce51b15a18bec8",
+        "evidence_urls": [
+          "https://github.com/open-telemetry/opentelemetry.io/blob/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "6f9997b6f85f473f853aeef19b5f16504dd228ba99cee70e5a19211df947a2b3"
+      }
     },
     {
       "id": "openai-agents",
@@ -129,7 +758,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 14,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/openai/openai-agents-python/841dfdd938bfd4ca052475eb76d6245a356868e0/docs/agents.md",
+      "reviewed_commit": "841dfdd938bfd4ca052475eb76d6245a356868e0",
+      "reviewed_sha256": "a7610fba9f6f95e3fad126f23600f644464bafb1d6a7e020090beff86a4619c9",
+      "document_license": {
+        "name": "MIT",
+        "spdx": "MIT",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "openai/openai-agents-python",
+        "reviewed_commit": "841dfdd938bfd4ca052475eb76d6245a356868e0",
+        "evidence_urls": [
+          "https://github.com/openai/openai-agents-python/blob/841dfdd938bfd4ca052475eb76d6245a356868e0/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "13df7812ca53ecaae1cb4a868844bb598373047ae1d580e4debfbef1dd5b6915"
+      }
     },
     {
       "id": "openai-apps",
@@ -139,7 +785,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 14,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/openai/openai-apps-sdk-examples/18cc38e78a968712c357bacdc3c79fead5bfc6b4/README.md",
+      "reviewed_commit": "18cc38e78a968712c357bacdc3c79fead5bfc6b4",
+      "reviewed_sha256": "9faecc20f32fc628038d1cd3745b08e38a84b358e303a9ea70cd763e99241f98",
+      "document_license": {
+        "name": "MIT",
+        "spdx": "MIT",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "openai/openai-apps-sdk-examples",
+        "reviewed_commit": "18cc38e78a968712c357bacdc3c79fead5bfc6b4",
+        "evidence_urls": [
+          "https://github.com/openai/openai-apps-sdk-examples/blob/18cc38e78a968712c357bacdc3c79fead5bfc6b4/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "13df7812ca53ecaae1cb4a868844bb598373047ae1d580e4debfbef1dd5b6915"
+      }
     },
     {
       "id": "opentofu",
@@ -149,7 +812,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/opentofu/opentofu/ec773ed37be4d07e00d4a2fbb237d0c0fe1ca3ce/README.md",
+      "reviewed_commit": "ec773ed37be4d07e00d4a2fbb237d0c0fe1ca3ce",
+      "reviewed_sha256": "60c539cfab196b4b39768781ee871f07b34aadcada2f4bef42393810e3dbfb92",
+      "document_license": {
+        "name": "MPL-2.0",
+        "spdx": "MPL-2.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "opentofu/opentofu",
+        "reviewed_commit": "ec773ed37be4d07e00d4a2fbb237d0c0fe1ca3ce",
+        "evidence_urls": [
+          "https://github.com/opentofu/opentofu/blob/ec773ed37be4d07e00d4a2fbb237d0c0fe1ca3ce/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "142b957651baf401646dd7f3d855cb7c4f6f0921d645faa27e7cb540bc33cf4c"
+      }
     },
     {
       "id": "owasp",
@@ -159,7 +839,294 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/ASVS/2b47a9dd16760ee484a6672d197f1f7e25d9c632/README.md",
+      "reviewed_commit": "2b47a9dd16760ee484a6672d197f1f7e25d9c632",
+      "reviewed_sha256": "9a360766c67c8facb75a088656dfadad7b390a894acf439c49b2d6cd7b077876",
+      "document_license": {
+        "name": "CC-BY-SA-4.0",
+        "spdx": "CC-BY-SA-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "OWASP/ASVS",
+        "reviewed_commit": "2b47a9dd16760ee484a6672d197f1f7e25d9c632",
+        "evidence_urls": [
+          "https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/LICENSE.md"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+      }
+    },
+    {
+      "id": "owasp-ai-agent",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/AI_Agent_Security_Cheat_Sheet.md",
+      "publisher": "OWASP",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 14,
+      "scope": "OWASP mechanism-specific guidance at inspected commit; descriptive controls inform original local risk and testing policy. Code examples and source prose are not republished.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/AI_Agent_Security_Cheat_Sheet.md",
+      "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+      "reviewed_sha256": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a",
+      "document_license": {
+        "name": "CC-BY-SA-4.0",
+        "spdx": "CC-BY-SA-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "OWASP/CheatSheetSeries",
+        "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+        "evidence_urls": [
+          "https://github.com/OWASP/CheatSheetSeries/blob/4a2852f456ccac403e140b6b48beb53ce505a550/LICENSE.md"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "2b47ecdd5078e948395bc5980226933854228ff688f10d1dd059208be4956084"
+      }
+    },
+    {
+      "id": "owasp-asvs-requirements",
+      "url": "https://raw.githubusercontent.com/OWASP/ASVS/v5.0.0/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv",
+      "publisher": "OWASP",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "OWASP ASVS 5.0.0 released requirements; upstream master is explicitly a development version. Cite versioned requirement IDs; source is not reproduced.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/ASVS/3383877f732ce89a458a1af43288f2f1b1d7db0c/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv",
+      "reviewed_commit": "3383877f732ce89a458a1af43288f2f1b1d7db0c",
+      "reviewed_sha256": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+      "document_license": {
+        "name": "CC-BY-SA-4.0",
+        "spdx": "CC-BY-SA-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "OWASP/ASVS",
+        "reviewed_commit": "3383877f732ce89a458a1af43288f2f1b1d7db0c",
+        "evidence_urls": [
+          "https://github.com/OWASP/ASVS/blob/3383877f732ce89a458a1af43288f2f1b1d7db0c/LICENSE.md"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+      }
+    },
+    {
+      "id": "owasp-authentication",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Authentication_Cheat_Sheet.md",
+      "publisher": "OWASP",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "OWASP mechanism-specific guidance at inspected commit; descriptive controls inform original local risk and testing policy. Code examples and source prose are not republished.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Authentication_Cheat_Sheet.md",
+      "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+      "reviewed_sha256": "92f7483b28548679917a329c7b9be1824f33e934d9eed670aaf3e9a1e7b37e83",
+      "document_license": {
+        "name": "CC-BY-SA-4.0",
+        "spdx": "CC-BY-SA-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "OWASP/CheatSheetSeries",
+        "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+        "evidence_urls": [
+          "https://github.com/OWASP/CheatSheetSeries/blob/4a2852f456ccac403e140b6b48beb53ce505a550/LICENSE.md"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "2b47ecdd5078e948395bc5980226933854228ff688f10d1dd059208be4956084"
+      }
+    },
+    {
+      "id": "owasp-authorization",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Authorization_Cheat_Sheet.md",
+      "publisher": "OWASP",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "OWASP mechanism-specific guidance at inspected commit; descriptive controls inform original local risk and testing policy. Code examples and source prose are not republished.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Authorization_Cheat_Sheet.md",
+      "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+      "reviewed_sha256": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+      "document_license": {
+        "name": "CC-BY-SA-4.0",
+        "spdx": "CC-BY-SA-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "OWASP/CheatSheetSeries",
+        "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+        "evidence_urls": [
+          "https://github.com/OWASP/CheatSheetSeries/blob/4a2852f456ccac403e140b6b48beb53ce505a550/LICENSE.md"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "2b47ecdd5078e948395bc5980226933854228ff688f10d1dd059208be4956084"
+      }
+    },
+    {
+      "id": "owasp-csrf",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md",
+      "publisher": "OWASP",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "OWASP mechanism-specific guidance at inspected commit; descriptive controls inform original local risk and testing policy. Code examples and source prose are not republished.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md",
+      "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+      "reviewed_sha256": "6efa25bf9a69aefdb58f41d8c9cdcc1d0f1e84cc82570f11b77a4ed46eab2ded",
+      "document_license": {
+        "name": "CC-BY-SA-4.0",
+        "spdx": "CC-BY-SA-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "OWASP/CheatSheetSeries",
+        "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+        "evidence_urls": [
+          "https://github.com/OWASP/CheatSheetSeries/blob/4a2852f456ccac403e140b6b48beb53ce505a550/LICENSE.md"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "2b47ecdd5078e948395bc5980226933854228ff688f10d1dd059208be4956084"
+      }
+    },
+    {
+      "id": "owasp-multi-tenant",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.md",
+      "publisher": "OWASP",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "OWASP mechanism-specific guidance at inspected commit; descriptive controls inform original local risk and testing policy. Code examples and source prose are not republished.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.md",
+      "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+      "reviewed_sha256": "f1286c7bada7b7361922405157aaae8c86fb5198347a85fcdf4bfb207904790e",
+      "document_license": {
+        "name": "CC-BY-SA-4.0",
+        "spdx": "CC-BY-SA-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "OWASP/CheatSheetSeries",
+        "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+        "evidence_urls": [
+          "https://github.com/OWASP/CheatSheetSeries/blob/4a2852f456ccac403e140b6b48beb53ce505a550/LICENSE.md"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "2b47ecdd5078e948395bc5980226933854228ff688f10d1dd059208be4956084"
+      }
+    },
+    {
+      "id": "owasp-session",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Session_Management_Cheat_Sheet.md",
+      "publisher": "OWASP",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "OWASP mechanism-specific guidance at inspected commit; descriptive controls inform original local risk and testing policy. Code examples and source prose are not republished.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Session_Management_Cheat_Sheet.md",
+      "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+      "reviewed_sha256": "3c38656e2be6188be4fc31d8c1fadafaaa6f37accc27e411e3345c235d44c051",
+      "document_license": {
+        "name": "CC-BY-SA-4.0",
+        "spdx": "CC-BY-SA-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "OWASP/CheatSheetSeries",
+        "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+        "evidence_urls": [
+          "https://github.com/OWASP/CheatSheetSeries/blob/4a2852f456ccac403e140b6b48beb53ce505a550/LICENSE.md"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "2b47ecdd5078e948395bc5980226933854228ff688f10d1dd059208be4956084"
+      }
+    },
+    {
+      "id": "owasp-ssrf",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md",
+      "publisher": "OWASP",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "OWASP mechanism-specific guidance at inspected commit; descriptive controls inform original local risk and testing policy. Code examples and source prose are not republished.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md",
+      "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+      "reviewed_sha256": "3ae2f474449eceadd74cc2c28edfdc405d935166550b2bd67965729b7d707652",
+      "document_license": {
+        "name": "CC-BY-SA-4.0",
+        "spdx": "CC-BY-SA-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "OWASP/CheatSheetSeries",
+        "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+        "evidence_urls": [
+          "https://github.com/OWASP/CheatSheetSeries/blob/4a2852f456ccac403e140b6b48beb53ce505a550/LICENSE.md"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "2b47ecdd5078e948395bc5980226933854228ff688f10d1dd059208be4956084"
+      }
+    },
+    {
+      "id": "owasp-xss",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md",
+      "publisher": "OWASP",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "OWASP mechanism-specific guidance at inspected commit; descriptive controls inform original local risk and testing policy. Code examples and source prose are not republished.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md",
+      "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+      "reviewed_sha256": "199c484557a3d2e6732daec1d2b8d683645163ce1d7dd58f7e5590d93f5a2719",
+      "document_license": {
+        "name": "CC-BY-SA-4.0",
+        "spdx": "CC-BY-SA-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "OWASP/CheatSheetSeries",
+        "reviewed_commit": "4a2852f456ccac403e140b6b48beb53ce505a550",
+        "evidence_urls": [
+          "https://github.com/OWASP/CheatSheetSeries/blob/4a2852f456ccac403e140b6b48beb53ce505a550/LICENSE.md"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "2b47ecdd5078e948395bc5980226933854228ff688f10d1dd059208be4956084"
+      }
+    },
+    {
+      "id": "playwright-testing",
+      "url": "https://raw.githubusercontent.com/microsoft/playwright/main/docs/src/best-practices-js.md",
+      "publisher": "microsoft",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Official Playwright browser testing guidance: user-visible behavior, isolation, controlled external dependencies, resilient assertions. Does not establish universal test-level ratios.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/microsoft/playwright/ca7ca36145b84183cf423c2a099bd7e9cd8b1cb3/docs/src/best-practices-js.md",
+      "reviewed_commit": "ca7ca36145b84183cf423c2a099bd7e9cd8b1cb3",
+      "reviewed_sha256": "785e6244815ed457ceb0a9109e0ead34a114fd89b09c0689174a5b421eed8512",
+      "document_license": {
+        "name": "Apache-2.0",
+        "spdx": "Apache-2.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "microsoft/playwright",
+        "reviewed_commit": "ca7ca36145b84183cf423c2a099bd7e9cd8b1cb3",
+        "evidence_urls": [
+          "https://github.com/microsoft/playwright/blob/ca7ca36145b84183cf423c2a099bd7e9cd8b1cb3/LICENSE"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library.",
+        "evidence_sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+      }
     },
     {
       "id": "plugins",
@@ -169,7 +1136,23 @@
       "reviewed_on": "2026-10-21",
       "review_days": 14,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/openai/plugins/0722921d5542fc593105c27bd52630babd8b8c2a/README.md",
+      "reviewed_commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+      "reviewed_sha256": "b3681ebd15797bdee1d638c6520c7ba10a36e676760ea5c251530f53f843c852",
+      "document_license": {
+        "name": "NOASSERTION",
+        "spdx": "NOASSERTION",
+        "status": "unresolved",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "openai/plugins",
+        "reviewed_commit": "0722921d5542fc593105c27bd52630babd8b8c2a",
+        "evidence_urls": [
+          "https://github.com/openai/plugins/tree/0722921d5542fc593105c27bd52630babd8b8c2a"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. No root license grant was established from the license endpoint or inspected README; per-plugin material requires separate rights verification."
+      }
     },
     {
       "id": "postgres-backup",
@@ -179,7 +1162,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/backup.sgml",
+      "reviewed_commit": "5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33",
+      "reviewed_sha256": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26",
+      "document_license": {
+        "name": "PostgreSQL",
+        "spdx": "PostgreSQL",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "postgres/postgres",
+        "reviewed_commit": "5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33",
+        "evidence_urls": [
+          "https://github.com/postgres/postgres/blob/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/COPYRIGHT"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. COPYRIGHT text covers software and documentation, including the UC and PostgreSQL notices.",
+        "evidence_sha256": "3d6af92ff8a4c2cdf69afb1cf44edea727922f5cd0cf8b5f72b11cdecac8fdfd"
+      }
     },
     {
       "id": "postgres-isolation",
@@ -189,7 +1189,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml",
+      "reviewed_commit": "5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33",
+      "reviewed_sha256": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5",
+      "document_license": {
+        "name": "PostgreSQL",
+        "spdx": "PostgreSQL",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "postgres/postgres",
+        "reviewed_commit": "5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33",
+        "evidence_urls": [
+          "https://github.com/postgres/postgres/blob/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/COPYRIGHT"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. COPYRIGHT text covers software and documentation, including the UC and PostgreSQL notices.",
+        "evidence_sha256": "3d6af92ff8a4c2cdf69afb1cf44edea727922f5cd0cf8b5f72b11cdecac8fdfd"
+      }
     },
     {
       "id": "semver",
@@ -199,7 +1216,24 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/semver/semver/f99d5485190a47c0863949e7da810a5553e0ed4d/semver.md",
+      "reviewed_commit": "f99d5485190a47c0863949e7da810a5553e0ed4d",
+      "reviewed_sha256": "33ebae1a97845991d0b916f3295a88b499e2ec71a6c1fe84c12429077b19ce08",
+      "document_license": {
+        "name": "CC-BY-3.0",
+        "spdx": "CC-BY-3.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "semver/semver",
+        "reviewed_commit": "f99d5485190a47c0863949e7da810a5553e0ed4d",
+        "evidence_urls": [
+          "https://github.com/semver/semver/blob/f99d5485190a47c0863949e7da810a5553e0ed4d/semver.md#license"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. The specification itself states CC BY 3.0; no separate root license was returned.",
+        "evidence_sha256": "33ebae1a97845991d0b916f3295a88b499e2ec71a6c1fe84c12429077b19ce08"
+      }
     },
     {
       "id": "skills",
@@ -209,7 +1243,23 @@
       "reviewed_on": "2026-10-21",
       "review_days": 14,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "deprecated"
+      "status": "deprecated",
+      "reviewed_url": "https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/README.md",
+      "reviewed_commit": "49f948faa9258a0c61caceaf225e179651397431",
+      "reviewed_sha256": "0f6a07580f3c627253e15a58dd0439e135049ec38eb16cf3587f7e50abc6f590",
+      "document_license": {
+        "name": "NOASSERTION",
+        "spdx": "NOASSERTION",
+        "status": "unresolved",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "openai/skills",
+        "reviewed_commit": "49f948faa9258a0c61caceaf225e179651397431",
+        "evidence_urls": [
+          "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/README.md#license"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. README refers to individual skill LICENSE.txt files; that is not a blanket license for this README or other skills. No root grant established."
+      }
     },
     {
       "id": "wcag",
@@ -219,7 +1269,137 @@
       "reviewed_on": "2026-10-21",
       "review_days": 90,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "current"
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/index.html",
+      "reviewed_commit": "457cece22d8219be32d29c5c1313e71aa6b61eae",
+      "reviewed_sha256": "26fd85fad76ac1f8d0a08f595099d0435a8b9af5656e1c0f2596eef2519ad37c",
+      "document_license": {
+        "name": "W3C Document License",
+        "spdx": "NOASSERTION",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "w3c/wcag",
+        "reviewed_commit": "457cece22d8219be32d29c5c1313e71aa6b61eae",
+        "evidence_urls": [
+          "https://github.com/w3c/wcag/blob/457cece22d8219be32d29c5c1313e71aa6b61eae/LICENSE.md",
+          "https://www.w3.org/Consortium/Legal/copyright-documents"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. LICENSE.md refers to the W3C Document License; do not infer the broader W3C Software and Document License or translation/adaptation permission.",
+        "evidence_sha256": "7a3ad7d36b8855bc301276279769da4aff648ea5d7b92f3f023c0823ee948764"
+      }
+    },
+    {
+      "id": "wcag-contrast",
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/sc/20/contrast-minimum.html",
+      "publisher": "w3c",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Exact WCAG criterion including applicability and exceptions; no full WCAG conformance claim.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/contrast-minimum.html",
+      "reviewed_commit": "457cece22d8219be32d29c5c1313e71aa6b61eae",
+      "reviewed_sha256": "f1d819b44cc5ba64e962ce64889de2ab214af6911b27a119f7d24c43197b2e64",
+      "document_license": {
+        "name": "W3C Document License",
+        "spdx": "NOASSERTION",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "w3c/wcag",
+        "reviewed_commit": "457cece22d8219be32d29c5c1313e71aa6b61eae",
+        "evidence_urls": [
+          "https://github.com/w3c/wcag/blob/457cece22d8219be32d29c5c1313e71aa6b61eae/LICENSE.md",
+          "https://www.w3.org/Consortium/Legal/copyright-documents"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. LICENSE.md refers to the W3C Document License; do not infer the broader W3C Software and Document License or translation/adaptation permission.",
+        "evidence_sha256": "7a3ad7d36b8855bc301276279769da4aff648ea5d7b92f3f023c0823ee948764"
+      }
+    },
+    {
+      "id": "wcag-focus-order",
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/sc/20/focus-order.html",
+      "publisher": "w3c",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Exact WCAG criterion including applicability and exceptions; no full WCAG conformance claim.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/focus-order.html",
+      "reviewed_commit": "457cece22d8219be32d29c5c1313e71aa6b61eae",
+      "reviewed_sha256": "a21c9b35f8057c8ba2f3b93a76d463181a510677bb276912fd989d4a1adb2d6b",
+      "document_license": {
+        "name": "W3C Document License",
+        "spdx": "NOASSERTION",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "w3c/wcag",
+        "reviewed_commit": "457cece22d8219be32d29c5c1313e71aa6b61eae",
+        "evidence_urls": [
+          "https://github.com/w3c/wcag/blob/457cece22d8219be32d29c5c1313e71aa6b61eae/LICENSE.md",
+          "https://www.w3.org/Consortium/Legal/copyright-documents"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. LICENSE.md refers to the W3C Document License; do not infer the broader W3C Software and Document License or translation/adaptation permission.",
+        "evidence_sha256": "7a3ad7d36b8855bc301276279769da4aff648ea5d7b92f3f023c0823ee948764"
+      }
+    },
+    {
+      "id": "wcag-focus-visible",
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/sc/20/focus-visible.html",
+      "publisher": "w3c",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Exact WCAG criterion including applicability and exceptions; no full WCAG conformance claim.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/focus-visible.html",
+      "reviewed_commit": "457cece22d8219be32d29c5c1313e71aa6b61eae",
+      "reviewed_sha256": "7c3e6f6309edf9da9b232c78a16c33b074da56840e2b0ab27971f531162f92d6",
+      "document_license": {
+        "name": "W3C Document License",
+        "spdx": "NOASSERTION",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "w3c/wcag",
+        "reviewed_commit": "457cece22d8219be32d29c5c1313e71aa6b61eae",
+        "evidence_urls": [
+          "https://github.com/w3c/wcag/blob/457cece22d8219be32d29c5c1313e71aa6b61eae/LICENSE.md",
+          "https://www.w3.org/Consortium/Legal/copyright-documents"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. LICENSE.md refers to the W3C Document License; do not infer the broader W3C Software and Document License or translation/adaptation permission.",
+        "evidence_sha256": "7a3ad7d36b8855bc301276279769da4aff648ea5d7b92f3f023c0823ee948764"
+      }
+    },
+    {
+      "id": "wcag-keyboard",
+      "url": "https://raw.githubusercontent.com/w3c/wcag/main/guidelines/sc/20/keyboard.html",
+      "publisher": "w3c",
+      "authority": "primary",
+      "reviewed_on": "2026-10-22",
+      "review_days": 90,
+      "scope": "Exact WCAG criterion including applicability and exceptions; no full WCAG conformance claim.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/keyboard.html",
+      "reviewed_commit": "457cece22d8219be32d29c5c1313e71aa6b61eae",
+      "reviewed_sha256": "8724a66650968536ac46ec2cb486c4cedeade25531d2840f75aedf6826e7aed1",
+      "document_license": {
+        "name": "W3C Document License",
+        "spdx": "NOASSERTION",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "w3c/wcag",
+        "reviewed_commit": "457cece22d8219be32d29c5c1313e71aa6b61eae",
+        "evidence_urls": [
+          "https://github.com/w3c/wcag/blob/457cece22d8219be32d29c5c1313e71aa6b61eae/LICENSE.md",
+          "https://www.w3.org/Consortium/Legal/copyright-documents"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. LICENSE.md refers to the W3C Document License; do not infer the broader W3C Software and Document License or translation/adaptation permission.",
+        "evidence_sha256": "7a3ad7d36b8855bc301276279769da4aff648ea5d7b92f3f023c0823ee948764"
+      }
     },
     {
       "id": "webmcp",
@@ -229,7 +1409,26 @@
       "reviewed_on": "2026-10-21",
       "review_days": 14,
       "scope": "Publisher documentation; main/master may describe unreleased behavior. Verify installed versions.",
-      "status": "experimental"
+      "status": "experimental",
+      "reviewed_url": "https://raw.githubusercontent.com/webmachinelearning/webmcp/51ed75653aaa7f174f8dbe05d1bc327359bbc57c/README.md",
+      "reviewed_commit": "51ed75653aaa7f174f8dbe05d1bc327359bbc57c",
+      "reviewed_sha256": "184c519af9ed728e77249423ff376c7d99367cd340e80a2d7f3a4a789e3fc7d6",
+      "document_license": {
+        "name": "W3C Software and Document License (2023)",
+        "spdx": "NOASSERTION",
+        "status": "reviewed",
+        "reviewed_on": "2026-10-22",
+        "reference_only": true,
+        "upstream_repository": "webmachinelearning/webmcp",
+        "reviewed_commit": "51ed75653aaa7f174f8dbe05d1bc327359bbc57c",
+        "evidence_urls": [
+          "https://github.com/webmachinelearning/webmcp/blob/51ed75653aaa7f174f8dbe05d1bc327359bbc57c/LICENSE.md",
+          "https://www.w3.org/copyright/software-license-2023/"
+        ],
+        "notes": "Reference only. License information is not permission to copy protected expression into the library. LICENSE.md points to the 2023 W3C Software and Document License.",
+        "evidence_sha256": "ad6c4259239fc10a64f07fec660da5017dcd606ac7c42b5756270fe580e5e18d"
+      }
     }
-  ]
+  ],
+  "policy": "Original explanations only. Inspected source text remains reference-only; a citation does not grant reproduction/adaptation rights."
 }

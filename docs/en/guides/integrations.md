@@ -2,9 +2,9 @@
 {
   "id": "integrations",
   "language": "en",
-  "revision": 1,
-  "translation_revision": 1,
-  "reviewed_on": "2026-10-21"
+  "revision": 2,
+  "translation_revision": 2,
+  "reviewed_on": "2026-10-22"
 }
 ---
 # Skills, plugins, MCP, and WebMCP
@@ -29,10 +29,16 @@ Run `uv run python -m library.mcp_server` from the checkout, or configure a host
 
 The inspected WebMCP explainer uses `document.modelContext.registerTool`, abort-signal unregistration, and `toolchange` notifications. This is evolving work, not a universal browser guarantee. Feature-detect, preserve ordinary search, and test permissions, cancellation, navigation, and absent support. Do not invent standard events from proposals; application telemetry must use its own names. The bundled adapter exposes only public library search and emits no external analytics.
 
+## What an integration must disclose
+
+The returned guidance is agent-assisted, proposed content requiring human review. Preserve authorship, revision, source IDs, and content-license metadata when displaying or caching it. Prose remains CC BY 4.0 when transported in JSON; third-party source texts are not included or relicensed. A tool annotation such as read-only is descriptive, not server-side authorization. Do not give a retrieval connector production-write credentials or assume prompt instructions enforce a permission boundary.
+
+Before adoption, run a real host compatibility test: successful search/read, unknown ID, unsupported locale, cancellation, malformed input, and an unavailable server. Mocked WebMCP tests cannot establish native browser support. Use the [testing strategy](testing-strategy.md) and [security testing](security-testing.md) guides to select further boundaries. Any source-fed generation must follow the private review and public-transfer boundary described in [maintenance](maintenance.md).
+
 ## Related decisions
 
 [Human direction, agent execution](agents.md) · [Frontend architecture and contracts](frontend.md) · [Security, privacy, and supply chain](security.md) · [Evidence and automated maintenance](maintenance.md)
 
 ## Primary evidence
 
-[plugins](https://raw.githubusercontent.com/openai/plugins/main/README.md) · [skills](https://raw.githubusercontent.com/openai/skills/main/README.md) · [openai-apps](https://raw.githubusercontent.com/openai/openai-apps-sdk-examples/main/README.md) · [mcp-python](https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md) · [webmcp](https://raw.githubusercontent.com/webmachinelearning/webmcp/main/README.md)
+[plugins](https://raw.githubusercontent.com/openai/plugins/0722921d5542fc593105c27bd52630babd8b8c2a/README.md) · [skills](https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/README.md) · [openai-apps](https://raw.githubusercontent.com/openai/openai-apps-sdk-examples/18cc38e78a968712c357bacdc3c79fead5bfc6b4/README.md) · [mcp-python](https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/2af9e3089ac66b35c1550c500aae86a82efb1e17/README.md) · [webmcp](https://raw.githubusercontent.com/webmachinelearning/webmcp/51ed75653aaa7f174f8dbe05d1bc327359bbc57c/README.md)

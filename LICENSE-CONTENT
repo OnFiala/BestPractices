@@ -1,17 +1,36 @@
 Copyright (c) 2026 OnFiala and contributors.
 
-Except where otherwise credited, the original prose, translations, and diagrams
-in docs/, decisions/, and the repository's Markdown documentation are licensed
-under Creative Commons Attribution 4.0 International (CC BY 4.0).
+Except where otherwise credited, this project's original prose, translations,
+and diagrams are licensed under Creative Commons Attribution 4.0 International
+(CC BY 4.0). This includes documentation, Markdown templates, agent instructions,
+and narrative descriptions embedded in data files.
+
+Changing a container format does not change the content license. Guide text in
+generated HTML, guides.json, search indexes, llms.txt, MCP responses, and other
+exports remains CC BY 4.0. Code examples originally written for this project are
+MIT-licensed unless an explicit notice says otherwise.
 
 License deed: https://creativecommons.org/licenses/by/4.0/
 Full legal terms: https://creativecommons.org/licenses/by/4.0/legalcode
 
 You may share and adapt this content, including commercially, under those terms.
 Credit OnFiala/BestPractices and contributors, link the source and license, and
-indicate changes. No endorsement is implied. Third-party source documents retain
-their own licenses; links, metadata, and observations do not relicense those works.
+indicate changes. No endorsement is implied. These grants cover only rights the
+contributors hold; AI-assisted authorship does not create rights in third-party
+material or guarantee that copyright protection exists in every jurisdiction.
 
-Executable code, workflow definitions, JSON data, configuration, and reusable code
-snippets/templates are licensed under the MIT license in LICENSE-CODE. This file
-does not replace the linked CC BY 4.0 legal terms.
+Original executable code, workflow definitions, schemas, configuration, machine
+identifiers, factual metadata, and reusable code snippets use LICENSE-CODE (MIT).
+Prose fields embedded in JSON/YAML retain the content license above. A file's
+extension alone does not determine its license.
+
+Third-party documentation, code, icons, and dependencies retain their own terms.
+Links, hashes, references, and metadata do not relicense upstream works. Research
+snapshots are reference material and must not be published as our documentation.
+THIRD_PARTY_NOTICES.md and LICENSES/ identify redistributed website components.
+The .js files in third_party/lunr_languages/ are required corresponding program
+source under MPL-1.1, expressly excluded from our MIT and CC BY 4.0 grants. Necessary
+license/notice texts and corresponding source are distinct from copied guide prose.
+
+This file defines project scope; it does not replace the linked CC BY 4.0 legal
+terms or any applicable third-party terms.

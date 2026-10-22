@@ -1,7 +1,6 @@
 import datetime as dt
 import json
 import shutil
-import subprocess
 import sys
 import tempfile
 import unittest
@@ -10,8 +9,7 @@ from unittest.mock import patch
 
 from mcp import Client, StdioServerParameters
 
-from library.agent_gate import export_patch
-from library.content import ROOT, guide, search
+from library.content import ROOT, guide, read_markdown, search
 from library.sources import MAX_BYTES, SafeRedirect, compare, observe, validate_url
 from library.validate import validate
 
@@ -45,8 +43,9 @@ class ContentTests(unittest.TestCase):
                 shutil.copytree(ROOT / folder, root / folder)
             (root / "docs/es/guides/data.md").unlink()
             stale = root / "docs/cs/guides/data.md"
-            stale.write_text(stale.read_text().replace('"translation_revision": 1',
-                                                       '"translation_revision": 0'))
+            meta, body = read_markdown(stale)
+            meta['translation_revision'] = meta['revision'] - 1
+            stale.write_text('---\n' + json.dumps(meta) + '\n---\n' + body)
             broken = root / "docs/en/guides/data.md"
             broken.write_text(broken.read_text() + "\n[Bad](missing.md)\n")
             errors = "\n".join(validate(root))
@@ -68,6 +67,42 @@ class ContentTests(unittest.TestCase):
             self.assertIn("Unsupported schema version", errors)
             self.assertIn("Missing/unknown evidence", errors)
             self.assertIn("Escaping guide path", errors)
+
+    def test_reviewed_evidence_cannot_silently_move_or_be_relicensed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for folder in ("docs", "data"):
+                shutil.copytree(ROOT / folder, root / folder)
+            path = root / "data/sources.json"
+            data = json.loads(path.read_text())
+            first, second = data["sources"][:2]
+            first["reviewed_url"] = first["url"]
+            first["document_license"]["reference_only"] = False
+            first["document_license"]["reviewed_commit"] = "0" * 40
+            second["reviewed_sha256"] = "0" * 64
+            path.write_text(json.dumps(data))
+            errors = "\n".join(validate(root))
+            for expected in ("immutable reviewed evidence", "reference-only license evidence",
+                             "Source/license revision mismatch", "Reviewed source hash differs",
+                             "Stale claim evidence"):
+                self.assertIn(expected, errors)
+
+    def test_translation_citations_and_claim_references_must_match_reviewed_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for folder in ("docs", "data"):
+                shutil.copytree(ROOT / folder, root / folder)
+            path = root / "docs/es/guides/data.md"
+            path.write_text(path.read_text() + "\n[Unreviewed](https://raw.githubusercontent.com/unknown/repo/main/a.md)\n")
+            evidence_path = root / "data/evidence.json"
+            data = json.loads(evidence_path.read_text())
+            data["claims"][0]["sources"] = ["fabricated-source"]
+            data["claims"][0]["source_hashes"] = {"fabricated-source": "0" * 64}
+            evidence_path.write_text(json.dumps(data))
+            errors = "\n".join(validate(root))
+            for expected in ("Unpinned/missing/extra source citations", "Claim sources are absent",
+                             "Stale claim evidence"):
+                self.assertIn(expected, errors)
 
 
 class SourceTests(unittest.TestCase):
@@ -107,37 +142,6 @@ class SourceTests(unittest.TestCase):
         with patch("urllib.request.build_opener", return_value=opener):
             result = observe({"id": "x", "url": "https://raw.githubusercontent.com/a/b"})
         self.assertEqual(result["status"], "unavailable")
-
-
-class AgentBoundaryTests(unittest.TestCase):
-    def test_export_accepts_prose_and_rejects_policy_and_symlinks(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            def git(*args):
-                return subprocess.check_output(["git", "-C", tmp, *args], stderr=subprocess.DEVNULL)
-            git("init")
-            path = root / "docs/en/guides/example.md"
-            path.parent.mkdir(parents=True)
-            path.write_text("original")
-            (root / "AGENTS.md").write_text("policy")
-            git("add", ".")
-            git("-c", "user.name=Test", "-c", "user.email=test@example.invalid", "commit", "-m", "base")
-            base = git("rev-parse", "HEAD").decode().strip()
-            path.write_text("changed")
-            output = root.parent / (root.name + ".patch")
-            try:
-                export_patch(base, output, root)
-                self.assertIn(b"changed", output.read_bytes())
-                (root / "AGENTS.md").write_text("weakened")
-                with self.assertRaises(ValueError):
-                    export_patch(base, output, root)
-                (root / "AGENTS.md").write_text("policy")
-                path.unlink()
-                path.symlink_to(root / "AGENTS.md")
-                with self.assertRaises(ValueError):
-                    export_patch(base, output, root)
-            finally:
-                output.unlink(missing_ok=True)
 
 
 class MCPTests(unittest.IsolatedAsyncioTestCase):

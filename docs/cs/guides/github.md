@@ -2,29 +2,30 @@
 {
   "id": "github",
   "language": "cs",
-  "revision": 1,
-  "translation_revision": 1,
-  "reviewed_on": "2026-10-21"
+  "revision": 2,
+  "translation_revision": 2,
+  "reviewed_on": "2026-10-22"
 }
 ---
 # GitHub, verze a čisté stromy
 
-## Přehledný tok
+## Postup, který lze posoudit
 
-Udržujte `main` vydatelnou. Jedna změna patří na krátkou větev a do srozumitelných commitů. Commitujte smysluplný ověřitelný krok; nečekejte na celý projekt a nepřidávejte tajemství ani cache. Prefixy `feat:`, `fix:`, `docs:` jsou místní dohoda, ne náhrada vysvětlení.
+Udržujte `main` připravený k vydání. Pro jednu změnu používejte krátkodobé větve a malé soudržné commity, které vysvětlují záměr. Commitujte, když lze smysluplný přírůstek pochopit a ověřit; nečekejte na celý projekt a necommitujte vygenerované tajné údaje ani cache. `feat:`, `fix:` a `docs:` jsou užitečné místní konvence, nikoli náhrada jasného popisu.
 
-PR obsahuje problém, chování, důkazy, rizika a návrat. Kontrolujte konečný diff, ne jen souhrn agenta. Vyžadujte checks, vhodné code-owner review, vyřešené diskuse a nové schválení významných změn. Agent neschvaluje ani neslučuje vlastní práci. Ruleset má zakázat force-push, mazání a přímé změny `main`; soubory ho samy nezapnou.
+Otevřete PR s problémem, chováním, důkazy, riziky a návratem zpět. Posuzujte konečný diff, nikoli pouze shrnutí agenta. Vyžadujte stavové kontroly, posouzení vlastníkem kódu tam, kde je relevantní, vyřešené diskuse a nové schválení po významných změnách. Agenti nikdy neschvalují ani neslučují svou vlastní práci. Nastavte sadu pravidel blokující force-push, mazání a přímé změny větve `main`; samotné soubory ji neaktivují.
 
-SemVer použijte pro určenou veřejnou smlouvu. Tagujte vědomá vydání s changelogem a migrací; tag tiše nenahrazujte. Každý commit nemusí být release. ID průvodců a metadata této knihovny jsou smlouva: nekompatibilní změna vyžaduje migraci a rozhodnutí o verzi.
+SemVer používejte pro definovaný veřejný kontrakt. Záměrná vydání označujte tagy, publikujte přehled změn a migrační poznámky a nikdy potichu nenahrazujte tag vydání. Interní commity nemusejí být vydáními. V této knihovně jsou identifikátory průvodců a metadata kontrakty: jejich nekompatibilní změna vyžaduje migraci a rozhodnutí o verzi.
 
 ## Čistota
 
-Před úpravou čtěte status a chraňte cizí práci. Ignorujte generované výstupy, kontrolujte staging i smazání. Nepoužívejte plošný reset/clean. Sloučené větve smažte po ověření místních commitů; reference prořezávejte zvlášť. Worktree v cloudu jen při výslovném zadání. Opuštěné větve mají vlastníka a termín.
+Před úpravami zkontrolujte stav a zachovejte ostatní práci. Generované výstupy ignorujte; před commitem posuďte připravené soubory a nechtěná smazání. Nikdy nepoužívejte plošné příkazy reset nebo clean. Sloučené větve smažte až po ověření, že neobsahují práci existující pouze lokálně; reference promazávejte samostatně. Worktrees v tomto cloudovém prostředí používejte pouze v případě potřeby a na výslovnou žádost. Opuštěné větve evidujte s vlastníkem a koncem platnosti.
 
 ## Související rozhodnutí
 
-[Kontroly kvality dokazující chování](quality.md) · [Člověk řídí, agent vykonává](agents.md) · [Důkazy a automatická údržba](maintenance.md)
+[Kontroly kvality prokazující chování](quality.md) · [Člověk určuje směr, agent vykonává](agents.md) · [Důkazy a automatická údržba](maintenance.md)
 
 ## Primární zdroje
 
-[github-rulesets](https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md) · [github-workflows](https://raw.githubusercontent.com/github/docs/main/content/actions/reference/security/secure-use.md) · [semver](https://raw.githubusercontent.com/semver/semver/master/semver.md)
+
+[github-rulesets](https://raw.githubusercontent.com/github/docs/5815d11586b0796688963a98c889680e60d72dc4/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md) · [github-workflows](https://raw.githubusercontent.com/github/docs/5815d11586b0796688963a98c889680e60d72dc4/content/actions/reference/security/secure-use.md) · [semver](https://raw.githubusercontent.com/semver/semver/f99d5485190a47c0863949e7da810a5553e0ed4d/semver.md)

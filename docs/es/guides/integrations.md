@@ -2,37 +2,43 @@
 {
   "id": "integrations",
   "language": "es",
-  "revision": 1,
-  "translation_revision": 1,
-  "reviewed_on": "2026-10-21"
+  "revision": 2,
+  "translation_revision": 2,
+  "reviewed_on": "2026-10-22"
 }
 ---
 # Skills, plugins, MCP y WebMCP
 
-## Superficies distintas
+## Superficies de integración distintas
 
-| Superficie | Función | Entregado aquí |
+| Superficie | Función | Qué se entrega aquí |
 | --- | --- | --- |
-| Skill | Procedimiento repetible | Revisión arquitectónica y mantenimiento |
-| Plugin Codex | Manifest de skills y herramientas | Paquete local; falta verificar instalación en host |
-| MCP | Protocolo de herramientas/recursos | Búsqueda y lectura stdio probadas |
-| ChatGPT Apps SDK | MCP e interfaz opcional en ChatGPT | Guía; sin hosting público ni autenticación configurados |
-| WebMCP | Herramientas dentro de la página | Búsqueda experimental con detección |
+| Skill | Procedimiento repetible de agente con ámbito y comprobaciones | Skills de revisión arquitectónica y mantenimiento |
+| Plugin de Codex | Manifiesto que empaqueta skills y herramientas opcionales | Paquete local compuesto solo por skills; la instalación todavía requiere verificación en el anfitrión |
+| MCP | Protocolo de herramientas y recursos entre anfitrión y servidor | Búsqueda y lectura de guías de solo lectura por stdio, probadas |
+| ChatGPT Apps SDK | Integración con ChatGPT mediante MCP e interfaz opcional | Guía de integración; no se han provisionado alojamiento público ni autenticación |
+| WebMCP | Herramientas dentro de una página mediadas por el navegador | Adaptador experimental de búsqueda con detección de capacidades |
 
-El antiguo repositorio `skills` de OpenAI remite a `plugins`. Sigue los manifests actuales; plugins históricos de ChatGPT, plugins Codex y Apps SDK no son intercambiables.
+El antiguo repositorio `skills` de OpenAI apunta actualmente a `plugins`. Sigue los ejemplos actuales de manifiestos de plugins; no supongas que los plugins antiguos de ChatGPT, los plugins de Codex y las aplicaciones del Apps SDK sean intercambiables.
 
 ## MCP local
 
-Ejecuta `uv run python -m library.mcp_server`; un host puede usar `uv --directory /absolute/path/BestPractices run --frozen python -m library.mcp_server`. Expone catálogo, búsqueda e IDs conocidos, sin escritura ni rutas arbitrarias. ChatGPT remoto necesita HTTPS compatible, autenticación/límites, hosting y una prueba real. Pages no ejecuta ese servidor.
+Ejecuta `uv run python -m library.mcp_server` desde el repositorio local, o configura un anfitrión con `uv --directory /absolute/path/BestPractices run --frozen python -m library.mcp_server`. Expone catálogo, búsqueda e identificadores conocidos de guías, sin herramientas de escritura ni acceso a rutas arbitrarias. Una conexión remota de ChatGPT necesita un transporte HTTPS compatible, autenticación y límites de tasa explícitos, alojamiento y una prueba real de compatibilidad con el anfitrión. GitHub Pages no puede ejecutar ese servidor.
 
-## Experimento de navegador
+## Experimento en navegador
 
-El documento inspeccionado usa `document.modelContext.registerTool`, baja mediante AbortSignal y `toolchange`. Es una propuesta cambiante, no garantía universal. Detecta soporte, conserva búsqueda normal y prueba permisos, cancelación, navegación y ausencia de API. No presentes eventos propuestos como estándar; usa nombres propios para telemetría. El adaptador busca contenido público sin analítica externa.
+La explicación de WebMCP inspeccionada usa `document.modelContext.registerTool`, cancelación del registro mediante una señal de interrupción y notificaciones `toolchange`. Es un trabajo en evolución, no una garantía universal de compatibilidad de navegadores. Detecta capacidades, conserva la búsqueda ordinaria y prueba permisos, cancelación, navegación y ausencia de soporte. No inventes eventos estándar a partir de propuestas; la telemetría de la aplicación debe usar nombres propios. El adaptador incluido solo expone búsqueda en la biblioteca pública y no emite analítica externa.
+
+## Qué debe declarar una integración
+
+Las recomendaciones devueltas son contenido propuesto y asistido por agentes que requiere revisión humana. Conserva la autoría, la revisión, los identificadores de fuentes y los metadatos de licencia del contenido cuando lo muestres o almacenes en caché. La prosa sigue bajo CC BY 4.0 cuando se transporta en JSON; los textos de las fuentes externas no se incluyen ni se relicencian. Una anotación de herramienta como solo lectura es descriptiva, no autorización aplicada en servidor. No des a un conector de recuperación credenciales de escritura en producción ni supongas que las instrucciones de un prompt imponen un límite de permisos.
+
+Antes de adoptar, ejecuta una prueba real de compatibilidad con el anfitrión: búsqueda y lectura correctas, identificador desconocido, idioma no admitido, cancelación, entrada mal formada y servidor no disponible. Las pruebas simuladas de WebMCP no demuestran soporte nativo del navegador. Usa las guías de [estrategia de pruebas](testing-strategy.md) y [pruebas de seguridad](security-testing.md) para elegir otros límites. Toda generación alimentada con fuentes debe respetar el límite de revisión privada y traslado público descrito en [mantenimiento](maintenance.md).
 
 ## Decisiones relacionadas
 
-[Dirección humana, ejecución de agentes](agents.md) · [Arquitectura frontend y contratos](frontend.md) · [Seguridad, privacidad y dependencias](security.md) · [Evidencia y mantenimiento automático](maintenance.md)
+[Dirección humana, ejecución de agentes](agents.md) · [Arquitectura y contratos del frontend](frontend.md) · [Seguridad, privacidad y cadena de suministro](security.md) · [Evidencia y mantenimiento automático](maintenance.md)
 
 ## Evidencia primaria
 
-[plugins](https://raw.githubusercontent.com/openai/plugins/main/README.md) · [skills](https://raw.githubusercontent.com/openai/skills/main/README.md) · [openai-apps](https://raw.githubusercontent.com/openai/openai-apps-sdk-examples/main/README.md) · [mcp-python](https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md) · [webmcp](https://raw.githubusercontent.com/webmachinelearning/webmcp/main/README.md)
+[plugins](https://raw.githubusercontent.com/openai/plugins/0722921d5542fc593105c27bd52630babd8b8c2a/README.md) · [skills](https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/README.md) · [openai-apps](https://raw.githubusercontent.com/openai/openai-apps-sdk-examples/18cc38e78a968712c357bacdc3c79fead5bfc6b4/README.md) · [mcp-python](https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/2af9e3089ac66b35c1550c500aae86a82efb1e17/README.md) · [webmcp](https://raw.githubusercontent.com/webmachinelearning/webmcp/51ed75653aaa7f174f8dbe05d1bc327359bbc57c/README.md)

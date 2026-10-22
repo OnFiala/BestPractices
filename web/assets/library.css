@@ -6,6 +6,8 @@ body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
 .md-typeset h2 { color: #164f46; font-weight: 650; }
 .bp-status { font-size: .67rem; color: #52564c; border-left: .18rem solid #b08a36;
   padding: .4rem .7rem; background: #faf7ef; }
+.bp-agent { font-size: .72rem; color: #164f46; padding: .55rem .75rem;
+  background: #edf5f1; border-left: .18rem solid #12645a; }
 .bp-flow { border-radius: .7rem; padding: 1.1rem; background: #e6f2ed;
   color: #164f46; font-weight: 650; line-height: 2; }
 .bp-languages { position: relative; font-size: .7rem; margin: 0 .7rem; }

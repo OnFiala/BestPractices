@@ -2,31 +2,49 @@
 {
   "id": "self-hosting",
   "language": "en",
-  "revision": 1,
-  "translation_revision": 1,
-  "reviewed_on": "2026-10-21"
+  "revision": 2,
+  "translation_revision": 2,
+  "reviewed_on": "2026-10-22"
 }
 ---
 # Operate your own servers
 
-## Minimum topology
+## Define the topology and its limits
 
-For a small service, a reverse proxy with TLS routes to an application on a private network; the database is not publicly exposed. Administrative access is restricted and audited. Separate production from experiments, and keep backups in another failure domain and account where feasible. One host is a single point of failure: document the accepted outage and recovery plan.
+A small public service can place a TLS reverse proxy at the ingress boundary, an application on a private network and a database reachable only by authorized application/administrative identities. Network placement supplements authentication; it does not replace authorization. Separate production from experiments and give administrative access an audited, restricted path. A single machine remains a single failure domain even when it runs several containers.
 
-## Operating contract
+The minimum operating contract below is a library recommendation informed by container-security and recovery documentation. Adapt it to the platform and impact; this is not a hardened server configuration ready to deploy.
 
-Use infrastructure as code, pinned images, least-privilege users, resource limits, persistent volumes, and explicit secret injection. Do not expose the Docker socket to an application or assume a container is a strong sandbox. Define patch cadence, certificate renewal, disk alerts, log retention, and who responds outside working hours. Keep database migration credentials separate from normal application access.
+| Obligation | Record and verify |
+| --- | --- |
+| Administration | Owner, scoped access, revocation path and evidence of denied access |
+| Software updates | Supported OS/runtime, patch owner, maintenance window and recovery artifact |
+| Resource isolation | CPU/memory/disk limits, capacity alerts and behavior under exhaustion |
+| Secrets | Injection/rotation mechanism and separate deployment, migration and application identities |
+| Persistence | Explicit data volumes, backup scope, encryption/key access and retention |
+| Public boundary | TLS renewal, allowed ports, authentication and safe error responses |
+| Recovery | Off-host backup, last successful restore, RTO/RPO and incident contact |
 
-Compose is a reasonable starting point for a few services. Orchestration is justified by scheduling, availability, or team requirements that outweigh its operational cost. A home server additionally needs a power, connectivity, physical security, and off-site recovery assessment.
+Prefer a separate backup account or failure domain where feasible. A backup on the same writable disk can fail with the server or be deleted by the same compromised identity. Verify that restoration does not depend on credentials stored only on the lost host.
 
-## Recovery drill
+## Deploy a reproducible unit
 
-Recreate a clean server from recorded configuration, restore data, verify a real user journey, and measure time and loss against RTO/RPO. A successful backup job is insufficient. Test certificate renewal and disk exhaustion safely in staging. Move to managed services when the team cannot meet patching or recovery obligations; adding replicas does not replace competent ownership.
+Use infrastructure as code and pin the deployable image by digest. Store application state in explicitly managed persistence, not an accidental container layer. Do not expose the Docker socket to the application or agent, and do not treat a container as a strong hostile-code sandbox. Restrict privileges and resources to what the workload needs.
+
+Compose can fit a few services with understood failure and update behavior. Adopt orchestration when scheduling, availability or team requirements justify its operational burden. More replicas on one machine do not make that machine highly available. A home server additionally needs power, connectivity, physical-access and off-site recovery assessment.
+
+## Recovery and failure drill
+
+On a separate test machine, recreate the host from recorded configuration and restore a recent backup. Disable real email, payments and other external side effects. Validate a representative user journey, tenant permissions, business totals and queued work before declaring restoration successful. Measure recovery time and the actual loss window against the agreed objectives.
+
+Before a material hosting change, use [performance testing](performance-testing.md) to exercise bounded overload and recovery in an authorized environment. Test disk pressure, a stopped application, an unavailable database and certificate renewal safely. Use [security testing](security-testing.md) to verify closed administrative/database ports from the public boundary and revoked credentials.
+
+A test passes only when the user-facing behavior and recorded state meet the acceptance contract. If recovery depends on undocumented manual steps, record them and repeat the drill. Move to a managed service or reduce scope when ownership cannot meet patching, response or recovery obligations; adding machinery does not resolve an ownership gap.
 
 ## Related decisions
 
-[Security, privacy, and supply chain](security.md) · [Hosting and exit strategies](hosting.md) · [Health, recovery, and cost](operations.md)
+[Security](security.md) · [Hosting](hosting.md) · [Operations](operations.md) · [Performance testing](performance-testing.md) · [Security testing](security-testing.md)
 
 ## Primary evidence
 
-[docker-security](https://raw.githubusercontent.com/docker/docs/main/content/manuals/engine/security/_index.md) · [postgres-backup](https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/backup.sgml) · [opentofu](https://raw.githubusercontent.com/opentofu/opentofu/main/README.md)
+[docker-security](https://raw.githubusercontent.com/docker/docs/4d64a8e4f0a59967fc0b391120d54a90e9ccb60d/content/manuals/engine/security/_index.md) · [postgres-backup](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/backup.sgml) · [opentofu](https://raw.githubusercontent.com/opentofu/opentofu/ec773ed37be4d07e00d4a2fbb237d0c0fe1ca3ce/README.md)

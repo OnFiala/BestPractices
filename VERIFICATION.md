@@ -49,3 +49,19 @@ paid agent run was performed.
 The saved install/start instructions and network additions are now returned as the
 published cloud configuration. Restoring the complete project into a fresh task has
 not been independently verified.
+
+## Independent and specialist review — 2026-10-22
+
+The expanded edition passed 25 Python tests, 4 browser-adapter tests, Ruff,
+provenance/content validation, four strict locale builds, generated-site checks,
+actionlint and real Chromium search/language/mobile checks. It contains 24 catalog
+entries × 4 languages (96 pages), 53 pinned primary documents, 57 representative
+claim records, 14 tool entries and six proposed project profiles. Live source
+observation found no drift, unavailability or overdue entry.
+
+The [review report](reviews/2026-10-22-agent-system-review.md) records the separate
+strong-model control review, specialist findings/remediation, measured checks and
+limits. Its [overlap evidence](reviews/2026-10-22-overlap-evidence.json) contains only
+hashes/metadata, not source bodies. Formal Codex Security scan tools were unavailable;
+the security review was manual. No copyright clearance, human translation approval,
+production capacity result, private paid workflow run or deployment is claimed.

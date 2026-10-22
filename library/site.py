@@ -13,9 +13,22 @@ from pathlib import Path
 import yaml
 
 from library.content import LANGUAGES, ROOT, catalog, guide
+from library.licensing import publish_licenses
 from library.validate import validate
 
 NAMES = {"en": "English", "cs": "Čeština", "de": "Deutsch", "es": "Español"}
+DISCLOSURE = {
+    "en": "Created and maintained with AI agents. Humans own review and publication.",
+    "cs": "Vytvořeno a udržováno pomocí AI agentů. Za posouzení a zveřejnění odpovídají lidé.",
+    "de": "Mit KI-Agenten erstellt und gepflegt. Menschen verantworten Prüfung und Veröffentlichung.",
+    "es": "Biblioteca creada y mantenida con agentes de IA. Las personas son responsables de la revisión y publicación.",
+}
+LICENSE_LABELS = {
+    "en": ("Original text: CC BY 4.0 · Original code: MIT", "Third-party notices"),
+    "cs": ("Vlastní texty: CC BY 4.0 · Vlastní kód: MIT", "Licence třetích stran"),
+    "de": ("Eigene Texte: CC BY 4.0 · Eigener Code: MIT", "Hinweise zu Drittanbietern"),
+    "es": ("Textos originales: CC BY 4.0 · Código original: MIT", "Avisos de terceros"),
+}
 LABELS = {
     "en": ("Proposed guidance · human review required", "Choose → build → verify → operate → revisit"),
     "cs": ("Návrh doporučení · vyžaduje lidské posouzení", "Zvolit → postavit → ověřit → provozovat → přezkoumat"),
@@ -53,13 +66,15 @@ def build(root: Path = ROOT):
             _, rest = text[4:].split("\n---\n", 1)
             title, body = rest.split("\n", 1)
             badge = f'<p class="bp-status">{STATUS[language][entry["status"]]} · r{entry["revision"]}</p>'
+            disclosure = ('<p class="bp-agent" data-authorship="agent-assisted">'
+                          + html.escape(DISCLOSURE[language]) + '</p>')
             flow = ""
             if entry["id"] == "start":
                 flow = f'<p class="bp-flow">{html.escape(LABELS[language][1])}</p>'
-            path.write_text(title + "\n\n" + badge + flow + body, encoding="utf-8")
+            path.write_text(title + "\n\n" + disclosure + badge + flow + body, encoding="utf-8")
         config = {
             "site_name": "BestPractices",
-            "site_description": "Architecture and lifecycle decisions for humans and agents",
+            "site_description": DISCLOSURE[language],
             "site_url": "https://onfiala.github.io/BestPractices/" +
                         ("" if language == "en" else language + "/"),
             "repo_url": "https://github.com/OnFiala/BestPractices",
@@ -79,11 +94,13 @@ def build(root: Path = ROOT):
             "extra_css": ["assets/library.css"],
             "extra_javascript": ["assets/webmcp.js"],
             "extra": {"generator": False, "root_prefix": "." if language == "en" else "..",
+                      "license_label": LICENSE_LABELS[language][0],
+                      "notices_label": LICENSE_LABELS[language][1],
                       "alternate": [{"name": name, "lang": code,
                                      "link": "https://onfiala.github.io/BestPractices/" +
                                              ("" if code == "en" else code + "/")}
                                     for code, name in NAMES.items()]},
-            "copyright": "Text: CC BY 4.0 · Code: MIT · OnFiala & contributors",
+            "copyright": LICENSE_LABELS[language][0] + " · OnFiala & contributors",
             "nav": [{g["title"][language]: g["path"]} for g in entries],
             "validation": {"links": {"not_found": "warn", "anchors": "warn"},
                            "nav": {"omitted_files": "warn", "not_found": "warn"}},
@@ -98,9 +115,15 @@ def build(root: Path = ROOT):
         } for g in entries]
         (destination / "guides.json").write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
     shutil.copy(root / "data/catalog.json", root / "site/catalog.json")
+    for name in ("sources", "evidence", "tools", "blueprints"):
+        shutil.copy(root / f"data/{name}.json", root / f"site/{name}.json")
+    publish_licenses(root, root / "site")
     (root / "site/.nojekyll").touch()
     (root / "site/llms.txt").write_text(
-        "# BestPractices\n\nProposed contextual guidance; human approval is required. "
+        "# BestPractices\n\nAgent-maintained decision system. "
+        "Original guidance and translations are agent-assisted; human review is required. "
+        "Text including guides.json: CC BY 4.0; original code: MIT; third-party notices: "
+        "third-party-notices.html. Proposed contextual guidance. "
         "English is canonical. Stable IDs and evidence: catalog.json.\n\n" +
         "\n".join(f"- [{g['id']}]({g['path'].replace('.md', '/') if g['path'] != 'index.md' else './'}): "
                   f"{g['title']['en']}" for g in entries) + "\n", encoding="utf-8")

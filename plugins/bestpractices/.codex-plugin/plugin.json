@@ -1,7 +1,7 @@
 {
   "name": "bestpractices",
   "version": "0.1.0",
-  "description": "Evidence-based architecture review and library maintenance under human approval.",
+  "description": "Evidence-based architecture review, test planning, and library maintenance under human approval.",
   "author": {"name": "OnFiala"},
   "repository": "https://github.com/OnFiala/BestPractices",
   "license": "MIT AND CC-BY-4.0",

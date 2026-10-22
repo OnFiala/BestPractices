@@ -2,35 +2,35 @@
 {
   "id": "foundations",
   "language": "de",
-  "revision": 1,
-  "translation_revision": 1,
-  "reviewed_on": "2026-10-21"
+  "revision": 2,
+  "translation_revision": 2,
+  "reviewed_on": "2026-10-22"
 }
 ---
 # Entscheidungsprinzipien
 
-## Kontext und Standard
+## Kontext und Ausgangspunkt
 
-Beständige Architektur übersteht Änderungen, Ausfälle und den Verlust individuellen Wissens. Sie verspricht keinen ewigen Stack. Klare Grenzen, wenige Abhängigkeiten und Verantwortliche für jede Betriebsaufgabe bilden den Anfang. Reversible Entscheidungen bevorzugen, bis stärkere Belege eine Bindung rechtfertigen.
+Beständige Architektur bedeutet, dass Änderungen, Ausfälle und der Verlust individuellen Wissens überstanden werden können. Sie verspricht nicht, dass ein Stack für immer hält. Beginne mit ausdrücklichen Grenzen, wenigen Abhängigkeiten und einem Verantwortlichen für jede Betriebsverpflichtung. Bevorzuge reversible Entscheidungen, bis stärkere Belege eine Bindung rechtfertigen.
 
 ## Projektprofile
 
 | Profil | Ausgangspunkt | Pflichten |
 | --- | --- | --- |
-| Persönlich oder explorativ | Statische Seite oder ein Prozess, bei Bedarf verwalteter Speicher | Reproduzierbarer Aufbau, geschützte Geheimnisse, Export und Wiederherstellung |
-| Produkt mit Nutzern | Modulare Anwendung, verwaltete Datenbank, Worker nach Bedarf | Dienstziele, Wiederherstellungstest, Rollback, Supportverantwortung |
-| Viel Verkehr oder viele Teams | Gemessene Aufteilung, klare Verträge, Kapazitätsplanung | Bereitschaft, Lasttests, Isolation und Migrationsplan |
-| Hohe Konsequenzen | Jede Größe, auch ein Nutzer | Bedrohungsmodell, Nachvollziehbarkeit, Aufbewahrung, Fach- und Rechtsprüfung |
+| Persönlich oder explorativ | Statische Website oder ein Prozess, bei Bedarf verwalteter Speicher | Reproduzierbare Einrichtung, sorgfältiger Umgang mit Secrets, Export und Wiederherstellung |
+| Produkt mit echten Nutzern | Modulare Anwendung, verwaltete Datenbank, Hintergrund-Worker bei Bedarf | Dienstziele, Wiederherstellungstest, Deployment-Rollback und Supportverantwortlicher |
+| Viel Verkehr oder viele Teams | Gemessene Partitionierung, ausdrückliche Verträge und Kapazitätsplanung | Bereitschaftsabdeckung, Lasttests, Isolation und Migrationspläne |
+| Schwerwiegende Folgen | Jede Größe, auch ein Nutzer | Bedrohungsmodell, Auditierbarkeit, Aufbewahrung sowie Rechts- und Fachprüfung |
 
-Profile beschreiben Einschränkungen, keinen Reifewettbewerb. Ein kleiner regulierter Dienst kann stärkere Kontrollen benötigen als ein großer öffentlicher Katalog. Bewusst aufgeschobene Schritte samt Auslöser dokumentieren.
+Profile beschreiben Rahmenbedingungen, keinen Reifewettbewerb. Ein kleiner regulierter Dienst kann stärkere Kontrollen benötigen als ein großer öffentlicher Katalog. Dokumentiere bewusst zurückgestellte Maßnahmen und das Signal, das sie erforderlich macht.
 
 ## Entscheidungsprotokoll
 
-Jede wesentliche Wahl benennt Problem, Einschränkungen, Alternativen, Belege, Verantwortliche, Kosten, Prüfung und Ausstieg. Fakten von Annahmen und lokale Regeln von externen Standards trennen. Prüftermin und beobachtbaren Auslöser festlegen, etwa dauerhaft überschrittenes Warteschlangenalter.
+Jede folgenreiche Wahl benennt Problem, Rahmenbedingungen, Optionen, Belege, Verantwortlichen, erwartete Kosten, Prüfung und Ausstiegsweg. Trenne Fakten von Annahmen und lokale Richtlinien von externen Standards. Lege einen Prüftermin und einen beobachtbaren Auslöser fest, etwa ein dauerhaft über dem vereinbarten Ziel liegendes Alter wartender Aufgaben.
 
-## Prüfen und überdenken
+## Prüfen und neu bewerten
 
-Neue Mitwirkende müssen die Entwicklungsumgebung reproduzieren, eine Nutzeraktion bis zu ihren Daten verfolgen und eine fehlgeschlagene Veröffentlichung beheben können. Versteht nur der ursprüngliche Autor oder eine Modellsitzung das System, zuerst Dokumentation und Grenzen verbessern. Nach Vorfällen, wesentlichen Kostenänderungen, Produktwechseln oder neuen Rechtspflichten Entscheidungen erneut prüfen.
+Ein neuer Mitwirkender muss den Entwicklungsablauf reproduzieren, eine Nutzeraktion bis zu ihren Daten verfolgen und eine fehlgeschlagene Veröffentlichung beheben können. Kann nur der ursprüngliche Autor oder eine Modellsitzung das System erklären, verbessere Dokumentation und Grenzen, bevor du Komponenten hinzufügst. Bewerte Entscheidungen nach Vorfällen, wesentlichen Kostenänderungen, einer Neuausrichtung des Produkts oder geänderten rechtlichen Pflichten erneut.
 
 ## Verwandte Entscheidungen
 
@@ -38,4 +38,4 @@ Neue Mitwirkende müssen die Entwicklungsumgebung reproduzieren, eine Nutzerakti
 
 ## Primärbelege
 
-[owasp](https://raw.githubusercontent.com/OWASP/ASVS/master/README.md) · [observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/main/content/en/docs/concepts/observability-primer.md) · [github-rulesets](https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md)
+[owasp](https://raw.githubusercontent.com/OWASP/ASVS/2b47a9dd16760ee484a6672d197f1f7e25d9c632/README.md) · [observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [github-rulesets](https://raw.githubusercontent.com/github/docs/5815d11586b0796688963a98c889680e60d72dc4/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets.md)

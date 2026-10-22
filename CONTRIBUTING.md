@@ -19,5 +19,14 @@ dates; never copy unavailable results or reset dates automatically. Delete a res
 PRs explain the problem, final behavior, tested evidence, affected guide IDs/locales,
 tradeoffs, and rollback. Humans approve and merge; agents may not. Published releases
 use SemVer for catalog/adapter contracts; every commit does not need a new release.
-Contributions use the applicable repository license. Avoid copying source documents
-wholesale; cite primary URLs and keep third-party notices for any excerpts.
+Contributions use the applicable repository license; contributors must hold the
+necessary rights. Follow PROVENANCE.md. Write original explanations, structure, and
+examples. Do not copy, translate, or closely paraphrase upstream prose or diagrams;
+citing a source does not authorize reuse. Link the inspected primary material and
+separate directly supported facts from contextual library recommendations.
+
+Keep raw source snapshots and unreviewed source-fed model output private, including
+logs, summaries, patches, and artifacts. Unattended generation requires a private
+workspace/repository and human originality/rights review before public transfer.
+Required third-party software notices and corresponding source remain separate
+under their actual licenses. A clean similarity check is not legal clearance.

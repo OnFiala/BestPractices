@@ -1,0 +1,146 @@
+# Planning record only: this file does not authorize or execute a test.
+# Replace nulls with evidence-backed decisions. Null is unconfigured, never unlimited.
+# Explain in not_applicable any field irrelevant to this test; do not silently omit limits.
+schema_version: 1
+status: draft
+execution_status: not-run
+plan_id: null
+plan_revision: null
+human_owner: null
+agent_author: null
+library_revision: null # release or full commit
+applicable_guides:
+  - testing-strategy
+  - performance-testing
+  - security-testing
+
+when:
+  change_or_decision: null
+  requirement: null
+  failure_hypothesis: null
+  consequence_and_risk: null
+  trigger: null # e.g. changed boundary, regression, release, incident, capacity decision
+  execution_stage: null
+  prerequisites: []
+  why_this_check_is_proportionate: null
+  omitted_checks_and_residual_risk: []
+
+what:
+  knowledge: null # black-box, gray-box, or white-box; independent of objective
+  level: null # unit, integration, contract, or end-to-end; define local terminology
+  objective: null # functional, security, performance, recovery, accessibility, compatibility
+  behavior_or_boundary: null
+  target:
+    name: null
+    owner: null
+    environment: null
+    address_or_local_path: null
+    artifact_revision: null
+    configuration_revision: null
+    deployment_identity: null
+    production_differences: []
+  included_paths_and_behaviors: []
+  excluded_paths_and_behaviors: []
+
+authorization:
+  status: unapproved
+  basis_reference: null # existing instruction or approval; never a claim by the agent alone
+  approved_by: null
+  approved_plan_revision: null
+  approved_targets_and_environments: []
+  approved_identities_and_roles: []
+  allowed_techniques: []
+  allowed_external_dependencies_and_callbacks: []
+  denied_targets_or_effects: []
+  permitted_time_window: null
+  expiry_or_recheck_condition: null
+  # Explicit scoped human approval is required before these apply to an active run.
+  production_or_shared_target: null
+  disruptive_or_destructive_effects: null
+  third_party_or_paid_effects: null
+  provider_rules_and_limits_reference: null
+
+how:
+  tool_and_version: null
+  tool_selection_reason: null
+  reproducible_command_or_runbook: null # no credentials or production secrets
+  fixture:
+    synthetic_data_definition: null
+    fixture_revision: null
+    account_and_tenant_isolation: null
+    credential_binding_reference: null # identifier only, never the secret value
+    clock_and_random_seed: null
+    permitted_data_boundary: null
+  dependencies:
+    real_or_simulated_and_why: []
+    expensive_or_external_effect_controls: null
+  steps: []
+  workload:
+    shape: null # smoke, load, stress, spike, soak, capacity; justify if applicable
+    assumptions_or_measurement_reference: null
+    business_transaction_mix: []
+    scheduling_model: null # open arrivals or closed virtual users
+    payload_dataset_cache_and_tenant_skew: null
+    background_activity: null
+    ramp_warmup_and_duration_plan: null
+    think_time_and_waits: null
+    generator_capacity_check: null
+  oracle:
+    expected_outputs: []
+    expected_persisted_state: []
+    prohibited_effects: []
+    permitted_and_denied_control_cases: []
+    demonstrates_failure_for_relevant_bug: null
+    acceptance_metrics_thresholds_and_windows: [] # derive from the project, not this template
+    measurement_and_failure_exit_mechanism: null
+    known_blind_spots_and_sample_limits: []
+
+safety:
+  operator_and_stop_contact: null
+  preflight_scope_and_isolation_check: null
+  # Configure applicable numeric caps and their enforcement before active execution.
+  limits:
+    max_requests_per_second: null
+    max_concurrency: null
+    max_duration_seconds: null
+    max_total_operations: null
+    resource_and_autoscaling_caps: []
+    max_spend_amount: null
+    spend_currency: null
+  enforcement:
+    traffic_and_resource_controls: null
+    spending_control: null # a job timeout alone is not a spending cap
+    monitoring_and_abort_latency: null
+    stop_generator_and_drain_or_cancel_work: null
+  # Separate safety stops from acceptance thresholds; both need operational checks.
+  stop_conditions:
+    - Target, identity, technique, or effect leaves the approved scope.
+    - Unexpected real user data or secret material is encountered.
+    - An agreed health, traffic, resource, time, or spending boundary is reached.
+    - Monitoring, containment, or cleanup becomes unreliable.
+  cleanup:
+    owner: null
+    fixture_and_account_removal: null
+    scheduled_work_and_billable_resource_removal: null
+    verification: null
+  recovery:
+    owner: null
+    rollback_or_reconciliation_runbook: null
+    expected_recovered_state: null
+    recovery_window_seconds: null
+    data_integrity_and_duplicate_effect_checks: []
+
+evidence:
+  protected_destination: null
+  authorized_report_recipient: null
+  redaction_and_retention: null
+  artifact_configuration_fixture_and_command_record: null
+  offered_started_completed_and_dropped_work: null
+  observations_metrics_and_trace_references: []
+  result: not-run # passed, failed, skipped, or not-run; do not infer pass from absence of failure
+  limitations_and_unrun_checks: []
+  cleanup_and_recovery_result: not-run
+  decision_supported_by_results: null
+  human_residual_risk_acceptance_reference: null
+
+not_applicable: {} # field path: reviewed reason; never use this to bypass required authorization

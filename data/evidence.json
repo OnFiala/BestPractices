@@ -1,0 +1,904 @@
+{
+  "schema_version": 1,
+  "review_status": "agent-reviewed-proposal",
+  "human_approved": false,
+  "coverage": "Representative material architecture, reliability, accessibility, security and testing claims. Not exhaustive per-sentence verification or legal clearance.",
+  "claims": [
+    {
+      "guide_id": "security",
+      "claim_id": "server-authorization",
+      "claim": "The trusted execution layer must decide whether this actor may perform this action on this resource.",
+      "sources": [
+        "owasp-authorization",
+        "owasp-asvs-requirements"
+      ],
+      "support": "direct",
+      "limits": "ASVS5.0.0 V8 and OWASP authorization guidance support the boundary; project roles and exceptions still require local design.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-authorization": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+        "owasp-asvs-requirements": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680"
+      }
+    },
+    {
+      "guide_id": "security",
+      "claim_id": "tenant-propagation",
+      "claim": "Tenant isolation must survive database, cache, asynchronous work, file access and recovery boundaries.",
+      "sources": [
+        "owasp-multi-tenant"
+      ],
+      "support": "direct",
+      "limits": "The source documents these surfaces; no library code implements tenant isolation for an adopting project.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-multi-tenant": "f1286c7bada7b7361922405157aaae8c86fb5198347a85fcdf4bfb207904790e"
+      }
+    },
+    {
+      "guide_id": "security",
+      "claim_id": "browser-session",
+      "claim": "Session lifecycle and CSRF protections must be verified for the actual browser authentication mechanism.",
+      "sources": [
+        "owasp-session",
+        "owasp-csrf",
+        "owasp-authentication"
+      ],
+      "support": "direct",
+      "limits": "Cookie and bearer-token architectures differ; SameSite alone is not a complete CSRF policy.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-session": "3c38656e2be6188be4fc31d8c1fadafaaa6f37accc27e411e3345c235d44c051",
+        "owasp-csrf": "6efa25bf9a69aefdb58f41d8c9cdcc1d0f1e84cc82570f11b77a4ed46eab2ded",
+        "owasp-authentication": "92f7483b28548679917a329c7b9be1824f33e934d9eed670aaf3e9a1e7b37e83"
+      }
+    },
+    {
+      "guide_id": "security",
+      "claim_id": "outbound-policy",
+      "claim": "User-influenced outbound requests need policy enforced beyond URL string validation, including redirect and address handling.",
+      "sources": [
+        "owasp-ssrf"
+      ],
+      "support": "direct",
+      "limits": "Allowed destinations and any internal-service access are local decisions; fetching a known fixed source is a narrower case.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-ssrf": "3ae2f474449eceadd74cc2c28edfdc405d935166550b2bd67965729b7d707652"
+      }
+    },
+    {
+      "guide_id": "security",
+      "claim_id": "agent-enforcement",
+      "claim": "Model instructions, tool annotations and agent-supplied approval claims do not establish execution authority.",
+      "sources": [
+        "owasp-ai-agent"
+      ],
+      "support": "direct",
+      "limits": "OWASP tool middleware and high-impact action sections support executor-side checks; the specific credential/gateway design is application-specific.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      }
+    },
+    {
+      "guide_id": "quality",
+      "claim_id": "isolated-visible-checks",
+      "claim": "Browser tests should exercise observable user behavior with isolated state and controlled external dependencies.",
+      "sources": [
+        "playwright-testing"
+      ],
+      "support": "direct",
+      "limits": "These are browser-testing practices, not proof of all business, deployment or security properties.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "playwright-testing": "785e6244815ed457ceb0a9109e0ead34a114fd89b09c0689174a5b421eed8512"
+      }
+    },
+    {
+      "guide_id": "quality",
+      "claim_id": "test-packet",
+      "claim": "Select checks from the changed behavior and failure consequence, recording requirements and omitted evidence.",
+      "sources": [
+        "owasp-authorization",
+        "owasp-ai-agent",
+        "playwright-testing"
+      ],
+      "support": "synthesis",
+      "limits": "The packet and risk-based delivery gate are original library policy, not a universal requirement quoted from the sources.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-authorization": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a",
+        "playwright-testing": "785e6244815ed457ceb0a9109e0ead34a114fd89b09c0689174a5b421eed8512"
+      }
+    },
+    {
+      "guide_id": "quality",
+      "claim_id": "agent-evaluation",
+      "claim": "Agent regressions should include useful task completion, hostile inputs, actual tool effects and policy-boundary failures.",
+      "sources": [
+        "owasp-ai-agent"
+      ],
+      "support": "direct",
+      "limits": "Finite selected cases do not prove immunity to prompt injection; model-based graders need separate calibration.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      }
+    },
+    {
+      "guide_id": "quality",
+      "claim_id": "workflow-trust",
+      "claim": "Required checks and publication credentials must remain separated from untrusted change execution.",
+      "sources": [
+        "github-workflows"
+      ],
+      "support": "direct",
+      "limits": "The source supports GitHub workflow security; repository rules and platform permissions require separate actual configuration.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "github-workflows": "0b2d692984fae55eff6334aabb52ca3c97bd38757cca1e2cc3437460cbc4b1d5"
+      }
+    },
+    {
+      "guide_id": "testing-strategy",
+      "claim_id": "orthogonal-axes",
+      "claim": "Knowledge model, exercised boundary and test objective describe different properties of a test.",
+      "sources": [
+        "owasp-authorization",
+        "playwright-testing",
+        "owasp-ai-agent"
+      ],
+      "support": "synthesis",
+      "limits": "The three-axis presentation and matrix are this library's taxonomy; the sources illustrate compatible techniques rather than standardize that table.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-authorization": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+        "playwright-testing": "785e6244815ed457ceb0a9109e0ead34a114fd89b09c0689174a5b421eed8512",
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      }
+    },
+    {
+      "guide_id": "testing-strategy",
+      "claim_id": "real-boundaries",
+      "claim": "A mocked dependency cannot prove properties that belong to the real database, protocol or browser implementation.",
+      "sources": [
+        "postgres-isolation",
+        "playwright-testing"
+      ],
+      "support": "synthesis",
+      "limits": "Sources document database isolation and real browser behavior; choosing the minimum sufficient integration scope remains a local judgment.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "postgres-isolation": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5",
+        "playwright-testing": "785e6244815ed457ceb0a9109e0ead34a114fd89b09c0689174a5b421eed8512"
+      }
+    },
+    {
+      "guide_id": "testing-strategy",
+      "claim_id": "negative-permissions",
+      "claim": "Authorization checks should cover allowed and denied cases and inspect protected side effects.",
+      "sources": [
+        "owasp-authorization",
+        "owasp-multi-tenant"
+      ],
+      "support": "direct",
+      "limits": "A finite role/tenant matrix needs ongoing coverage updates when new routes, jobs or permissions are added.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-authorization": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+        "owasp-multi-tenant": "f1286c7bada7b7361922405157aaae8c86fb5198347a85fcdf4bfb207904790e"
+      }
+    },
+    {
+      "guide_id": "testing-strategy",
+      "claim_id": "falsifiable-evidence",
+      "claim": "A meaningful fix test should be capable of detecting the claimed defect rather than restating the implementation.",
+      "sources": [
+        "playwright-testing",
+        "owasp-ai-agent"
+      ],
+      "support": "synthesis",
+      "limits": "The proposed mutation/invalid-fixture technique is optional according to consequence; no universal coverage or mutation-score target is asserted.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "playwright-testing": "785e6244815ed457ceb0a9109e0ead34a114fd89b09c0689174a5b421eed8512",
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      }
+    },
+    {
+      "guide_id": "performance-testing",
+      "claim_id": "test-shapes",
+      "claim": "Load, stress, spike, soak and breakpoint experiments address distinct workload risks.",
+      "sources": [
+        "k6-test-types",
+        "k6-stress-testing",
+        "k6-spike-testing",
+        "k6-soak-testing",
+        "k6-breakpoint-testing"
+      ],
+      "support": "direct",
+      "limits": "Names are not universal; the guide defines the actual workload shape and applies project-specific duration and traffic limits.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "k6-test-types": "00d6c59d09e758240d3f4475cda7e327981195c3719576096fe639d710f944eb",
+        "k6-stress-testing": "705a154e718c32daa9760924503e25a6b6be635e3df80f3e767b3bac88aed47f",
+        "k6-spike-testing": "67006a3eadacc6f1536dd40c447f3119d9d5ba6ad03721fc314febe64fb80916",
+        "k6-soak-testing": "8461b5e2bb6414f9fe62fb25733a58de0ff12508ef4a1de3c84536be2c4c39b5",
+        "k6-breakpoint-testing": "37ae4ad38a793111dd96fb9eb672efe603b95f5262ae865f4de8695acae68974"
+      }
+    },
+    {
+      "guide_id": "performance-testing",
+      "claim_id": "arrival-model",
+      "claim": "A closed user population can reduce offered work as responses slow, while arrival-rate scheduling decouples starts from completion.",
+      "sources": [
+        "k6-open-vs-closed"
+      ],
+      "support": "direct",
+      "limits": "Open scheduling still requires sufficient generator resources; configured arrivals must be compared with actually started and dropped iterations.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "k6-open-vs-closed": "374d2ee2334444ff5a666e26f90dc79e7bebfac0304437c92a9d969dc1c8630c"
+      }
+    },
+    {
+      "guide_id": "performance-testing",
+      "claim_id": "runner-failure",
+      "claim": "In k6 a failed check is a metric and needs an appropriate threshold to make acceptance failure fail the run.",
+      "sources": [
+        "k6-thresholds"
+      ],
+      "support": "direct",
+      "limits": "Verified against k6 2.3.x documentation; other runners have different exit behavior.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "k6-thresholds": "429a8a5e46cf5fb11610fa552bb37e6a9ad07cffcb9e127fdda26d2889d7add2"
+      }
+    },
+    {
+      "guide_id": "performance-testing",
+      "claim_id": "bounded-abort",
+      "claim": "Experiment acceptance, safety abort and spending control are separate requirements.",
+      "sources": [
+        "k6-thresholds",
+        "k6-breakpoint-testing"
+      ],
+      "support": "synthesis",
+      "limits": "k6 documents delayed cloud abort evaluation and elastic-spending risks; independent target/account caps are this library's recommended policy, not a vendor guarantee.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "k6-thresholds": "429a8a5e46cf5fb11610fa552bb37e6a9ad07cffcb9e127fdda26d2889d7add2",
+        "k6-breakpoint-testing": "37ae4ad38a793111dd96fb9eb672efe603b95f5262ae865f4de8695acae68974"
+      }
+    },
+    {
+      "guide_id": "performance-testing",
+      "claim_id": "credible-measurement",
+      "claim": "Report useful throughput, route-specific tail behavior, errors and resource trends, then verify recovery after load falls.",
+      "sources": [
+        "k6-test-types",
+        "k6-soak-testing",
+        "k6-spike-testing",
+        "k6-thresholds"
+      ],
+      "support": "synthesis",
+      "limits": "The source supports workload-specific interpretation; statistical sample adequacy and project SLOs require local analysis and are not universal numeric thresholds.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "k6-test-types": "00d6c59d09e758240d3f4475cda7e327981195c3719576096fe639d710f944eb",
+        "k6-soak-testing": "8461b5e2bb6414f9fe62fb25733a58de0ff12508ef4a1de3c84536be2c4c39b5",
+        "k6-spike-testing": "67006a3eadacc6f1536dd40c447f3119d9d5ba6ad03721fc314febe64fb80916",
+        "k6-thresholds": "429a8a5e46cf5fb11610fa552bb37e6a9ad07cffcb9e127fdda26d2889d7add2"
+      }
+    },
+    {
+      "guide_id": "security-testing",
+      "claim_id": "versioned-verification",
+      "claim": "A security assessment should select requirements from a named verification-standard version.",
+      "sources": [
+        "owasp-asvs-requirements"
+      ],
+      "support": "direct",
+      "limits": "ASVS5.0.0 supplies requirements; a selected subset or linked standard is not certification or a full ASVS assessment.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-asvs-requirements": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680"
+      }
+    },
+    {
+      "guide_id": "security-testing",
+      "claim_id": "complementary-techniques",
+      "claim": "Static, dependency, secret, infrastructure, dynamic and manual testing have different strengths and blind spots.",
+      "sources": [
+        "owasp-asvs-requirements",
+        "github-workflows",
+        "owasp-ai-agent"
+      ],
+      "support": "synthesis",
+      "limits": "The tool-selection matrix is original local guidance; no tool in the library implements this complete assessment for another project.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-asvs-requirements": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+        "github-workflows": "0b2d692984fae55eff6334aabb52ca3c97bd38757cca1e2cc3437460cbc4b1d5",
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      }
+    },
+    {
+      "guide_id": "security-testing",
+      "claim_id": "cross-tenant-reproduction",
+      "claim": "Separate identities and tenants should exercise protected object and workflow paths, checking denial and absence of unintended effects.",
+      "sources": [
+        "owasp-authorization",
+        "owasp-multi-tenant"
+      ],
+      "support": "direct",
+      "limits": "Must cover the actual application's roles, cache, jobs and permission changes; source examples are not copied into this library.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-authorization": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+        "owasp-multi-tenant": "f1286c7bada7b7361922405157aaae8c86fb5198347a85fcdf4bfb207904790e"
+      }
+    },
+    {
+      "guide_id": "security-testing",
+      "claim_id": "adversarial-agents",
+      "claim": "Security tests should exercise tool misuse, approval replay, memory contamination and cross-agent privilege expansion alongside benign tasks.",
+      "sources": [
+        "owasp-ai-agent"
+      ],
+      "support": "direct",
+      "limits": "Selected adversarial cases establish bounded evidence, not universal resistance; legitimate success is needed to reject trivial always-deny behavior.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      }
+    },
+    {
+      "guide_id": "security-testing",
+      "claim_id": "engagement-scope",
+      "claim": "Agents require explicit owned targets, permitted techniques, stop rules and data limits before active security or disruptive testing.",
+      "sources": [
+        "owasp-asvs-requirements",
+        "owasp-ai-agent"
+      ],
+      "support": "synthesis",
+      "limits": "Rules of engagement are original project policy. Reading a repository is not authorization to scan production or third parties.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-asvs-requirements": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      }
+    },
+    {
+      "guide_id": "architecture",
+      "claim_id": "architecture-styles-tradeoffs",
+      "claim": "Separating deployments can add network, consistency and operational coordination costs even when it supports independent ownership.",
+      "sources": [
+        "azure-architecture-styles"
+      ],
+      "support": "direct",
+      "limits": "The source compares architecture styles in an Azure context; the library does not adopt its provider-specific services or make a universal performance ranking.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-architecture-styles": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a"
+      }
+    },
+    {
+      "guide_id": "architecture",
+      "claim_id": "architecture-smallest-viable",
+      "claim": "Compare the simplest viable topology with a proposed more distributed one using measured constraints and an identified owner.",
+      "sources": [
+        "azure-architecture-styles"
+      ],
+      "support": "synthesis",
+      "limits": "This is the library's decision heuristic, not an externally mandated order or proof that a modular monolith fits every product.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-architecture-styles": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a"
+      }
+    },
+    {
+      "guide_id": "architecture",
+      "claim_id": "architecture-cqrs-scope",
+      "claim": "CQRS can separate read/write models within one data store; separate asynchronously maintained stores introduce a freshness contract.",
+      "sources": [
+        "azure-cqrs"
+      ],
+      "support": "direct",
+      "limits": "The particular consistency, transaction and deployment behavior depends on the implementation; CQRS does not require event sourcing.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-cqrs": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b"
+      }
+    },
+    {
+      "guide_id": "architecture",
+      "claim_id": "architecture-event-history",
+      "claim": "Event sourcing makes persisted event history authoritative and requires replay, schema evolution and retention/privacy decisions.",
+      "sources": [
+        "azure-event-sourcing"
+      ],
+      "support": "direct",
+      "limits": "The source's product examples are not adopted; no claim is made that an event broker or audit table alone satisfies these requirements.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-event-sourcing": "3b43bdcdf4b17f9da1adbfd4f77fd767f1262a8baeb3aba232bbed293e2d2a49"
+      }
+    },
+    {
+      "guide_id": "architecture",
+      "claim_id": "architecture-extraction-proof",
+      "claim": "Before extraction, measure a baseline and test a vertical slice with old consumers, repeated requests and a slow dependency.",
+      "sources": [
+        "azure-architecture-styles",
+        "azure-cqrs"
+      ],
+      "support": "synthesis",
+      "limits": "The exact experiment, acceptance thresholds, migration authority and recovery plan must be designed for the project; this library has not benchmarked the six profiles.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-architecture-styles": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a",
+        "azure-cqrs": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b"
+      }
+    },
+    {
+      "guide_id": "durability",
+      "claim_id": "durability-outbox-atomicity",
+      "claim": "An outbox can atomically retain a local business transition and its event, while a relay publishes later.",
+      "sources": [
+        "azure-outbox",
+        "postgres-isolation"
+      ],
+      "support": "direct",
+      "limits": "The Microsoft worked implementation uses Cosmos DB transaction boundaries; relational implementations must verify their own transaction and durability settings. External provider effects do not join the local transaction.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-outbox": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
+        "postgres-isolation": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5"
+      }
+    },
+    {
+      "guide_id": "durability",
+      "claim_id": "durability-consumer-dedup",
+      "claim": "Duplicate delivery requires a consumer-specific durable strategy, with the deduplication marker and local effect committed consistently.",
+      "sources": [
+        "azure-idempotent-consumer"
+      ],
+      "support": "direct",
+      "limits": "The retention horizon, concurrent duplicate handling and ordering policy remain implementation choices; broker send deduplication does not replace consumer correctness.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
+      }
+    },
+    {
+      "guide_id": "durability",
+      "claim_id": "durability-external-uncertainty",
+      "claim": "A lost response after a provider side effect requires supported idempotency or reconciliation before repeating the effect.",
+      "sources": [
+        "azure-idempotent-consumer",
+        "azure-retry"
+      ],
+      "support": "direct",
+      "limits": "Supported provider operation identity, query semantics and expiry must be verified; a local key alone cannot guarantee exactly-once external effects.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+        "azure-retry": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab"
+      }
+    },
+    {
+      "guide_id": "durability",
+      "claim_id": "durability-retry-budget",
+      "claim": "Retry only eligible failures under a bounded policy that accounts for retries at nested layers.",
+      "sources": [
+        "azure-retry"
+      ],
+      "support": "direct",
+      "limits": "The appropriate delay, jitter and deadline depend on the operation and provider contract; permanent denial or validation failures do not become safe through retry.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-retry": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab"
+      }
+    },
+    {
+      "guide_id": "durability",
+      "claim_id": "durability-failure-matrix",
+      "claim": "Crash and recovery tests should inspect durable records and external effects at each important boundary.",
+      "sources": [
+        "azure-outbox",
+        "azure-idempotent-consumer",
+        "postgres-backup"
+      ],
+      "support": "synthesis",
+      "limits": "The guide's failure matrix is an original proposed acceptance plan. It is not a report of tests executed against a deployed order system.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-outbox": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
+        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+        "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26"
+      }
+    },
+    {
+      "guide_id": "scaling",
+      "claim_id": "scaling-cache-consistency",
+      "claim": "Cache-aside needs explicit expiry/invalidation and does not automatically keep all cached copies consistent.",
+      "sources": [
+        "azure-cache-aside"
+      ],
+      "support": "direct",
+      "limits": "Tenant isolation, access revocation and the accepted stale-read window require additional application-specific design; the guide does not prescribe a universal TTL.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-cache-aside": "eb19852e710d924d98a39f386928ef1b0d763391f0e9e22a353ce818dd57881f"
+      }
+    },
+    {
+      "guide_id": "scaling",
+      "claim_id": "scaling-partitioning-cost",
+      "claim": "Partitioning introduces routing and cross-partition data/transaction obligations, so hot keys and migration must be considered.",
+      "sources": [
+        "azure-data-partitioning"
+      ],
+      "support": "direct",
+      "limits": "The inspected source discusses Azure products; its specific constraints and tooling are not asserted for every database.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-data-partitioning": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77"
+      }
+    },
+    {
+      "guide_id": "scaling",
+      "claim_id": "scaling-escalation-order",
+      "claim": "Change a measured constraint and compare useful throughput, errors, queue age and cost before accepting more infrastructure.",
+      "sources": [
+        "observability",
+        "azure-cache-aside",
+        "azure-data-partitioning"
+      ],
+      "support": "synthesis",
+      "limits": "The escalation table and choice of experimental measurements are local guidance; no user-count threshold or guaranteed capacity is supplied.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
+        "azure-cache-aside": "eb19852e710d924d98a39f386928ef1b0d763391f0e9e22a353ce818dd57881f",
+        "azure-data-partitioning": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77"
+      }
+    },
+    {
+      "guide_id": "scaling",
+      "claim_id": "scaling-steady-state-estimate",
+      "claim": "Average in-flight work can be estimated from average arrival rate and average elapsed time only within a matching stable boundary.",
+      "sources": [
+        "observability"
+      ],
+      "support": "synthesis",
+      "limits": "This dimensional/steady-state estimate is explanatory library reasoning, not established by the cited observability primer and not a tail-latency or overload-capacity guarantee.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e"
+      }
+    },
+    {
+      "guide_id": "hosting",
+      "claim_id": "hosting-operating-obligation",
+      "claim": "Compare hosting options by recovery, security, data movement and operator responsibilities as well as the infrastructure bill.",
+      "sources": [
+        "docker-security",
+        "postgres-backup",
+        "kubernetes",
+        "opentofu"
+      ],
+      "support": "synthesis",
+      "limits": "The table is original decision guidance. Current provider pricing, guarantees, regional availability and quotas are not verified by these general sources.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "docker-security": "bf9c126d4fc7bad25d75d1e1bce851d75738cdd8bc41561a39a9a8687ed1c9e0",
+        "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26",
+        "kubernetes": "0fd1fc2f5ff1e715c5ef99bfd040803f75ec17807c35c863c2b6890620cc3d10",
+        "opentofu": "60c539cfab196b4b39768781ee871f07b34aadcada2f4bef42393810e3dbfb92"
+      }
+    },
+    {
+      "guide_id": "hosting",
+      "claim_id": "hosting-write-cutover",
+      "claim": "A hosting migration must identify the authoritative writer and reconcile post-cutover changes; switching DNS does not reverse accepted writes.",
+      "sources": [
+        "postgres-isolation",
+        "postgres-backup"
+      ],
+      "support": "synthesis",
+      "limits": "This is a derived recovery obligation, not a provider-specific migration procedure. The rollback/forward-repair plan must be tested on the selected stores.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "postgres-isolation": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5",
+        "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26"
+      }
+    },
+    {
+      "guide_id": "self-hosting",
+      "claim_id": "self-hosting-container-boundary",
+      "claim": "Do not expose privileged container-engine control to an application or treat a container alone as a hostile-code security boundary.",
+      "sources": [
+        "docker-security"
+      ],
+      "support": "direct",
+      "limits": "Actual isolation depends on host, runtime configuration and privileges; this guide is not a hardening configuration or a penetration-test result.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "docker-security": "bf9c126d4fc7bad25d75d1e1bce851d75738cdd8bc41561a39a9a8687ed1c9e0"
+      }
+    },
+    {
+      "guide_id": "self-hosting",
+      "claim_id": "self-hosting-restore-proof",
+      "claim": "Demonstrate recovery on a clean isolated host, including required data and credential access, instead of treating backup-job completion as proof.",
+      "sources": [
+        "postgres-backup",
+        "opentofu"
+      ],
+      "support": "synthesis",
+      "limits": "The operating checklist is the library's recommendation; storage, encryption and restore procedures differ by platform and workload.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26",
+        "opentofu": "60c539cfab196b4b39768781ee871f07b34aadcada2f4bef42393810e3dbfb92"
+      }
+    },
+    {
+      "guide_id": "frontend",
+      "claim_id": "frontend-keyboard-focus",
+      "claim": "Relevant user journeys need keyboard operation, meaningful focus order and visible focus.",
+      "sources": [
+        "wcag-keyboard",
+        "wcag-focus-order",
+        "wcag-focus-visible"
+      ],
+      "support": "direct",
+      "limits": "These are inspected success-criterion source files at a fixed commit. Check the applicable published WCAG edition, conformance level and criterion exceptions before asserting conformance.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "wcag-keyboard": "8724a66650968536ac46ec2cb486c4cedeade25531d2840f75aedf6826e7aed1",
+        "wcag-focus-order": "a21c9b35f8057c8ba2f3b93a76d463181a510677bb276912fd989d4a1adb2d6b",
+        "wcag-focus-visible": "7c3e6f6309edf9da9b232c78a16c33b074da56840e2b0ab27971f531162f92d6"
+      }
+    },
+    {
+      "guide_id": "frontend",
+      "claim_id": "frontend-contrast",
+      "claim": "Text contrast is a specific accessibility criterion that should be checked under the applicable exceptions and level.",
+      "sources": [
+        "wcag-contrast"
+      ],
+      "support": "direct",
+      "limits": "The library does not reproduce threshold text or declare conformance; the source is pinned working material and the applicable published recommendation remains the authority.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "wcag-contrast": "f1d819b44cc5ba64e962ce64889de2ab214af6911b27a119f7d24c43197b2e64"
+      }
+    },
+    {
+      "guide_id": "frontend",
+      "claim_id": "frontend-state-and-contracts",
+      "claim": "Separate state ownership and define cancellation, optimistic-update recovery, offline conflict and API compatibility behavior.",
+      "sources": [
+        "azure-cqrs",
+        "owasp"
+      ],
+      "support": "synthesis",
+      "limits": "This is original interface design guidance. The ASVS README is background, not direct control-level evidence for every frontend rule; framework-specific behavior still needs validation.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-cqrs": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b",
+        "owasp": "9a360766c67c8facb75a088656dfadad7b390a894acf439c49b2d6cd7b077876"
+      }
+    },
+    {
+      "guide_id": "data",
+      "claim_id": "data-database-invariants",
+      "claim": "Database isolation and constraints determine concurrency behavior; applications must handle the chosen transaction semantics and serialization failures.",
+      "sources": [
+        "postgres-isolation"
+      ],
+      "support": "direct",
+      "limits": "The inspected source covers PostgreSQL development documentation; select the matching deployed database version before relying on a specific behavior.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "postgres-isolation": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5"
+      }
+    },
+    {
+      "guide_id": "data",
+      "claim_id": "data-expand-contract",
+      "claim": "Use a compatible transition, bounded backfill and invariant reconciliation before removing old data representations.",
+      "sources": [
+        "postgres-isolation",
+        "postgres-backup"
+      ],
+      "support": "synthesis",
+      "limits": "This original migration sequence is not copied from or fully established by the two sources. The actual old/new schema and rollback limits must be tested for the project.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "postgres-isolation": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5",
+        "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26"
+      }
+    },
+    {
+      "guide_id": "data",
+      "claim_id": "data-recovery-contract",
+      "claim": "Restore and reconcile business state before resuming external side effects and asynchronous processing.",
+      "sources": [
+        "postgres-backup",
+        "azure-outbox",
+        "azure-idempotent-consumer"
+      ],
+      "support": "synthesis",
+      "limits": "The library combines source mechanisms into an operational plan; the plan has not been executed against an adopter's data or providers.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26",
+        "azure-outbox": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
+        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
+      }
+    },
+    {
+      "guide_id": "lifecycle",
+      "claim_id": "lifecycle-stage-gates",
+      "claim": "Move through discovery, design, build, release, operation and retirement using explicit artifacts and observed exit evidence.",
+      "sources": [
+        "github-rulesets",
+        "observability",
+        "postgres-backup"
+      ],
+      "support": "synthesis",
+      "limits": "These stages are a proposed local operating model rather than an external certification or universal process standard.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "github-rulesets": "ad074c0507552b396bd5d506a7e80875c5664dd7e6f0e496f5a1dbc1bd039810",
+        "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
+        "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26"
+      }
+    },
+    {
+      "guide_id": "lifecycle",
+      "claim_id": "lifecycle-testing-timing",
+      "claim": "Select tests during planning and revisit compatibility, security, capacity and recovery evidence when relevant boundaries change.",
+      "sources": [
+        "github-rulesets",
+        "observability"
+      ],
+      "support": "synthesis",
+      "limits": "The sequence and depth are risk-based project decisions; passing CI alone does not establish acceptance, security or factual correctness.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "github-rulesets": "ad074c0507552b396bd5d506a7e80875c5664dd7e6f0e496f5a1dbc1bd039810",
+        "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e"
+      }
+    },
+    {
+      "guide_id": "operations",
+      "claim_id": "operations-observability-outcomes",
+      "claim": "Reliability measurement should relate telemetry to meaningful service outcomes rather than only whether a process exists.",
+      "sources": [
+        "observability",
+        "azure-health-endpoints"
+      ],
+      "support": "direct",
+      "limits": "An application must define its own success criteria and instrumentation; telemetry presence does not guarantee that the objective is met.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
+        "azure-health-endpoints": "2ffed47249e9c6e6dd5a2d2b36c73fcb2adcbd217377e60f3466c98cf9f9d08f"
+      }
+    },
+    {
+      "guide_id": "operations",
+      "claim_id": "operations-health-probe-risk",
+      "claim": "Frequent deep health probes can consume resources or remove otherwise useful instances during a shared dependency failure.",
+      "sources": [
+        "azure-health-endpoints"
+      ],
+      "support": "direct",
+      "limits": "Probe behavior and platform remediation differ; configure and test them for the actual load balancer/orchestrator, rather than copying product-specific defaults.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-health-endpoints": "2ffed47249e9c6e6dd5a2d2b36c73fcb2adcbd217377e60f3466c98cf9f9d08f"
+      }
+    },
+    {
+      "guide_id": "operations",
+      "claim_id": "operations-error-budget-example",
+      "claim": "For a request-based 99.9% objective over 100,000 eligible requests, 100 requests outside the objective exhaust the illustrative budget.",
+      "sources": [
+        "observability"
+      ],
+      "support": "synthesis",
+      "limits": "This is original arithmetic illustrating an explicitly defined denominator; the target is not recommended and the primer is not cited as the source of a required budget policy.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e"
+      }
+    },
+    {
+      "guide_id": "operations",
+      "claim_id": "operations-review-cadence",
+      "claim": "Use accountable incident response, restore drills and cost enforcement with a review cadence the owner can sustain.",
+      "sources": [
+        "observability",
+        "postgres-backup"
+      ],
+      "support": "synthesis",
+      "limits": "The ownership, alert, budget and cadence choices are library recommendations; no uniform operating interval or compliance claim is established.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
+        "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26"
+      }
+    },
+    {
+      "guide_id": "adoption",
+      "claim_id": "adoption-public-data-boundary",
+      "claim": "Private notes and secrets must remain outside public repository history and static assets; a login UI cannot protect downloadable public files.",
+      "sources": [
+        "owasp-authorization"
+      ],
+      "support": "synthesis",
+      "limits": "Original application of authorization principles to public static delivery. Check actual storage, asset, search and download access paths; a frontend gate is not an enforcement boundary.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "owasp-authorization": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975"
+      }
+    },
+    {
+      "guide_id": "adoption",
+      "claim_id": "adoption-pin-policy",
+      "claim": "Adopt guide IDs at a reviewed release or full commit, and upgrade them through an accountable project decision.",
+      "sources": [
+        "github-rulesets"
+      ],
+      "support": "synthesis",
+      "limits": "This is the library's governance recommendation, not a claim that GitHub rulesets automatically enforce semantic policy or review quality.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "github-rulesets": "ad074c0507552b396bd5d506a7e80875c5664dd7e6f0e496f5a1dbc1bd039810"
+      }
+    },
+    {
+      "guide_id": "examples",
+      "claim_id": "examples-design-profile-status",
+      "claim": "The six profiles describe proposed boundaries and planned acceptance evidence, not deployed samples or demonstrated capacity.",
+      "sources": [
+        "azure-architecture-styles",
+        "openai-agents",
+        "postgres-backup",
+        "wcag"
+      ],
+      "support": "synthesis",
+      "limits": "No profile was load-tested, security-certified or deployed by this library; each adopter must choose the actual stack, applicable controls and test environment.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-architecture-styles": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a",
+        "openai-agents": "a7610fba9f6f95e3fad126f23600f644464bafb1d6a7e020090beff86a4619c9",
+        "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26",
+        "wcag": "26fd85fad76ac1f8d0a08f595099d0435a8b9af5656e1c0f2596eef2519ad37c"
+      }
+    },
+    {
+      "guide_id": "examples",
+      "claim_id": "examples-uncertain-external-effects",
+      "claim": "The payment and agent examples require reconciliation when a crash leaves an external action's outcome unknown.",
+      "sources": [
+        "azure-retry",
+        "azure-idempotent-consumer"
+      ],
+      "support": "synthesis",
+      "limits": "These are original worked scenarios combining source mechanisms. Provider support, approval enforcement and financial/device effects must be verified separately.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "azure-retry": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab",
+        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
+      }
+    }
+  ]
+}

@@ -7,10 +7,9 @@
   const script = document.currentScript;
   if (!script) return;
   const indexURL = new URL("../guides.json", script.src);
-  const registration = new AbortController();
+  let registration = null;
   const normalize = (text) => text.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
-  try {
-    await api.registerTool({
+  const tool = {
       name: "search-bestpractices",
       description: "Search public architecture guidance in this page's language. Read only; results include maturity and sources.",
       inputSchema: { type: "object", properties: { query: { type: "string", minLength: 1, maxLength: 300 } }, required: ["query"], additionalProperties: false },
@@ -24,11 +23,27 @@
           .slice(0, 8).map(({ content, ...g }) => ({ ...g, excerpt: content.slice(0, 500), url: new URL(g.url, indexURL).href }));
         return { content: [{ type: "text", text: JSON.stringify(results) }] };
       }
-    }, { signal: registration.signal });
-    // toolchange belongs to the browser API; do not synthesize standard events.
-    window.addEventListener("pagehide", () => registration.abort(), { once: true });
-  } catch (error) {
-    // Missing permission/API compatibility must not break normal document reading.
-    console.info("Optional WebMCP search unavailable:", error.name);
+    };
+  async function register() {
+    if (registration) return;
+    const controller = new AbortController();
+    registration = controller;
+    try {
+      await api.registerTool(tool, { signal: controller.signal });
+    } catch (error) {
+      if (registration === controller) registration = null;
+      // Missing permission/API compatibility must not break ordinary reading.
+      console.info("Optional WebMCP search unavailable:", error?.name || "Error");
+    }
   }
+  // bfcache restores this document without running its scripts again.
+  window.addEventListener("pagehide", () => {
+    registration?.abort();
+    registration = null;
+  });
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) return register();
+  });
+  // toolchange belongs to the browser API; do not synthesize standard events.
+  await register();
 })();

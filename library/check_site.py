@@ -14,9 +14,12 @@ class Links(HTMLParser):
         self.targets = []
         self.alternates = {}
         self.ids = set()
+        self.agent_disclosure = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if attrs.get("data-authorship") == "agent-assisted":
+            self.agent_disclosure = True
         if "id" in attrs:
             self.ids.add(attrs["id"])
         if tag == "a" and attrs.get("hreflang"):
@@ -57,6 +60,12 @@ def check(root: Path = ROOT) -> list[str]:
                 continue
             if set(parsed[page].alternates) != set(LANGUAGES):
                 errors.append(f"Missing language switch: {page}")
+            if not parsed[page].agent_disclosure:
+                errors.append(f"Missing agent-authorship disclosure: {page}")
+            notice_links = [(page.parent / urlsplit(t).path).resolve()
+                            for t in parsed[page].targets if t.endswith("third-party-notices.html")]
+            if site / "third-party-notices.html" not in notice_links:
+                errors.append(f"Missing third-party notice link: {page}")
             for other, href in parsed[page].alternates.items():
                 dest = (page.parent / href).resolve()
                 if dest.is_dir():
@@ -70,7 +79,15 @@ def check(root: Path = ROOT) -> list[str]:
             if not (folder / name).is_file():
                 errors.append(f"Missing index: {folder / name}")
             else:
-                json.loads((folder / name).read_text(encoding="utf-8"))
+                payload = json.loads((folder / name).read_text(encoding="utf-8"))
+                if name == "guides.json":
+                    if {item["id"] for item in payload} != {g["id"] for g in catalog(root)}:
+                        errors.append(f"Incomplete guide export: {folder / name}")
+                    for item in payload:
+                        if (item.get("authorship") != "agent-assisted"
+                                or item.get("human_review_required") is not True
+                                or item.get("content_license") != "CC-BY-4.0"):
+                            errors.append(f"Missing authorship/license metadata: {lang}/{item['id']}")
     return errors
 
 

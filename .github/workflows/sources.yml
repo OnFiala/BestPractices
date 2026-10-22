@@ -24,7 +24,10 @@ jobs:
         if: always()
         with:
           name: source-evidence
-          path: reports/
+          # Public artifacts contain retrieval metadata only, never source bodies.
+          path: |
+            reports/sources.json
+            reports/source-observations.json
           retention-days: 14
   propose:
     needs: observe

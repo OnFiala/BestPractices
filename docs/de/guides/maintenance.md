@@ -2,26 +2,32 @@
 {
   "id": "maintenance",
   "language": "de",
-  "revision": 1,
-  "translation_revision": 1,
-  "reviewed_on": "2026-10-21"
+  "revision": 2,
+  "translation_revision": 2,
+  "reviewed_on": "2026-10-22"
 }
 ---
 # Belege und automatische Pflege
 
-## Evidenzablauf
+## Belegprozess
 
-`data/sources.json` erfasst Primärquellen, Umfang, Prüftermin und Intervall. Die Baseline enthält erfolgreiche Abrufhashes. Ein geplanter Beobachter lädt begrenzte HTTPS-Dokumente und meldet Änderungen, Unerreichbarkeit und überfällige Prüfung. Ein Hashwechsel verlangt Prüfung, keine automatische Empfehlung. Fehlgeschlagener Abruf bedeutet nicht unverändert.
+`data/sources.json` trennt eine unveränderliche geprüfte Quelle von der URL, deren spätere Änderungen beobachtet werden. Erfasst werden Herausgeber, Geltungsbereich, Prüfintervall und Lizenzbelege. Die Abrufbasis speichert erfolgreiche Hashes, keine menschliche Freigabe. Eine geplante Beobachtung ruft begrenzte HTTPS-Dokumente ab und meldet geänderte, nicht verfügbare oder überfällige Quellen. Ein anderer Hash fordert zur Prüfung auf, autorisiert aber keine Änderung der Hinweise. Ein gescheiterter Abruf bleibt „nicht verfügbar“ und wird nicht zu „unverändert“.
 
-Der Workflow erstellt oder aktualisiert bei Handlungsbedarf einen Evidenz-PR. Er ändert weder akzeptierte Baseline noch mergt er. Ein Mensch prüft Quelldiff, Aussagen und Anwendbarkeit und aktualisiert gegebenenfalls Leitfäden, Übersetzungen, Termine und Baseline gemeinsam. HTTP 200 erneuert keinen fachlichen Prüftermin.
+Der Quellenworkflow erzeugt oder aktualisiert bei Handlungsbedarf einen Beleg-PR. Er ändert weder die akzeptierte Basis noch führt er Änderungen zusammen. Ein Mensch liest den relevanten Quelldiff, prüft Aussagen und Anwendbarkeit und entscheidet über die gemeinsame Anpassung von Leitfäden, Übersetzungen, Prüfdaten und Basis. Setze kein Prüfdatum allein wegen einer HTTP-200-Antwort zurück.
 
-## Agentenpflege
+## Agentengestützte Aktualisierungen
 
-Der optionale Codex-Workflow schlägt begrenzte Dokumentationsänderungen vor. GitHub-Secret und explizite Aktivierung sind nötig; lokale Prüfung und Quellenabruf brauchen keine bezahlte API. Agenten ändern vorhandene Übersetzungen und Katalogmetadaten. Ein separater Job öffnet einen Entwurfs-PR; kein Merge durch Agenten. Rulesets und menschliche Freigaben in GitHub aktivieren.
+Das öffentliche Repository beobachtet Quellenmetadaten. Modellerzeugung aus Quellen und Vorschlagsjobs sind auf ein separates privates Repository, einen Spiegel oder einen privaten Arbeitsbereich begrenzt. Logs, Zusammenfassungen, Patches und Artefakte könnten fremden Text vor der Rechteprüfung enthalten. Der optionale private Codex-Workflow benötigt ein konfiguriertes Secret und ausdrückliche Aktivierung; lokale Validierung und Quellenprüfungen brauchen keine kostenpflichtige API. Das Modell gibt begrenzte strukturierte Vorschlagsdaten zurück. Eine frische vertrauenswürdige Verarbeitung prüft diese Daten, statt ein vom Agenten erzeugtes Skript auszuführen oder seinen Git-Metadaten zu vertrauen.
+
+Ein Mensch prüft die privaten Ergebnisse auf eigenständige Formulierungen, Lizenzen, sensible Daten, Belege und Übersetzungsbedeutung, bevor freigegebene Inhalte in einen öffentlichen PR übertragen werden. Es gibt keine automatische öffentliche Übertragung. Verfasse eigenständige Erläuterungen und Beispiele. Kopiere oder übersetze keine fremde Prosa und paraphrasiere charakteristische Formulierungen nicht eng. Erforderliche Hinweise zu fremder Software behalten ihre jeweiligen Lizenzen. Ein Quellenverweis oder Ähnlichkeitstest gewährt keine Nutzungsrechte.
+
+Der Agent darf nicht freigeben, zusammenführen oder veröffentlichen. Rulesets und Pflichtreviews müssen tatsächlich in GitHub konfiguriert werden; eine Workflowdatei erzwingt sie nicht. Ein privater Generierungsdienst wurde als Teil dieser Bibliothek nicht bereitgestellt.
 
 ## Aktualität und Fehler
 
-Schnelle KI-/Protokollquellen häufiger prüfen als stabile Prinzipien. Experimente, Abkündigungen und strittige Aussagen markieren; Migrationen verlinken. Fehlende Rechte, Netzfehler, fehlgeschlagene Tests und alte Übersetzungen bleiben sichtbar. Prüfverzug und Behebungszeit messen. Falsche Empfehlungen per Commit zurücknehmen und betroffene Projekte bewerten.
+Prüfe schnelllebige KI- und Protokollquellen häufiger als stabile Grundsätze. Kennzeichne Experimente und abgelöste Ansätze, erhalte Migrationslinks und dokumentiere strittige Hinweise. Fehlende Zugangsdaten, blockierte Netzwerke, fehlgeschlagene Prüfungen und veraltete Übersetzungen bleiben sichtbare Hindernisse. Verfolge überfällige Reviews und die Zeit zur Klärung geänderter Quellen. Nimm eine fehlerhafte Empfehlung per Commit zurück und prüfe Projekte, die sie übernommen haben.
+
+Behandle ein README oder einen Index mit eingebundenen Teildateien nicht als Prüfung der zugrunde liegenden Spezifikation. Registriere die tatsächlich verwendete fachliche Kontrolle oder den Mechanismus. Aussagezuordnungen müssen quellenbelegtes Verhalten von lokaler Zusammenführung trennen, Anwendbarkeit dokumentieren und an die geprüfte Version gebunden bleiben. Aktualisiere Lebenszyklusinformationen vor der Einführung einer KI-Plattform. Eine Methode kann sinnvoll bleiben, nachdem das Produkt aus ihrem Beispiel eingestellt wurde.
 
 ## Verwandte Entscheidungen
 
@@ -29,4 +35,4 @@ Schnelle KI-/Protokollquellen häufiger prüfen als stabile Prinzipien. Experime
 
 ## Primärbelege
 
-[codex-action](https://raw.githubusercontent.com/openai/codex-action/main/README.md) · [github-workflows](https://raw.githubusercontent.com/github/docs/main/content/actions/reference/security/secure-use.md) · [plugins](https://raw.githubusercontent.com/openai/plugins/main/README.md)
+[codex-action](https://raw.githubusercontent.com/openai/codex-action/c05cfd74ad95c626cdf05c6685e62becc3bf7813/README.md) · [github-workflows](https://raw.githubusercontent.com/github/docs/5815d11586b0796688963a98c889680e60d72dc4/content/actions/reference/security/secure-use.md) · [plugins](https://raw.githubusercontent.com/openai/plugins/0722921d5542fc593105c27bd52630babd8b8c2a/README.md)

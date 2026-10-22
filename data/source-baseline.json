@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "checked_at": "2026-10-21",
-  "meaning": "Initial retrieval baseline; not human policy approval.",
+  "meaning": "Retrieval snapshots proposed for human review, not human policy or rights approval. Original observations are preserved; added source snapshots were inspected on 2026-10-22.",
   "observations": {
     "agents-guardrails": {
       "status": "ok",
@@ -140,6 +140,187 @@
       "url": "https://raw.githubusercontent.com/webmachinelearning/webmcp/main/README.md",
       "sha256": "184c519af9ed728e77249423ff376c7d99367cd340e80a2d7f3a4a789e3fc7d6",
       "bytes": 37575
+    },
+    "k6-breakpoint-testing": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/breakpoint-testing.md",
+      "sha256": "37ae4ad38a793111dd96fb9eb672efe603b95f5262ae865f4de8695acae68974",
+      "bytes": 6043
+    },
+    "k6-open-vs-closed": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/using-k6/scenarios/concepts/open-vs-closed.md",
+      "sha256": "374d2ee2334444ff5a666e26f90dc79e7bebfac0304437c92a9d969dc1c8630c",
+      "bytes": 4166
+    },
+    "k6-soak-testing": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/soak-testing.md",
+      "sha256": "8461b5e2bb6414f9fe62fb25733a58de0ff12508ef4a1de3c84536be2c4c39b5",
+      "bytes": 4601
+    },
+    "k6-spike-testing": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/spike-testing.md",
+      "sha256": "67006a3eadacc6f1536dd40c447f3119d9d5ba6ad03721fc314febe64fb80916",
+      "bytes": 4431
+    },
+    "k6-stress-testing": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/stress-testing.md",
+      "sha256": "705a154e718c32daa9760924503e25a6b6be635e3df80f3e767b3bac88aed47f",
+      "bytes": 5142
+    },
+    "k6-test-types": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/testing-guides/test-types/_index.md",
+      "sha256": "00d6c59d09e758240d3f4475cda7e327981195c3719576096fe639d710f944eb",
+      "bytes": 7065
+    },
+    "k6-thresholds": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/grafana/k6-docs/151bf3efc34b5a23b5f338d6ea341af48f1f4d69/docs/sources/k6/v2.3.x/using-k6/thresholds.md",
+      "sha256": "429a8a5e46cf5fb11610fa552bb37e6a9ad07cffcb9e127fdda26d2889d7add2",
+      "bytes": 17833
+    },
+    "owasp-ai-agent": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/AI_Agent_Security_Cheat_Sheet.md",
+      "sha256": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a",
+      "bytes": 26794
+    },
+    "owasp-asvs-requirements": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/OWASP/ASVS/3383877f732ce89a458a1af43288f2f1b1d7db0c/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv",
+      "sha256": "98c8fe911b9edb403af8ee05d3ce8201ecac2659e313b053890a62847cdcf680",
+      "bytes": 105100
+    },
+    "owasp-authentication": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Authentication_Cheat_Sheet.md",
+      "sha256": "92f7483b28548679917a329c7b9be1824f33e934d9eed670aaf3e9a1e7b37e83",
+      "bytes": 41242
+    },
+    "owasp-authorization": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Authorization_Cheat_Sheet.md",
+      "sha256": "fb8b6e5c60ed783025beefb5049142fd9da02d01f5c95de18a19d26479737975",
+      "bytes": 31021
+    },
+    "owasp-csrf": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md",
+      "sha256": "6efa25bf9a69aefdb58f41d8c9cdcc1d0f1e84cc82570f11b77a4ed46eab2ded",
+      "bytes": 57348
+    },
+    "owasp-multi-tenant": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.md",
+      "sha256": "f1286c7bada7b7361922405157aaae8c86fb5198347a85fcdf4bfb207904790e",
+      "bytes": 50400
+    },
+    "owasp-session": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Session_Management_Cheat_Sheet.md",
+      "sha256": "3c38656e2be6188be4fc31d8c1fadafaaa6f37accc27e411e3345c235d44c051",
+      "bytes": 56989
+    },
+    "owasp-ssrf": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md",
+      "sha256": "3ae2f474449eceadd74cc2c28edfdc405d935166550b2bd67965729b7d707652",
+      "bytes": 29588
+    },
+    "owasp-xss": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/4a2852f456ccac403e140b6b48beb53ce505a550/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md",
+      "sha256": "199c484557a3d2e6732daec1d2b8d683645163ce1d7dd58f7e5590d93f5a2719",
+      "bytes": 30770
+    },
+    "playwright-testing": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/microsoft/playwright/ca7ca36145b84183cf423c2a099bd7e9cd8b1cb3/docs/src/best-practices-js.md",
+      "sha256": "785e6244815ed457ceb0a9109e0ead34a114fd89b09c0689174a5b421eed8512",
+      "bytes": 19880
+    },
+    "azure-architecture-styles": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/guide/architecture-styles/index.md",
+      "sha256": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a",
+      "bytes": 21894
+    },
+    "azure-cqrs": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cqrs.md",
+      "sha256": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b",
+      "bytes": 20477
+    },
+    "azure-event-sourcing": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/event-sourcing.md",
+      "sha256": "3b43bdcdf4b17f9da1adbfd4f77fd767f1262a8baeb3aba232bbed293e2d2a49",
+      "bytes": 30015
+    },
+    "azure-retry": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/retry-content.md",
+      "sha256": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab",
+      "bytes": 11945
+    },
+    "azure-cache-aside": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cache-aside-content.md",
+      "sha256": "eb19852e710d924d98a39f386928ef1b0d763391f0e9e22a353ce818dd57881f",
+      "bytes": 14318
+    },
+    "azure-data-partitioning": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/best-practices/data-partitioning-strategies-content.md",
+      "sha256": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77",
+      "bytes": 12763
+    },
+    "azure-health-endpoints": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/health-endpoint-monitoring.md",
+      "sha256": "2ffed47249e9c6e6dd5a2d2b36c73fcb2adcbd217377e60f3466c98cf9f9d08f",
+      "bytes": 22037
+    },
+    "azure-outbox": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/databases/guide/transactional-out-box-cosmos.md",
+      "sha256": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
+      "bytes": 33262
+    },
+    "azure-idempotent-consumer": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/idempotent-consumer.md",
+      "sha256": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+      "bytes": 19383
+    },
+    "wcag-keyboard": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/keyboard.html",
+      "sha256": "8724a66650968536ac46ec2cb486c4cedeade25531d2840f75aedf6826e7aed1",
+      "bytes": 872
+    },
+    "wcag-focus-order": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/focus-order.html",
+      "sha256": "a21c9b35f8057c8ba2f3b93a76d463181a510677bb276912fd989d4a1adb2d6b",
+      "bytes": 350
+    },
+    "wcag-focus-visible": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/focus-visible.html",
+      "sha256": "7c3e6f6309edf9da9b232c78a16c33b074da56840e2b0ab27971f531162f92d6",
+      "bytes": 261
+    },
+    "wcag-contrast": {
+      "status": "ok",
+      "url": "https://raw.githubusercontent.com/w3c/wcag/457cece22d8219be32d29c5c1313e71aa6b61eae/guidelines/sc/20/contrast-minimum.html",
+      "sha256": "f1d819b44cc5ba64e962ce64889de2ab214af6911b27a119f7d24c43197b2e64",
+      "bytes": 1071
     }
-  }
+  },
+  "proposed_additions_on": "2026-10-22"
 }
