@@ -24,8 +24,8 @@ uses the locked, tested 1.6.1 renderer. See ADR-0001 for the migration boundary.
 Optional theme GitHub statistics/sitemap lookups can fail under this environment's
 network policy; document reading, local search, and language links were verified.
 
-Not yet verified: GitHub-hosted workflow runs, enforced rulesets, Pages deployment,
-native browser WebMCP support, Codex plugin installation, paid agent execution, or a
+Not yet verified: enforced rulesets, Pages deployment, native browser WebMCP support,
+Codex plugin installation, paid agent execution, or a
 remote ChatGPT connection. A mocked browser API is not evidence of native support.
 Translations need human editorial review; this report does not approve their meaning.
 
@@ -38,10 +38,13 @@ the handoff uses the GitHub CLI/API. Reading Actions permission settings returns
 `Resource not accessible by integration` (HTTP 403), so repository access must not be
 mistaken for permission to administer every GitHub feature.
 
-The remote has no branches before the handoff. An empty `main` commit provides the
-base for the library proposal; all content is submitted in a separate PR for human
-review. Consult that PR for the actual GitHub-hosted check results. No website
-deployment or paid agent run is implied by the local results above.
+The remote had no branches before the handoff. An empty `main` commit provides the
+base for [PR #1](https://github.com/OnFiala/BestPractices/pull/1); all content was
+pushed on `codex/library-foundation` for human review. GitHub Actions' `quality`
+check passed on commit `c078e824dc9af34d779792b8745e5901050fb4b0` in
+[run 39747252519](https://github.com/OnFiala/BestPractices/actions/runs/39747252519).
+Consult the PR for the latest commit's check results. No website deployment or
+paid agent run was performed.
 
 The saved install/start instructions and network additions are now returned as the
 published cloud configuration. Restoring the complete project into a fresh task has
