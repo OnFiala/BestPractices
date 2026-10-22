@@ -2,8 +2,8 @@
 {
   "id": "start",
   "language": "de",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -13,13 +13,54 @@ Eine praktische Bibliothek für den gesamten Lebenszyklus von Software: von der 
 
 Diese Bibliothek ist selbst ein **von Agenten gepflegtes Entscheidungssystem**: KI-Agenten recherchieren, schreiben, übersetzen und prüfen. Menschen verantworten Anwendbarkeit, Rechteprüfung, Zusammenführung und Veröffentlichung. Empfehlungen sind kontextabhängige Vorschläge, keine universell zertifizierten Regeln. Die technischen Erläuterungen sind eigenständige Zusammenführungen; zitierte Dokumente behalten ihre Lizenzen und werden nicht als unsere Inhalte wiedergegeben.
 
-## Mit einer Entscheidung beginnen
+## Ich habe ein Projekt: Wo fange ich an?
 
-1. Halte Ergebnis, Datensensibilität, Betriebsbudget und akzeptable Ausfallzeit in einem Projektprofil fest.
-2. Wähle die kleinste Architektur, die diese Bedingungen erfüllt. Ein persönliches Werkzeug kann sensible Daten verarbeiten; eine Million registrierte Konten kann dennoch geringe gleichzeitige Last erzeugen.
-3. Dokumentiere folgenreiche Entscheidungen in einem Architecture Decision Record (ADR). Verknüpfe Belege, Alternativen und einen Rückweg.
-4. Gib einem Agenten eine kleine Aufgabe mit Abnahmekriterien. Verlange eine unabhängige Prüfung und eine Zusammenführung durch einen Menschen.
-5. Betreibe das Gebaute: Beobachte reales Verhalten, teste Wiederherstellung und überarbeite Annahmen bei neuen Erkenntnissen.
+Nutze diese Bibliothek, um einem Agenten eine klare Aufgabe zu geben, einen
+geeigneten Ansatz zu wählen und das Ergebnis zu prüfen. Sie liefert Empfehlungen,
+einen Plan und Nachweisprüfungen. Dein Agent erstellt das eigentliche Produkt
+in deiner Entwicklungsumgebung.
+
+1. Lies [die Anleitung zur Einführung](guides/adoption.md): Wähle das JSON-Auslieferungsprofil
+   für die Werkzeuge und bei Bedarf ein YAML-Dokument für ausführlichere Entscheidungsgrundlagen.
+2. Durchlaufe [deinen ersten Prüfpunkt mit Nachweisen](guides/first-project.md): Erstelle
+   ein tatsächliches Ergebnis, lass es prüfen und sieh nach, was weiterhin blockiert ist. Eine Modell-API ist nicht erforderlich.
+3. Wähle unten dein Projekt und folge dann [dem Auslieferungsablauf](guides/project-delivery.md).
+
+| Was entwickelst du? | Hier beginnen |
+| --- | --- |
+| Öffentliche Website | [Öffentliche Website](guides/playbook-public-website.md) |
+| SaaS | [SaaS](guides/playbook-saas.md) |
+| Internes Betriebswerkzeug | [Internes Werkzeug](guides/playbook-internal-tool.md) |
+| KI-Anwendung | [KI-Anwendung](guides/playbook-ai-application.md) |
+| Agentenautomatisierung | [Agentenautomatisierung](guides/playbook-agent-automation.md) |
+| Backend und mobile Clients | [Mobiles Backend](guides/playbook-mobile-backend.md) |
+
+## Gib deinem Agenten seine erste Aufgabe
+
+Ersetze die Werte in eckigen Klammern und übergib diesen Text einem Agenten,
+der dein Projekt und eine vertrauenswürdige lokale Arbeitskopie dieser Bibliothek
+lesen kann. Eine Plugin- oder MCP-Installation ist nicht erforderlich.
+
+```text
+Arbeite in [Zielprojekt]. Nutze [BestPractices-Arbeitskopie] als Referenz.
+Lies die Anweisungen des Zielprojekts, dann in der Bibliothek
+plugins/bestpractices/skills/project-delivery/SKILL.md und den passenden Projektleitfaden.
+Ergebnis: [beobachtbares Ergebnis]. Einschränkungen: [Daten, Budget, erlaubte Effekte].
+Dokumentiere die Bibliotheksrevision. Erstelle ein JSON-Auslieferungsprofil anhand
+der tatsächlichen Anforderungen und der Git-Zielrevision; kennzeichne Unbekanntes ausdrücklich.
+Führe den Planer aus und bearbeite den ersten unerfüllten Prüfpunkt. Erstelle dessen
+tatsächliches Artefakt, führe eine passende Prüfung durch und hole eine unabhängige
+Begutachtung ein, sofern sie verfügbar ist.
+Erfinde keine Ergebnisse oder Prüfer. Berichte über die Nachweise und verbleibenden Hindernisse.
+Arbeite lokal; führe keine Bereitstellung durch und verändere die Referenzbibliothek nicht.
+```
+
+Ein **Prüfpunkt** verlangt bestimmte Ergebnisse. Ein **Artefakt** ist ein Dokument,
+eine Codeänderung oder ein Bericht. **Nachweise** beschreiben eine tatsächlich
+durchgeführte Begutachtung oder Prüfung dieses Ergebnisses. Das Erstellen eines
+Plans setzt das Projekt nicht um und berechtigt nicht zur Veröffentlichung.
+Was lokal nachgewiesen ist und was noch projektspezifische Belege erfordert,
+erläutert [Abdeckung und Grenzen](guides/coverage.md).
 
 ## Nach Bedarf lesen
 

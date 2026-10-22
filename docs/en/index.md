@@ -2,8 +2,8 @@
 {
   "id": "start",
   "language": "en",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -13,13 +13,50 @@ A working library for the whole life of software: from the first problem stateme
 
 This library itself is an **agent-maintained decision system**: AI agents research, write, translate, and verify; humans own applicability, rights review, merge, and publication. Recommendations are contextual proposals, not universally certified rules. The engineering explanations are original synthesis; cited documents keep their own licenses and are not reproduced as our content.
 
-## Start with a decision
+## I have a project: where do I start?
 
-1. Define the outcome, data sensitivity, operating budget, and acceptable downtime in a project profile.
-2. Select the smallest architecture that meets those constraints. A personal tool can still handle sensitive data; a million registered accounts can still have modest concurrency.
-3. Capture consequential choices in an architecture decision record (ADR). Link evidence, alternatives, and a reversal plan.
-4. Give an agent a small task with acceptance criteria. Require an independent check and human merge.
-5. Operate what you build: observe real behavior, test recovery, and revisit assumptions when evidence changes.
+Use this library to give an agent a clear task, choose a suitable approach and
+review the result. It provides guidance, a plan and evidence checks. Your agent
+builds the actual product in your development environment.
+
+1. Read [adoption](guides/adoption.md): choose the JSON delivery profile for the
+   tools and optionally a YAML brief for richer decisions.
+2. Follow [your first evidence gate](guides/first-project.md): create one actual
+   output, have it reviewed and see what remains blocked. No model API is required.
+3. Choose your project below, then follow [the delivery workflow](guides/project-delivery.md).
+
+| What are you building? | Start here |
+| --- | --- |
+| Public website | [Public website](guides/playbook-public-website.md) |
+| SaaS | [SaaS](guides/playbook-saas.md) |
+| Internal operations tool | [Internal tool](guides/playbook-internal-tool.md) |
+| AI application | [AI application](guides/playbook-ai-application.md) |
+| Agent automation | [Agent automation](guides/playbook-agent-automation.md) |
+| Backend and mobile clients | [Mobile backend](guides/playbook-mobile-backend.md) |
+
+## Give your agent its first task
+
+Replace the bracketed values and give this to an agent that can read your project
+and a trusted local checkout of this library. No plugin or MCP installation is needed.
+
+```text
+Work in [target project]. Use [BestPractices checkout] as a reference.
+Read the target project's instructions, then the library's
+plugins/bestpractices/skills/project-delivery/SKILL.md and the matching playbook.
+Outcome: [observable result]. Constraints: [data, budget, permitted effects].
+Record the library revision. Create a JSON delivery profile using actual
+requirements and the target Git revision; leave unknowns explicit.
+Run the planner and take the first unmet gate. Produce its actual artifact,
+perform a relevant check and obtain independent review when available.
+Do not invent results or reviewers. Report the evidence and remaining blockers.
+Work locally; do not deploy or modify the reference library.
+```
+
+A **gate** is a checkpoint with required outputs. An **artifact** is a document,
+code change or report. **Evidence** describes an actual inspection or test of that
+output. Creating a plan does not implement the project or authorize a release.
+For what is demonstrated locally and what still needs project-specific proof,
+read [coverage and limits](guides/coverage.md).
 
 ## Read by need
 

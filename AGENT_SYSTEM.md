@@ -2,7 +2,7 @@
 
 This system is created and maintained with AI agents under human direction. Its
 first operational edition joins six project profiles, 28 conditional gates in
-11 lifecycle stages, 35 declared coverage domains, 33 catalog entries in four
+11 lifecycle stages, 35 declared coverage domains, 34 catalog entries in four
 languages, three executable local references, five read-only MCP tools and five
 host skills. Counts describe scope, not completeness or assurance. The English
 and Czech, German and Spanish guidance remains proposed until human review of

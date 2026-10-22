@@ -1,11 +1,15 @@
 # BestPractices
 
 **An agent-maintained decision and delivery system, created with AI agents under human direction.**
+Use it to turn a software idea into a scoped task for an agent, a reviewable change,
+and evidence of what was actually checked. You receive guidance, a delivery plan
+and evidence checks; the agent in your development environment builds your product.
+
 It connects project requirements, architecture decisions, bounded implementation,
 verification, release review and operational ownership. The first operational edition
 contains six project profiles, 28 conditional gates across 11 lifecycle stages,
-35 declared coverage domains, and 33 catalog entries in **EN / CS / DE / ES**
-(132 localized pages). These counts describe the implemented scope; they do not
+35 declared coverage domains, and 34 catalog entries in **EN / CS / DE / ES**
+(136 localized pages). These counts describe the implemented scope; they do not
 establish complete coverage of software engineering or production readiness.
 
 English is canonical. Guidance and translations remain proposed until human review.
@@ -18,15 +22,47 @@ The [operational delivery review](reviews/2026-10-22-operational-delivery-review
 tracks this edition's findings, observed checks and remaining limits; the
 [foundation review](reviews/2026-10-22-agent-system-review.md) covers the earlier library.
 
-Start with [the delivery workflow](docs/en/guides/project-delivery.md),
+## Start here
+
+1. Read [how to adopt the library](docs/en/guides/adoption.md). The recommended
+   tool input is a JSON delivery profile; the optional YAML decision brief keeps
+   richer business and operating context. They are different schemas.
+2. Follow [one complete first evidence gate](docs/en/guides/first-project.md).
+   It creates a real intent document and shows an independent review, while
+   leaving the unfinished project's release blocked. No browser or model API is needed.
+3. Choose the matching playbook and give your agent the bounded task below.
+
+| Your project | Starting playbook |
+| --- | --- |
+| Public website | [Public website](docs/en/guides/playbook-public-website.md) |
+| SaaS | [SaaS](docs/en/guides/playbook-saas.md) |
+| Internal operations tool | [Internal tool](docs/en/guides/playbook-internal-tool.md) |
+| AI application | [AI application](docs/en/guides/playbook-ai-application.md) |
+| Agent automation | [Agent automation](docs/en/guides/playbook-agent-automation.md) |
+| Backend and mobile clients | [Mobile backend](docs/en/guides/playbook-mobile-backend.md) |
+
+Open an agent in your target project and replace the bracketed values:
+
+```text
+Work in [absolute target-project path]. Use the trusted BestPractices checkout
+at [absolute library path] as a reference; do not modify the library.
+Outcome: [observable user outcome]. Constraints: [data, budget, allowed effects].
+Read the target project's instructions, then the library's project-delivery
+skill and the matching project playbook. Record the library commit used.
+Create a JSON delivery profile from actual requirements and the real target
+Git revision. Run the planner from the library root using that profile.
+Take the first unmet gate, explain its required artifact and acceptance check,
+and perform the authorized local work. Preserve unknowns and failed/unrun checks.
+Request an independent review of the actual artifact. Do not invent approval
+or evidence. Report results and blockers; deployment is outside this task.
+```
+
+The skill is at `plugins/bestpractices/skills/project-delivery/SKILL.md`.
+A skill is an instruction file for the host agent, not a running service.
+Plugin installation and MCP are optional. Continue with
+[the delivery workflow](docs/en/guides/project-delivery.md),
 [coverage and limits](docs/en/guides/coverage.md), or
 [the reference projects](docs/en/guides/reference-labs.md).
-Choose a playbook: [public website](docs/en/guides/playbook-public-website.md),
-[SaaS](docs/en/guides/playbook-saas.md),
-[internal tool](docs/en/guides/playbook-internal-tool.md),
-[AI application](docs/en/guides/playbook-ai-application.md),
-[agent automation](docs/en/guides/playbook-agent-automation.md), or
-[mobile backend](docs/en/guides/playbook-mobile-backend.md).
 Česky: [úvod](docs/cs/index.md). Deutsch: [Einstieg](docs/de/index.md).
 Español: [inicio](docs/es/index.md). All entries are in [the catalog](data/catalog.json).
 

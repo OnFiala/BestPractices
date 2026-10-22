@@ -2,8 +2,8 @@
 {
   "id": "project-delivery",
   "language": "de",
-  "revision": 1,
-  "translation_revision": 1,
+  "revision": 2,
+  "translation_revision": 2,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -14,6 +14,24 @@
 Das Auslieferungssystem verbindet ein Projektprofil, einen bedingungsabhängigen Lebenszyklusplan, unabhängig geprüfte Artefakte, lokale Referenzprüfungen und eine Bewertung des Bereitschaftsstands. Es hilft einem Agentenhost wie Codex, begrenzte Arbeit auszuführen. Der Python-Planer selbst ruft kein Modell auf, baut kein beliebiges angefordertes Produkt, authentifiziert keinen Menschen, führt keinen PR zusammen und stellt keinen Dienst bereit.
 
 Wählen Sie eines von sechs Ausgangsprofilen: öffentliche Website, SaaS, internes Werkzeug, KI-Anwendung, Agentenautomatisierung oder mobiles Backend. Erfassen Sie das tatsächliche Ergebnis, Risiko, Datensensibilität, Last, Hosting, Schnittstellen und externe Effekte. Eine Kontenzahl ist keine Lastmessung. Unbekannte Last bleibt ungemessen; auch ein kleines persönliches Projekt kann strenge Datenschutz- oder Wiederherstellungskontrollen benötigen. Das enthaltene Profil ist ausdrücklich synthetisch und kann die Anforderungen eines echten Nutzers nicht ersetzen.
+
+## Ihr erster Schritt
+
+Sind Sie neu in dieser Bibliothek? Durchlaufen Sie
+[einen vollständigen Prüfpunkt mit Nachweisen](first-project.md), bevor Sie alle
+Referenzbeispiele ausführen. Das Beispiel benötigt Python und Git, erstellt ein
+tatsächliches Entscheidungsdokument und zeigt, wie ein geprüftes Ergebnis erfasst
+wird, während die Veröffentlichung blockiert bleibt. Die
+[Anleitung zur Einführung](adoption.md) erläutert das JSON-Auslieferungsprofil und
+das optionale YAML-Entscheidungsdokument. Die von `init` erstellte Datei
+`project-profile.json` verwendet das JSON-Auslieferungsschema; `project-profile.yaml`
+ist ein separates, für Menschen lesbares Dokument und keine CLI-Eingabe.
+
+Ein Prüfpunkt ist eine Kontrollstelle; ein Artefakt ist das dort geforderte Ergebnis;
+ein Nachweis ist eine aufgezeichnete Beobachtung dieses Ergebnisses. Wählen Sie den
+passenden Projektleitfaden und starten Sie dann den Agenten im Host mit einem klar
+begrenzten Ergebnis und dem Skill `project-delivery`. Der Agent benötigt Zugriff
+auf das Zielprojekt und diese vertrauenswürdige Bibliothek; die Installation von MCP ist optional.
 
 ## Der ausführbare Ablauf
 

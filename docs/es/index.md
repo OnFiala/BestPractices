@@ -2,8 +2,8 @@
 {
   "id": "start",
   "language": "es",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -13,13 +13,52 @@ Una biblioteca de trabajo para toda la vida del software: desde la primera defin
 
 Esta biblioteca es, en sí misma, un **sistema de decisiones mantenido por agentes**: los agentes de IA investigan, redactan, traducen y verifican; las personas son responsables de la aplicabilidad, la revisión de derechos, la fusión de cambios y la publicación. Las recomendaciones son propuestas contextualizadas, no reglas certificadas universalmente. Las explicaciones de ingeniería son una síntesis original; los documentos citados conservan sus propias licencias y no se reproducen como contenido nuestro.
 
-## Empezar con una decisión
+## Tengo un proyecto: ¿por dónde empiezo?
 
-1. Define el resultado esperado, la sensibilidad de los datos, el presupuesto operativo y el tiempo de interrupción aceptable en un perfil de proyecto.
-2. Elige la arquitectura más pequeña que cumpla esas restricciones. Una herramienta personal también puede tratar datos sensibles; un millón de cuentas registradas puede tener una concurrencia modesta.
-3. Registra las elecciones importantes en un registro de decisión arquitectónica (ADR). Enlaza evidencia, alternativas y un plan de reversión.
-4. Da al agente una tarea pequeña con criterios de aceptación. Exige una comprobación independiente y que una persona fusione los cambios.
-5. Opera lo que construyes: observa el comportamiento real, prueba la recuperación y revisa los supuestos cuando cambie la evidencia.
+Usa esta biblioteca para dar al agente una tarea clara, elegir un enfoque adecuado
+y revisar el resultado. Proporciona recomendaciones, un plan y comprobaciones de
+evidencias. Tu agente construye el producto real en tu entorno de desarrollo.
+
+1. Lee [cómo adoptar la biblioteca](guides/adoption.md): elige el perfil de entrega
+   JSON para las herramientas y, si lo necesitas, un documento YAML para decisiones más detalladas.
+2. Sigue [tu primer punto de control con evidencias](guides/first-project.md):
+   crea un resultado real, solicita su revisión y comprueba qué sigue bloqueado. No se necesita una API de modelos.
+3. Elige tu proyecto a continuación y sigue [el flujo de entrega](guides/project-delivery.md).
+
+| ¿Qué estás construyendo? | Empieza aquí |
+| --- | --- |
+| Sitio web público | [Sitio web público](guides/playbook-public-website.md) |
+| SaaS | [SaaS](guides/playbook-saas.md) |
+| Herramienta interna de operaciones | [Herramienta interna](guides/playbook-internal-tool.md) |
+| Aplicación de IA | [Aplicación de IA](guides/playbook-ai-application.md) |
+| Automatización de agentes | [Automatización de agentes](guides/playbook-agent-automation.md) |
+| Backend y clientes móviles | [Backend móvil](guides/playbook-mobile-backend.md) |
+
+## Asigna al agente su primera tarea
+
+Sustituye los valores entre corchetes y entrega este texto a un agente que pueda
+leer tu proyecto y una copia local confiable de esta biblioteca. No es necesario
+instalar un plugin ni MCP.
+
+```text
+Trabaja en [proyecto de destino]. Usa [copia local de BestPractices] como referencia.
+Lee las instrucciones del proyecto de destino y después, en la biblioteca,
+plugins/bestpractices/skills/project-delivery/SKILL.md y la guía del tipo de proyecto correspondiente.
+Resultado: [resultado observable]. Restricciones: [datos, presupuesto, efectos permitidos].
+Registra la revisión de la biblioteca. Crea un perfil de entrega JSON con los
+requisitos reales y la revisión Git de destino; deja explícitos los datos desconocidos.
+Ejecuta el planificador y aborda el primer punto de control sin completar. Produce
+su artefacto real, realiza una comprobación pertinente y obtén una revisión independiente
+cuando esté disponible.
+No inventes resultados ni revisores. Informa de las evidencias y los bloqueos pendientes.
+Trabaja en local; no despliegues ni modifiques la biblioteca de referencia.
+```
+
+Un **punto de control** exige determinados resultados. Un **artefacto** es un documento,
+un cambio de código o un informe. Las **evidencias** describen una inspección o prueba
+real de ese resultado. Crear un plan no implementa el proyecto ni autoriza una publicación.
+Para conocer lo que se demuestra en local y lo que aún necesita pruebas específicas
+del proyecto, consulta [cobertura y límites](guides/coverage.md).
 
 ## Leer según la necesidad
 

@@ -2,8 +2,8 @@
 {
   "id": "project-delivery",
   "language": "es",
-  "revision": 1,
-  "translation_revision": 1,
+  "revision": 2,
+  "translation_revision": 2,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -14,6 +14,23 @@
 El sistema de entrega conecta un perfil de proyecto, un plan condicional del ciclo de vida, artefactos revisados de forma independiente, comprobaciones de referencias locales y una evaluación de preparación. Ayuda a un entorno anfitrión de agentes como Codex a realizar trabajo acotado. El planificador de Python en sí no llama a un modelo ni construye cualquier producto solicitado, ni autentica a una persona, ni fusiona un PR, ni despliega un servicio.
 
 Elige uno de seis perfiles iniciales: sitio web público, SaaS, herramienta interna, aplicación de IA, automatización de agentes o backend móvil. Registra el resultado real, el riesgo, la sensibilidad de datos, la carga de trabajo, el hosting, las superficies y los efectos externos. El número de cuentas no es una medición de carga. Una carga desconocida sigue sin medirse; un proyecto personal pequeño también puede necesitar controles sólidos de privacidad o recuperación. El perfil incluido es explícitamente sintético y no puede sustituir los requisitos de un usuario real.
+
+## Tu primer paso
+
+¿Es tu primera vez con esta biblioteca? Sigue
+[un punto de control completo con evidencias](first-project.md) antes de ejecutar
+todos los ejemplos de referencia. El ejemplo necesita Python y Git, crea un documento
+real y muestra cómo registrar un resultado revisado mientras la publicación sigue
+bloqueada. [La adopción](adoption.md) explica el perfil de entrega JSON y el documento
+opcional YAML para decisiones. El archivo `project-profile.json` creado por `init`
+usa el esquema de entrega JSON; `project-profile.yaml` es un documento separado
+legible para las personas, no una entrada para la CLI.
+
+Un punto de control marca una comprobación; un artefacto es su resultado obligatorio;
+una evidencia es una observación registrada de ese resultado. Elige la guía del tipo
+de proyecto correspondiente y después inicia el agente en su entorno anfitrión con
+un resultado acotado y la skill `project-delivery`. El agente necesita acceso al
+proyecto de destino y a esta biblioteca confiable; instalar MCP es opcional.
 
 ## El recorrido ejecutable
 

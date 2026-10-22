@@ -2,8 +2,8 @@
 {
   "id": "project-delivery",
   "language": "en",
-  "revision": 1,
-  "translation_revision": 1,
+  "revision": 2,
+  "translation_revision": 2,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -14,6 +14,20 @@
 The delivery system connects a project profile, a conditional lifecycle plan, independently reviewed artifacts, local reference checks, and a readiness assessment. It helps an agent host such as Codex carry out bounded work. The Python planner itself does not call a model, build an arbitrary requested product, authenticate a human, merge a PR, or deploy a service.
 
 Choose one of six starting profiles: public website, SaaS, internal tool, AI application, agent automation, or mobile backend. Record the actual outcome, risk, data sensitivity, workload, hosting, surfaces and external effects. An account count is not a workload measurement. Unknown workload stays unmeasured; a small personal project can still need strong privacy or recovery controls. The included profile is explicitly synthetic and cannot substitute for a real user's requirements.
+
+## Your first step
+
+New to this library? Follow [one complete evidence gate](first-project.md) before
+running all references. The example needs Python and Git, creates a real brief,
+and shows how one reviewed output is recorded while release remains blocked.
+[Adoption](adoption.md) explains the JSON delivery profile and optional YAML decision
+brief. `project-profile.json` created by `init` uses the JSON delivery schema;
+`project-profile.yaml` is a separate human-readable document, not CLI input.
+
+A gate is a checkpoint; an artifact is its required output; evidence is a recorded
+observation of that output. Pick the matching playbook, then start the host agent
+with a bounded outcome and the `project-delivery` skill. The agent needs access to
+the target project and this trusted library; installing MCP is optional.
 
 ## The executable journey
 

@@ -2,16 +2,56 @@
 {
   "id": "adoption",
   "language": "cs",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
 # Použití knihovny v projektu
 
-## Sestavte přenosný soubor rozhodnutí
+## Začněte doporučeným postupem
 
-Kopírujte potřebné šablony, ne celou knihovnu. Do `project-profile.yaml` zapište zamýšlený výsledek, citlivost dat, odpovědného vlastníka, zátěž, rozpočet, cíle služby a předpoklady obnovy. Knihovnu připněte k posouzenému vydání nebo úplnému commitu a stabilním ID průvodců. Tiché sledování proměnlivé větve `main` může změnit produkční pravidla bez schválení v projektu.
+Pokud s knihovnou začínáte, projděte [první kontrolní bránu s důkazy](first-project.md)
+a potom pokračujte [postupem realizace projektu](project-delivery.md) a průvodcem pro svůj typ projektu.
+Vytvoříte plán a malý konkrétní výstup, zaznamenáte skutečné pozorování a posouzení.
+**Kontrolní brána** je kontrolní bod s požadovanými výstupy a podmínkami, které blokují
+pokračování. **Artefakt** je výstup, například záznam rozhodnutí, změna zdrojového kódu
+nebo zpráva o testu. **Důkazy** zaznamenávají, co někdo na tomto výstupu skutečně
+posoudil nebo spustil. Naplánovaná kontrola není pozorování a vyplněná šablona není schválení.
+
+## Použijte správný profil
+
+| Soubor | Účel | Kdo jej čte |
+| --- | --- | --- |
+| `templates/delivery-profile.json` | Příklad vstupu s přísným schématem JSON: typ projektu, přesná cílová revize, riziko, data, zátěž, hosting, rozhraní, účinky a cíle | `library.delivery plan`, `library.delivery assess` a `library.project init` |
+| `project-profile.json` | Vyplněný JSON profil dodávání vašeho projektu; tento název generuje `init` | Stejné nástroje; název souboru se liší, schéma ne |
+| `templates/project-profile.yaml` | Volitelný podrobný podklad pro rozhodování: vlastník, rozpočet, cíle služby, umístění dat, obnova a výjimky | Lidé a agenti; CLI jej nečte ani nepřevádí |
+
+Pro plánování spouštěné nástroji začněte šablonou JSON. Nahraďte její syntetické
+požadavky skutečnými rozhodnutími projektu. U existujícího projektu uchovávejte
+profil a důkazy na schváleném místě daného projektu a spouštějte CLI knihovny
+s výslovně uvedenými cestami. Nespouštějte `init` nad existujícím projektem:
+vytváří pouze nový cílový adresář. Do nového přenosného balíčku `init` zkopíruje
+potřebné nástroje, průvodce, licence a vybrané referenční příklady; ty nejsou vaším hotovým produktem.
+Pro samotné čtení a podporu rozhodování odkazujte na příslušné průvodce a kopírujte
+jen potřebné šablony; generování balíčku ani MCP není nutné.
+
+Pokud vedete i podklad v YAML, přenášejte rozhodnutí uvážlivě:
+
+| Podklad pro rozhodování | Profil dodávání | Co vyžaduje interpretaci |
+| --- | --- | --- |
+| `name`, `outcome`, `non_goals` | `project_id`, `description`, `objectives`, `constraints` | Zvolte platné stabilní ID a pozorovatelné výsledky; nestačí jen přejmenovat klíče |
+| `data.classification` | `data_sensitivity` | Po posouzení skutečných dat vyberte podporovanou kategorii |
+| Naměřená pole `workload` | `workload` | Zvolte odůvodněnou kategorii; pokud měření chybí, použijte `unmeasured` |
+| `library_revision` | Žádné odpovídající pole profilu | Revizi knihovny připněte samostatně; `revision` v JSON znamená Git commit cílového projektu |
+| Vlastník, rozpočet, cíle služby, umístění dat, obnova, výjimky | Uchovejte v podkladu a příslušných artefaktech kontrolních bran | Tyto povinnosti stále platí; plánovač tato pole YAML nevyhodnocuje |
+
+Typ projektu, hosting, rozhraní, účinky a riziko také vyžadují výslovná rozhodnutí
+v JSON. Automatický převod ani synchronizace neexistuje. Při změně společných
+předpokladů aktualizujte oba dokumenty, znovu vygenerujte plán a přehodnoťte dotčené důkazy.
+Do přísného schématu JSON nepřidávejte pole určená pouze pro YAML. Knihovnu připněte
+k posouzenému vydání nebo úplnému commitu a používejte stabilní ID průvodců.
+Tiché sledování proměnlivé větve `main` může změnit pravidla projektu bez jeho schválení.
 
 Vytvořte kontextový diagram a ADR pro první zásadní rozhodnutí. Zaznamenejte přijatá doporučení, záměrně odložené kontroly, vlastníka, termín platnosti a náhradní kontroly. Projektové pokyny pro agenty udržujte v `AGENTS.md` a odkazujte na podpůrné materiály. Tato knihovna je zdroj návrhů udržovaný agenty. Její doporučení se stávají pravidly projektu až prostřednictvím lidského rozhodování v daném projektu.
 

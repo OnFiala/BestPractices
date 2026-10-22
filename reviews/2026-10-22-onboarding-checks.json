@@ -1,0 +1,1162 @@
+{
+  "kind": "onboarding-change-verification",
+  "observed_at": "2026-10-22T15:27:01.555213+00:00",
+  "scope": "New onboarding and first-gate walkthrough in EN/CS/DE/ES; Pages build read permission. No runtime acceptance contract was weakened.",
+  "reference_verification": {
+    "schema_version": 1,
+    "kind": "local-reference-verification",
+    "observed_at": "2026-10-22T15:27:01.555213+00:00",
+    "runtime": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "linux",
+      "node": "v24.19.0"
+    },
+    "input_image": {
+      "digest": "47aeb1453c471c61b560dd9d73ae4c0620d2aa18e73d908d1809231bbf42a05e",
+      "files": [
+        {
+          "path": ".github/workflows/agent.yml",
+          "sha256": "ed2e283b7a3e018939a1fcf001aabd6e3c071ca1e1bcab05b4544f0a46ca7bc2"
+        },
+        {
+          "path": ".github/workflows/pages.yml",
+          "sha256": "245c06a3e8784c8c69b52897b88b55ccd9e249e60179d41b7364ee8a7c898376"
+        },
+        {
+          "path": ".github/workflows/sources.yml",
+          "sha256": "a6dadf5ec8fd9019dd16c1f5ddb342cc78daaacb1323925516e0e5f1c91c3b3d"
+        },
+        {
+          "path": ".github/workflows/validate.yml",
+          "sha256": "427a6f988caaf61ad04b54ece477972fd73438a373d0873ad34c0cd3b09a708b"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "1ba324d5717e3a5331b1ac9d859ae894cc5bfa995f25cdbf66c3c91b4219f703"
+        },
+        {
+          "path": "AGENT_SYSTEM.md",
+          "sha256": "43b02b2b997047b197fb8196625bc06cd71d206e3ad3a7c5e388a85a86792eb5"
+        },
+        {
+          "path": "LICENSE-CODE",
+          "sha256": "2646b6a15233c2231af675d9fa8412497b50207143863e653e8dcaa39ccf2dfb"
+        },
+        {
+          "path": "LICENSE-CONTENT",
+          "sha256": "66fa3c944028a50e7ea0f77390ae5652c5aec578879ea812a5c995694e54043d"
+        },
+        {
+          "path": "PROVENANCE.md",
+          "sha256": "d332afb8a48b79c83846774c27fe26a839cc441b8ccb3a4ae5dead4cbcd64c9f"
+        },
+        {
+          "path": "README.md",
+          "sha256": "448df41d9944f1187773e5fadb5848bc478f7ab1a88d056aee26e1ab3004e761"
+        },
+        {
+          "path": "SECURITY.md",
+          "sha256": "6a0f9cab8be3665a47b8d4436f7c65c67acfbee424dfd3f1b64b64aaba49af1d"
+        },
+        {
+          "path": "data/blueprints.json",
+          "sha256": "84f6f4d9931bee9252b679378480af7bff9727c91a95d268d87071b1217fa277"
+        },
+        {
+          "path": "data/catalog.json",
+          "sha256": "23f45eb0a9be4dddc20d8c918bcc6ea73b3d01daef80360adbabadda53efe80a"
+        },
+        {
+          "path": "data/coverage.json",
+          "sha256": "bc09a5bcc0f676e81b9eb7c63e60117f1547c3180b92006b290eb67414737eaf"
+        },
+        {
+          "path": "data/delivery.json",
+          "sha256": "bfdf3e21a4f0b2b04e23d831db2c42a7566f73c4e764fe4073569ee9730abe89"
+        },
+        {
+          "path": "data/evidence.json",
+          "sha256": "519661edb1cd7888afd73c79be711316f12c38699300c5a498c8bc5033a0dcc5"
+        },
+        {
+          "path": "data/source-baseline.json",
+          "sha256": "4951ce406e8c09b1f5db5aeb0175e7786d7a2f05267d8b2dfbe30a88991f3434"
+        },
+        {
+          "path": "data/sources.json",
+          "sha256": "402467c6de6a05b4b0c4cc1a9ad5f8d77859eb20e46c12eac5d328fda4b189d4"
+        },
+        {
+          "path": "data/third-party-assets.json",
+          "sha256": "1683330d9b61de690cbc3f832d32279abf6f0704dfe337dd21a4539893dca6c7"
+        },
+        {
+          "path": "data/tools.json",
+          "sha256": "ce8dbd4ab10181ccce8a72ed0e7269fca3882bb67583de174396f51a480a9714"
+        },
+        {
+          "path": "docs/cs/guides/adoption.md",
+          "sha256": "998ffc093dd9cb5689c2970794f825a6bab6c99f5da8959d706552ea4f65c6a7"
+        },
+        {
+          "path": "docs/cs/guides/agents.md",
+          "sha256": "595132c1eb7194c7f389625ec49c0167ead7c076e179abc1ae18321a6a3ed4cd"
+        },
+        {
+          "path": "docs/cs/guides/architecture.md",
+          "sha256": "cb76eba72c222e248bb16181a5ff4d111ad7807ad9cc3ca86ec77fe2b29a81c0"
+        },
+        {
+          "path": "docs/cs/guides/coverage.md",
+          "sha256": "c82aa1e0db99a0280abac084382600f73905a7c3e6221dfd6f39c573df89ae4d"
+        },
+        {
+          "path": "docs/cs/guides/data.md",
+          "sha256": "913e1c8a2c58b99181203fafd91dd1174fead38a27c21a8457464be3a5425601"
+        },
+        {
+          "path": "docs/cs/guides/durability.md",
+          "sha256": "6dbbca0cc28927410088bfbe273c004f56d5f4b56a3830c5297fcfa6cda48141"
+        },
+        {
+          "path": "docs/cs/guides/first-project.md",
+          "sha256": "bdb49576b97d135008ce6b1480c082a0c28efa672328a32789006d2f8f45eb4b"
+        },
+        {
+          "path": "docs/cs/guides/foundations.md",
+          "sha256": "c05806aed17fb412180a7dd69e261e17b28f8f75387822c08ff292de833a3142"
+        },
+        {
+          "path": "docs/cs/guides/frontend.md",
+          "sha256": "e8bda79d1db749ba387d08244791bc6f3b547bbdc5a73053ef18715ea6e9fd3a"
+        },
+        {
+          "path": "docs/cs/guides/github.md",
+          "sha256": "04c1196eaf8fbcb8357983d68a1d1a6135c07c3217e3c6723c600143fa2f47cf"
+        },
+        {
+          "path": "docs/cs/guides/governance.md",
+          "sha256": "9634f3942f24e71d4effcbaed797d5fe260b80c81269c8a79928b917df4134d5"
+        },
+        {
+          "path": "docs/cs/guides/hosting.md",
+          "sha256": "86141f9717be9068a008a1d5d7ce0dd8476e6aad12bb435a594cccedb5548012"
+        },
+        {
+          "path": "docs/cs/guides/integrations.md",
+          "sha256": "0ee11ec1448ab4c0bef1cde10374f372f3b401f7bcdfdb8b3a70c65281c09375"
+        },
+        {
+          "path": "docs/cs/guides/lifecycle.md",
+          "sha256": "d9ff0a6c9740483cc4b7e1dea763a0df0c856c042855d624463794a0da272d85"
+        },
+        {
+          "path": "docs/cs/guides/maintenance.md",
+          "sha256": "bc1ee88e103b2051788aa3f4af3897d2e73e721284a92d4260efdbc7307703c7"
+        },
+        {
+          "path": "docs/cs/guides/operations.md",
+          "sha256": "92f77d5d76b5f3bd5f105ba76ffa97351a7cb8961ee6d036510101fd8403d1d7"
+        },
+        {
+          "path": "docs/cs/guides/performance-testing.md",
+          "sha256": "40d6d29ad3169236061a10d5e1d2725214e520a83944aa22590f5828320fd139"
+        },
+        {
+          "path": "docs/cs/guides/playbook-agent-automation.md",
+          "sha256": "fafee502160b33980a0f11f0b2f49c7c7d902165e9c8c16c9ddd3bf04cca75ba"
+        },
+        {
+          "path": "docs/cs/guides/playbook-ai-application.md",
+          "sha256": "0972aec2f1f13178449b49ae9a58c0d803a7bf1b426569cd79a6dbe566d8b0b2"
+        },
+        {
+          "path": "docs/cs/guides/playbook-internal-tool.md",
+          "sha256": "95db2563a4fa3aa72f4f6e53b448803a6d54020eb28bc86f12dd98a67893a168"
+        },
+        {
+          "path": "docs/cs/guides/playbook-mobile-backend.md",
+          "sha256": "5243f7a10253cdb67fc999ff88786085f8fd28553471d7d7214a6126647d53e2"
+        },
+        {
+          "path": "docs/cs/guides/playbook-public-website.md",
+          "sha256": "a9e62f0bd18774f134a0e344417f2db6dbae95339be29d46fb34be51244d39f6"
+        },
+        {
+          "path": "docs/cs/guides/playbook-saas.md",
+          "sha256": "ae67f46c178678e0b2f094c29f47e04c882d6d79c09e3605a00ef0d96ed62172"
+        },
+        {
+          "path": "docs/cs/guides/project-delivery.md",
+          "sha256": "d7e7a0e31c051355d47c4bcfa71249f1b17423c75013282da183317f8b76e7e5"
+        },
+        {
+          "path": "docs/cs/guides/quality.md",
+          "sha256": "5271afc71a448782d4f59c7da79a4bbcb739af60ed4a528c274d5d1a76306fed"
+        },
+        {
+          "path": "docs/cs/guides/reference-labs.md",
+          "sha256": "694ab98a864c5a94388a8b7a90b6842a8eac9b173ee2ca3be25364953e58d737"
+        },
+        {
+          "path": "docs/cs/guides/scaling.md",
+          "sha256": "d10e12610e51ee8166c74b8a123af9ab6601fac006fb5691284a77aab440a1a6"
+        },
+        {
+          "path": "docs/cs/guides/security-testing.md",
+          "sha256": "d65aae8ab45da17586c8778489d2b4ade299b5d521578fc0db114dfed71b9d28"
+        },
+        {
+          "path": "docs/cs/guides/security.md",
+          "sha256": "b97ff53157795801671ffbcb857f7184c3ca534564af436aa67339e1edbc9d14"
+        },
+        {
+          "path": "docs/cs/guides/self-hosting.md",
+          "sha256": "7535f11ac5e158eb8104788a89e67df03f9f3106744ea52327a0b872c2af265a"
+        },
+        {
+          "path": "docs/cs/guides/testing-strategy.md",
+          "sha256": "cfebeea7f34c257d1b320dadcf41228272e32c51de2fd98b2f4f118acaeb1875"
+        },
+        {
+          "path": "docs/cs/index.md",
+          "sha256": "0f16e835ca95ad7f518b48cc741fc0d7042ca28552ce082997191848b567cc58"
+        },
+        {
+          "path": "docs/cs/reference/examples.md",
+          "sha256": "46866ade0cdf27bbc039c0cc324d6f710640aae0617860cc6a33198a9042e049"
+        },
+        {
+          "path": "docs/cs/reference/tools.md",
+          "sha256": "18ec818458c65fec417da0a98bb14332dcfd00c6c2a14a99acf967c9772124f3"
+        },
+        {
+          "path": "docs/de/guides/adoption.md",
+          "sha256": "add57f9e125ecee0dc2f38af8bef33ba49089561c921981a0344c68e2302ae13"
+        },
+        {
+          "path": "docs/de/guides/agents.md",
+          "sha256": "9cdda7e0afe71037b234e8ca8970a4ea2740b9eb27da72f1b3c8bf97c29dec43"
+        },
+        {
+          "path": "docs/de/guides/architecture.md",
+          "sha256": "48989b4f81b32c61ef07b04016e0418cdce91bcd53d836ad48a080dfba9a4194"
+        },
+        {
+          "path": "docs/de/guides/coverage.md",
+          "sha256": "7d857541a1c3297c5e980481a3e0c48ddab0e700ce19148318cb43be2b8eac75"
+        },
+        {
+          "path": "docs/de/guides/data.md",
+          "sha256": "a2bacff5090283c6329ed1ebfd584cfa82940e40a91576c588077493e4f3d5c5"
+        },
+        {
+          "path": "docs/de/guides/durability.md",
+          "sha256": "37ad3ab3c40af0497902095aa300977faba9ca3b507a3672675a6ee134c8a6bb"
+        },
+        {
+          "path": "docs/de/guides/first-project.md",
+          "sha256": "f01a2893dbaacaeaea321324e710f7945c0604c6a56e51073f6357dbd9143826"
+        },
+        {
+          "path": "docs/de/guides/foundations.md",
+          "sha256": "7c54ea8d6f2a8876c7d6e063df2e91defd3b7f2245daefb4740650d41d0037d9"
+        },
+        {
+          "path": "docs/de/guides/frontend.md",
+          "sha256": "8d9135fb28efe5a1b52bbca5abbc063406d9043bd28a99eb5a1e1250671eab8f"
+        },
+        {
+          "path": "docs/de/guides/github.md",
+          "sha256": "0ab143168f3f4ec1292a2783eeebfec26bc900771cb4a0e5be38e5c69c8fdfb4"
+        },
+        {
+          "path": "docs/de/guides/governance.md",
+          "sha256": "9fe49a60903d23b143559da364ccc8f4194e69e55864ecf3a64e0e597a5218f2"
+        },
+        {
+          "path": "docs/de/guides/hosting.md",
+          "sha256": "f7b3c52d7027ac8e2d20527c4096cdea1387857f77ffc9ecf16950c8f0ac1e22"
+        },
+        {
+          "path": "docs/de/guides/integrations.md",
+          "sha256": "015fba50867177eaf57307960d553a2db198df385438deae72a9ecbe8237a604"
+        },
+        {
+          "path": "docs/de/guides/lifecycle.md",
+          "sha256": "0009fcb5bb0293a9f53122d3c057869d6c46202bf26f18531e6747c8876afa3e"
+        },
+        {
+          "path": "docs/de/guides/maintenance.md",
+          "sha256": "d6a7c9c349f1ef8859c057b22650fcc6d926663d34979c7e99f42f9b2beaeb78"
+        },
+        {
+          "path": "docs/de/guides/operations.md",
+          "sha256": "7363d930440d884a95495b404340b76b7e2b5a1a6ca68aa9bb70eb499714495a"
+        },
+        {
+          "path": "docs/de/guides/performance-testing.md",
+          "sha256": "225dc32b63904607ed2e8492a68f04f4a69d61d2fb599bd35f39add602c35737"
+        },
+        {
+          "path": "docs/de/guides/playbook-agent-automation.md",
+          "sha256": "99a7ad3a8093bfe1958dc0b5cdae1c1dee087f3019f54a53d7f419b1d8a98eed"
+        },
+        {
+          "path": "docs/de/guides/playbook-ai-application.md",
+          "sha256": "db26dfcdc488997a6581c87ce92eb553bcdd3860beaa67d4336c8926d58bfda9"
+        },
+        {
+          "path": "docs/de/guides/playbook-internal-tool.md",
+          "sha256": "08b5a11d3f809fed465baf19550f16418229f3cced8b16861d9ab4d201f431a2"
+        },
+        {
+          "path": "docs/de/guides/playbook-mobile-backend.md",
+          "sha256": "24e75c65d70d6aa40bf7e2389b7608c511568a8a85e4f7be8c029c8171a322b2"
+        },
+        {
+          "path": "docs/de/guides/playbook-public-website.md",
+          "sha256": "30678f401d34e309b047714bf2fb06b4153b08b9bb4632b2634cb389d1d31a16"
+        },
+        {
+          "path": "docs/de/guides/playbook-saas.md",
+          "sha256": "2aed76f123d0db09a83673574f80c4e774843143e86a8bec9a079df19730d607"
+        },
+        {
+          "path": "docs/de/guides/project-delivery.md",
+          "sha256": "326c9f527fd02d80f5c44478f4cec72fe5cf931f8d6f8ac9958df1c2129115ab"
+        },
+        {
+          "path": "docs/de/guides/quality.md",
+          "sha256": "11cb8f3dc8b1dc1c1198d707f2182b489ae1c3b0cbba8cc517bf987c5e808793"
+        },
+        {
+          "path": "docs/de/guides/reference-labs.md",
+          "sha256": "1406f7bce8d27c307533e36bbf571c8a4fb1655eb7aed40e29be148844d812f1"
+        },
+        {
+          "path": "docs/de/guides/scaling.md",
+          "sha256": "2f7d950b3f51dd2ca2bc947262d1c0163cb083b40fdccbd2a0d6b467d49765d5"
+        },
+        {
+          "path": "docs/de/guides/security-testing.md",
+          "sha256": "ea36f0ccb1a00e6b22f98ef756001e4f21b0a147b67c22e2c139a288674381b7"
+        },
+        {
+          "path": "docs/de/guides/security.md",
+          "sha256": "1b0e58c46c01459da0e155e0635b47764ad7285ef39de4f76423791a3ef04991"
+        },
+        {
+          "path": "docs/de/guides/self-hosting.md",
+          "sha256": "4059776183084f7d8f30aef271dc31c5e8c8911853f3d4e8364feebb6bab39cd"
+        },
+        {
+          "path": "docs/de/guides/testing-strategy.md",
+          "sha256": "f9529317b796d34f65eb7fe68123019e0bb6a39d7b24ed2c049b446cd3fbf5d5"
+        },
+        {
+          "path": "docs/de/index.md",
+          "sha256": "c3f5c0c66409126a580f4d215380cca36aa48bdcfb227ae4434e0885522ad9a0"
+        },
+        {
+          "path": "docs/de/reference/examples.md",
+          "sha256": "8c29afed96e1b8147cf02ddf241cd7b7b6ec34c6a23bfd549bf7dd6ca9118b33"
+        },
+        {
+          "path": "docs/de/reference/tools.md",
+          "sha256": "44ffedf2d8111ad8ccc488ec4ae7840e150a5d2fa4a7cf8b225f73100f94bcc6"
+        },
+        {
+          "path": "docs/en/guides/adoption.md",
+          "sha256": "e527528978640383dc68654a890830da94cbb0aa2cefddad9316960e6d525ff6"
+        },
+        {
+          "path": "docs/en/guides/agents.md",
+          "sha256": "e1df88f583eb36aab812f6fbff4560e82ac7e69893c29139d1b7e323db74fd49"
+        },
+        {
+          "path": "docs/en/guides/architecture.md",
+          "sha256": "14759c2c04fb17a7e021d72d5cf67c67f8e64c9b6b15151e94fd7390e6c5ea72"
+        },
+        {
+          "path": "docs/en/guides/coverage.md",
+          "sha256": "1b66c60a7a10c001a96fd6d65e900a35cbd4af294ddc605719913c17e18a18e8"
+        },
+        {
+          "path": "docs/en/guides/data.md",
+          "sha256": "00512b4bff7248089226913f889c01eb6984af40bb78f381553cd2cb9f96a2b6"
+        },
+        {
+          "path": "docs/en/guides/durability.md",
+          "sha256": "da9719849e86238057428604ae8c42495cc0a1f7d8dd690d213fd42f8e6961b5"
+        },
+        {
+          "path": "docs/en/guides/first-project.md",
+          "sha256": "5c8bf41da44b77f6f401b31adcd8ec7d8dd1ecf56df4efed3caa06bf07d77796"
+        },
+        {
+          "path": "docs/en/guides/foundations.md",
+          "sha256": "9f932a56fdaefee774059bcbf1af7b9be9f9dc89b56c4df980a778bf84229230"
+        },
+        {
+          "path": "docs/en/guides/frontend.md",
+          "sha256": "18e3542fed1de24fe89fbd27f67aa966439186f89b98539bfe3f2afd8993565f"
+        },
+        {
+          "path": "docs/en/guides/github.md",
+          "sha256": "7dc5e189a1b5e44727b05c43027d5efb662ac439b7616c4d5aa468b67267dab9"
+        },
+        {
+          "path": "docs/en/guides/governance.md",
+          "sha256": "00dc6cf989b4b19b27f08619fe039872d9f6bc6e966ed4344706945649fdbde1"
+        },
+        {
+          "path": "docs/en/guides/hosting.md",
+          "sha256": "9965cf952037a92195870da91c662c8f3acfbd6e55dee0d7003e9de73965df66"
+        },
+        {
+          "path": "docs/en/guides/integrations.md",
+          "sha256": "d2579a76b7b08c1ee415b7bd1f618da3d9890c7c73ba69c8b5c5c0cc29ebdfd7"
+        },
+        {
+          "path": "docs/en/guides/lifecycle.md",
+          "sha256": "746696f555034a7e2500dd1387934f04ae54c2c8579568594bb7d9c0f1dc541e"
+        },
+        {
+          "path": "docs/en/guides/maintenance.md",
+          "sha256": "b2bae820db1acef20c50b831d09b53724c2c0c4d3312689b39323fdeb8184420"
+        },
+        {
+          "path": "docs/en/guides/operations.md",
+          "sha256": "34782cbe64e3098cbf03900fa65bc13b077843fd992b8f9f510b547a49a4de3f"
+        },
+        {
+          "path": "docs/en/guides/performance-testing.md",
+          "sha256": "f94c9a53284f3687545cf17ddd9224d3c1f1d43ceceb91766f7b4a1eebd14c95"
+        },
+        {
+          "path": "docs/en/guides/playbook-agent-automation.md",
+          "sha256": "8efa3a8c2f13295bc764e65608980b023ba44ee8758e5cb3e18c18e8c9b31f84"
+        },
+        {
+          "path": "docs/en/guides/playbook-ai-application.md",
+          "sha256": "c4eefbbfaa98cf5e7c46edb68b8b9a7c072e8baa2b8043c43c723fed6d9bffef"
+        },
+        {
+          "path": "docs/en/guides/playbook-internal-tool.md",
+          "sha256": "a74c211d6e8ffda1b4ee55a9639a1b826e5b881ae8bfeeb1682003d1dab415e0"
+        },
+        {
+          "path": "docs/en/guides/playbook-mobile-backend.md",
+          "sha256": "9e9c8bedd674d69639642cc1d99e255e8aa7ca5a788b4ede44b5983b659cd0bf"
+        },
+        {
+          "path": "docs/en/guides/playbook-public-website.md",
+          "sha256": "14859902f4a97aa7e676dfb93618d0a6edf7082fcc5d71b88f86646a675843cb"
+        },
+        {
+          "path": "docs/en/guides/playbook-saas.md",
+          "sha256": "cc7a2ee6219bf150e93898e36b81788ccf3dce82d0d81618cb7d414b125db373"
+        },
+        {
+          "path": "docs/en/guides/project-delivery.md",
+          "sha256": "6823ee66ac33db1796234c8b13b5cb3abb46ac247e926867c64cc4a83476969d"
+        },
+        {
+          "path": "docs/en/guides/quality.md",
+          "sha256": "c3528d1d53b8a1310eedb18a6f9748e7041303ec437afbd3460fa58301cd94bb"
+        },
+        {
+          "path": "docs/en/guides/reference-labs.md",
+          "sha256": "4621582228f66a8a62cc261b2e8362b8031224698050a3ccddd05276fdfab224"
+        },
+        {
+          "path": "docs/en/guides/scaling.md",
+          "sha256": "bfff8b2a7abe622077d2ec55ea9323f107b984a1a3b4d62579db33f5715beb3d"
+        },
+        {
+          "path": "docs/en/guides/security-testing.md",
+          "sha256": "988a422b85c1e7d8248a1d201ca8495f47aaba0da36030a7f50d7fabb193dce2"
+        },
+        {
+          "path": "docs/en/guides/security.md",
+          "sha256": "fde4e279fd1ba492f832babdf382f91a606ddb2f29776bb621c5d9b231998f95"
+        },
+        {
+          "path": "docs/en/guides/self-hosting.md",
+          "sha256": "a628d3b9141525b7663064ea58529b3a3e56a350022a1af035da86b7d12fcaf9"
+        },
+        {
+          "path": "docs/en/guides/testing-strategy.md",
+          "sha256": "695cc43b0a0506e16a4e54c5870307d5538582083555017f99a497d001810854"
+        },
+        {
+          "path": "docs/en/index.md",
+          "sha256": "e20984eb723e3df63efdd8834998597b31c08f1739eed2872fdbdfc2bf760645"
+        },
+        {
+          "path": "docs/en/reference/examples.md",
+          "sha256": "e5a1eaee8b80f94e6246c39137900414f4b8ca52e769a4076748a46775886d63"
+        },
+        {
+          "path": "docs/en/reference/tools.md",
+          "sha256": "6cb89dfe9f6791bb1de08506f1fd91eb1be2a4295717a1d8eda672d74882857e"
+        },
+        {
+          "path": "docs/es/guides/adoption.md",
+          "sha256": "a2ee79d341c2a4a4d9c6b09156361f8520a0f8b5b3e07924a8b856d49db8d543"
+        },
+        {
+          "path": "docs/es/guides/agents.md",
+          "sha256": "50e77c3746bf519dd192fbd7bcf9bed1664ae4b0ed22feb4dff5834b2905dd90"
+        },
+        {
+          "path": "docs/es/guides/architecture.md",
+          "sha256": "82717eca5534054b1267055c54a4ce5e6270f30937c31f9829373044b1f103c7"
+        },
+        {
+          "path": "docs/es/guides/coverage.md",
+          "sha256": "48c7acb74c10affe9ac4ad425131205a6c511ae77b45314ab0183fada4ddb318"
+        },
+        {
+          "path": "docs/es/guides/data.md",
+          "sha256": "46692c9a9e917f7f487032ac08fc8766af584484b64997a05e7765d4a396134f"
+        },
+        {
+          "path": "docs/es/guides/durability.md",
+          "sha256": "f0665a9c311590f638419d2444571d03db0c050d83f86d1a907fa67623287478"
+        },
+        {
+          "path": "docs/es/guides/first-project.md",
+          "sha256": "c42789dde5ab7672b5c248ae83f127ff3684a61d4352d6b3c35d06729ab01d2f"
+        },
+        {
+          "path": "docs/es/guides/foundations.md",
+          "sha256": "86e0b405c28282279a4f76b060a31ad7ae6e4a1e16039690d8db43253a8967a9"
+        },
+        {
+          "path": "docs/es/guides/frontend.md",
+          "sha256": "6ecb674324cfa9f72de56e850fc7ebb4885fa355a5c0c308238e66092e9293bc"
+        },
+        {
+          "path": "docs/es/guides/github.md",
+          "sha256": "1ccc415f942bd47f9fe94fe98f37d300e4e30f145c01e7f74ea20390c4d7f036"
+        },
+        {
+          "path": "docs/es/guides/governance.md",
+          "sha256": "f008d1a827711cb6dc012400936bff5c11581e34673c9650db03e7f41966a6e1"
+        },
+        {
+          "path": "docs/es/guides/hosting.md",
+          "sha256": "00f56ab93e24b4139f8203c3e640d112f43555d38dba1ab3a2623d9e2dfb9cf5"
+        },
+        {
+          "path": "docs/es/guides/integrations.md",
+          "sha256": "942a06484ba9939429dbd791120a169d9342a5453dc7f64fa95d38e74229b201"
+        },
+        {
+          "path": "docs/es/guides/lifecycle.md",
+          "sha256": "f747ea9ef2198645645e5971d3f75a618d7bdc39b2b10cd6cdb023a41c98fc7c"
+        },
+        {
+          "path": "docs/es/guides/maintenance.md",
+          "sha256": "f3a8da1083d388cfdbb47defcae285e4146f984d75e70ca172c2936087b66c5d"
+        },
+        {
+          "path": "docs/es/guides/operations.md",
+          "sha256": "e5a946c221f225565284b452b7ae62f2ba332b6b7e51c6f818372b9e2823ede6"
+        },
+        {
+          "path": "docs/es/guides/performance-testing.md",
+          "sha256": "3c70d38dbcf98be9d638ec4debd7cc18c0fa1402c6577c99c3c196f677228e83"
+        },
+        {
+          "path": "docs/es/guides/playbook-agent-automation.md",
+          "sha256": "56a29a3d3a53e16cf05139786497f8ff43760d82513a36c2cac5ceca23db89e2"
+        },
+        {
+          "path": "docs/es/guides/playbook-ai-application.md",
+          "sha256": "cddd63e3449531d27c4900167249069d4103343a24d7533cedb5806c2a175097"
+        },
+        {
+          "path": "docs/es/guides/playbook-internal-tool.md",
+          "sha256": "5a350bdc48dd2778d8e74dfeff2159d69c3d15d52c4d05c3270566b0e27f056f"
+        },
+        {
+          "path": "docs/es/guides/playbook-mobile-backend.md",
+          "sha256": "0f346b8ef21c48518bb2fa2fbf116e39a6ebadb39d2c6e5afde26713268d467b"
+        },
+        {
+          "path": "docs/es/guides/playbook-public-website.md",
+          "sha256": "784ad4ab9f8dfd44761ca7b30078a45536d67058d88755fadf91fbd2bc3af7e7"
+        },
+        {
+          "path": "docs/es/guides/playbook-saas.md",
+          "sha256": "0609e49eeb672605888cdc29593a0d84d45e711e988ca3d0a3c73b12bcbeadd3"
+        },
+        {
+          "path": "docs/es/guides/project-delivery.md",
+          "sha256": "c0db1c0fc178243b6b8a029349a6a092efe2505a69b22b9e79daca8d5c23e01d"
+        },
+        {
+          "path": "docs/es/guides/quality.md",
+          "sha256": "75849e6027f58e9e053029cbb203ee317018ac59d1d85a2adc65113732c5db6e"
+        },
+        {
+          "path": "docs/es/guides/reference-labs.md",
+          "sha256": "4e9ef73cf797403db1fd39b07c2252f9670cc18925ab40a665e8ff9c457e3cb4"
+        },
+        {
+          "path": "docs/es/guides/scaling.md",
+          "sha256": "b8f6e3db5e0f2082ce939cdbebc5ec78cb6d20ea0b0d90bf14cb85010a1fda86"
+        },
+        {
+          "path": "docs/es/guides/security-testing.md",
+          "sha256": "e1445e9b1e5602d0057a3bbf926ae260f4faf3a2023a927fb8451ca7767c01be"
+        },
+        {
+          "path": "docs/es/guides/security.md",
+          "sha256": "557313a33f18098b8401a2fd288c0db2fdc6a91d52a43e809857a3204387334a"
+        },
+        {
+          "path": "docs/es/guides/self-hosting.md",
+          "sha256": "9c17008fd58e4cfb4d177ae9fbba70d30899f22745e2bd073a99c5c80c6b8d93"
+        },
+        {
+          "path": "docs/es/guides/testing-strategy.md",
+          "sha256": "e7c43f502871b46d4567b090cdc1e09b13ea740e09086191e4391b77c8add14e"
+        },
+        {
+          "path": "docs/es/index.md",
+          "sha256": "eaee4cb15e32807c67dbeee26559bab902af8097fa21b3f4bea4793f3bba7f72"
+        },
+        {
+          "path": "docs/es/reference/examples.md",
+          "sha256": "8650f4a7c2a49f0f2aa88820bf578b9dcb3c6207d7364d05a7bc834ed8517cb7"
+        },
+        {
+          "path": "docs/es/reference/tools.md",
+          "sha256": "48465db78bbf4dab08c2d1cbc039e104d05dea5fed00819a22880c508fcd7685"
+        },
+        {
+          "path": "examples/agent_workflow/README.md",
+          "sha256": "1eebee2198b63fa3e9127041d6ac51486cd0303b3b72746ccc4b616fc0cdb797"
+        },
+        {
+          "path": "examples/agent_workflow/__init__.py",
+          "sha256": "8fcb98be4aebc87de1e5a7267e1ab70ef02d315401c78362acd739434c49ec8f"
+        },
+        {
+          "path": "examples/agent_workflow/__main__.py",
+          "sha256": "64bb2f5cb5e796f3617519c43008db98d5e7d2e030fc2f384835ac857188923d"
+        },
+        {
+          "path": "examples/agent_workflow/cases.json",
+          "sha256": "1787de8eb8daa392a20d1a8025d58fb8ca774f81356c3e05ea545804d1d83d7d"
+        },
+        {
+          "path": "examples/agent_workflow/evaluate.py",
+          "sha256": "a8451b24a60dc19b72b296d2da7318bd26e0ec18233be8057984877a563d0656"
+        },
+        {
+          "path": "examples/agent_workflow/workflow.py",
+          "sha256": "0ad79a2852c7a26dc394a52dfb0806518d68d889d51849a14abe26235088bc0c"
+        },
+        {
+          "path": "examples/durable_service/README.md",
+          "sha256": "80b7812efc25e7a103ee8b62489ac2a8b4df6e0487f58e4ee939ab093e79b272"
+        },
+        {
+          "path": "examples/durable_service/__init__.py",
+          "sha256": "e070a458ce34d156d63d0052280364321174a0b9b4f08298eb5802ce9c518a4c"
+        },
+        {
+          "path": "examples/durable_service/__main__.py",
+          "sha256": "6a8fac205faeb533c19bb49e10a4d81030208d29c29983ca6bbb43aa0b4632ce"
+        },
+        {
+          "path": "examples/durable_service/experiments.py",
+          "sha256": "4a1afa8af5d29b3a96527188f53db7344bae617b559abc1fd4e1a3cbe7d11821"
+        },
+        {
+          "path": "examples/durable_service/service.py",
+          "sha256": "de02711238aa410e3241c2a76030ef8acd3209c037ab06b2b410d8d1c888aeb3"
+        },
+        {
+          "path": "examples/frontend/README.md",
+          "sha256": "d7f6763e5431327545670952509fcd62e251bf2cb04cedf065b8d0caa53d4385"
+        },
+        {
+          "path": "examples/frontend/app.mjs",
+          "sha256": "d46ca35f788d9dbae9ab77f4f8d881a8216295252b01854bfb5b1f1ef3c4bb92"
+        },
+        {
+          "path": "examples/frontend/browser-smoke.mjs",
+          "sha256": "53c4fc2c376e5e62ae119e2bc6ed5d6bd5f54ae93ec210acfb8fcb477e1dd310"
+        },
+        {
+          "path": "examples/frontend/browser-startup.mjs",
+          "sha256": "646683fae65e567165b52be81b9ac3b56f954ec76041f706f0a62a996ae18253"
+        },
+        {
+          "path": "examples/frontend/controller.mjs",
+          "sha256": "1f090d9cd84ff98ddc9310cdb9897d39677bd24daa6e76109f63207c82da31c8"
+        },
+        {
+          "path": "examples/frontend/fixture-process.mjs",
+          "sha256": "685a2e9e1c3d668e06b1bf737cf30144931c6de10d9a05495bcf0d7507faeb59"
+        },
+        {
+          "path": "examples/frontend/index.html",
+          "sha256": "fea75327e1192bf7bf7866ee72e27798c91a3107744d714cbd14ed7cce558773"
+        },
+        {
+          "path": "examples/frontend/server.py",
+          "sha256": "6799d0e2c7fc14f8dda615ea8397a1943044f58362c662a8faab2ba8f49fa410"
+        },
+        {
+          "path": "examples/frontend/state.mjs",
+          "sha256": "01988c5d444af568908a81cd8054dd37595dcc432562bffca76c476084cf65f3"
+        },
+        {
+          "path": "examples/frontend/styles.css",
+          "sha256": "6638450837b60981a823edcc091aae9f3d2ee1226196be1d96cd1e63278df6b1"
+        },
+        {
+          "path": "library/__init__.py",
+          "sha256": "b56727deebbf038b057730c37f6a42cf460c9c54f1412af0f9e47bf77f437fa0"
+        },
+        {
+          "path": "library/agent_gate.py",
+          "sha256": "ff0cba44518ea4db218d908f15cc60a0525023c1b863014d9546cd619d7a516a"
+        },
+        {
+          "path": "library/check_runner.py",
+          "sha256": "5958c97239375b78e5781c19d27477081d07e398cfe80a8965261ae37045ced7"
+        },
+        {
+          "path": "library/check_site.py",
+          "sha256": "18fc8e20c480259502c210e3330956d27cb35c25f66a57ee40f8a81278df9543"
+        },
+        {
+          "path": "library/content.py",
+          "sha256": "f899ecdc863181483acdc39d9e25be25d98785968d1810e27f32b62de84784e2"
+        },
+        {
+          "path": "library/coverage.py",
+          "sha256": "4d03a23b8dd7a140c655f55e29e8eaa33db089fb45461632ca8311e29a1c754b"
+        },
+        {
+          "path": "library/delivery.py",
+          "sha256": "692ba1a686218e78b8d1fc4d3fe67bde6b9a33a4aa28ce83009bf8d4b3ed851f"
+        },
+        {
+          "path": "library/licensing.py",
+          "sha256": "3225eacb5494f91ba7404cc74f119b1c769408db6ff8ed8ab1d1af2124bd9e1f"
+        },
+        {
+          "path": "library/mcp_server.py",
+          "sha256": "33c03c5973006336aeb5b60b46e044aed2da8a90e53937720819abe50e94ec57"
+        },
+        {
+          "path": "library/project.py",
+          "sha256": "e1a7e8db7ebc0e803beb068078c8eb862427ea240a5699e4f9a5cd3561f2dbc9"
+        },
+        {
+          "path": "library/site.py",
+          "sha256": "c89a4b8a6f73a4f5dd717f1ed0279da0cb55dfe7a307824c9a50441445d99aa3"
+        },
+        {
+          "path": "library/site_hooks.py",
+          "sha256": "5ebe46c47fbc1677a1acd21cfabda7a963692c2b34b0191a6adcccdba9feaf72"
+        },
+        {
+          "path": "library/sources.py",
+          "sha256": "e43891b7a349e4c90a40212d9f4c8ff30915af593cdda06d9988ae4ed7e3f9f8"
+        },
+        {
+          "path": "library/validate.py",
+          "sha256": "9ac5884b11dc3830ea5e5af87e95ceba26b8369db34f109180b1f0b4d1360260"
+        },
+        {
+          "path": "library/verification.py",
+          "sha256": "5131290e728a0971d991939d84e68cfdd321ab0fcdb1dd677241bc5f70bbb5e9"
+        },
+        {
+          "path": "plugins/bestpractices/.codex-plugin/plugin.json",
+          "sha256": "59fc2679568c424038f3a5c8af8b4e069767cda5b7c227ce56e3830b8373f148"
+        },
+        {
+          "path": "plugins/bestpractices/skills/architecture-review/SKILL.md",
+          "sha256": "ac872bc00be631cfa6315168f8f78fab8a46ce3e9768ec6b5aa4c15dd37b9d86"
+        },
+        {
+          "path": "plugins/bestpractices/skills/maintain-library/SKILL.md",
+          "sha256": "3dad6c512f05a491420e28919d57b37d8c5b4d425caeb351b30e796d0b9ad8f7"
+        },
+        {
+          "path": "plugins/bestpractices/skills/project-delivery/SKILL.md",
+          "sha256": "6940f4853d15ff7858570321658193115054cd98300e99d2ad7bbffb33657f5b"
+        },
+        {
+          "path": "plugins/bestpractices/skills/release-review/SKILL.md",
+          "sha256": "2ac9d76d9cc9bd7a4d7200f2c52b0469af06e01ebd788ba9ea05d30f9960efb2"
+        },
+        {
+          "path": "plugins/bestpractices/skills/test-strategy/SKILL.md",
+          "sha256": "f9aa6c9f0f4db0fcc84058f66f9b35d008e9899f06a657d05b412272efe3ccc7"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "483d86fdab9db6525e8a0f06f64c1e146781b724be147f0cf7d404afd677e854"
+        },
+        {
+          "path": "templates/adr.md",
+          "sha256": "9e46e9bf52d0d6c216e2d29efe97305f4d0148bb6ba9027c10a335d3c699edab"
+        },
+        {
+          "path": "templates/agent-task.md",
+          "sha256": "c871d08f5feeea2de48f3415081586611a6f57cfe90a99c20eeed86a59a635f4"
+        },
+        {
+          "path": "templates/delivery-evidence.json",
+          "sha256": "9be0ece5126851ac40ea43025af5dfda143eb80d940579f0d16f1cb6e39cdaa6"
+        },
+        {
+          "path": "templates/delivery-profile.json",
+          "sha256": "6219345b61341af5dc3aa7cd9a3b5282dd3b17b82af2612b48be32d169512fbb"
+        },
+        {
+          "path": "templates/exception.md",
+          "sha256": "c4b0003593eaaf21076e4c54e46bd6fd1590965a1dbab0fa0584e42221d19d35"
+        },
+        {
+          "path": "templates/incident.md",
+          "sha256": "0040a33bc4ecf966937737d0c4f2b6e09428a5405bd8469f60b331ad9ff70fff"
+        },
+        {
+          "path": "templates/project-profile.yaml",
+          "sha256": "7a71715a3b9f1181166a5f26fc91f8653a0e4029cc4a7af6fb221f4e4f003524"
+        },
+        {
+          "path": "templates/release-checklist.md",
+          "sha256": "efaf080eb9915929c84cb300e6b9e1746a577d03d1761bcb3111491d85b2dc94"
+        },
+        {
+          "path": "templates/test-plan.yaml",
+          "sha256": "ef933606617a99f625572e32fb4b0479ab46a3fcbadf2136fc6ffdaebbfbd4f3"
+        },
+        {
+          "path": "tests/frontend.test.cjs",
+          "sha256": "ba4c99471b1fb1b507ff7dd97696011b5322c326de46e5422414a0e18352e2ee"
+        },
+        {
+          "path": "tests/test_agent_workflow.py",
+          "sha256": "ba65767249205aebd2de6a97d99e5419dd1d9a0e9c056ae1b35a583e6be854fe"
+        },
+        {
+          "path": "tests/test_coverage.py",
+          "sha256": "097ebed9b71dbe07c8771a205a3f5689e82220de2df09695d23c4233ee5ddf48"
+        },
+        {
+          "path": "tests/test_delivery.py",
+          "sha256": "dddebc83a3e2ea1873b9f6b3efd8a9a87ace54a81c96fcb0841b3c78e570e6ee"
+        },
+        {
+          "path": "tests/test_durable_service.py",
+          "sha256": "964eea346697ffbc1b5bfae14bfd1f3886c48150a341dbf407ff2d15daba2e59"
+        },
+        {
+          "path": "tests/test_library.py",
+          "sha256": "9b938133d9b6cfada604cc607550261b58623e3f8c4953fd0688a12b4b9a7270"
+        },
+        {
+          "path": "tests/test_licensing.py",
+          "sha256": "f533879767b30e8cb75744565556ce492b73d738957db54542d742df6e7ce587"
+        },
+        {
+          "path": "tests/test_project.py",
+          "sha256": "4ce31830b3e91108f50135b2e44a6789bd15401f222518a187f20ef20525534b"
+        },
+        {
+          "path": "tests/test_security.py",
+          "sha256": "d679d1e9bdf43278dce1f0ffd62181b572790aa2af125bd0622002aafdccf2b8"
+        },
+        {
+          "path": "tests/test_verification.py",
+          "sha256": "5d8573bff48f02635c8670aced1e0dc0866dd999e8e70f959cadd884c4f65bad"
+        },
+        {
+          "path": "tests/webmcp.test.cjs",
+          "sha256": "82e5cd91da06320b9967c1ce529c1271230524fdd70c5f587ff6aed81e9e0afb"
+        },
+        {
+          "path": "uv.lock",
+          "sha256": "9c84406bae97c6cb77cba4619c04d129a835a5fb661e8390e32dabe1ebee21e6"
+        },
+        {
+          "path": "web/assets/library.css",
+          "sha256": "3376037966a1069a6ee137561842ff1bb580abdce84f0ee961ab8e4a2b028142"
+        },
+        {
+          "path": "web/assets/webmcp.js",
+          "sha256": "6aabb86b0de8a13fffb57d8c10c64e6e41964ca67e9ece904ad5abb43c97458e"
+        },
+        {
+          "path": "web/overrides/partials/alternate.html",
+          "sha256": "d369e59312dc3fc70798deda1a8431cadd937ef6d1f5db8e5cac5802fa6ba4a1"
+        }
+      ],
+      "revision": "7aed6d0e0018887a25a49aa8ed071ebaf4edf112",
+      "dirty": true,
+      "scope": "Listed code/configuration/guidance inputs; excludes reports, reviews, caches and runtime state."
+    },
+    "input_changed": false,
+    "results": [
+      {
+        "suite_id": "delivery",
+        "scope": "Local planning and recorded-evidence policy; no authenticated approval.",
+        "command": [
+          "/workspace/BestPractices/.venv/bin/python",
+          "-m",
+          "library.check_runner",
+          "--pattern",
+          "test_delivery.py"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_seconds": 0.28901,
+        "test_observation": {
+          "case_ids": [
+            "test_delivery.DeliveryTests.test_artifact_revision_identity_and_observation_binding_are_required",
+            "test_delivery.DeliveryTests.test_cli_plan_and_blocked_assessment_have_documented_exit_codes",
+            "test_delivery.DeliveryTests.test_complete_assertions_only_enable_human_review_never_production",
+            "test_delivery.DeliveryTests.test_duplicate_blueprint_and_missing_stage_are_configuration_errors",
+            "test_delivery.DeliveryTests.test_duplicate_observation_and_failed_observation_cannot_be_hidden",
+            "test_delivery.DeliveryTests.test_duplicate_records_do_not_allow_pass_to_hide_later_failure",
+            "test_delivery.DeliveryTests.test_evidence_strings_never_become_paths_or_commands",
+            "test_delivery.DeliveryTests.test_evidence_unknown_fields_inactive_gates_and_size_are_rejected",
+            "test_delivery.DeliveryTests.test_guide_revision_change_invalidates_prior_plan_digest",
+            "test_delivery.DeliveryTests.test_illustrative_template_and_assertions_never_support_readiness",
+            "test_delivery.DeliveryTests.test_invalid_profiles_are_bounded_json_failures",
+            "test_delivery.DeliveryTests.test_missing_failed_skipped_unrun_and_self_review_block_dependents",
+            "test_delivery.DeliveryTests.test_post_release_work_does_not_require_prior_production_execution",
+            "test_delivery.DeliveryTests.test_profile_variants_add_gates_and_inherit_blueprint_boundaries",
+            "test_delivery.DeliveryTests.test_registry_symlink_cannot_read_outside_library_root",
+            "test_delivery.DeliveryTests.test_six_project_types_have_full_deterministic_lifecycle",
+            "test_delivery.DeliveryTests.test_stale_future_naive_failed_and_empty_observations_block",
+            "test_delivery.DeliveryTests.test_unknown_prerequisites_and_cycles_fail_even_when_inactive",
+            "test_delivery.DeliveryTests.test_wrong_envelope_revision_profile_and_plan_fail_closed"
+          ],
+          "errors": 0,
+          "expected_failures": 0,
+          "failures": 0,
+          "skipped": 0,
+          "tests_run": 19,
+          "unexpected_successes": 0
+        },
+        "tests_observed": 19,
+        "stdout_sha256": "215ce6662983be6cf2dca2de9a2c1d03fcb5a839befdb2accc393a6241f9f55c",
+        "stderr_sha256": "b31363bea59c63c14e08de2f50aad8e649ceba398325a61deff6cfa1a030e1f6"
+      },
+      {
+        "suite_id": "durable-service",
+        "scope": "Synthetic loopback HTTP and local SQLite invariants.",
+        "command": [
+          "/workspace/BestPractices/.venv/bin/python",
+          "-m",
+          "library.check_runner",
+          "--pattern",
+          "test_durable_service.py"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_seconds": 0.932448,
+        "test_observation": {
+          "case_ids": [
+            "test_durable_service.DurableHTTPContractTests.test_cross_tenant_reads_writes_export_and_worker_are_denied_without_effect",
+            "test_durable_service.DurableHTTPContractTests.test_invalid_payloads_never_create_records",
+            "test_durable_service.DurableHTTPContractTests.test_missing_invalid_and_duplicate_authentication",
+            "test_durable_service.DurableHTTPContractTests.test_replay_payload_conflict_and_optimistic_version",
+            "test_durable_service.DurableHTTPContractTests.test_same_operation_key_and_object_id_are_separate_between_tenants",
+            "test_durable_service.DurableHTTPContractTests.test_simultaneous_identical_retries_have_one_result_and_effect",
+            "test_durable_service.DurableHTTPContractTests.test_simultaneous_version_writers_have_one_winner",
+            "test_durable_service.DurableIntegrationTests.test_bounded_overload_recovers_without_data_loss",
+            "test_durable_service.DurableIntegrationTests.test_process_crashes_restart_restore_and_schema_compatibility",
+            "test_durable_service.DurableIntegrationTests.test_transactional_outbox_and_concurrent_consumers",
+            "test_durable_service.DurableIntegrationTests.test_unknown_event_schema_is_not_acknowledged_or_applied",
+            "test_durable_service.DurableIntegrationTests.test_unsafe_experiment_limits_and_overwriting_backup_are_rejected"
+          ],
+          "errors": 0,
+          "expected_failures": 0,
+          "failures": 0,
+          "skipped": 0,
+          "tests_run": 12,
+          "unexpected_successes": 0
+        },
+        "tests_observed": 12,
+        "stdout_sha256": "fc828c49a272d97b38da34a56e783a979a2df334529e2c5d483ea5d3a1abb1ef",
+        "stderr_sha256": "6d36a8439903e291b717870ff2caa09c449b8988852be3d7c23f2404a622a6a1"
+      },
+      {
+        "suite_id": "agent-workflow",
+        "scope": "Deterministic local policy, retrieval and side-effect fixtures; no model-quality claim.",
+        "command": [
+          "/workspace/BestPractices/.venv/bin/python",
+          "-m",
+          "library.check_runner",
+          "--pattern",
+          "test_agent_workflow.py"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_seconds": 0.169132,
+        "test_observation": {
+          "case_ids": [
+            "test_agent_workflow.AgentWorkflowTests.test_approval_is_bound_to_run_tenant_and_task",
+            "test_agent_workflow.AgentWorkflowTests.test_budget_reserved_before_calls_and_survives_restart",
+            "test_agent_workflow.AgentWorkflowTests.test_cancellation_before_dispatch_stops_and_after_dispatch_accounts_for_effect",
+            "test_agent_workflow.AgentWorkflowTests.test_cli_json_and_no_arbitrary_target_option",
+            "test_agent_workflow.AgentWorkflowTests.test_corpus_and_oracle_report_failure_separately_from_skip",
+            "test_agent_workflow.AgentWorkflowTests.test_cross_tenant_and_cross_task_documents_never_reach_model",
+            "test_agent_workflow.AgentWorkflowTests.test_deadline_and_cancellation_are_rechecked_after_model_work",
+            "test_agent_workflow.AgentWorkflowTests.test_duplicate_and_restart_reconcile_one_durable_effect",
+            "test_agent_workflow.AgentWorkflowTests.test_executor_revalidates_persisted_action_and_digest",
+            "test_agent_workflow.AgentWorkflowTests.test_expiry_at_boundary_rejects_capability",
+            "test_agent_workflow.AgentWorkflowTests.test_injected_document_cannot_grant_tool_scope_or_approval",
+            "test_agent_workflow.AgentWorkflowTests.test_invalid_corpus_cannot_report_a_pass",
+            "test_agent_workflow.AgentWorkflowTests.test_malformed_schema_bounds_and_duplicate_keys",
+            "test_agent_workflow.AgentWorkflowTests.test_mismatched_provider_receipt_stays_unresolved",
+            "test_agent_workflow.AgentWorkflowTests.test_missing_provider_receipt_remains_unresolved_without_blind_replay",
+            "test_agent_workflow.AgentWorkflowTests.test_model_failures_are_audited_without_leaking_exception_text",
+            "test_agent_workflow.AgentWorkflowTests.test_provider_duplicate_key_is_atomic_and_payload_conflict_is_rejected",
+            "test_agent_workflow.AgentWorkflowTests.test_revision_change_invalidates_approval_even_for_identical_action",
+            "test_agent_workflow.AgentWorkflowTests.test_revocation_and_deleted_document_are_checked_before_context",
+            "test_agent_workflow.AgentWorkflowTests.test_revoked_capability_human_denial_and_scope_revocation",
+            "test_agent_workflow.AgentWorkflowTests.test_two_connections_consume_approval_and_dispatch_only_once",
+            "test_agent_workflow.AgentWorkflowTests.test_untrusted_string_cannot_approve_and_token_is_not_in_report"
+          ],
+          "errors": 0,
+          "expected_failures": 0,
+          "failures": 0,
+          "skipped": 0,
+          "tests_run": 22,
+          "unexpected_successes": 0
+        },
+        "tests_observed": 22,
+        "stdout_sha256": "0aa83c183440cdcfe79b472bc5ef0957f79e2f4d1c87cf976604743a70b21f6c",
+        "stderr_sha256": "3bbf4ff258f8a880e2ee79fd8875ae9a4327884e1c6160443bd3e5f99555ab21"
+      },
+      {
+        "suite_id": "frontend-unit",
+        "scope": "Frontend state and local fixture contracts.",
+        "command": [
+          "node",
+          "--test",
+          "--test-reporter=tap",
+          "tests/frontend.test.cjs"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_seconds": 7.161164,
+        "node_observation": {
+          "tests": 12,
+          "pass": 12,
+          "fail": 0,
+          "skipped": 0,
+          "todo": 0,
+          "cancelled": 0
+        },
+        "tests_observed": 12,
+        "stdout_sha256": "3516dd90463caac18a02974f21a9badfbbddf61a4010a438846296369832c620",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "suite_id": "frontend-browser",
+        "scope": "Selected real-browser journeys, not full accessibility certification.",
+        "command": [
+          "node",
+          "examples/frontend/browser-smoke.mjs"
+        ],
+        "status": "passed",
+        "returncode": 0,
+        "duration_seconds": 4.030508,
+        "browser_observation": {
+          "status": "passed",
+          "browser_version": "Chrome/154.0.8037.57",
+          "browser_path": "/usr/bin/chromium",
+          "node_version": "v24.19.0",
+          "checks": [
+            "loading",
+            "cancellation",
+            "late-response safety",
+            "cancellation focus",
+            "native keyboard",
+            "skip link",
+            "visible focus",
+            "search",
+            "draft isolation",
+            "history",
+            "empty",
+            "persistent error",
+            "explicit retry recovery",
+            "bounded request count",
+            "superseded request",
+            "text-only rendering of HTML-shaped server strings",
+            "390px overflow/control bounds",
+            "local-only display state",
+            "accessible names",
+            "no external page requests"
+          ],
+          "check_count": 20,
+          "sandbox_disabled": true
+        },
+        "tests_observed": 20,
+        "stdout_sha256": "6e66d39ece901597a8e0b70db9e9991719d492a0f56896192990373211282707",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "all_selected_passed": true,
+    "human_approval": false,
+    "authenticated_execution": false,
+    "limits": "Local recorded observations, not signed attestations, production readiness, model quality or human approval."
+  },
+  "additional_checks": {
+    "python_unittest": {
+      "tests": 89,
+      "failures": 0,
+      "skipped": 0,
+      "log_sha256": "b4f2c484c289a449f1c1b2d60cd4b0b86de0721739fabb41ca162e1b65500bdf"
+    },
+    "webmcp": {
+      "tests": 4,
+      "failures": 0,
+      "skipped": 0,
+      "log_sha256": "2a3410589ed9f339912b9b54ac91aa1d66a80b8bccabb3551f60e4db6fd97162"
+    },
+    "content_validation": {
+      "guides": 34,
+      "languages": 4,
+      "status": "passed"
+    },
+    "site": {
+      "localized_pages": 136,
+      "strict_build": "passed",
+      "links_anchors_language_switches_search": "passed"
+    },
+    "ruff": "passed",
+    "actionlint": "passed",
+    "git_diff_check": "passed",
+    "tutorial_code_parity": {
+      "blocks": 7,
+      "languages": [
+        "en",
+        "cs",
+        "de",
+        "es"
+      ],
+      "status": "byte-identical"
+    }
+  },
+  "limits": "Historical observations on the recorded input image, initially a dirty working tree at the listed base commit. Python reference suites are subsets of the 89 tests, not additional tests. The explicit browser no-sandbox exception is limited to the owned synthetic loopback fixture. No human approval, production readiness or native WebMCP-host compatibility is asserted."
+}

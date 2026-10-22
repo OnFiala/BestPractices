@@ -2,8 +2,8 @@
 {
   "id": "project-delivery",
   "language": "cs",
-  "revision": 1,
-  "translation_revision": 1,
+  "revision": 2,
+  "translation_revision": 2,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -14,6 +14,22 @@
 Systém dodávání propojuje profil projektu, podmíněný plán životního cyklu, nezávisle posouzené artefakty, lokální referenční kontroly a posouzení připravenosti. Pomáhá hostitelskému prostředí agentů, například Codexu, vykonávat ohraničenou práci. Samotný plánovač v Pythonu nevolá model, nevytváří libovolný požadovaný produkt, neověřuje identitu člověka, neslučuje PR ani nenasazuje službu.
 
 Vyberte jeden ze šesti výchozích profilů: veřejný web, SaaS, interní nástroj, aplikace s AI, agentní automatizace nebo mobilní backend. Zaznamenejte skutečný výsledek, riziko, citlivost dat, zátěž, hosting, rozhraní a externí účinky. Počet účtů není měřením zátěže. Neznámá zátěž zůstává nezměřená; i malý osobní projekt může potřebovat silnou ochranu soukromí nebo obnovy. Přiložený profil je výslovně syntetický a nemůže nahradit požadavky skutečného uživatele.
+
+## Váš první krok
+
+Začínáte s touto knihovnou? Než spustíte všechny referenční příklady, projděte
+[jednu celou kontrolní bránu s důkazy](first-project.md). Příklad vyžaduje Python
+a Git, vytváří skutečný podklad a ukazuje, jak zaznamenat jeden posouzený výstup,
+zatímco vydání zůstává zablokované. [Použití knihovny v projektu](adoption.md)
+vysvětluje JSON profil dodávání a volitelný YAML podklad pro rozhodování.
+`project-profile.json` vytvořený pomocí `init` používá schéma JSON pro dodávání;
+`project-profile.yaml` je samostatný dokument čitelný pro člověka, nikoli vstup pro CLI.
+
+Kontrolní brána je kontrolní bod; artefakt je její požadovaný výstup; důkaz je
+zaznamenané pozorování tohoto výstupu. Vyberte odpovídající projektový postup
+a potom spusťte agenta v hostitelském prostředí s ohraničeným výsledkem a dovedností
+`project-delivery`. Agent potřebuje přístup k cílovému projektu a této důvěryhodné
+knihovně; instalace MCP je volitelná.
 
 ## Spustitelný postup
 

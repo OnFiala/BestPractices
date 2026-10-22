@@ -4,6 +4,10 @@ description: Turn a project brief into a bounded lifecycle plan, execute authori
 ---
 
 Read the target project's instructions and locate a trusted BestPractices checkout.
+For a first run, read [adoption](../../../../docs/en/guides/adoption.md) and
+[first-project](../../../../docs/en/guides/first-project.md). The JSON delivery
+profile is the tool input; the optional project-profile.yaml is a richer decision
+brief, not an interchangeable CLI schema.
 Read guide IDs [lifecycle](../../../../docs/en/guides/lifecycle.md),
 [agents](../../../../docs/en/guides/agents.md),
 [architecture](../../../../docs/en/guides/architecture.md), and

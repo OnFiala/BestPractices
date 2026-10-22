@@ -2,16 +2,60 @@
 {
   "id": "adoption",
   "language": "es",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
 # Adoptar la biblioteca en un proyecto
 
-## Crear un conjunto de decisiones portable
+## Empezar por una ruta de entrega
 
-Copia las plantillas que necesites, no toda la biblioteca. Completa `project-profile.yaml` con el resultado esperado, la sensibilidad de los datos, la persona responsable, la carga de trabajo, el presupuesto, los objetivos del servicio y los supuestos de recuperación. Fija esta biblioteca a una versión revisada o a un commit completo y utiliza identificadores estables de las guías. Seguir silenciosamente la rama mutable `main` puede cambiar las reglas de producción sin la aprobación del proyecto.
+Si empiezas a usar la biblioteca, sigue
+[tu primer punto de control con evidencias](first-project.md) y después utiliza
+[el flujo de entrega](project-delivery.md) con la guía de tu tipo de proyecto.
+Producirás un plan, una pequeña parte del trabajo, una observación real y una revisión.
+Un **punto de control** exige determinados resultados y establece condiciones de bloqueo.
+Un **artefacto** es un resultado, como un documento de decisión, un cambio de código
+fuente o un informe de pruebas. Las **evidencias** registran lo que alguien inspeccionó
+o ejecutó realmente sobre ese resultado. Una comprobación planificada no es una
+observación, y una plantilla rellenada no es una aprobación.
+
+## Usar el perfil adecuado
+
+| Archivo | Propósito | Quién lo lee |
+| --- | --- | --- |
+| `templates/delivery-profile.json` | Ejemplo de la entrada con esquema JSON estricto: tipo de proyecto, revisión exacta de destino, riesgo, datos, carga de trabajo, hosting, superficies, efectos y objetivos | `library.delivery plan`, `library.delivery assess` y `library.project init` |
+| `project-profile.json` | El perfil de entrega JSON rellenado de tu proyecto; este es el nombre que genera `init` | Las mismas herramientas; cambia el nombre del archivo, no el esquema |
+| `templates/project-profile.yaml` | Documento detallado opcional para decisiones: responsable, presupuesto, objetivos del servicio, residencia de datos, recuperación y excepciones | Personas y agentes; la CLI no lo lee ni lo convierte |
+
+Empieza por la plantilla JSON para la planificación ejecutable. Sustituye sus
+requisitos sintéticos por decisiones reales del proyecto. Para un proyecto existente,
+conserva el perfil y las evidencias en la ubicación aprobada de ese proyecto y
+ejecuta la CLI de la biblioteca con rutas explícitas. No ejecutes `init` sobre un
+proyecto existente: solo crea un destino nuevo. Para un nuevo paquete portable,
+`init` copia las herramientas necesarias, las guías, las licencias y los ejemplos
+de referencia seleccionados; estos no son tu producto terminado.
+Si solo necesitas leer y apoyar decisiones, enlaza las guías pertinentes y copia
+únicamente las plantillas necesarias; no hace falta generar un paquete ni usar MCP.
+
+Si también mantienes el documento YAML, traslada las decisiones de forma deliberada:
+
+| Documento de decisiones | Perfil de entrega | Qué requiere interpretación |
+| --- | --- | --- |
+| `name`, `outcome`, `non_goals` | `project_id`, `description`, `objectives`, `constraints` | Elige un identificador estable válido y resultados observables; no te limites a renombrar claves |
+| `data.classification` | `data_sensitivity` | Selecciona una categoría admitida después de revisar los datos reales |
+| Campos de `workload` medidos | `workload` | Elige una categoría justificada; usa `unmeasured` cuando falten mediciones |
+| `library_revision` | No hay un campo correspondiente en el perfil | Fija la revisión de la biblioteca por separado; `revision` en JSON significa el commit Git del proyecto de destino |
+| Responsable, presupuesto, objetivos del servicio, residencia de datos, recuperación, excepciones | Consérvalos en el documento y en los artefactos de los puntos de control pertinentes | Estas obligaciones siguen siendo relevantes; el planificador no evalúa esos campos YAML |
+
+El tipo de proyecto, el hosting, las superficies, los efectos y el riesgo también
+requieren decisiones explícitas en JSON. No hay conversión ni sincronización automática.
+Cuando cambien los supuestos compartidos, actualiza ambos documentos, vuelve a generar
+el plan y reevalúa las evidencias afectadas. No añadas al esquema JSON estricto campos
+que solo pertenecen a YAML. Fija la biblioteca a una versión revisada o a un commit
+completo y utiliza identificadores estables de las guías. Seguir silenciosamente
+la rama mutable `main` puede cambiar las reglas del proyecto sin su aprobación.
 
 Crea un diagrama de contexto y un ADR para la primera decisión importante. Registra las recomendaciones aceptadas, los controles aplazados deliberadamente, una persona responsable, una fecha de caducidad y comprobaciones compensatorias. Conserva las instrucciones específicas del proyecto para los agentes en `AGENTS.md` y enlaza los materiales de apoyo. Esta biblioteca es una fuente de propuestas mantenida por agentes. Sus recomendaciones solo se convierten en reglas del proyecto mediante el proceso humano de decisión del propio proyecto.
 

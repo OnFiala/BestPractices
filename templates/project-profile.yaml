@@ -1,3 +1,5 @@
+# Optional human-readable decision brief; not input to library.delivery or library.project.
+# For executable planning use delivery-profile.json; see docs/en/guides/adoption.md.
 # Copy into your project and replace nulls with reviewed decisions, not guesses.
 schema_version: 1
 name: null

@@ -32,11 +32,37 @@
         "security-testing",
         "project-delivery",
         "coverage",
-        "reference-labs"
+        "reference-labs",
+        "first-project"
       ],
       "area": "start",
-      "revision": 2,
+      "revision": 3,
       "status": "proposed"
+    },
+    {
+      "id": "first-project",
+      "path": "guides/first-project.md",
+      "area": "start",
+      "status": "proposed",
+      "revision": 1,
+      "title": {
+        "en": "Complete your first evidence gate",
+        "cs": "Dokončete první kontrolní bránu s důkazy",
+        "de": "Den ersten Prüfpunkt mit Nachweisen abschließen",
+        "es": "Completar el primer punto de control con evidencias"
+      },
+      "sources": [
+        "github-rulesets",
+        "github-workflows",
+        "owasp-ai-agent",
+        "skills"
+      ],
+      "related": [
+        "adoption",
+        "project-delivery",
+        "testing-strategy",
+        "coverage"
+      ]
     },
     {
       "id": "foundations",
@@ -586,10 +612,11 @@
         "examples",
         "project-delivery",
         "coverage",
-        "reference-labs"
+        "reference-labs",
+        "first-project"
       ],
-      "area": "engineering",
-      "revision": 2,
+      "area": "start",
+      "revision": 3,
       "status": "proposed"
     },
     {
@@ -845,7 +872,7 @@
       "path": "guides/project-delivery.md",
       "area": "agent-delivery",
       "status": "proposed",
-      "revision": 1,
+      "revision": 2,
       "title": {
         "en": "Run a project through the agent delivery system",
         "cs": "Proveďte projekt systémem agentního dodávání",
@@ -861,7 +888,8 @@
       "related": [
         "testing-strategy",
         "agents",
-        "lifecycle"
+        "lifecycle",
+        "first-project"
       ]
     },
     {

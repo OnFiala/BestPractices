@@ -2,16 +2,62 @@
 {
   "id": "adoption",
   "language": "de",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
 # Die Bibliothek im Projekt einsetzen
 
-## Ein übertragbares Entscheidungspaket erstellen
+## Mit einem Auslieferungsweg beginnen
 
-Kopiere die benötigten Vorlagen, nicht die gesamte Bibliothek. Erfasse in `project-profile.yaml` Ziel, Datensensibilität, verantwortlichen Eigentümer, Arbeitslast, Budget, Dienstziele und Wiederherstellungsannahmen. Fixiere diese Bibliothek auf eine geprüfte Veröffentlichung oder einen vollständigen Commit und verwende stabile Leitfaden-IDs. Wer dem veränderlichen `main` unbemerkt folgt, kann Produktionsrichtlinien ohne Projektfreigabe ändern.
+Wenn du die Bibliothek zum ersten Mal verwendest, durchlaufe
+[deinen ersten Prüfpunkt mit Nachweisen](first-project.md). Nutze anschließend
+[den Auslieferungsablauf](project-delivery.md) mit dem Leitfaden für dein Projekt.
+Dabei entstehen ein Plan, ein kleines Arbeitsergebnis, eine tatsächliche Beobachtung
+und eine Begutachtung. Ein **Prüfpunkt** verlangt bestimmte Ergebnisse und legt
+blockierende Bedingungen fest. Ein **Artefakt** ist ein Ergebnis wie ein Entscheidungsdokument,
+eine Quellcodeänderung oder ein Testbericht. **Nachweise** halten fest, was jemand
+an diesem Ergebnis tatsächlich begutachtet oder ausgeführt hat. Eine geplante Prüfung
+ist keine Beobachtung, und eine ausgefüllte Vorlage ist keine Genehmigung.
+
+## Das richtige Profil verwenden
+
+| Datei | Zweck | Wer sie liest |
+| --- | --- | --- |
+| `templates/delivery-profile.json` | Beispiel für die Eingabe mit strengem JSON-Schema: Projekttyp, genaue Zielrevision, Risiko, Daten, Last, Hosting, Schnittstellen, Effekte und Ziele | `library.delivery plan`, `library.delivery assess` und `library.project init` |
+| `project-profile.json` | Das ausgefüllte JSON-Auslieferungsprofil deines Projekts; diesen Namen erzeugt `init` | Dieselben Werkzeuge; der Dateiname unterscheidet sich, das Schema nicht |
+| `templates/project-profile.yaml` | Optionales ausführliches Entscheidungsdokument: Verantwortlicher, Budget, Dienstziele, Datenstandort, Wiederherstellung und Ausnahmen | Menschen und Agenten; die CLI liest oder konvertiert es nicht |
+
+Beginne für die ausführbare Planung mit der JSON-Vorlage. Ersetze ihre synthetischen
+Anforderungen durch tatsächliche Projektentscheidungen. Bewahre bei einem bestehenden
+Projekt das Profil und die Nachweise am dafür genehmigten Ort im Projekt auf und
+rufe die Bibliotheks-CLI mit ausdrücklichen Pfadangaben auf. Führe `init` nicht
+über einem bestehenden Projekt aus: Es erstellt ausschließlich ein neues Zielverzeichnis.
+Für ein neues übertragbares Paket kopiert `init` die benötigten Werkzeuge,
+Leitfäden, Lizenzen und ausgewählten Referenzbeispiele; diese sind nicht dein fertiges Produkt.
+Wenn du die Bibliothek nur zum Lesen und zur Entscheidungsunterstützung nutzt,
+verlinke die passenden Leitfäden und kopiere nur die benötigten Vorlagen;
+weder Paketerstellung noch MCP ist dafür erforderlich.
+
+Wenn du auch das YAML-Entscheidungsdokument pflegst, übertrage Entscheidungen bewusst:
+
+| Entscheidungsdokument | Auslieferungsprofil | Was ausgelegt werden muss |
+| --- | --- | --- |
+| `name`, `outcome`, `non_goals` | `project_id`, `description`, `objectives`, `constraints` | Wähle eine gültige stabile ID und beobachtbare Ergebnisse; benenne nicht einfach Schlüssel um |
+| `data.classification` | `data_sensitivity` | Wähle nach Prüfung der tatsächlichen Daten eine unterstützte Kategorie |
+| Gemessene `workload`-Felder | `workload` | Wähle eine begründete Kategorie; verwende `unmeasured`, wenn Messungen fehlen |
+| `library_revision` | Kein entsprechendes Profilfeld | Fixiere die Bibliotheksrevision separat; `revision` im JSON bezeichnet den Git-Commit des Zielprojekts |
+| Verantwortlicher, Budget, Dienstziele, Datenstandort, Wiederherstellung, Ausnahmen | Im Entscheidungsdokument und in den zugehörigen Prüfpunktartefakten festhalten | Diese Verpflichtungen gelten weiterhin; der Planer wertet diese YAML-Felder nicht aus |
+
+Auch Projekttyp, Hosting, Schnittstellen, Effekte und Risiko erfordern ausdrückliche
+Entscheidungen im JSON. Es gibt keine automatische Konvertierung oder Synchronisierung.
+Wenn sich gemeinsame Annahmen ändern, aktualisiere beide Dokumente, erstelle den
+Plan neu und bewerte die betroffenen Nachweise erneut. Füge dem strengen JSON-Schema
+keine Felder hinzu, die nur für YAML vorgesehen sind. Fixiere die Bibliothek auf eine
+geprüfte Veröffentlichung oder einen vollständigen Commit und verwende stabile
+Leitfaden-IDs. Wer dem veränderlichen `main` unbemerkt folgt, kann Projektrichtlinien
+ohne Projektfreigabe ändern.
 
 Erstelle ein Kontextdiagramm und ein ADR für die erste folgenreiche Entscheidung. Dokumentiere übernommene Empfehlungen, bewusst zurückgestellte Kontrollen, einen Verantwortlichen, ein Ablaufdatum und ausgleichende Prüfungen. Projektspezifische Agentenanweisungen gehören in `AGENTS.md`; verlinke unterstützende Unterlagen. Diese Bibliothek liefert von Agenten gepflegte Vorschläge. Ihre Empfehlungen werden erst durch den menschlichen Entscheidungsprozess des Projekts zu dessen Richtlinien.
 

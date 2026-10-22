@@ -1289,6 +1289,24 @@
       "source_hashes": {
         "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
       }
+    },
+    {
+      "guide_id": "first-project",
+      "claim_id": "one-observed-gate",
+      "claim": "The local first-project exercise records a review of actual committed document bytes, preserves unfinished gates and never turns that review into production authorization.",
+      "sources": [
+        "github-rulesets",
+        "skills",
+        "owasp-ai-agent"
+      ],
+      "support": "synthesis",
+      "limits": "The exact profile, document, commands, hashes and single-gate evaluator behavior are original local design. The sources support scoped work and external review/authorization boundaries, not this tutorial or empirical verification of an adopting product. Reviewer identity and observations remain unauthenticated assertions.",
+      "reviewed_on": "2026-10-22",
+      "source_hashes": {
+        "github-rulesets": "ad074c0507552b396bd5d506a7e80875c5664dd7e6f0e496f5a1dbc1bd039810",
+        "skills": "0f6a07580f3c627253e15a58dd0439e135049ec38eb16cf3587f7e50abc6f590",
+        "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
+      }
     }
   ]
 }
