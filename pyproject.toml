@@ -8,7 +8,7 @@ dependencies = []
 [dependency-groups]
 docs = ["mkdocs-material==9.7.7"]
 agent = ["mcp==2.3.0"]
-dev = ["ruff==0.17.1"]
+dev = ["ruff==0.17.2"]
 
 [tool.uv]
 package = false
