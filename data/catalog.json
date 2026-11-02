@@ -127,9 +127,10 @@
         "es": "Elegir y conectar arquitecturas"
       },
       "sources": [
-        "azure-architecture-styles",
-        "azure-cqrs",
-        "azure-event-sourcing",
+        "spring-modulith-fundamentals",
+        "grpc-retry",
+        "pekko-cqrs",
+        "pekko-event-sourcing",
         "durable-workflows",
         "postgres-isolation"
       ],
@@ -143,7 +144,7 @@
         "security-testing"
       ],
       "area": "engineering",
-      "revision": 2,
+      "revision": 3,
       "status": "proposed"
     },
     {
@@ -156,10 +157,11 @@
         "es": "Durabilidad y trabajo distribuido"
       },
       "sources": [
-        "azure-cqrs",
-        "azure-idempotent-consumer",
-        "azure-outbox",
-        "azure-retry",
+        "pekko-cqrs",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
+        "debezium-outbox",
+        "grpc-retry",
         "durable-workflows",
         "postgres-backup",
         "postgres-isolation"
@@ -172,7 +174,7 @@
         "performance-testing"
       ],
       "area": "engineering",
-      "revision": 2,
+      "revision": 3,
       "status": "proposed"
     },
     {
@@ -185,8 +187,8 @@
         "es": "Escalar con mediciones"
       },
       "sources": [
-        "azure-cache-aside",
-        "azure-data-partitioning",
+        "redis-cache-aside",
+        "postgres-partitioning",
         "observability",
         "postgres-isolation"
       ],
@@ -198,7 +200,7 @@
         "performance-testing"
       ],
       "area": "engineering",
-      "revision": 2,
+      "revision": 3,
       "status": "proposed"
     },
     {
@@ -263,7 +265,7 @@
         "es": "Arquitectura y contratos del frontend"
       },
       "sources": [
-        "azure-cqrs",
+        "pekko-cqrs",
         "owasp",
         "wcag",
         "wcag-contrast",
@@ -281,7 +283,7 @@
         "security-testing"
       ],
       "area": "engineering",
-      "revision": 2,
+      "revision": 3,
       "status": "proposed"
     },
     {
@@ -294,10 +296,11 @@
         "es": "Datos, contratos y migraciones"
       },
       "sources": [
-        "azure-cqrs",
-        "azure-data-partitioning",
-        "azure-idempotent-consumer",
-        "azure-outbox",
+        "pekko-cqrs",
+        "postgres-partitioning",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
+        "debezium-outbox",
         "owasp",
         "postgres-backup",
         "postgres-isolation"
@@ -311,7 +314,7 @@
         "security-testing"
       ],
       "area": "engineering",
-      "revision": 2,
+      "revision": 3,
       "status": "proposed"
     },
     {
@@ -468,7 +471,7 @@
         "es": "Salud, recuperación y coste"
       },
       "sources": [
-        "azure-health-endpoints",
+        "kubernetes-probes",
         "observability",
         "postgres-backup"
       ],
@@ -480,7 +483,7 @@
         "performance-testing"
       ],
       "area": "engineering",
-      "revision": 2,
+      "revision": 3,
       "status": "proposed"
     },
     {
@@ -585,7 +588,7 @@
         "governance"
       ],
       "area": "engineering",
-      "revision": 2,
+      "revision": 3,
       "status": "proposed"
     },
     {
@@ -652,9 +655,10 @@
         "es": "Rutas de referencia para proyectos"
       },
       "sources": [
-        "azure-architecture-styles",
-        "azure-idempotent-consumer",
-        "azure-retry",
+        "spring-modulith-fundamentals",
+        "grpc-retry",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
         "openai-agents",
         "owasp",
         "postgres-backup",
@@ -670,7 +674,7 @@
         "security-testing"
       ],
       "area": "reference",
-      "revision": 2,
+      "revision": 3,
       "status": "proposed"
     },
     {
@@ -754,8 +758,9 @@
         "owasp-authorization",
         "postgres-isolation",
         "postgres-backup",
-        "azure-outbox",
-        "azure-idempotent-consumer"
+        "debezium-outbox",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing"
       ],
       "related": [
         "data",
@@ -764,7 +769,7 @@
         "scaling"
       ],
       "area": "project-playbooks",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -779,7 +784,8 @@
       "sources": [
         "owasp-authorization",
         "owasp-session",
-        "azure-idempotent-consumer",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
         "observability"
       ],
       "related": [
@@ -789,7 +795,7 @@
         "durability"
       ],
       "area": "project-playbooks",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -828,7 +834,8 @@
       },
       "sources": [
         "owasp-ai-agent",
-        "azure-idempotent-consumer",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
         "observability"
       ],
       "related": [
@@ -838,7 +845,7 @@
         "security-testing"
       ],
       "area": "project-playbooks",
-      "revision": 1,
+      "revision": 2,
       "status": "proposed"
     },
     {
@@ -918,7 +925,7 @@
       "path": "guides/reference-labs.md",
       "area": "agent-delivery",
       "status": "proposed",
-      "revision": 1,
+      "revision": 2,
       "title": {
         "en": "Run and interpret the reference projects",
         "cs": "Spouštění a interpretace referenčních projektů",
@@ -926,8 +933,9 @@
         "es": "Ejecutar e interpretar los proyectos de referencia"
       },
       "sources": [
-        "azure-idempotent-consumer",
-        "azure-outbox",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
+        "debezium-outbox",
         "owasp-authorization",
         "owasp-ai-agent",
         "playwright-testing",

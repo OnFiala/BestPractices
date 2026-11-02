@@ -2,8 +2,8 @@
 {
   "id": "durability",
   "language": "es",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -47,4 +47,4 @@ Restaura en un entorno aislado, concilia los totales de negocio y los efectos ex
 
 ## Evidencia primaria
 
-[postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml) · [postgres-backup](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/backup.sgml) · [durable-workflows](https://raw.githubusercontent.com/temporalio/temporal/e8ee627110a98501103827745aab18aedf312dd0/README.md) · [azure-retry](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/retry-content.md) · [azure-cqrs](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cqrs.md) · [azure-outbox](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/databases/guide/transactional-out-box-cosmos.md) · [azure-idempotent-consumer](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/idempotent-consumer.md)
+[pekko-cqrs](https://raw.githubusercontent.com/apache/pekko-projection/d1bcc1ed09efd8a11ce3dca0a7edea306dff6e02/docs/src/main/paradox/use-cases.md) · [rabbitmq-reliability](https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/483c5f73095c3d808e98840e50c1ed5f2b148369/docs/reliability.md) · [pekko-event-sourcing](https://raw.githubusercontent.com/apache/pekko/0b963c40b68bfb8788f91a265a13f6ce38947b63/docs/src/main/paradox/typed/persistence.md) · [debezium-outbox](https://raw.githubusercontent.com/debezium/debezium/d67bfa5a10efac6eb74c0d62f43777b1198ad454/documentation/modules/ROOT/pages/quarkus/outbox.adoc) · [grpc-retry](https://raw.githubusercontent.com/grpc/grpc.io/d4b80855571d015e4a6df23acc4dd3692c0c7200/content/en/docs/guides/retry.md) · [durable-workflows](https://raw.githubusercontent.com/temporalio/temporal/e8ee627110a98501103827745aab18aedf312dd0/README.md) · [postgres-backup](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/backup.sgml) · [postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml)

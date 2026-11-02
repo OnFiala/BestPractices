@@ -2,8 +2,8 @@
 {
   "id": "operations",
   "language": "cs",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -52,4 +52,4 @@ Systém je zdravý, pokud jeho vlastníci dokážou prokázat chování, obnovu 
 ## Primární zdroje
 
 
-[observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [postgres-backup](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/backup.sgml) · [azure-health-endpoints](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/health-endpoint-monitoring.md)
+[kubernetes-probes](https://raw.githubusercontent.com/kubernetes/website/33ea519050c6c6bea202ee53838d053ccba95a47/content/en/docs/concepts/workloads/pods/probes.md) · [observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [postgres-backup](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/backup.sgml)

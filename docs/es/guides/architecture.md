@@ -2,8 +2,8 @@
 {
   "id": "architecture",
   "language": "es",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -54,4 +54,4 @@ Si no se demuestra el beneficio, conserva la topología más sencilla y el lími
 
 ## Evidencia primaria
 
-[azure-architecture-styles](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/guide/architecture-styles/index.md) · [azure-cqrs](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cqrs.md) · [azure-event-sourcing](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/event-sourcing.md) · [postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml) · [durable-workflows](https://raw.githubusercontent.com/temporalio/temporal/e8ee627110a98501103827745aab18aedf312dd0/README.md)
+[spring-modulith-fundamentals](https://raw.githubusercontent.com/spring-projects/spring-modulith/e744475adc65af2fd033a57949be55e87209195c/src/docs/antora/modules/ROOT/pages/fundamentals.adoc) · [grpc-retry](https://raw.githubusercontent.com/grpc/grpc.io/d4b80855571d015e4a6df23acc4dd3692c0c7200/content/en/docs/guides/retry.md) · [pekko-cqrs](https://raw.githubusercontent.com/apache/pekko-projection/d1bcc1ed09efd8a11ce3dca0a7edea306dff6e02/docs/src/main/paradox/use-cases.md) · [pekko-event-sourcing](https://raw.githubusercontent.com/apache/pekko/0b963c40b68bfb8788f91a265a13f6ce38947b63/docs/src/main/paradox/typed/persistence.md) · [durable-workflows](https://raw.githubusercontent.com/temporalio/temporal/e8ee627110a98501103827745aab18aedf312dd0/README.md) · [postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml)

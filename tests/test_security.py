@@ -184,6 +184,12 @@ class PublicationBoundaryTests(unittest.TestCase):
         self.assertEqual(len(uploads), 1)
         self.assertEqual(set(uploads[0]["with"]["path"].splitlines()),
                          {"reports/sources.json", "reports/source-observations.json"})
+        self.assertEqual(workflow["permissions"], {"contents": "read"})
+        self.assertNotIn("permissions", workflow["jobs"]["observe"])
+        self.assertIn("vars.ENABLE_SOURCE_REVIEW_PRS == 'true'",
+                      workflow["jobs"]["propose"]["if"])
+        summary = next(s for s in observer if s.get("name") == "Publish review instructions")
+        self.assertEqual(summary["if"], "always()")
 
 
 if __name__ == "__main__":

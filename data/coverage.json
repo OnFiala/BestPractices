@@ -61,9 +61,10 @@
         "scaling"
       ],
       "sources": [
-        "azure-architecture-styles",
-        "azure-cqrs",
-        "azure-event-sourcing"
+        "spring-modulith-fundamentals",
+        "grpc-retry",
+        "pekko-cqrs",
+        "pekko-event-sourcing"
       ],
       "support": "local-synthesis",
       "reference_paths": [],
@@ -237,8 +238,9 @@
         "data"
       ],
       "sources": [
-        "azure-idempotent-consumer",
-        "azure-retry"
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
+        "grpc-retry"
       ],
       "support": "local-synthesis",
       "reference_paths": [
@@ -287,8 +289,9 @@
         "architecture"
       ],
       "sources": [
-        "azure-outbox",
-        "azure-idempotent-consumer"
+        "debezium-outbox",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing"
       ],
       "support": "local-synthesis",
       "reference_paths": [
@@ -314,7 +317,8 @@
       ],
       "sources": [
         "postgres-backup",
-        "azure-idempotent-consumer"
+        "rabbitmq-reliability",
+        "pekko-event-sourcing"
       ],
       "support": "local-synthesis",
       "reference_paths": [
@@ -506,8 +510,9 @@
         "durability"
       ],
       "sources": [
-        "azure-cqrs",
-        "azure-idempotent-consumer"
+        "pekko-cqrs",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing"
       ],
       "support": "local-synthesis",
       "reference_paths": [],
@@ -604,8 +609,9 @@
         "agents"
       ],
       "sources": [
-        "azure-idempotent-consumer",
-        "azure-retry"
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
+        "grpc-retry"
       ],
       "support": "local-synthesis",
       "reference_paths": [
@@ -632,7 +638,7 @@
       ],
       "sources": [
         "owasp-ai-agent",
-        "azure-retry"
+        "grpc-retry"
       ],
       "support": "local-synthesis",
       "reference_paths": [
@@ -752,7 +758,7 @@
       ],
       "sources": [
         "observability",
-        "azure-health-endpoints"
+        "kubernetes-probes"
       ],
       "support": "local-synthesis",
       "reference_paths": [],

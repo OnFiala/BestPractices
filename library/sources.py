@@ -57,19 +57,23 @@ def observe(source: dict, documents: Path | None = None) -> dict:
 
 def compare(sources: list[dict], baseline: dict, observations: dict,
             today: dt.date) -> dict:
-    changed, unavailable, overdue = [], [], []
+    changed, unavailable, overdue, unbaselined = [], [], [], []
     for source in sources:
         sid = source["id"]
         current = observations[sid]
+        if sid not in baseline:
+            unbaselined.append(sid)
         if current["status"] != "ok":
             unavailable.append(sid)
-        elif current["sha256"] != baseline.get(sid, {}).get("sha256"):
+        elif current["sha256"] != baseline.get(sid, {}).get(
+                "sha256", source.get("reviewed_sha256")):
             changed.append(sid)
         age = (today - dt.date.fromisoformat(source["reviewed_on"])).days
         if age > source["review_days"]:
             overdue.append(sid)
     return {"changed": changed, "unavailable": unavailable, "overdue": overdue,
-            "action_required": bool(changed or unavailable or overdue)}
+            "unbaselined": unbaselined,
+            "action_required": bool(changed or unavailable or overdue or unbaselined)}
 
 
 def check(output: Path, candidate: Path | None = None, root: Path = ROOT,
@@ -89,7 +93,8 @@ def check(output: Path, candidate: Path | None = None, root: Path = ROOT,
     if candidate and report["action_required"]:
         candidate.parent.mkdir(parents=True, exist_ok=True)
         candidate.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    print(json.dumps({k: report[k] for k in ("changed", "unavailable", "overdue")}))
+    print(json.dumps({k: report[k] for k in
+                      ("changed", "unavailable", "overdue", "unbaselined")}))
     return 1 if report["unavailable"] else 0
 
 
