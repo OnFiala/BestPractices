@@ -124,14 +124,20 @@ def validate(root: Path = ROOT) -> list[str]:
         require(tool["status"] in {"candidate", "used-here", "experimental", "deprecated"},
                 f"Invalid tool status: {tool['id']}")
     baseline = read_json(root / "data/source-baseline.json")["observations"]
-    require(set(baseline) == source_ids, "Source baseline does not cover registry")
+    pending = {s["id"] for s in sources
+               if s.get("baseline_status") == "pending-human-review"}
+    require(all(s.get("baseline_status") in (None, "pending-human-review") for s in sources),
+            "Unknown source baseline status")
+    require(set(baseline) == source_ids - pending,
+            "Source baseline does not cover registry or includes pending proposals")
     for sid, observation in baseline.items():
         require(bool(re.fullmatch(r"[0-9a-f]{64}", observation["sha256"])),
                 f"Invalid source hash: {sid}")
         require(observation["status"] == "ok", f"Unverified baseline: {sid}")
     sources_by_id = {s["id"]: s for s in sources}
     for source in sources:
-        require(source.get("reviewed_sha256") == baseline.get(source["id"], {}).get("sha256")
+        require((source["id"] in pending
+                 or source.get("reviewed_sha256") == baseline.get(source["id"], {}).get("sha256"))
                 and bool(re.fullmatch(r"[0-9a-f]{64}", source.get("reviewed_sha256", ""))),
                 f"Reviewed source hash differs from snapshot: {source['id']}")
     evidence = read_json(root / "data/evidence.json")

@@ -190,11 +190,24 @@ not a newly executed verification result.
    conversations, and approval from a human code owner; dismiss stale approvals.
    Block force pushes/deletion and avoid bot bypass. A sole owner cannot approve
    their own PR: use bot-authored PRs with owner review or add another reviewer.
-3. Enable Actions and “Allow GitHub Actions to create and approve pull requests”.
-   This grants platform capability; this project never automates PR approval.
-   Weekly evidence PRs require `contents: write` and `pull-requests: write` only in
-   the publication job. PRs created with `GITHUB_TOKEN` may not trigger new workflow
-   runs: run **Validate** manually on the bot branch before human review/merge.
+3. Enable Actions. Weekly source observation works with read-only permissions and
+   publishes the `source-evidence` metadata artifact plus review instructions in
+   the run summary. Download it within 14 days. If a candidate is present, inspect
+   it and copy `source-observations.json` to `data/source-observations.json` on a
+   branch from current `main`, then open a draft PR. Inspect an existing
+   `automation/source-observations` branch before reusing it: an earlier failed PR
+   creation may already have pushed that branch. Run **Validate** on the exact head.
+   New sources remain explicitly pending human baseline review; neither a successful
+   fetch nor an agent creates an accepted baseline.
+
+   Automatic draft PR creation is optional and disabled unless repository variable
+   `ENABLE_SOURCE_REVIEW_PRS=true`. It additionally needs the repository/organization
+   policy “Allow GitHub Actions to create and approve pull requests”, configured by
+   an authorized human. The project never automates approval. Only that optional
+   job requests `contents: write` and `pull-requests: write`. A denial remains a
+   failed proposal; use the artifact path without adding a token or bypassing policy.
+   PRs created with `GITHUB_TOKEN` may not trigger checks: run **Validate** manually
+   on the bot branch before human review/merge.
 4. For source-fed AI generation, use a **separate private repository/mirror or private workspace**.
    The model-generation and proposal jobs refuse to run in a public repository:
    logs, model output, patches, and artifacts may contain third-party text before

@@ -2,8 +2,8 @@
 {
   "id": "maintenance",
   "language": "en",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -13,7 +13,9 @@
 
 `data/sources.json` separates an immutable inspected source from the URL monitored for later changes. It records publisher, scope, review interval, and license evidence. The retrieval baseline records successful hashes, not human approval. A scheduled observer fetches bounded HTTPS documents and reports changed, unavailable, or overdue sources. A changed hash is a review signal, never authorization to alter guidance. A failed fetch remains unavailable, not unchanged.
 
-The source workflow creates or refreshes an evidence PR when action is needed. It does not update the accepted baseline or merge. A human reads the relevant source diff, verifies claims and applicability, and decides whether to update guides, translations, review dates, and baseline together. Do not reset a review date just because a URL returned 200.
+By default the source workflow publishes a metadata artifact and review instructions, using read-only permissions. Download `source-evidence` from the run within 14 days, inspect `source-observations.json`, and copy that candidate to `data/source-observations.json` on a review branch. Check an existing `automation/source-observations` branch before reusing it, open a draft PR, and run Validate on its exact head. Automatic proposals require the explicit `ENABLE_SOURCE_REVIEW_PRS=true` variable and an owner-configured GitHub policy allowing Actions to create PRs. A failed proposal may have pushed a branch without creating a PR; inspect the actual result. Do not add credentials or weaken permissions to bypass a denial.
+
+Neither path accepts the baseline or merges. New references carry `baseline_status: pending-human-review` and remain outside `data/source-baseline.json`; a successful fetch does not accept them. A human reads the relevant source diff, verifies claims and applicability, and decides whether to update guides, translations, review dates, and baseline together. Acceptance of a new source adds its inspected observation and removes the pending marker in the same reviewed change. Do not reset a review date just because a URL returned 200.
 
 ## Agent-assisted updates
 
