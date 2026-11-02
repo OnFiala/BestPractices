@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
-  "reviewed_on": "2026-10-22",
+  "reviewed_on": "2026-11-02",
   "scope": "Redistributed static website components; original prose remains CC-BY-4.0 in HTML, JSON, and MCP exports. Installed server/build dependency licenses are separately available in their distributions.",
   "build_dependencies": {
-    "mkdocs-material": "9.7.7",
+    "mkdocs-material": "9.8.0",
     "mkdocs": "1.6.1"
   },
-  "upstream_build_lock": "https://github.com/squidfunk/mkdocs-material/blob/b3e6dd886a974aa8200759ecfd7db28c598a2894/package-lock.json",
+  "upstream_build_lock": "https://github.com/squidfunk/mkdocs-material/blob/0f72ad68d1bee212f909f3b82e0189e221b06374/package-lock.json",
   "components": [
     {
       "id": "mkdocs-material",
-      "version": "9.7.7",
+      "version": "9.8.0",
       "license": "MIT",
       "license_files": [
         "LICENSES/mkdocs-material-MIT.txt"
       ],
-      "upstream": "https://github.com/squidfunk/mkdocs-material/tree/b3e6dd886a974aa8200759ecfd7db28c598a2894",
+      "upstream": "https://github.com/squidfunk/mkdocs-material/tree/0f72ad68d1bee212f909f3b82e0189e221b06374",
       "role": "Theme templates, JavaScript, styles, source maps, and favicon"
     },
     {
@@ -201,8 +201,8 @@
       ]
     },
     {
-      "path": "assets/javascripts/bundle.d7400e89.min.js",
-      "sha256": "f288ab99e197c406766aea4581ba6e902d7d0e28c013bdd3cd3fab6cc77fb7c8",
+      "path": "assets/javascripts/bundle.c21346df.min.js",
+      "sha256": "fe3a2b41858af0adc1f392d8bbf2d7467c8e9694eced5e92b5fe07834da1f2dc",
       "components": [
         "mkdocs-material",
         "clipboard",
@@ -217,8 +217,8 @@
       ]
     },
     {
-      "path": "assets/javascripts/bundle.d7400e89.min.js.map",
-      "sha256": "dcfd5eb85b43e975773ecf102220197ef3f985f45abbbee4a5286e137f8097ba",
+      "path": "assets/javascripts/bundle.c21346df.min.js.map",
+      "sha256": "17168108f7ce26dfb278571f4db8dbafdb18ada6aadf54cba93fb629b73f9d48",
       "components": [
         "mkdocs-material",
         "clipboard",
@@ -254,24 +254,24 @@
       ]
     },
     {
-      "path": "assets/javascripts/workers/search.2c215733.min.js",
-      "sha256": "cfb35333fafd6d2eb148eba21452849fb7fbde32fdfbf986836573f963106188",
+      "path": "assets/javascripts/workers/search.a7633da7.min.js",
+      "sha256": "da1b3df5e5f00cc73083c9e21ff0ec28bde85cd247057bdd05b7a167e5903bd4",
       "components": [
         "mkdocs-material",
         "lunr"
       ]
     },
     {
-      "path": "assets/javascripts/workers/search.2c215733.min.js.map",
-      "sha256": "780dccece24891aa19da6285715e2c7d0cd884237a87a3a9be6684823584921f",
+      "path": "assets/javascripts/workers/search.a7633da7.min.js.map",
+      "sha256": "bcb8d79f2873cf66f17dcb6691f4ed3032dbf436a7b50339864da8910a55f694",
       "components": [
         "mkdocs-material",
         "lunr"
       ]
     },
     {
-      "path": "assets/stylesheets/main.ec1eaa64.min.css",
-      "sha256": "ec1eaa640ab3790ea234d5a09da26015eb070222da8185a1e532d99cb022d68d",
+      "path": "assets/stylesheets/main.57a0d79d.min.css",
+      "sha256": "57a0d79d880c51fe0fa86e34640429eefc664e85f1906c885beed544fd00a9ed",
       "components": [
         "mkdocs-material",
         "material-design-color",
@@ -279,8 +279,8 @@
       ]
     },
     {
-      "path": "assets/stylesheets/main.ec1eaa64.min.css.map",
-      "sha256": "0202466a8ddb51487b325e6df1b6e3a704d7506cf5762617301e5d4bff3a0f54",
+      "path": "assets/stylesheets/main.57a0d79d.min.css.map",
+      "sha256": "ca7866617d22173ceee1fb2e108f9b377ca7db4ab9abc5b5e5dedb20a41336b7",
       "components": [
         "mkdocs-material",
         "material-design-color",
@@ -288,15 +288,15 @@
       ]
     },
     {
-      "path": "assets/stylesheets/palette.ab4e12ef.min.css",
-      "sha256": "ab4e12ef511f9c36de818455892c5c57cc3f98a8c86c36fa609601a88a720da2",
+      "path": "assets/stylesheets/palette.fb2fffe2.min.css",
+      "sha256": "fb2fffe2c525a359e29ee030c77ffdead459d9d73888c34213d4773262a832ab",
       "components": [
         "mkdocs-material"
       ]
     },
     {
-      "path": "assets/stylesheets/palette.ab4e12ef.min.css.map",
-      "sha256": "bcf19de0132bed966de2c46b3b56b69f4bf720b2fe35e8dca22b568a017ee3f9",
+      "path": "assets/stylesheets/palette.fb2fffe2.min.css.map",
+      "sha256": "d88cac0538fcf659b76857c156825e274506a62df6109f1fdb4c830fa087f3ab",
       "components": [
         "mkdocs-material"
       ]
@@ -396,5 +396,5 @@
       "sha256": "9acfb121aae107828dc54f15cf779ef4a151cdaaade158be705a26e6e96ec618"
     }
   ],
-  "upstream_build_commit": "b3e6dd886a974aa8200759ecfd7db28c598a2894"
+  "upstream_build_commit": "0f72ad68d1bee212f909f3b82e0189e221b06374"
 }
