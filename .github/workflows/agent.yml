@@ -28,7 +28,7 @@ jobs:
       - run: uv sync --frozen
       - run: uv run python -m library.sources check --documents reports/evidence
       # Last worker step: no scripts, Git operations, or artifact upload follow it.
-      - uses: openai/codex-action@c05cfd74ad95c626cdf05c6685e62becc3bf7813
+      - uses: openai/codex-action@13e9c17417b29e9a276f73ec6ed7fb574137d3c3
         id: agent
         with:
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
