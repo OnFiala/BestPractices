@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-13T08:17:08.354295+00:00",
+  "changed": [
+    "azure-data-partitioning"
+  ],
+  "unavailable": [],
+  "overdue": [],
+  "action_required": true,
+  "observations": {
+    "azure-data-partitioning": {
+      "status": "ok",
+      "sha256": "3d16aa6af26e51c59c91fd4ab60b987e5d963a3eb1a641c8e61db23c7ddb6113",
+      "bytes": 36901,
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/sharding.md"
+    }
+  },
+  "meaning": "Candidate observation for the relocated azure-data-partitioning URL only. Retrieval and hash comparison; not baseline acceptance or semantic approval."
+}

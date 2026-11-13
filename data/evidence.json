@@ -542,10 +542,10 @@
         "azure-data-partitioning"
       ],
       "support": "direct",
-      "limits": "The inspected pattern states routing, hotspot, cross-shard, and data-movement obligations. Azure product examples in that pattern are not asserted for every database.",
-      "reviewed_on": "2026-11-13",
+      "limits": "The inspected source discusses Azure products; its specific constraints and tooling are not asserted for every database.",
+      "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-data-partitioning": "3d16aa6af26e51c59c91fd4ab60b987e5d963a3eb1a641c8e61db23c7ddb6113"
+        "azure-data-partitioning": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77"
       }
     },
     {
@@ -563,7 +563,7 @@
       "source_hashes": {
         "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
         "azure-cache-aside": "eb19852e710d924d98a39f386928ef1b0d763391f0e9e22a353ce818dd57881f",
-        "azure-data-partitioning": "3d16aa6af26e51c59c91fd4ab60b987e5d963a3eb1a641c8e61db23c7ddb6113"
+        "azure-data-partitioning": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77"
       }
     },
     {

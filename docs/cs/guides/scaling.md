@@ -2,8 +2,8 @@
 {
   "id": "scaling",
   "language": "cs",
-  "revision": 3,
-  "translation_revision": 3,
+  "revision": 2,
+  "translation_revision": 2,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -40,7 +40,7 @@ Pro hrubou kontrolu ve stabilním systému platí, že průměrný počet rozpra
 
 Škálujte, když trvalé měření nebo zdůvodněná předpověď ohrožuje dohodnutý cíl či rezervu při selhání. Zaznamenejte spouštěč, očekávaný přínos, provozní náklad, vlastníka změny a plán návratu nebo dopředné opravy. Autoscaling potřebuje horní meze, započítanou dobu startu, kapacitu závislostí a řízení rozpočtu. Neopraví neefektivní transakci ani nezaručí dostupnost.
 
-Zápisy ve více regionech a sharding přidávají rozhodnutí o směrování a konzistenci. Zavádějte je až po ověření převzetí při selhání, konfliktů či porovnání stavu a migrace na reprezentativních datech. Níže citovaný vzor shardování tyto povinnosti směrování, horkých míst a přesunu dat ilustruje; příklad jednoho produktu v tom vzoru není limitem pro každou databázi.
+Zápisy ve více regionech a sharding přidávají rozhodnutí o směrování a konzistenci. Zavádějte je až po ověření převzetí při selhání, konfliktů či porovnání stavu a migrace na reprezentativních datech. Níže uvedený zdroj o dělení dat u konkrétního poskytovatele tyto povinnosti ilustruje; limity jeho produktu nejsou univerzálními limity jiné databáze.
 
 ## Související rozhodnutí
 
@@ -48,4 +48,4 @@ Zápisy ve více regionech a sharding přidávají rozhodnutí o směrování a 
 
 ## Primární zdroje
 
-[observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [azure-cache-aside](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cache-aside-content.md) · [azure-data-partitioning](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/36555358df8a55439e2d3b53c3212faeacfbade2/docs/patterns/sharding.md) · [postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml)
+[observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [azure-cache-aside](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cache-aside-content.md) · [azure-data-partitioning](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/best-practices/data-partitioning-strategies-content.md) · [postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml)

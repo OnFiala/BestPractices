@@ -39,9 +39,19 @@ def validate(root: Path = ROOT) -> list[str]:
                 and len(segments) == 4 and bool(re.fullmatch(r"[0-9a-f]{40}", commit))
                 and segments[2] == commit,
                 f"Source lacks immutable reviewed evidence: {source['id']}")
-        tracking = urlsplit(source["url"]).path.strip("/").split("/", 3)
-        require(len(tracking) == 4 and len(segments) == 4
-                and tracking[:2] == segments[:2] and tracking[3] == segments[3],
+        tracked = urlsplit(source["url"])
+        tracking = tracked.path.strip("/").split("/", 3)
+        successor = source.get("successor_of")
+        same_document = len(tracking) == 4 and tracking[3] == segments[3] and successor is None
+        relocated = (len(tracking) == 4 and isinstance(successor, str)
+                     and successor == segments[3] and tracking[3] != segments[3]
+                     and "/" in successor and "\\" not in successor and ".." not in successor.split("/"))
+        require(tracked.scheme == "https" and tracked.hostname == "raw.githubusercontent.com"
+                and tracked.username is None and tracked.password is None
+                and tracked.netloc == "raw.githubusercontent.com"
+                and not tracked.query and not tracked.fragment
+                and len(segments) == 4 and tracking[:2] == segments[:2]
+                and (same_document or relocated),
                 f"Tracking/reviewed source mismatch: {source['id']}")
         license_info = source.get("document_license", {})
         require(license_info.get("reference_only") is True
@@ -134,6 +144,9 @@ def validate(root: Path = ROOT) -> list[str]:
         require(source.get("reviewed_sha256") == baseline.get(source["id"], {}).get("sha256")
                 and bool(re.fullmatch(r"[0-9a-f]{64}", source.get("reviewed_sha256", ""))),
                 f"Reviewed source hash differs from snapshot: {source['id']}")
+        if source.get("successor_of"):
+            require(baseline.get(source["id"], {}).get("url") == source.get("reviewed_url"),
+                    f"Relocated source baseline was replaced: {source['id']}")
     evidence = read_json(root / "data/evidence.json")
     require(evidence.get("review_status") == "agent-reviewed-proposal"
             and evidence.get("human_approved") is False and bool(evidence.get("coverage")),

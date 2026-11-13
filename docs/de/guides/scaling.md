@@ -2,8 +2,8 @@
 {
   "id": "scaling",
   "language": "de",
-  "revision": 3,
-  "translation_revision": 3,
+  "revision": 2,
+  "translation_revision": 2,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -40,7 +40,7 @@ Als grobe Kontrolle gilt in einem stabilen System: Die durchschnittlich gleichze
 
 Skaliere, wenn anhaltende Messungen oder eine begründete Prognose das vereinbarte Ziel oder die Ausfallreserve gefährden. Dokumentiere Auslöser, erwarteten Nutzen, Betriebskosten, Änderungsverantwortlichen und einen Plan für Rücknahme oder Vorwärtskorrektur. Autoscaling benötigt Obergrenzen, Startzeit, Abhängigkeitskapazität und Budgetkontrollen. Es repariert keine ineffiziente Transaktion und garantiert keine Verfügbarkeit.
 
-Regionsübergreifendes Schreiben und Sharding bringen zusätzliche Routing- und Konsistenzentscheidungen mit sich. Führe sie erst nach Tests von Failover, Konflikt- oder Abgleichverhalten und Migration mit repräsentativen Daten ein. Das unten zitierte Sharding-Muster veranschaulicht diese Pflichten zu Routing, Hotspots und Datenverschiebung; ein Produktbeispiel in diesem Muster ist keine Grenze für jede Datenbank.
+Regionsübergreifendes Schreiben und Sharding bringen zusätzliche Routing- und Konsistenzentscheidungen mit sich. Führe sie erst nach Tests von Failover, Konflikt- oder Abgleichverhalten und Migration mit repräsentativen Daten ein. Die unten zitierte anbieterspezifische Partitionierungsquelle veranschaulicht diese Pflichten; ihre Produktgrenzen sind keine universellen Grenzen für andere Datenbanken.
 
 ## Verwandte Entscheidungen
 
@@ -48,4 +48,4 @@ Regionsübergreifendes Schreiben und Sharding bringen zusätzliche Routing- und 
 
 ## Primärbelege
 
-[observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [azure-cache-aside](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cache-aside-content.md) · [azure-data-partitioning](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/36555358df8a55439e2d3b53c3212faeacfbade2/docs/patterns/sharding.md) · [postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml)
+[observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [azure-cache-aside](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cache-aside-content.md) · [azure-data-partitioning](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/best-practices/data-partitioning-strategies-content.md) · [postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml)

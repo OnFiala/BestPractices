@@ -275,9 +275,9 @@
     },
     "azure-data-partitioning": {
       "status": "ok",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/36555358df8a55439e2d3b53c3212faeacfbade2/docs/patterns/sharding.md",
-      "sha256": "3d16aa6af26e51c59c91fd4ab60b987e5d963a3eb1a641c8e61db23c7ddb6113",
-      "bytes": 36901
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/best-practices/data-partitioning-strategies-content.md",
+      "sha256": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77",
+      "bytes": 12763
     },
     "azure-health-endpoints": {
       "status": "ok",

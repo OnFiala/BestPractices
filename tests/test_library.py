@@ -87,6 +87,28 @@ class ContentTests(unittest.TestCase):
                              "Stale claim evidence"):
                 self.assertIn(expected, errors)
 
+    def test_relocated_monitor_cannot_replace_the_accepted_baseline(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for folder in ("docs", "data"):
+                shutil.copytree(ROOT / folder, root / folder)
+            sources_path = root / "data/sources.json"
+            data = json.loads(sources_path.read_text())
+            source = next(item for item in data["sources"] if item["id"] == "azure-data-partitioning")
+            source.pop("successor_of")
+            sources_path.write_text(json.dumps(data))
+            self.assertIn("Tracking/reviewed source mismatch", "\n".join(validate(root)))
+            source["successor_of"] = source["reviewed_url"]
+            sources_path.write_text(json.dumps(data))
+            self.assertIn("Tracking/reviewed source mismatch", "\n".join(validate(root)))
+            source["successor_of"] = "docs/best-practices/data-partitioning-strategies-content.md"
+            sources_path.write_text(json.dumps(data))
+            baseline_path = root / "data/source-baseline.json"
+            baseline = json.loads(baseline_path.read_text())
+            baseline["observations"]["azure-data-partitioning"]["url"] = source["url"]
+            baseline_path.write_text(json.dumps(baseline))
+            self.assertIn("Relocated source baseline was replaced", "\n".join(validate(root)))
+
     def test_translation_citations_and_claim_references_must_match_reviewed_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
