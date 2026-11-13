@@ -42,8 +42,9 @@ def validate(root: Path = ROOT) -> list[str]:
         tracked = urlsplit(source["url"])
         tracking = tracked.path.strip("/").split("/", 3)
         successor = source.get("successor_of")
-        same_document = len(tracking) == 4 and tracking[3] == segments[3] and successor is None
-        relocated = (len(tracking) == 4 and isinstance(successor, str)
+        same_document = (len(tracking) == 4 and len(segments) == 4
+                         and tracking[3] == segments[3] and successor is None)
+        relocated = (len(tracking) == 4 and len(segments) == 4 and isinstance(successor, str)
                      and successor == segments[3] and tracking[3] != segments[3]
                      and "/" in successor and "\\" not in successor and ".." not in successor.split("/"))
         require(tracked.scheme == "https" and tracked.hostname == "raw.githubusercontent.com"

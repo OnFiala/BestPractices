@@ -87,6 +87,24 @@ class ContentTests(unittest.TestCase):
                              "Stale claim evidence"):
                 self.assertIn(expected, errors)
 
+    def test_malformed_reviewed_url_returns_validation_errors(self):
+        for source_id in ("azure-data-partitioning", "azure-architecture-styles"):
+            for reviewed_url in ("", "https://raw.githubusercontent.com/malformed",
+                                 "https://raw.githubusercontent.com/owner/repo/main"):
+                with self.subTest(source=source_id, reviewed_url=reviewed_url):
+                    with tempfile.TemporaryDirectory() as tmp:
+                        root = Path(tmp)
+                        for folder in ("docs", "data"):
+                            shutil.copytree(ROOT / folder, root / folder)
+                        path = root / "data/sources.json"
+                        data = json.loads(path.read_text())
+                        source = next(s for s in data["sources"] if s["id"] == source_id)
+                        source["reviewed_url"] = reviewed_url
+                        path.write_text(json.dumps(data))
+                        errors = "\n".join(validate(root))
+                        self.assertIn("Source lacks immutable reviewed evidence", errors)
+                        self.assertIn("Tracking/reviewed source mismatch", errors)
+
     def test_relocated_monitor_cannot_replace_the_accepted_baseline(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
