@@ -111,16 +111,16 @@
     },
     {
       "id": "azure-data-partitioning",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/best-practices/data-partitioning-strategies-content.md",
+      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/sharding.md",
       "publisher": "MicrosoftDocs",
       "authority": "primary",
-      "reviewed_on": "2026-10-22",
+      "reviewed_on": "2026-11-13",
       "review_days": 90,
-      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
+      "scope": "Inspected Microsoft sharding pattern after the product partitioning article was removed from main. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
       "status": "current",
-      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/best-practices/data-partitioning-strategies-content.md",
-      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-      "reviewed_sha256": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77",
+      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/36555358df8a55439e2d3b53c3212faeacfbade2/docs/patterns/sharding.md",
+      "reviewed_commit": "36555358df8a55439e2d3b53c3212faeacfbade2",
+      "reviewed_sha256": "3d16aa6af26e51c59c91fd4ab60b987e5d963a3eb1a641c8e61db23c7ddb6113",
       "document_license": {
         "name": "CC-BY-4.0",
         "spdx": "CC-BY-4.0",
@@ -128,9 +128,9 @@
         "reviewed_on": "2026-10-22",
         "reference_only": true,
         "upstream_repository": "MicrosoftDocs/architecture-center",
-        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
+        "reviewed_commit": "36555358df8a55439e2d3b53c3212faeacfbade2",
         "evidence_urls": [
-          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
+          "https://github.com/MicrosoftDocs/architecture-center/blob/36555358df8a55439e2d3b53c3212faeacfbade2/LICENSE"
         ],
         "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
         "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"

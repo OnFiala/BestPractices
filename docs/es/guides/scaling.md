@@ -2,8 +2,8 @@
 {
   "id": "scaling",
   "language": "es",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -40,7 +40,7 @@ Como comprobación aproximada en un sistema estable, el promedio de trabajo en c
 
 Escala cuando las mediciones sostenidas o una previsión justificada amenacen el objetivo acordado o la capacidad de reserva ante fallos. Registra la condición de activación, la mejora prevista, el coste operativo, la persona responsable del cambio y el plan de reversión o reparación hacia delante. El escalado automático necesita máximos acotados, tiempo de arranque, capacidad de las dependencias y controles de presupuesto. No puede corregir una transacción ineficiente ni garantizar disponibilidad.
 
-Las escrituras multirregión y la fragmentación añaden decisiones de enrutamiento y coherencia. Introdúcelas solo después de probar la conmutación ante fallos, los conflictos o la conciliación y la migración con datos representativos. La fuente sobre partición específica de un proveedor ilustra esas obligaciones; los límites de su producto no son límites universales para otra base de datos.
+Las escrituras multirregión y la fragmentación añaden decisiones de enrutamiento y coherencia. Introdúcelas solo después de probar la conmutación ante fallos, los conflictos o la conciliación y la migración con datos representativos. El patrón de fragmentación citado abajo ilustra esas obligaciones de enrutamiento, puntos calientes y movimiento de datos; un ejemplo de producto en ese patrón no es un límite para cualquier base de datos.
 
 ## Decisiones relacionadas
 
@@ -48,4 +48,4 @@ Las escrituras multirregión y la fragmentación añaden decisiones de enrutamie
 
 ## Evidencia primaria
 
-[observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [azure-cache-aside](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cache-aside-content.md) · [azure-data-partitioning](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/best-practices/data-partitioning-strategies-content.md) · [postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml)
+[observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [azure-cache-aside](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cache-aside-content.md) · [azure-data-partitioning](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/36555358df8a55439e2d3b53c3212faeacfbade2/docs/patterns/sharding.md) · [postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml)
