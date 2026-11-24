@@ -2,8 +2,8 @@
 {
   "id": "scaling",
   "language": "en",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -40,7 +40,7 @@ As a rough check in a stable system, average in-flight work is average arrival r
 
 Scale when sustained measurements or a justified forecast threaten the agreed objective or failure headroom. Record the trigger, expected gain, operating cost, change owner and rollback/forward-repair plan. Autoscaling needs bounded maximums, startup time, dependency capacity and budget controls. It cannot repair an inefficient transaction or guarantee availability.
 
-Multi-region writes and sharding add routing and consistency decisions. Introduce them only after testing failover, conflict or reconciliation behavior and migration on representative data. The provider-specific partitioning source below illustrates those obligations; its product limits are not universal limits for another database.
+Multi-region writes and sharding add routing and consistency decisions. Introduce them only after testing failover, conflict or reconciliation behavior and migration on representative data. The PostgreSQL source covers local table partitioning, including key choice, constraints, pruning and maintenance. It does not establish distributed sharding or multi-region guarantees; those need separate evidence for the selected system.
 
 ## Related decisions
 
@@ -48,4 +48,4 @@ Multi-region writes and sharding add routing and consistency decisions. Introduc
 
 ## Primary evidence
 
-[observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [azure-cache-aside](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cache-aside-content.md) · [azure-data-partitioning](https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/best-practices/data-partitioning-strategies-content.md) · [postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml)
+[redis-cache-aside](https://raw.githubusercontent.com/redis/docs/25edf15e0d44b939a4cc9a63c3157073391a7be1/content/develop/use-cases/cache-aside/_index.md) · [postgres-partitioning](https://raw.githubusercontent.com/postgres/postgres/5681f0cfa5acfdc5146e2b74ff5b7e940df039f3/doc/src/sgml/ddl.sgml) · [observability](https://raw.githubusercontent.com/open-telemetry/opentelemetry.io/2cc7b050cecdab1a7daadb6b78ce51b15a18bec8/content/en/docs/concepts/observability-primer.md) · [postgres-isolation](https://raw.githubusercontent.com/postgres/postgres/5ffb8c7409385c58e5c1abaa22ee77ba4c1b5c33/doc/src/sgml/mvcc.sgml)

@@ -2,8 +2,8 @@
 {
   "id": "maintenance",
   "language": "cs",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -13,7 +13,9 @@
 
 `data/sources.json` odděluje neměnný prozkoumaný zdroj od URL sledované kvůli pozdějším změnám. Zaznamenává vydavatele, rozsah, interval posuzování a licenční podklady. Výchozí stav načtení zaznamenává úspěšné hashe, nikoli lidské schválení. Plánovaný pozorovatel načítá dokumenty přes HTTPS s limity a hlásí změněné, nedostupné nebo k posouzení opožděné zdroje. Změněný hash je signálem k posouzení, nikdy oprávněním změnit doporučení. Neúspěšné načtení zůstává nedostupné; není označeno jako beze změny.
 
-Workflow zdrojů vytváří nebo aktualizuje PR s důkazy, když je nutná reakce. Nemění přijatý výchozí stav a neslučuje změny. Člověk přečte relevantní diff zdroje, ověří tvrzení a použitelnost a rozhodne, zda společně aktualizovat průvodce, překlady, data posouzení a výchozí stav. Datum posouzení neposouvejte jen proto, že URL vrátila HTTP 200.
+Ve výchozím stavu workflow zdrojů zveřejní artefakt s metadaty a pokyny k posouzení; používá oprávnění pouze ke čtení. Do 14 dnů stáhněte z běhu `source-evidence`, prohlédněte `source-observations.json` a zkopírujte tento návrh do `data/source-observations.json` na větvi k posouzení. Před opětovným použitím zkontrolujte existující větev `automation/source-observations`, otevřete draft PR a spusťte Validate na jeho přesném commitu. Automatické návrhy vyžadují výslovné nastavení `ENABLE_SOURCE_REVIEW_PRS=true` a pravidla GitHubu nastavená vlastníkem, která dovolují Actions vytvářet PR. Neúspěšný návrh mohl odeslat větev, aniž vzniklo PR; ověřte skutečný výsledek. Zamítnutí neobcházejte přidáním přihlašovacích údajů ani oslabením oprávnění.
+
+Ani jedna cesta nepřijímá výchozí stav a neslučuje změny. Nové zdroje mají `baseline_status: pending-human-review` a zůstávají mimo `data/source-baseline.json`; úspěšné načtení je nepřijímá. Člověk přečte relevantní diff zdroje, ověří tvrzení a použitelnost a rozhodne o společné aktualizaci průvodců, překladů, dat posouzení a výchozího stavu. Přijetí nového zdroje přidá jeho prozkoumané pozorování a odstraní příznak čekání v téže posouzené změně. Datum posouzení neposouvejte jen proto, že URL vrátila HTTP 200.
 
 ## Aktualizace s pomocí agentů
 

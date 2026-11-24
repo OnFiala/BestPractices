@@ -375,178 +375,202 @@
       "claim_id": "architecture-styles-tradeoffs",
       "claim": "Separating deployments can add network, consistency and operational coordination costs even when it supports independent ownership.",
       "sources": [
-        "azure-architecture-styles"
+        "spring-modulith-fundamentals",
+        "grpc-retry"
       ],
-      "support": "direct",
-      "limits": "The source compares architecture styles in an Azure context; the library does not adopt its provider-specific services or make a universal performance ranking.",
+      "support": "synthesis",
+      "limits": "Spring Modulith supports internal interfaces and dependency boundaries; gRPC documents network retry behavior. The topology comparison and costs are local synthesis, not a benchmark or a requirement to adopt either implementation.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-architecture-styles": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a"
-      }
+        "spring-modulith-fundamentals": "7b7ac322a75de339df00e9bf23c5bdaad711ec8704a66d8bf542886758fe9209",
+        "grpc-retry": "616a29cad0d8e6c4aa500b0fd4efd1ae6544b8963ea404d701fe2c37cf76e01d"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "architecture",
       "claim_id": "architecture-smallest-viable",
       "claim": "Compare the simplest viable topology with a proposed more distributed one using measured constraints and an identified owner.",
       "sources": [
-        "azure-architecture-styles"
+        "spring-modulith-fundamentals",
+        "grpc-retry"
       ],
       "support": "synthesis",
       "limits": "This is the library's decision heuristic, not an externally mandated order or proof that a modular monolith fits every product.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-architecture-styles": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a"
-      }
+        "spring-modulith-fundamentals": "7b7ac322a75de339df00e9bf23c5bdaad711ec8704a66d8bf542886758fe9209",
+        "grpc-retry": "616a29cad0d8e6c4aa500b0fd4efd1ae6544b8963ea404d701fe2c37cf76e01d"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "architecture",
       "claim_id": "architecture-cqrs-scope",
       "claim": "CQRS can separate read/write models within one data store; separate asynchronously maintained stores introduce a freshness contract.",
       "sources": [
-        "azure-cqrs"
+        "pekko-cqrs"
       ],
-      "support": "direct",
-      "limits": "The particular consistency, transaction and deployment behavior depends on the implementation; CQRS does not require event sourcing.",
+      "support": "synthesis",
+      "limits": "Pekko describes separate command/query responsibilities and event-driven read models without requiring event sourcing. One-store deployment, transactional behavior and freshness budgets are local design choices, not a universal guarantee of that implementation.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-cqrs": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b"
-      }
+        "pekko-cqrs": "2114914cf55b328f62f166529525dd58a5c21fad3dd89545fc2afeec8d767bc3"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "architecture",
       "claim_id": "architecture-event-history",
       "claim": "Event sourcing makes persisted event history authoritative and requires replay, schema evolution and retention/privacy decisions.",
       "sources": [
-        "azure-event-sourcing"
+        "pekko-event-sourcing"
       ],
       "support": "direct",
-      "limits": "The source's product examples are not adopted; no claim is made that an event broker or audit table alone satisfies these requirements.",
+      "limits": "Pekko documents event replay, schema evolution, deletion and side-effect limits. Its actor/journal behavior is contextual; a broker or audit table alone does not establish these properties.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-event-sourcing": "3b43bdcdf4b17f9da1adbfd4f77fd767f1262a8baeb3aba232bbed293e2d2a49"
-      }
+        "pekko-event-sourcing": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "architecture",
       "claim_id": "architecture-extraction-proof",
       "claim": "Before extraction, measure a baseline and test a vertical slice with old consumers, repeated requests and a slow dependency.",
       "sources": [
-        "azure-architecture-styles",
-        "azure-cqrs"
+        "spring-modulith-fundamentals",
+        "grpc-retry",
+        "pekko-cqrs"
       ],
       "support": "synthesis",
       "limits": "The exact experiment, acceptance thresholds, migration authority and recovery plan must be designed for the project; this library has not benchmarked the six profiles.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-architecture-styles": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a",
-        "azure-cqrs": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b"
-      }
+        "spring-modulith-fundamentals": "7b7ac322a75de339df00e9bf23c5bdaad711ec8704a66d8bf542886758fe9209",
+        "grpc-retry": "616a29cad0d8e6c4aa500b0fd4efd1ae6544b8963ea404d701fe2c37cf76e01d",
+        "pekko-cqrs": "2114914cf55b328f62f166529525dd58a5c21fad3dd89545fc2afeec8d767bc3"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "durability",
       "claim_id": "durability-outbox-atomicity",
       "claim": "An outbox can atomically retain a local business transition and its event, while a relay publishes later.",
       "sources": [
-        "azure-outbox",
+        "debezium-outbox",
         "postgres-isolation"
       ],
       "support": "direct",
-      "limits": "The Microsoft worked implementation uses Cosmos DB transaction boundaries; relational implementations must verify their own transaction and durability settings. External provider effects do not join the local transaction.",
+      "limits": "The inspected Debezium Quarkus extension writes its event table in the current transaction. Other implementations must verify their own transaction and durability settings; external provider effects do not join that transaction.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-outbox": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
+        "debezium-outbox": "2e5fe69c3f34e63a084aa73009f6f7d8bab0bed98ecfb100c620218d45d33e56",
         "postgres-isolation": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5"
-      }
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "durability",
       "claim_id": "durability-consumer-dedup",
       "claim": "Duplicate delivery requires a consumer-specific durable strategy, with the deduplication marker and local effect committed consistently.",
       "sources": [
-        "azure-idempotent-consumer"
+        "rabbitmq-reliability",
+        "pekko-event-sourcing"
       ],
-      "support": "direct",
-      "limits": "The retention horizon, concurrent duplicate handling and ordering policy remain implementation choices; broker send deduplication does not replace consumer correctness.",
+      "support": "synthesis",
+      "limits": "RabbitMQ establishes duplicate-delivery risk. Atomic local effect/marker storage, retention, concurrency and ordering are proposed application requirements; the broker does not implement them for the consumer.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
-      }
+        "rabbitmq-reliability": "25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+        "pekko-event-sourcing": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "durability",
       "claim_id": "durability-external-uncertainty",
       "claim": "A lost response after a provider side effect requires supported idempotency or reconciliation before repeating the effect.",
       "sources": [
-        "azure-idempotent-consumer",
-        "azure-retry"
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
+        "grpc-retry"
       ],
-      "support": "direct",
-      "limits": "Supported provider operation identity, query semantics and expiry must be verified; a local key alone cannot guarantee exactly-once external effects.",
+      "support": "synthesis",
+      "limits": "RabbitMQ describes lost acknowledgements and duplicates; Pekko documents side effects outside durable replay. Provider idempotency, query semantics, expiry and the reconciliation hold are project-specific synthesis, not exactly-once guarantees.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
-        "azure-retry": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab"
-      }
+        "rabbitmq-reliability": "25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+        "pekko-event-sourcing": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea",
+        "grpc-retry": "616a29cad0d8e6c4aa500b0fd4efd1ae6544b8963ea404d701fe2c37cf76e01d"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "durability",
       "claim_id": "durability-retry-budget",
       "claim": "Retry only eligible failures under a bounded policy that accounts for retries at nested layers.",
       "sources": [
-        "azure-retry"
+        "grpc-retry"
       ],
-      "support": "direct",
-      "limits": "The appropriate delay, jitter and deadline depend on the operation and provider contract; permanent denial or validation failures do not become safe through retry.",
+      "support": "synthesis",
+      "limits": "gRPC documents eligibility, attempt limits, jitter, backoff and underlying transparent retries. A total budget across application layers is local policy; other clients and provider contracts need separate verification.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-retry": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab"
-      }
+        "grpc-retry": "616a29cad0d8e6c4aa500b0fd4efd1ae6544b8963ea404d701fe2c37cf76e01d"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "durability",
       "claim_id": "durability-failure-matrix",
       "claim": "Crash and recovery tests should inspect durable records and external effects at each important boundary.",
       "sources": [
-        "azure-outbox",
-        "azure-idempotent-consumer",
+        "debezium-outbox",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
         "postgres-backup"
       ],
       "support": "synthesis",
       "limits": "The guide's failure matrix is an original proposed acceptance plan. It is not a report of tests executed against a deployed order system.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-outbox": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
-        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+        "debezium-outbox": "2e5fe69c3f34e63a084aa73009f6f7d8bab0bed98ecfb100c620218d45d33e56",
+        "rabbitmq-reliability": "25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+        "pekko-event-sourcing": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea",
         "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26"
-      }
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "scaling",
       "claim_id": "scaling-cache-consistency",
       "claim": "Cache-aside needs explicit expiry/invalidation and does not automatically keep all cached copies consistent.",
       "sources": [
-        "azure-cache-aside"
+        "redis-cache-aside"
       ],
       "support": "direct",
       "limits": "Tenant isolation, access revocation and the accepted stale-read window require additional application-specific design; the guide does not prescribe a universal TTL.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-cache-aside": "eb19852e710d924d98a39f386928ef1b0d763391f0e9e22a353ce818dd57881f"
-      }
+        "redis-cache-aside": "30d67f505380fc99ab1f0ac896a0dd5f8bfd84ea22d1937a17ce7576766fb42c"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "scaling",
       "claim_id": "scaling-partitioning-cost",
       "claim": "Partitioning introduces routing and cross-partition data/transaction obligations, so hot keys and migration must be considered.",
       "sources": [
-        "azure-data-partitioning"
+        "postgres-partitioning"
       ],
-      "support": "direct",
-      "limits": "The inspected source discusses Azure products; its specific constraints and tooling are not asserted for every database.",
+      "support": "synthesis",
+      "limits": "PostgreSQL describes local table partitioning, pruning, constraint restrictions and planning/maintenance cost. Distributed routing, hot-key rebalancing and cross-node semantics are additional project requirements, not guarantees of local table partitioning.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-data-partitioning": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77"
-      }
+        "postgres-partitioning": "b4099e01d760d08bff5bdba8c9d0a41ca4b54b648415e9cecdaff448817d1585"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "scaling",
@@ -554,17 +578,18 @@
       "claim": "Change a measured constraint and compare useful throughput, errors, queue age and cost before accepting more infrastructure.",
       "sources": [
         "observability",
-        "azure-cache-aside",
-        "azure-data-partitioning"
+        "redis-cache-aside",
+        "postgres-partitioning"
       ],
       "support": "synthesis",
       "limits": "The escalation table and choice of experimental measurements are local guidance; no user-count threshold or guaranteed capacity is supplied.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
         "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
-        "azure-cache-aside": "eb19852e710d924d98a39f386928ef1b0d763391f0e9e22a353ce818dd57881f",
-        "azure-data-partitioning": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77"
-      }
+        "redis-cache-aside": "30d67f505380fc99ab1f0ac896a0dd5f8bfd84ea22d1937a17ce7576766fb42c",
+        "postgres-partitioning": "b4099e01d760d08bff5bdba8c9d0a41ca4b54b648415e9cecdaff448817d1585"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "scaling",
@@ -683,16 +708,17 @@
       "claim_id": "frontend-state-and-contracts",
       "claim": "Separate state ownership and define cancellation, optimistic-update recovery, offline conflict and API compatibility behavior.",
       "sources": [
-        "azure-cqrs",
+        "pekko-cqrs",
         "owasp"
       ],
       "support": "synthesis",
       "limits": "This is original interface design guidance. The ASVS README is background, not direct control-level evidence for every frontend rule; framework-specific behavior still needs validation.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-cqrs": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b",
+        "pekko-cqrs": "2114914cf55b328f62f166529525dd58a5c21fad3dd89545fc2afeec8d767bc3",
         "owasp": "9a360766c67c8facb75a088656dfadad7b390a894acf439c49b2d6cd7b077876"
-      }
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "data",
@@ -730,17 +756,20 @@
       "claim": "Restore and reconcile business state before resuming external side effects and asynchronous processing.",
       "sources": [
         "postgres-backup",
-        "azure-outbox",
-        "azure-idempotent-consumer"
+        "debezium-outbox",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing"
       ],
       "support": "synthesis",
       "limits": "The library combines source mechanisms into an operational plan; the plan has not been executed against an adopter's data or providers.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
         "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26",
-        "azure-outbox": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
-        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
-      }
+        "debezium-outbox": "2e5fe69c3f34e63a084aa73009f6f7d8bab0bed98ecfb100c620218d45d33e56",
+        "rabbitmq-reliability": "25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+        "pekko-event-sourcing": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "lifecycle",
@@ -782,29 +811,31 @@
       "claim": "Reliability measurement should relate telemetry to meaningful service outcomes rather than only whether a process exists.",
       "sources": [
         "observability",
-        "azure-health-endpoints"
+        "kubernetes-probes"
       ],
       "support": "direct",
-      "limits": "An application must define its own success criteria and instrumentation; telemetry presence does not guarantee that the objective is met.",
+      "limits": "OpenTelemetry supports outcome-oriented measurement; Kubernetes distinguishes container health and readiness. Applications define success criteria; probe success and telemetry presence do not guarantee those objectives.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
         "observability": "dc03eacab8e562649cfc648081d23fe08fff34c4abae8d8418db45c587877f5e",
-        "azure-health-endpoints": "2ffed47249e9c6e6dd5a2d2b36c73fcb2adcbd217377e60f3466c98cf9f9d08f"
-      }
+        "kubernetes-probes": "a810dfe6150b79d3876af0853676219ed6991edcf84fc437e75b962a02bb4949"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "operations",
       "claim_id": "operations-health-probe-risk",
       "claim": "Frequent deep health probes can consume resources or remove otherwise useful instances during a shared dependency failure.",
       "sources": [
-        "azure-health-endpoints"
+        "kubernetes-probes"
       ],
       "support": "direct",
-      "limits": "Probe behavior and platform remediation differ; configure and test them for the actual load balancer/orchestrator, rather than copying product-specific defaults.",
+      "limits": "Kubernetes documents resource overhead, traffic removal, restarts and cascading failures from poorly designed probes. Test the actual platform and shared-dependency behavior; no orchestrator is prescribed.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-health-endpoints": "2ffed47249e9c6e6dd5a2d2b36c73fcb2adcbd217377e60f3466c98cf9f9d08f"
-      }
+        "kubernetes-probes": "a810dfe6150b79d3876af0853676219ed6991edcf84fc437e75b962a02bb4949"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "operations",
@@ -869,7 +900,8 @@
       "claim_id": "examples-design-profile-status",
       "claim": "The six profiles describe proposed boundaries and planned acceptance evidence, not deployed samples or demonstrated capacity.",
       "sources": [
-        "azure-architecture-styles",
+        "spring-modulith-fundamentals",
+        "grpc-retry",
         "openai-agents",
         "postgres-backup",
         "wcag"
@@ -878,27 +910,32 @@
       "limits": "No profile was load-tested, security-certified or deployed by this library; each adopter must choose the actual stack, applicable controls and test environment.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-architecture-styles": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a",
+        "spring-modulith-fundamentals": "7b7ac322a75de339df00e9bf23c5bdaad711ec8704a66d8bf542886758fe9209",
+        "grpc-retry": "616a29cad0d8e6c4aa500b0fd4efd1ae6544b8963ea404d701fe2c37cf76e01d",
         "openai-agents": "a7610fba9f6f95e3fad126f23600f644464bafb1d6a7e020090beff86a4619c9",
         "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26",
         "wcag": "26fd85fad76ac1f8d0a08f595099d0435a8b9af5656e1c0f2596eef2519ad37c"
-      }
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "examples",
       "claim_id": "examples-uncertain-external-effects",
       "claim": "The payment and agent examples require reconciliation when a crash leaves an external action's outcome unknown.",
       "sources": [
-        "azure-retry",
-        "azure-idempotent-consumer"
+        "grpc-retry",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing"
       ],
       "support": "synthesis",
       "limits": "These are original worked scenarios combining source mechanisms. Provider support, approval enforcement and financial/device effects must be verified separately.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-retry": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab",
-        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
-      }
+        "grpc-retry": "616a29cad0d8e6c4aa500b0fd4efd1ae6544b8963ea404d701fe2c37cf76e01d",
+        "rabbitmq-reliability": "25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+        "pekko-event-sourcing": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "playbook-public-website",
@@ -984,36 +1021,42 @@
       "claim_id": "atomic-local-effects",
       "claim": "Persist the business mutation and outbox atomically and design for duplicate delivery with stable operation identity.",
       "sources": [
-        "azure-outbox",
-        "azure-idempotent-consumer",
+        "debezium-outbox",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
         "postgres-isolation"
       ],
       "support": "synthesis",
       "limits": "Outbox and idempotent-consumer mechanics are directly supported. Tenant/action/request-fingerprint keys and stored-response contracts are proposed designs. PostgreSQL semantics do not establish SQLite behavior or remote-effect atomicity.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-outbox": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
-        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+        "debezium-outbox": "2e5fe69c3f34e63a084aa73009f6f7d8bab0bed98ecfb100c620218d45d33e56",
+        "rabbitmq-reliability": "25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+        "pekko-event-sourcing": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea",
         "postgres-isolation": "02542fc297db5b5932858b609cd4bc8f815453cd33ca6e7232a5cc9046e585a5"
       },
-      "inspected_sections": "Transactional Outbox solution; Idempotent Consumer solution; transaction isolation"
+      "inspected_sections": "Transactional Outbox solution; Idempotent Consumer solution; transaction isolation",
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "playbook-saas",
       "claim_id": "payment-recovery-boundary",
       "claim": "A lost provider acknowledgement requires safe provider-supported retry or reconciliation; restoring local data does not reverse a charge.",
       "sources": [
-        "azure-idempotent-consumer",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
         "postgres-backup"
       ],
       "support": "synthesis",
       "limits": "Source limits on external effects and backup consistency inform the recommendation; no payment-provider implementation or guarantee is asserted. Provider contracts require separate inspection.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+        "rabbitmq-reliability": "25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+        "pekko-event-sourcing": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea",
         "postgres-backup": "cadee6e7b3c2dda08b5234fc148427d0f5db96a2a2e8511fc825daeb431fad26"
       },
-      "inspected_sections": "External side-effect limits of delivery guarantees; consistent backup and recovery methods"
+      "inspected_sections": "External side-effect limits of delivery guarantees; consistent backup and recovery methods",
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "playbook-internal-tool",
@@ -1052,15 +1095,18 @@
       "claim_id": "uncertain-upstream-write",
       "claim": "A lost response after upstream success must lead to supported idempotent retry or a visible reconciliation hold.",
       "sources": [
-        "azure-idempotent-consumer"
+        "rabbitmq-reliability",
+        "pekko-event-sourcing"
       ],
       "support": "synthesis",
-      "limits": "The source explains stable identifiers and external-effect limits. The operation ledger, human escalation, adapter recovery and business-approved correction are local delivery decisions.",
+      "limits": "RabbitMQ and Pekko illustrate duplicate delivery and side effects outside durable recovery. The operation ledger, provider-supported retry, reconciliation hold and human escalation are local delivery decisions.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
+        "rabbitmq-reliability": "25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+        "pekko-event-sourcing": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea"
       },
-      "inspected_sections": "Duplicate delivery; stable message identifiers; limits of exactly-once delivery"
+      "inspected_sections": "Duplicate delivery; stable message identifiers; limits of exactly-once delivery",
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "playbook-internal-tool",
@@ -1148,17 +1194,20 @@
       "claim_id": "uncertain-effect-reconciliation",
       "claim": "Durable run state does not make arbitrary external effects exactly once; lost acknowledgement requires provider guarantees or reconciliation.",
       "sources": [
-        "azure-idempotent-consumer",
+        "rabbitmq-reliability",
+        "pekko-event-sourcing",
         "owasp-ai-agent"
       ],
       "support": "synthesis",
       "limits": "The sources support external-effect limits and controlled tool execution. The local fixture effect ledger and crash protocol are proposed verification designs, not proof of real connector behavior.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
+        "rabbitmq-reliability": "25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+        "pekko-event-sourcing": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea",
         "owasp-ai-agent": "61fa0df50f255f10b82965d614ebbd40ec77a9274785109ce9cb5dc90e34ea7a"
       },
-      "inspected_sections": "limits of exactly-once delivery; stable identifiers; high-impact tool controls"
+      "inspected_sections": "limits of exactly-once delivery; stable identifiers; high-impact tool controls",
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "playbook-agent-automation",
@@ -1280,15 +1329,18 @@
       "claim_id": "local-recovery-and-external-effect-boundary",
       "claim": "Inspect persisted outcomes, duplicate processing and uncertain effects at their actual transaction boundary; deduplication in a local ledger does not establish an external provider guarantee.",
       "sources": [
-        "azure-idempotent-consumer"
+        "rabbitmq-reliability",
+        "pekko-event-sourcing"
       ],
       "support": "synthesis",
-      "limits": "The source supports atomic consumer deduplication, concurrency controls and reconciliation of effects outside the database transaction. It does not establish SQLite durability, the correctness of these example implementations, live-model quality, full browser accessibility, or production capacity. The process-crash drills, simulated workflow interruptions and browser journeys require their own exact-input execution records and retain the documented fixture limits.",
+      "limits": "RabbitMQ and Pekko support duplicate-delivery and external-side-effect limits. Atomic local ledgers, concurrency controls and reconciliation are library synthesis. These sources do not establish SQLite durability, example correctness, live-model quality, accessibility or production capacity; the fixtures need their own exact-input execution reports.",
       "inspected_sections": "Limits of exactly-once delivery; Commit the processed key and the side effects atomically; Guard against concurrent duplicates; Handle side effects that cannot join the transaction.",
       "reviewed_on": "2026-10-22",
       "source_hashes": {
-        "azure-idempotent-consumer": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4"
-      }
+        "rabbitmq-reliability": "25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+        "pekko-event-sourcing": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea"
+      },
+      "replacement_evidence_reviewed_on": "2026-11-02"
     },
     {
       "guide_id": "first-project",

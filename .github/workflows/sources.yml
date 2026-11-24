@@ -21,6 +21,7 @@ jobs:
           python-version: '3.12'
       - run: python -m library.sources check --candidate reports/source-observations.json
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        id: evidence
         if: always()
         with:
           name: source-evidence
@@ -29,9 +30,16 @@ jobs:
             reports/sources.json
             reports/source-observations.json
           retention-days: 14
+      - name: Publish review instructions
+        if: always()
+        env:
+          ARTIFACT_URL: ${{ steps.evidence.outputs.artifact-url }}
+        run: python -m library.source_review >> "$GITHUB_STEP_SUMMARY"
   propose:
     needs: observe
-    if: ${{ always() && !cancelled() }}
+    # Disabled by default: the read-only artifact path works without PR permission.
+    # Enable only after a human configures the existing repository/org policy.
+    if: ${{ always() && !cancelled() && vars.ENABLE_SOURCE_REVIEW_PRS == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
@@ -66,3 +74,13 @@ jobs:
             Read the run artifact and affected primary sources; review all relevant locales.
             Run Validate manually on this branch if GITHUB_TOKEN did not trigger PR checks.
             A human must decide, approve, and merge.
+      - name: Report unsuccessful proposal
+        if: failure()
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" <<'EOF'
+          The automated proposal did not complete. Do not assume that a PR exists.
+          A branch may already have been pushed; inspect `automation/source-observations`
+          before retrying. Use the observe job's metadata artifact and manual review path.
+          If GitHub denied PR creation, an owner must review the repository/organization
+          setting. Do not add a token or change permissions to work around the denial.
+          EOF

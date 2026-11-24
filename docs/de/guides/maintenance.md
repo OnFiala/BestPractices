@@ -2,8 +2,8 @@
 {
   "id": "maintenance",
   "language": "de",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -13,7 +13,9 @@
 
 `data/sources.json` trennt eine unveränderliche geprüfte Quelle von der URL, deren spätere Änderungen beobachtet werden. Erfasst werden Herausgeber, Geltungsbereich, Prüfintervall und Lizenzbelege. Die Abrufbasis speichert erfolgreiche Hashes, keine menschliche Freigabe. Eine geplante Beobachtung ruft begrenzte HTTPS-Dokumente ab und meldet geänderte, nicht verfügbare oder überfällige Quellen. Ein anderer Hash fordert zur Prüfung auf, autorisiert aber keine Änderung der Hinweise. Ein gescheiterter Abruf bleibt „nicht verfügbar“ und wird nicht zu „unverändert“.
 
-Der Quellenworkflow erzeugt oder aktualisiert bei Handlungsbedarf einen Beleg-PR. Er ändert weder die akzeptierte Basis noch führt er Änderungen zusammen. Ein Mensch liest den relevanten Quelldiff, prüft Aussagen und Anwendbarkeit und entscheidet über die gemeinsame Anpassung von Leitfäden, Übersetzungen, Prüfdaten und Basis. Setze kein Prüfdatum allein wegen einer HTTP-200-Antwort zurück.
+Standardmäßig veröffentlicht der Quellenworkflow ein Metadatenartefakt und Prüfanweisungen mit reinen Leserechten. Lade `source-evidence` innerhalb von 14 Tagen aus dem Lauf herunter, prüfe `source-observations.json` und kopiere diesen Vorschlag auf einem Prüfbranch nach `data/source-observations.json`. Prüfe einen bestehenden Branch `automation/source-observations` vor der Wiederverwendung, öffne einen Entwurfs-PR und führe Validate für dessen exakten Commit aus. Automatische Vorschläge benötigen ausdrücklich `ENABLE_SOURCE_REVIEW_PRS=true` und eine vom Eigentümer konfigurierte GitHub-Richtlinie, die Actions das Erstellen von PRs erlaubt. Ein fehlgeschlagener Vorschlag kann bereits einen Branch übertragen haben, ohne einen PR zu erstellen; prüfe das tatsächliche Ergebnis. Umgehe eine Ablehnung nicht durch zusätzliche Zugangsdaten oder schwächere Berechtigungen.
+
+Keiner der Wege akzeptiert die Basis oder führt Änderungen zusammen. Neue Quellen tragen `baseline_status: pending-human-review` und bleiben außerhalb von `data/source-baseline.json`; erfolgreiches Abrufen akzeptiert sie nicht. Ein Mensch liest den relevanten Quelldiff, prüft Aussagen und Anwendbarkeit und entscheidet über die gemeinsame Anpassung von Leitfäden, Übersetzungen, Prüfdaten und Basis. Die Annahme einer neuen Quelle fügt die geprüfte Beobachtung hinzu und entfernt die Wartemarkierung in derselben geprüften Änderung. Setze kein Prüfdatum allein wegen einer HTTP-200-Antwort zurück.
 
 ## Agentengestützte Aktualisierungen
 

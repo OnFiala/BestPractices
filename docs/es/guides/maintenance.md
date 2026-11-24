@@ -2,8 +2,8 @@
 {
   "id": "maintenance",
   "language": "es",
-  "revision": 2,
-  "translation_revision": 2,
+  "revision": 3,
+  "translation_revision": 3,
   "reviewed_on": "2026-10-22"
 }
 ---
@@ -13,7 +13,9 @@
 
 `data/sources.json` separa la fuente inmutable inspeccionada de la URL supervisada para detectar cambios posteriores. Registra el editor, el alcance, el intervalo de revisión y la evidencia de licencia. La referencia de recuperación registra hashes obtenidos correctamente, no aprobación humana. Un observador programado obtiene documentos HTTPS con límites y notifica fuentes modificadas, no disponibles o con revisión vencida. Un hash distinto es una señal para revisar, nunca autorización para cambiar recomendaciones. Una descarga fallida sigue siendo no disponible, no «sin cambios».
 
-El workflow de fuentes crea o actualiza un PR de evidencia cuando hace falta actuar. No actualiza la referencia aceptada ni fusiona cambios. Una persona lee el diff relevante de la fuente, verifica afirmaciones y aplicabilidad y decide si actualizar conjuntamente guías, traducciones, fechas de revisión y referencia. No reinicies una fecha de revisión solo porque una URL devuelva 200.
+De forma predeterminada, el workflow de fuentes publica un artefacto de metadatos e instrucciones de revisión con permisos de solo lectura. Descarga `source-evidence` de la ejecución en un plazo de 14 días, inspecciona `source-observations.json` y copia esa propuesta a `data/source-observations.json` en una rama de revisión. Comprueba una rama `automation/source-observations` existente antes de reutilizarla, abre un PR en borrador y ejecuta Validate sobre su commit exacto. Las propuestas automáticas requieren explícitamente `ENABLE_SOURCE_REVIEW_PRS=true` y una política de GitHub configurada por el propietario que permita a Actions crear PR. Una propuesta fallida puede haber subido una rama sin crear un PR; comprueba el resultado real. No eludas una denegación añadiendo credenciales ni debilitando permisos.
+
+Ninguna vía acepta la referencia ni fusiona cambios. Las fuentes nuevas llevan `baseline_status: pending-human-review` y quedan fuera de `data/source-baseline.json`; una descarga correcta no las acepta. Una persona lee el diff relevante, verifica afirmaciones y aplicabilidad y decide si actualizar conjuntamente guías, traducciones, fechas de revisión y referencia. La aceptación de una fuente nueva añade la observación inspeccionada y elimina el indicador pendiente en el mismo cambio revisado. No reinicies una fecha de revisión solo porque una URL devuelva 200.
 
 ## Actualizaciones asistidas por agentes
 

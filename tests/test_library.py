@@ -75,7 +75,8 @@ class ContentTests(unittest.TestCase):
                 shutil.copytree(ROOT / folder, root / folder)
             path = root / "data/sources.json"
             data = json.loads(path.read_text())
-            first, second = data["sources"][:2]
+            first = next(s for s in data["sources"] if s["id"] == "agents-guardrails")
+            second = next(s for s in data["sources"] if s["id"] == "postgres-isolation")
             first["reviewed_url"] = first["url"]
             first["document_license"]["reference_only"] = False
             first["document_license"]["reviewed_commit"] = "0" * 40

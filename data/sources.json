@@ -29,249 +29,6 @@
       }
     },
     {
-      "id": "azure-architecture-styles",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/guide/architecture-styles/index.md",
-      "publisher": "MicrosoftDocs",
-      "authority": "primary",
-      "reviewed_on": "2026-10-22",
-      "review_days": 90,
-      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
-      "status": "current",
-      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/guide/architecture-styles/index.md",
-      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-      "reviewed_sha256": "0a449eff5f349559d407038a2bea5a85afd3f2ccbe396fbb46e373c3ef60cd3a",
-      "document_license": {
-        "name": "CC-BY-4.0",
-        "spdx": "CC-BY-4.0",
-        "status": "reviewed",
-        "reviewed_on": "2026-10-22",
-        "reference_only": true,
-        "upstream_repository": "MicrosoftDocs/architecture-center",
-        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-        "evidence_urls": [
-          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
-        ],
-        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
-        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
-      }
-    },
-    {
-      "id": "azure-cache-aside",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/cache-aside-content.md",
-      "publisher": "MicrosoftDocs",
-      "authority": "primary",
-      "reviewed_on": "2026-10-22",
-      "review_days": 90,
-      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
-      "status": "current",
-      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cache-aside-content.md",
-      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-      "reviewed_sha256": "eb19852e710d924d98a39f386928ef1b0d763391f0e9e22a353ce818dd57881f",
-      "document_license": {
-        "name": "CC-BY-4.0",
-        "spdx": "CC-BY-4.0",
-        "status": "reviewed",
-        "reviewed_on": "2026-10-22",
-        "reference_only": true,
-        "upstream_repository": "MicrosoftDocs/architecture-center",
-        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-        "evidence_urls": [
-          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
-        ],
-        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
-        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
-      }
-    },
-    {
-      "id": "azure-cqrs",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/cqrs.md",
-      "publisher": "MicrosoftDocs",
-      "authority": "primary",
-      "reviewed_on": "2026-10-22",
-      "review_days": 90,
-      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
-      "status": "current",
-      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/cqrs.md",
-      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-      "reviewed_sha256": "c8c037d08ecbfacad018443ecc5b2c5b05e60cc484bed4e6cf7760869537371b",
-      "document_license": {
-        "name": "CC-BY-4.0",
-        "spdx": "CC-BY-4.0",
-        "status": "reviewed",
-        "reviewed_on": "2026-10-22",
-        "reference_only": true,
-        "upstream_repository": "MicrosoftDocs/architecture-center",
-        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-        "evidence_urls": [
-          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
-        ],
-        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
-        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
-      }
-    },
-    {
-      "id": "azure-data-partitioning",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/best-practices/data-partitioning-strategies-content.md",
-      "publisher": "MicrosoftDocs",
-      "authority": "primary",
-      "reviewed_on": "2026-10-22",
-      "review_days": 90,
-      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
-      "status": "current",
-      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/best-practices/data-partitioning-strategies-content.md",
-      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-      "reviewed_sha256": "ef4eb9d5b6ee07d069614474d551c79f3df103d0333a22bb6e75fe2a36b38d77",
-      "document_license": {
-        "name": "CC-BY-4.0",
-        "spdx": "CC-BY-4.0",
-        "status": "reviewed",
-        "reviewed_on": "2026-10-22",
-        "reference_only": true,
-        "upstream_repository": "MicrosoftDocs/architecture-center",
-        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-        "evidence_urls": [
-          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
-        ],
-        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
-        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
-      }
-    },
-    {
-      "id": "azure-event-sourcing",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/event-sourcing.md",
-      "publisher": "MicrosoftDocs",
-      "authority": "primary",
-      "reviewed_on": "2026-10-22",
-      "review_days": 90,
-      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
-      "status": "current",
-      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/event-sourcing.md",
-      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-      "reviewed_sha256": "3b43bdcdf4b17f9da1adbfd4f77fd767f1262a8baeb3aba232bbed293e2d2a49",
-      "document_license": {
-        "name": "CC-BY-4.0",
-        "spdx": "CC-BY-4.0",
-        "status": "reviewed",
-        "reviewed_on": "2026-10-22",
-        "reference_only": true,
-        "upstream_repository": "MicrosoftDocs/architecture-center",
-        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-        "evidence_urls": [
-          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
-        ],
-        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
-        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
-      }
-    },
-    {
-      "id": "azure-health-endpoints",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/health-endpoint-monitoring.md",
-      "publisher": "MicrosoftDocs",
-      "authority": "primary",
-      "reviewed_on": "2026-10-22",
-      "review_days": 90,
-      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
-      "status": "current",
-      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/health-endpoint-monitoring.md",
-      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-      "reviewed_sha256": "2ffed47249e9c6e6dd5a2d2b36c73fcb2adcbd217377e60f3466c98cf9f9d08f",
-      "document_license": {
-        "name": "CC-BY-4.0",
-        "spdx": "CC-BY-4.0",
-        "status": "reviewed",
-        "reviewed_on": "2026-10-22",
-        "reference_only": true,
-        "upstream_repository": "MicrosoftDocs/architecture-center",
-        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-        "evidence_urls": [
-          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
-        ],
-        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
-        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
-      }
-    },
-    {
-      "id": "azure-idempotent-consumer",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/idempotent-consumer.md",
-      "publisher": "MicrosoftDocs",
-      "authority": "primary",
-      "reviewed_on": "2026-10-22",
-      "review_days": 90,
-      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
-      "status": "current",
-      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/idempotent-consumer.md",
-      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-      "reviewed_sha256": "ada28cefdc0980a2462bab51877f4b6d051f2f61e32390258405fee9e81432e4",
-      "document_license": {
-        "name": "CC-BY-4.0",
-        "spdx": "CC-BY-4.0",
-        "status": "reviewed",
-        "reviewed_on": "2026-10-22",
-        "reference_only": true,
-        "upstream_repository": "MicrosoftDocs/architecture-center",
-        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-        "evidence_urls": [
-          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
-        ],
-        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
-        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
-      }
-    },
-    {
-      "id": "azure-outbox",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/databases/guide/transactional-out-box-cosmos.md",
-      "publisher": "MicrosoftDocs",
-      "authority": "primary",
-      "reviewed_on": "2026-10-22",
-      "review_days": 90,
-      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
-      "status": "current",
-      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/databases/guide/transactional-out-box-cosmos.md",
-      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-      "reviewed_sha256": "a2864017a09d8559659f5b4407aafc303c1248477fc55f6ebcf8d6843d969bf9",
-      "document_license": {
-        "name": "CC-BY-4.0",
-        "spdx": "CC-BY-4.0",
-        "status": "reviewed",
-        "reviewed_on": "2026-10-22",
-        "reference_only": true,
-        "upstream_repository": "MicrosoftDocs/architecture-center",
-        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-        "evidence_urls": [
-          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
-        ],
-        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
-        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
-      }
-    },
-    {
-      "id": "azure-retry",
-      "url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/main/docs/patterns/retry-content.md",
-      "publisher": "MicrosoftDocs",
-      "authority": "primary",
-      "reviewed_on": "2026-10-22",
-      "review_days": 90,
-      "scope": "Inspected Microsoft architecture pattern. Azure examples are contextual; local topology, thresholds and recovery policy are original synthesis.",
-      "status": "current",
-      "reviewed_url": "https://raw.githubusercontent.com/MicrosoftDocs/architecture-center/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/docs/patterns/retry-content.md",
-      "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-      "reviewed_sha256": "5dbbe2fafe931b163788df3bc0cedbdd6eff658c18687c845646354c61dcdbab",
-      "document_license": {
-        "name": "CC-BY-4.0",
-        "spdx": "CC-BY-4.0",
-        "status": "reviewed",
-        "reviewed_on": "2026-10-22",
-        "reference_only": true,
-        "upstream_repository": "MicrosoftDocs/architecture-center",
-        "reviewed_commit": "afb6a29f8871e2d9a49bfe407ef980a0db3aabd9",
-        "evidence_urls": [
-          "https://github.com/MicrosoftDocs/architecture-center/blob/afb6a29f8871e2d9a49bfe407ef980a0db3aabd9/LICENSE"
-        ],
-        "notes": "Reference only. License information is not permission to copy protected expression into the library. Actual LICENSE text inspected; GitHub automatic classification returned NOASSERTION.",
-        "evidence_sha256": "7183ef9749eb9b75e710a81a4c812a9405cc184f087500581a973e5929ac3f5e"
-      }
-    },
-    {
       "id": "codex",
       "url": "https://raw.githubusercontent.com/openai/codex/main/README.md",
       "publisher": "openai",
@@ -323,6 +80,33 @@
         ],
         "notes": "Reference only. License information is not permission to copy protected expression into the library.",
         "evidence_sha256": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc"
+      }
+    },
+    {
+      "id": "debezium-outbox",
+      "url": "https://raw.githubusercontent.com/debezium/debezium/main/documentation/modules/ROOT/pages/quarkus/outbox.adoc",
+      "publisher": "debezium",
+      "authority": "primary",
+      "reviewed_on": "2026-11-02",
+      "review_days": 90,
+      "scope": "The Quarkus extension writes an outbox event in the current business transaction and CDC relays it. The general mechanism does not prescribe Quarkus, Kafka or a connector, nor cover external provider effects.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/debezium/debezium/d67bfa5a10efac6eb74c0d62f43777b1198ad454/documentation/modules/ROOT/pages/quarkus/outbox.adoc",
+      "reviewed_commit": "d67bfa5a10efac6eb74c0d62f43777b1198ad454",
+      "reviewed_sha256": "2e5fe69c3f34e63a084aa73009f6f7d8bab0bed98ecfb100c620218d45d33e56",
+      "baseline_status": "pending-human-review",
+      "document_license": {
+        "name": "Apache-2.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-11-02",
+        "reference_only": true,
+        "upstream_repository": "debezium/debezium",
+        "reviewed_commit": "d67bfa5a10efac6eb74c0d62f43777b1198ad454",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/debezium/debezium/d67bfa5a10efac6eb74c0d62f43777b1198ad454/LICENSE.txt"
+        ],
+        "evidence_sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+        "notes": "Reference only. Source text, examples and diagrams are not redistributed or relicensed. The inspected license evidence does not authorize copying expression into library prose."
       }
     },
     {
@@ -431,6 +215,33 @@
         ],
         "notes": "Reference only. License information is not permission to copy protected expression into the library.",
         "evidence_sha256": "12d3a82a7d1378e6f597ec23d63a081aeb6ec4bc8de2a76ee9dc96c34c6d7a1b"
+      }
+    },
+    {
+      "id": "grpc-retry",
+      "url": "https://raw.githubusercontent.com/grpc/grpc.io/main/content/en/docs/guides/retry.md",
+      "publisher": "grpc",
+      "authority": "primary",
+      "reviewed_on": "2026-11-02",
+      "review_days": 90,
+      "scope": "gRPC retry eligibility, attempts, backoff, throttling and transparent retries. Total application budgets and reconciliation of external effects are local synthesis; verify the actual protocol and client.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/grpc/grpc.io/d4b80855571d015e4a6df23acc4dd3692c0c7200/content/en/docs/guides/retry.md",
+      "reviewed_commit": "d4b80855571d015e4a6df23acc4dd3692c0c7200",
+      "reviewed_sha256": "616a29cad0d8e6c4aa500b0fd4efd1ae6544b8963ea404d701fe2c37cf76e01d",
+      "baseline_status": "pending-human-review",
+      "document_license": {
+        "name": "CC-BY-4.0 content; Apache-2.0 code samples",
+        "status": "mixed",
+        "reviewed_on": "2026-11-02",
+        "reference_only": true,
+        "upstream_repository": "grpc/grpc.io",
+        "reviewed_commit": "d4b80855571d015e4a6df23acc4dd3692c0c7200",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/grpc/grpc.io/d4b80855571d015e4a6df23acc4dd3692c0c7200/LICENSE"
+        ],
+        "evidence_sha256": "9e3d1e4ba9165f24c03622be6cb83529b09d56201a6a51fb614506172c640201",
+        "notes": "Reference only. Source text, examples and diagrams are not redistributed or relicensed. The inspected license evidence does not authorize copying expression into library prose."
       }
     },
     {
@@ -640,6 +451,33 @@
         ],
         "notes": "Reference only. License information is not permission to copy protected expression into the library.",
         "evidence_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      }
+    },
+    {
+      "id": "kubernetes-probes",
+      "url": "https://raw.githubusercontent.com/kubernetes/website/main/content/en/docs/concepts/workloads/pods/probes.md",
+      "publisher": "kubernetes",
+      "authority": "primary",
+      "reviewed_on": "2026-11-02",
+      "review_days": 90,
+      "scope": "Startup, readiness and liveness roles, traffic removal, restarts and cascading-failure/resource risks. Kubernetes behavior is an example, not a requirement to deploy an orchestrator.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/kubernetes/website/33ea519050c6c6bea202ee53838d053ccba95a47/content/en/docs/concepts/workloads/pods/probes.md",
+      "reviewed_commit": "33ea519050c6c6bea202ee53838d053ccba95a47",
+      "reviewed_sha256": "a810dfe6150b79d3876af0853676219ed6991edcf84fc437e75b962a02bb4949",
+      "baseline_status": "pending-human-review",
+      "document_license": {
+        "name": "CC-BY-4.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-11-02",
+        "reference_only": true,
+        "upstream_repository": "kubernetes/website",
+        "reviewed_commit": "33ea519050c6c6bea202ee53838d053ccba95a47",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/kubernetes/website/33ea519050c6c6bea202ee53838d053ccba95a47/LICENSE"
+        ],
+        "evidence_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+        "notes": "Reference only. Source text, examples and diagrams are not redistributed or relicensed. The inspected license evidence does not authorize copying expression into library prose."
       }
     },
     {
@@ -1102,6 +940,60 @@
       }
     },
     {
+      "id": "pekko-cqrs",
+      "url": "https://raw.githubusercontent.com/apache/pekko-projection/main/docs/src/main/paradox/use-cases.md",
+      "publisher": "apache",
+      "authority": "primary",
+      "reviewed_on": "2026-11-02",
+      "review_days": 90,
+      "scope": "CQRS read/write separation and projections from events without requiring event sourcing. The source illustrates Apache Pekko; store layout, shared-database transitions and freshness budgets remain project decisions.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/apache/pekko-projection/d1bcc1ed09efd8a11ce3dca0a7edea306dff6e02/docs/src/main/paradox/use-cases.md",
+      "reviewed_commit": "d1bcc1ed09efd8a11ce3dca0a7edea306dff6e02",
+      "reviewed_sha256": "2114914cf55b328f62f166529525dd58a5c21fad3dd89545fc2afeec8d767bc3",
+      "baseline_status": "pending-human-review",
+      "document_license": {
+        "name": "Apache-2.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-11-02",
+        "reference_only": true,
+        "upstream_repository": "apache/pekko-projection",
+        "reviewed_commit": "d1bcc1ed09efd8a11ce3dca0a7edea306dff6e02",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/apache/pekko-projection/d1bcc1ed09efd8a11ce3dca0a7edea306dff6e02/LICENSE"
+        ],
+        "evidence_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "notes": "Reference only. Source text, examples and diagrams are not redistributed or relicensed. The inspected license evidence does not authorize copying expression into library prose."
+      }
+    },
+    {
+      "id": "pekko-event-sourcing",
+      "url": "https://raw.githubusercontent.com/apache/pekko/main/docs/src/main/paradox/typed/persistence.md",
+      "publisher": "apache",
+      "authority": "primary",
+      "reviewed_on": "2026-11-02",
+      "review_days": 90,
+      "scope": "Apache Pekko persisted events, recovery/replay, schema evolution, retention and side-effect delivery limits. Does not establish exactly-once remote effects or require adopting the actor framework.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/apache/pekko/0b963c40b68bfb8788f91a265a13f6ce38947b63/docs/src/main/paradox/typed/persistence.md",
+      "reviewed_commit": "0b963c40b68bfb8788f91a265a13f6ce38947b63",
+      "reviewed_sha256": "b5bbb155183a6c97a14bd7831e42a08dd830468493b893c6c126d4cc110a3cea",
+      "baseline_status": "pending-human-review",
+      "document_license": {
+        "name": "Apache-2.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-11-02",
+        "reference_only": true,
+        "upstream_repository": "apache/pekko",
+        "reviewed_commit": "0b963c40b68bfb8788f91a265a13f6ce38947b63",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/apache/pekko/0b963c40b68bfb8788f91a265a13f6ce38947b63/LICENSE"
+        ],
+        "evidence_sha256": "2dca66a35023ac4f692030f7848d41098f622b18ab2f58a15cd48a6de272f30c",
+        "notes": "Reference only. Source text, examples and diagrams are not redistributed or relicensed. The inspected license evidence does not authorize copying expression into library prose."
+      }
+    },
+    {
       "id": "playwright-testing",
       "url": "https://raw.githubusercontent.com/microsoft/playwright/main/docs/src/best-practices-js.md",
       "publisher": "microsoft",
@@ -1209,6 +1101,87 @@
       }
     },
     {
+      "id": "postgres-partitioning",
+      "url": "https://raw.githubusercontent.com/postgres/postgres/master/doc/src/sgml/ddl.sgml",
+      "publisher": "postgres",
+      "authority": "primary",
+      "reviewed_on": "2026-11-02",
+      "review_days": 90,
+      "scope": "PostgreSQL table partitioning: partition keys, pruning, maintenance, constraints and planning cost. Local table partitioning is not distributed sharding; routing, cross-node consistency and rebalancing require separate project evidence.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/postgres/postgres/5681f0cfa5acfdc5146e2b74ff5b7e940df039f3/doc/src/sgml/ddl.sgml",
+      "reviewed_commit": "5681f0cfa5acfdc5146e2b74ff5b7e940df039f3",
+      "reviewed_sha256": "b4099e01d760d08bff5bdba8c9d0a41ca4b54b648415e9cecdaff448817d1585",
+      "baseline_status": "pending-human-review",
+      "document_license": {
+        "name": "PostgreSQL",
+        "status": "reviewed",
+        "reviewed_on": "2026-11-02",
+        "reference_only": true,
+        "upstream_repository": "postgres/postgres",
+        "reviewed_commit": "5681f0cfa5acfdc5146e2b74ff5b7e940df039f3",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/postgres/postgres/5681f0cfa5acfdc5146e2b74ff5b7e940df039f3/COPYRIGHT"
+        ],
+        "evidence_sha256": "3d6af92ff8a4c2cdf69afb1cf44edea727922f5cd0cf8b5f72b11cdecac8fdfd",
+        "notes": "Reference only. Source text, examples and diagrams are not redistributed or relicensed. The inspected license evidence does not authorize copying expression into library prose."
+      }
+    },
+    {
+      "id": "rabbitmq-reliability",
+      "url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/main/docs/reliability.md",
+      "publisher": "rabbitmq",
+      "authority": "primary",
+      "reviewed_on": "2026-11-02",
+      "review_days": 90,
+      "scope": "Publisher/consumer acknowledgements, lost confirmations and duplicate delivery in RabbitMQ. Atomic deduplication records and external-effect reconciliation are library synthesis, not broker guarantees.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/483c5f73095c3d808e98840e50c1ed5f2b148369/docs/reliability.md",
+      "reviewed_commit": "483c5f73095c3d808e98840e50c1ed5f2b148369",
+      "reviewed_sha256": "25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+      "baseline_status": "pending-human-review",
+      "document_license": {
+        "name": "Apache-2.0 OR MPL-2.0 (documentation; blog excluded)",
+        "status": "mixed",
+        "reviewed_on": "2026-11-02",
+        "reference_only": true,
+        "upstream_repository": "rabbitmq/rabbitmq-website",
+        "reviewed_commit": "483c5f73095c3d808e98840e50c1ed5f2b148369",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/483c5f73095c3d808e98840e50c1ed5f2b148369/README.md"
+        ],
+        "evidence_sha256": "5ce5bdf2245751716d3429a41dd8e016ac4910595d50cde875b9306dea1000d1",
+        "notes": "Reference only. Source text, examples and diagrams are not redistributed or relicensed. The inspected license evidence does not authorize copying expression into library prose."
+      }
+    },
+    {
+      "id": "redis-cache-aside",
+      "url": "https://raw.githubusercontent.com/redis/docs/main/content/develop/use-cases/cache-aside/_index.md",
+      "publisher": "redis",
+      "authority": "primary",
+      "reviewed_on": "2026-11-02",
+      "review_days": 90,
+      "scope": "Cache lookup, origin fallback, expiry, invalidation and stampede risks. Redis implementation examples are contextual; advertised latency and zero-cost claims are not adopted or measured here.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/redis/docs/25edf15e0d44b939a4cc9a63c3157073391a7be1/content/develop/use-cases/cache-aside/_index.md",
+      "reviewed_commit": "25edf15e0d44b939a4cc9a63c3157073391a7be1",
+      "reviewed_sha256": "30d67f505380fc99ab1f0ac896a0dd5f8bfd84ea22d1937a17ce7576766fb42c",
+      "baseline_status": "pending-human-review",
+      "document_license": {
+        "name": "CC-BY-NC-SA-4.0; some legacy portions CC-BY-SA-4.0",
+        "status": "mixed",
+        "reviewed_on": "2026-11-02",
+        "reference_only": true,
+        "upstream_repository": "redis/docs",
+        "reviewed_commit": "25edf15e0d44b939a4cc9a63c3157073391a7be1",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/redis/docs/25edf15e0d44b939a4cc9a63c3157073391a7be1/LICENSE"
+        ],
+        "evidence_sha256": "598d5d2100d48f8f7838c60cdd3b813268c9df38de65353df61edb5125828099",
+        "notes": "Reference only. Source text, examples and diagrams are not redistributed or relicensed. The inspected license evidence does not authorize copying expression into library prose."
+      }
+    },
+    {
       "id": "semver",
       "url": "https://raw.githubusercontent.com/semver/semver/master/semver.md",
       "publisher": "semver",
@@ -1259,6 +1232,33 @@
           "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/README.md#license"
         ],
         "notes": "Reference only. License information is not permission to copy protected expression into the library. README refers to individual skill LICENSE.txt files; that is not a blanket license for this README or other skills. No root grant established."
+      }
+    },
+    {
+      "id": "spring-modulith-fundamentals",
+      "url": "https://raw.githubusercontent.com/spring-projects/spring-modulith/main/src/docs/antora/modules/ROOT/pages/fundamentals.adoc",
+      "publisher": "spring-projects",
+      "authority": "primary",
+      "reviewed_on": "2026-11-02",
+      "review_days": 90,
+      "scope": "Logical modules, exposed interfaces and explicit dependency boundaries in Spring Modulith. The library generalizes the boundary concept; this is not a framework prescription or a comparative topology benchmark.",
+      "status": "current",
+      "reviewed_url": "https://raw.githubusercontent.com/spring-projects/spring-modulith/e744475adc65af2fd033a57949be55e87209195c/src/docs/antora/modules/ROOT/pages/fundamentals.adoc",
+      "reviewed_commit": "e744475adc65af2fd033a57949be55e87209195c",
+      "reviewed_sha256": "7b7ac322a75de339df00e9bf23c5bdaad711ec8704a66d8bf542886758fe9209",
+      "baseline_status": "pending-human-review",
+      "document_license": {
+        "name": "Apache-2.0",
+        "status": "reviewed",
+        "reviewed_on": "2026-11-02",
+        "reference_only": true,
+        "upstream_repository": "spring-projects/spring-modulith",
+        "reviewed_commit": "e744475adc65af2fd033a57949be55e87209195c",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/spring-projects/spring-modulith/e744475adc65af2fd033a57949be55e87209195c/LICENSE"
+        ],
+        "evidence_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "notes": "Reference only. Source text, examples and diagrams are not redistributed or relicensed. The inspected license evidence does not authorize copying expression into library prose."
       }
     },
     {
