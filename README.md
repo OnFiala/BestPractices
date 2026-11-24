@@ -1,5 +1,8 @@
 # BestPractices
 
+Read the introduction: [English](docs/en/index.md) · [Česky](docs/cs/index.md) ·
+[Deutsch](docs/de/index.md) · [Español](docs/es/index.md).
+
 **An agent-maintained decision and delivery system, created with AI agents under human direction.**
 Use it to turn a software idea into a scoped task for an agent, a reviewable change,
 and evidence of what was actually checked. You receive guidance, a delivery plan
@@ -63,8 +66,7 @@ Plugin installation and MCP are optional. Continue with
 [the delivery workflow](docs/en/guides/project-delivery.md),
 [coverage and limits](docs/en/guides/coverage.md), or
 [the reference projects](docs/en/guides/reference-labs.md).
-Česky: [úvod](docs/cs/index.md). Deutsch: [Einstieg](docs/de/index.md).
-Español: [inicio](docs/es/index.md). All entries are in [the catalog](data/catalog.json).
+All entries are in [the catalog](data/catalog.json).
 
 ## Create a local delivery packet
 
