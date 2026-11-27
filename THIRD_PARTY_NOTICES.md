@@ -22,7 +22,7 @@ and npm dependency metadata were inspected to include bundled transitive code.
 
 | Component | Version | Applicable license and retained terms |
 | --- | --- | --- |
-| Material for MkDocs — Martin Donath | 9.7.7 | [MIT](LICENSES/mkdocs-material-MIT.txt) |
+| Material for MkDocs — Martin Donath | 9.8.0 | [MIT](LICENSES/mkdocs-material-MIT.txt) |
 | MkDocs — MkDocs team | 1.6.1 | [BSD-2-Clause](LICENSES/mkdocs-BSD-2-Clause.txt) |
 | Clipboard.js — Zeno Rocha | 2.0.11 | [MIT](LICENSES/clipboard-LICENSE.txt) |
 | good-listener — Zeno Rocha | 1.2.2 | [MIT](LICENSES/zenorocha-MIT.txt) |
